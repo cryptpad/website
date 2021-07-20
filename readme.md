@@ -1,4 +1,14 @@
-﻿[TOC]
+﻿## Usage
+
+You need some very basic node dependencies:
+
+`npm i`
+
+then build it:
+
+`node build.js`
+
+and serve `cryptpad.org/built/` with your preferred static webserver.
 
 ## Ideas
 
