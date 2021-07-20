@@ -1,0 +1,18 @@
+{
+  "name": "cryptpad.org",
+  "version": "1.0.0",
+  "description": "cryptpad.org site",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://ansuz@macsween.ca/home/ansuz/repo/cryptpad.org.git"
+  },
+  "author": "ansuz",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^10.0.0"
+  }
+}
