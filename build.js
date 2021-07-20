@@ -111,6 +111,20 @@ write([
     Fs.readFileSync('parts/enterprise.html', {encoding: 'utf8'}),
 ], 'built/enterprise.html');
 
+write([
+    swap(head, {
+        title: 'CryptPad - consulting services and custom development',
+        description: 'Custom projects and training provided by the experienced CryptPad team',
+        url: 'https://cryptpad.orrg/consulting.html',
+        image: 'https://cryptpad.org/images/shredder.png',
+        domain: 'cryptpad.org',
+        canonical: 'https://cryptpad.org/enterprise.html',
+        favicon: 'images/main-favicon.png',
+    }),
+    Fs.readFileSync('parts/consulting.html', 'utf8')
+], 'built/consulting.html');
+
+
 var instancePart = Fs.readFileSync('parts/instance.html', 'utf8');
 
 // instances.html
