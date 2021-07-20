@@ -35,23 +35,30 @@ var write = function (A, dest) {
     Fs.writeFileSync(dest, A.filter(isNonEmptyString).join('\n'));
 };
 
+var log = function (s) {
+    console.log(s);
+};
+
+log("Creating target directories");
+
 var buildPath = './built';
 Fse.mkdirpSync(buildPath);
 
 var imagePath = 'images';
 Fse.mkdirpSync(Path.join(buildPath, imagePath));
 
-// copy all images
+log("Copying images");
 Fs.readdirSync(imagePath).forEach(function (file) {
     Fse.copySync(Path.join(imagePath, file), Path.join(buildPath, imagePath, file));
 });
 
-// copy all static assets
+log("Copying static assets");
 var staticPath = 'static';
 Fs.readdirSync(staticPath).forEach(function (file) {
     Fse.copySync(Path.join(staticPath, file), Path.join(buildPath, file));
 });
 
+log("Creating home page");
 write([
     swap(head, {
         title: 'CryptPad - the end-to-end encrypted collaboration suite',
@@ -65,24 +72,7 @@ write([
     swap(Fs.readFileSync('parts/index.html', {encoding: 'utf8'}), Stats),
 ], 'built/index.html');
 
-/*
-index.html
-
-our users
-testimonials
-open-source
-sustainability
-governance
-funding
-our research
-status
-contribute
-follow
-
-*/
-
-
-// education.html
+log("Creating education page"); // education.html
 write([
     swap(head, {
         title: 'CryptPad - packages for education',
@@ -97,7 +87,7 @@ write([
 ], 'built/education.html');
 
 
-// enterprise.html
+log("Creating enterprise page"); // enterprise.html
 write([
     swap(head, {
         title: 'CryptPad - packages for enterprise',
@@ -111,6 +101,7 @@ write([
     Fs.readFileSync('parts/enterprise.html', {encoding: 'utf8'}),
 ], 'built/enterprise.html');
 
+log("Creating consulting page"); // consulting.html
 write([
     swap(head, {
         title: 'CryptPad - consulting services and custom development',
@@ -127,7 +118,7 @@ write([
 
 var instancePart = Fs.readFileSync('parts/instance.html', 'utf8');
 
-// instances.html
+log("Creating instance directory page"); // instances.html
 write([
     swap(head, {
         title: 'CryptPad - publicly available instances',
