@@ -2,6 +2,7 @@ var Fs = require("fs");
 var Fse = require("fs-extra");
 var Path = require("path");
 var Stats = require("./stats.json");
+var Less = require("less");
 
 var head = Fs.readFileSync('./parts/head.html', 'utf8');
 
@@ -160,4 +161,13 @@ write([
     return swap(instancePart, data);
 })), 'built/instances.html');
 
+log("Compiling less");
+Less.render(Fs.readFileSync("./styles/main.less", "utf8"), {
+
+
+
+}, function (err, output) {
+    if (err) { return void console.error(err); }
+    Fs.writeFileSync(Path.join(buildPath, 'style.css'), output.css);
+});
 
