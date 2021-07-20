@@ -1,0 +1,1 @@
+git push ssh://cryptpad@agile.cryptpad.fr:/home/cryptpad/cryptpad.org.git main && ssh cryptpad@agile.cryptpad.fr "cd /home/cryptpad/cryptpad.org && /home/cryptpad/.nvm/versions/node/v12.14.0/bin/node build.js"
