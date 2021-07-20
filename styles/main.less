@@ -1,5 +1,11 @@
-@main: #eee2ee;
-@alt: #eee;
+@main-bg: #eee2ee;
+@alt-bg: #eee;
+
+@main-bg-dark: #222;
+@alt-bg-dark: #333;
+
+@link-color: blue;
+@link-color-dark: CornflowerBlue;
 
 html, body, div, h1 {
     margin: 0;
@@ -27,22 +33,26 @@ div:is(.full, .half) {
         margin-right: auto;
     }
     &:nth-child(odd) {
-        background: @main;
+        background: @main-bg;
     }
     &:nth-child(even) {
-        background-color: @alt;
+        background-color: @alt-bg;
     }
 }
-
 .full { min-height: 100vh; }
 .half { min-height: 50vh; }
 
 h1, h2, h3 {
     & > a {
-        color: black; /* XXX */
+        color: black; /* XXX */ // XXX
         text-decoration: none;
         &:hover {
             text-decoration: underline;
+        }
+    }
+    @media screen and (prefers-color-scheme: dark) {
+        & > a {
+            color: white !important;
         }
     }
 }
@@ -67,4 +77,35 @@ blockquote {
 img  {
     max-width: 100%;
 }
+
+a {
+    color: @link-color;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    html, body, div, h1 {
+        color: white; // XXX
+    }
+    div:is(.full, .half) {
+        &:nth-child(odd) {
+            // background: @main-bg;
+            background: @main-bg-dark;
+        }
+        &:nth-child(even) {
+            // background-color: @alt-bg;
+            background-color: @alt-bg-dark;
+        }
+    }
+
+    a {
+        color: @link-color-dark !important;
+    }
+
+    h1, h2, h3 {
+        & > a {
+            color: white; // XXX
+        }
+    }
+}
+
 
