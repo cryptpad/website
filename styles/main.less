@@ -1,12 +1,20 @@
 @import './styles/font.less';
 
-@main-bg: #eee2ee;
-@alt-bg: #eee;
-@text-color: black;
+@cryptpad_color_grey_200: #EEEEEE;
+@cryptpad_color_grey_300: #E0E0E0;
+@cryptpad_color_grey_700: #616161;
+@cryptpad_color_grey_800: #424242;
+@cryptpad_color_grey_900: #212121;
+@cryptpad_color_grey_950: #121212;
 
-@main-bg-dark: #222;
-@alt-bg-dark: #333;
-@text-color-dark: white;
+@main-bg: @cryptpad_color_grey_200; //#eee2ee;
+@alt-bg: @cryptpad_color_grey_300; //#eee;
+@text-color: @cryptpad_color_grey_800; //black;
+
+
+@main-bg-dark: @cryptpad_color_grey_900; //#222;
+@alt-bg-dark: @cryptpad_color_grey_800; //#333;
+@text-color-dark: @cryptpad_color_grey_200; //grey_white;
 
 @link-color: blue;
 @link-color-dark: CornflowerBlue;
@@ -19,6 +27,10 @@ html, body, div, h1 {
     vertical-align: baseline;
     background: transparent;
     font-family: 'Open Sans', Verdana, Geneva, sans-serif;
+    color: @text-color;
+    @media screen and (prefers-color-scheme: dark) {
+        color: @text-color-dark;
+    }
 }
 
 div:is(.full, .half) {
