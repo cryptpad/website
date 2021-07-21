@@ -45,19 +45,12 @@ log("Creating target directories");
 var buildPath = './built';
 Fse.mkdirpSync(buildPath);
 
-var imagePath = 'images';
-Fse.mkdirpSync(Path.join(buildPath, imagePath));
-
-log("Copying images");
-Fs.readdirSync(imagePath).forEach(function (file) {
-    Fse.copySync(Path.join(imagePath, file), Path.join(buildPath, imagePath, file));
-});
-
 log("Copying static assets");
 var staticPath = 'static';
-Fs.readdirSync(staticPath).forEach(function (file) {
-    Fse.copySync(Path.join(staticPath, file), Path.join(buildPath, file));
-});
+Fse.copySync(staticPath, buildPath);
+
+var DEFAULT_FAVICON = 'images/main-favicon.png';
+var DOMAIN = 'cryptpad.org';
 
 log("Creating home page");
 write([
@@ -66,9 +59,9 @@ write([
         description: 'An overview of the open-source project and its community',
         url: 'https://cryptpad.org/',
         image: 'https://cryptpad.org/images/shredder.png',
-        domain: 'cryptpad.org',
+        domain: DOMAIN,
         canonical: 'https://cryptpad.org/',
-        favicon: 'images/main-favicon.png',
+        favicon: DEFAULT_FAVICON,
     }),
     swap(Fs.readFileSync('parts/index.html', {encoding: 'utf8'}), Stats),
 ], 'built/index.html');
@@ -80,9 +73,9 @@ write([
         description: "Protect the personal information of your institution's students and faculty",
         url: 'https://cryptpad.org/education.html',
         image: 'https://cryptpad.org/images/shredder.png',
-        domain: 'cryptpad.org',
+        domain: DOMAIN,
         canonical: 'https://cryptpad.org/education.html',
-        favicon: 'images/main-favicon.png',
+        favicon: DEFAULT_FAVICON,
     }),
     Fs.readFileSync('parts/education.html', {encoding: 'utf8'}),
 ], 'built/education.html');
@@ -97,7 +90,7 @@ write([
         image: 'https://cryptpad.org/images/shredder.png',
         domain: 'cryptpad.org',
         canonical: 'https://cryptpad.org/enterprise.html',
-        favicon: 'images/main-favicon.png',
+        favicon: DEFAULT_FAVICON,
     }),
     Fs.readFileSync('parts/enterprise.html', {encoding: 'utf8'}),
 ], 'built/enterprise.html');
@@ -107,11 +100,11 @@ write([
     swap(head, {
         title: 'CryptPad - consulting services and custom development',
         description: 'Custom projects and training provided by the experienced CryptPad team',
-        url: 'https://cryptpad.orrg/consulting.html',
+        url: 'https://cryptpad.org/consulting.html',
         image: 'https://cryptpad.org/images/shredder.png',
-        domain: 'cryptpad.org',
+        domain: DOMAIN,
         canonical: 'https://cryptpad.org/enterprise.html',
-        favicon: 'images/main-favicon.png',
+        favicon: DEFAULT_FAVICON,
     }),
     Fs.readFileSync('parts/consulting.html', 'utf8')
 ], 'built/consulting.html');
@@ -126,9 +119,9 @@ write([
         description: "Find an instance that suits your needs",
         url: 'https://cryptpad.org/instances.html',
         image: 'https://cryptpad.org/images/shredder.png',
-        domain: 'cryptpad.org',
+        domain: DOMAIN,
         canonical: 'https://cryptpad.org/instances.html',
-        favicon: 'images/main-favicon.png',
+        favicon: DEFAULT_FAVICON,
     }),
     Fs.readFileSync('parts/instances.html', {encoding: 'utf8'}),
 ].concat([ // XXX keep a list of manually validated instances
