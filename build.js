@@ -1,8 +1,9 @@
 var Fs = require("fs");
 var Fse = require("fs-extra");
 var Path = require("path");
-var Stats = require("./stats.json");
 var Less = require("less");
+
+var Stats = require("./data/stats.json");
 
 var head = Fs.readFileSync('./parts/head.html', 'utf8');
 
