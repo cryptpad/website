@@ -5,7 +5,8 @@
   "main": "build.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node build.js"
+    "build": "node build.js",
+    "optimize": "for i in static/images/*.png; do optipng $i;done;for i in static/images/*.jp*g;do jpegoptim $i;done"
   },
   "repository": {
     "type": "git",

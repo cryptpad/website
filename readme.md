@@ -10,6 +10,18 @@ then build it:
 
 and serve `cryptpad.org/built/` with your preferred static webserver.
 
+### Optimizing images
+
+Images currently have the most significant impact on loading time.
+
+Ubuntu's repos contain two tools that make lossless image compression very simple:
+
+```bash
+apt install jpegoptim optipng
+```
+
+With these installed you can run `npm run optimize` to minimize the size of all images in `static/images/` without any loss of quality.
+
 ## Ideas
 
 * cryptpad.org architecture
