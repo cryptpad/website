@@ -52,31 +52,40 @@ Fse.copySync(staticPath, buildPath);
 
 var DEFAULT_FAVICON = 'images/main-favicon.png';
 var DOMAIN = 'cryptpad.org';
+var PREVIEW = 'https://cryptypad.org/images/shredder.png';
 
-log("Creating home page");
+var templateHead = function (obj) {
+    return swap(head, {
+        title: obj.title,
+        description: obj.description,
+        url: obj.url,
+        canonical: obj.canonical,
+
+        lang: 'en', // XXX
+        image: obj.image || PREVIEW,
+        domain: obj.domain || DOMAIN,
+        favicon: obj.favicon || DEFAULT_FAVICON,
+    });
+};
+
+log("Creating home page"); // index.html
 write([
-    swap(head, {
+    templateHead({
         title: 'CryptPad - the end-to-end encrypted collaboration suite',
         description: 'An overview of the open-source project and its community',
-        url: 'https://cryptpad.org/',
-        image: 'https://cryptpad.org/images/shredder.png',
-        domain: DOMAIN,
+        url: 'https://cryptpad.org',
         canonical: 'https://cryptpad.org/',
-        favicon: DEFAULT_FAVICON,
     }),
     swap(Fs.readFileSync('parts/index.html', {encoding: 'utf8'}), Stats),
 ], 'built/index.html');
 
 log("Creating education page"); // education.html
 write([
-    swap(head, {
+    templateHead({
         title: 'CryptPad - packages for education',
         description: "Protect the personal information of your institution's students and faculty",
         url: 'https://cryptpad.org/education.html',
-        image: 'https://cryptpad.org/images/shredder.png',
-        domain: DOMAIN,
         canonical: 'https://cryptpad.org/education.html',
-        favicon: DEFAULT_FAVICON,
     }),
     Fs.readFileSync('parts/education.html', {encoding: 'utf8'}),
 ], 'built/education.html');
@@ -84,45 +93,46 @@ write([
 
 log("Creating enterprise page"); // enterprise.html
 write([
-    swap(head, {
+    templateHead({
         title: 'CryptPad - packages for enterprise',
         description: "Keep your clients' data safe and have peace of mind",
         url: 'https://cryptpad.org/enterprise.html',
-        image: 'https://cryptpad.org/images/shredder.png',
-        domain: 'cryptpad.org',
         canonical: 'https://cryptpad.org/enterprise.html',
-        favicon: DEFAULT_FAVICON,
     }),
     Fs.readFileSync('parts/enterprise.html', {encoding: 'utf8'}),
 ], 'built/enterprise.html');
 
 log("Creating consulting page"); // consulting.html
 write([
-    swap(head, {
+    templateHead({
         title: 'CryptPad - consulting services and custom development',
         description: 'Custom projects and training provided by the experienced CryptPad team',
         url: 'https://cryptpad.org/consulting.html',
-        image: 'https://cryptpad.org/images/shredder.png',
-        domain: DOMAIN,
         canonical: 'https://cryptpad.org/enterprise.html',
-        favicon: DEFAULT_FAVICON,
     }),
     Fs.readFileSync('parts/consulting.html', 'utf8')
 ], 'built/consulting.html');
 
+log("Creating error page"); // error.html
+write([
+    templateHead({
+        title: 'CryptPad - Page not found',
+        description: 'Page not found',
+        url: 'https://cryptpad.org/error.html',
+        canonical: 'https://cryptpad.org/error.html',
+    }),
+    Fs.readFileSync('parts/error.html', 'utf8')
+], 'built/error.html');
 
 var instancePart = Fs.readFileSync('parts/instance.html', 'utf8');
 
 log("Creating instance directory page"); // instances.html
 write([
-    swap(head, {
+    templateHead({
         title: 'CryptPad - publicly available instances',
         description: "Find an instance that suits your needs",
         url: 'https://cryptpad.org/instances.html',
-        image: 'https://cryptpad.org/images/shredder.png',
-        domain: DOMAIN,
         canonical: 'https://cryptpad.org/instances.html',
-        favicon: DEFAULT_FAVICON,
     }),
     Fs.readFileSync('parts/instances.html', {encoding: 'utf8'}),
 ].concat([ // XXX keep a list of manually validated instances
@@ -144,7 +154,7 @@ write([
     {
         title: 'pad.envs.net',
         url: 'https://pad.envs.net',
-        description: 'Germans?',
+        description: 'One of many services hosted by envs.net, a minimalist, non-commercial shared linux system.',
     },
     {
         title: 'pad.artemislena.eu',
@@ -156,11 +166,7 @@ write([
 })), 'built/instances.html');
 
 log("Compiling less");
-Less.render(Fs.readFileSync("./styles/main.less", "utf8"), {
-
-
-
-}, function (err, output) {
+Less.render(Fs.readFileSync("./styles/main.less", "utf8"), {}, function (err, output) {
     if (err) { return void console.error(err); }
     Fs.writeFileSync(Path.join(buildPath, 'style.css'), output.css);
 });
