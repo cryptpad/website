@@ -7,6 +7,9 @@
 @cryptpad_color_grey_900: #212121;
 @cryptpad_color_grey_950: #121212;
 
+@cryptpad_color_brand: #0087FF;
+@cryptpad_color_brand_300: lighten(@cryptpad_color_brand, 30%);
+
 @main-bg: @cryptpad_color_grey_200; //#eee2ee;
 @alt-bg: @cryptpad_color_grey_300; //#eee;
 @text-color: @cryptpad_color_grey_800; //black;
@@ -16,8 +19,8 @@
 @alt-bg-dark: @cryptpad_color_grey_800; //#333;
 @text-color-dark: @cryptpad_color_grey_200; //grey_white;
 
-@link-color: blue;
-@link-color-dark: CornflowerBlue;
+@link-color: @cryptpad_color_brand; //blue;
+@link-color-dark: @cryptpad_color_brand_300; //CornflowerBlue;
 
 html, body, div, h1 {
     margin: 0;
