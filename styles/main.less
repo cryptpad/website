@@ -1,3 +1,5 @@
+@import './styles/font.less';
+
 @main-bg: #eee2ee;
 @alt-bg: #eee;
 
@@ -14,7 +16,8 @@ html, body, div, h1 {
     outline: 0;
     vertical-align: baseline;
     background: transparent;
-    font-family: Verdana, Geneva, sans-serif;
+    //font-family: Verdana, Geneva, sans-serif;
+    font-family: 'Open Sans', Verdana, Geneva, sans-serif;
 }
 
 div:is(.full, .half) {
@@ -25,7 +28,7 @@ div:is(.full, .half) {
         text-align: center;
         margin-top: 30px;
         margin-bottom: 30px;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-family: 'IBM Plex Mono', Helvetica Neue, Helvetica, Arial, sans-serif;
     }
     :is(h1, h2, h3, p, ul, blockquote) {
         max-width: 50em;
@@ -107,5 +110,4 @@ a {
         }
     }
 }
-
 
