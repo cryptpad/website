@@ -59,7 +59,7 @@ var templateHead = function (obj) {
         title: obj.title,
         description: obj.description,
         url: obj.url,
-        canonical: obj.canonical,
+        canonical: obj.url, //obj.canonical,
 
         lang: 'en', // XXX
         image: obj.image || PREVIEW,
@@ -67,6 +67,8 @@ var templateHead = function (obj) {
         favicon: obj.favicon || DEFAULT_FAVICON,
     });
 };
+
+var footerPart = Fs.readFileSync('./parts/footer.html', 'utf8');
 
 log("Creating home page"); // index.html
 write([
@@ -76,8 +78,32 @@ write([
         url: 'https://cryptpad.org',
         canonical: 'https://cryptpad.org/',
     }),
-    swap(Fs.readFileSync('parts/index.html', {encoding: 'utf8'}), Stats),
+    [
+        'intro',
+        'what',
+        'users',
+        'testimonials',
+        'open-source',
+        'sustainability',
+        'services',
+        'governance',
+        'contribute',
+    ].map(function (part) {
+        return swap(Fs.readFileSync('parts/' + part + '.html', 'utf8'), Stats);
+    }).join('\n'),
+    footerPart,
 ], 'built/index.html');
+
+log("Creating research page"); // research.html
+write([
+    templateHead({
+        title: 'CryptPad - research projects',
+        description: "Research projects",
+        url: 'https://cryptpad.org/research.html',
+    }),
+    Fs.readFileSync('parts/research.html', {encoding: 'utf8'}),
+    footerPart,
+], 'built/research.html');
 
 log("Creating education page"); // education.html
 write([
@@ -85,9 +111,9 @@ write([
         title: 'CryptPad - packages for education',
         description: "Protect the personal information of your institution's students and faculty",
         url: 'https://cryptpad.org/education.html',
-        canonical: 'https://cryptpad.org/education.html',
     }),
     Fs.readFileSync('parts/education.html', {encoding: 'utf8'}),
+    footerPart,
 ], 'built/education.html');
 
 
@@ -97,9 +123,9 @@ write([
         title: 'CryptPad - packages for enterprise',
         description: "Keep your clients' data safe and have peace of mind",
         url: 'https://cryptpad.org/enterprise.html',
-        canonical: 'https://cryptpad.org/enterprise.html',
     }),
     Fs.readFileSync('parts/enterprise.html', {encoding: 'utf8'}),
+    footerPart,
 ], 'built/enterprise.html');
 
 log("Creating consulting page"); // consulting.html
@@ -108,10 +134,21 @@ write([
         title: 'CryptPad - consulting services and custom development',
         description: 'Custom projects and training provided by the experienced CryptPad team',
         url: 'https://cryptpad.org/consulting.html',
-        canonical: 'https://cryptpad.org/enterprise.html',
     }),
-    Fs.readFileSync('parts/consulting.html', 'utf8')
+    Fs.readFileSync('parts/consulting.html', 'utf8'),
+    footerPart,
 ], 'built/consulting.html');
+
+log("Creating support page"); // support.html
+write([
+    templateHead({
+        title: 'CryptPad - premium support packages',
+        description: 'Support packages and private installations provided by the experienced CryptPad team',
+        url: 'https://cryptpad.org/support.html',
+    }),
+    Fs.readFileSync('parts/support.html', 'utf8'),
+    footerPart,
+], 'built/support.html');
 
 log("Creating error page"); // error.html
 write([
@@ -119,9 +156,9 @@ write([
         title: 'CryptPad - Page not found',
         description: 'Page not found',
         url: 'https://cryptpad.org/error.html',
-        canonical: 'https://cryptpad.org/error.html',
     }),
-    Fs.readFileSync('parts/error.html', 'utf8')
+    Fs.readFileSync('parts/error.html', 'utf8'),
+    footerPart,
 ], 'built/error.html');
 
 var instancePart = Fs.readFileSync('parts/instance.html', 'utf8');
@@ -132,7 +169,6 @@ write([
         title: 'CryptPad - publicly available instances',
         description: "Find an instance that suits your needs",
         url: 'https://cryptpad.org/instances.html',
-        canonical: 'https://cryptpad.org/instances.html',
     }),
     Fs.readFileSync('parts/instances.html', {encoding: 'utf8'}),
 ].concat([ // XXX keep a list of manually validated instances
@@ -163,7 +199,8 @@ write([
     },
 ].map(function (data) {
     return swap(instancePart, data);
-})), 'built/instances.html');
+}).concat([footerPart])
+), 'built/instances.html');
 
 log("Compiling less");
 Less.render(Fs.readFileSync("./styles/main.less", "utf8"), {}, function (err, output) {
