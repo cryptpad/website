@@ -148,13 +148,17 @@ a {
         display: inline-block;
     }
     .thermometer-progress {
-        //width: 80% !important;
         padding: 15px;
         background: @cryptpad_color_brand;
         text-align: center;
+        color: @cryptpad_color_grey_200;
+        font-weight: bold;
     }
     .thermometer-remainder {
         width: 100%;
-        background: @text-color;
+        background: rgba(0, 0, 0, 0.2);
+        @media screen and (prefers-color-scheme: dark) {
+            background: @text-color;
+        }
     }
 }
