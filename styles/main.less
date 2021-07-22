@@ -141,3 +141,20 @@ a {
     }
 }
 
+.thermometer-container {
+    max-width: 100%;
+    height: 20px;
+    .thermometer-progress, .thermometer-remainder {
+        display: inline-block;
+    }
+    .thermometer-progress {
+        //width: 80% !important;
+        padding: 15px;
+        background: @cryptpad_color_brand;
+        text-align: center;
+    }
+    .thermometer-remainder {
+        width: 100%;
+        background: @text-color;
+    }
+}
