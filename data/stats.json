@@ -3,5 +3,6 @@
     "maxusercount": 350000,
     "instancecount": 700,
     "countries": 40,
-    "fundingprogress": 33
+    "fundingprogress": 33,
+    "researchemail": "contact@cryptpad.fr"
 }

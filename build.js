@@ -34,7 +34,7 @@ var isNonEmptyString = function (s) {
 };
 
 var write = function (A, dest) {
-    Fs.writeFileSync(dest, A.filter(isNonEmptyString).join('\n'));
+    Fs.writeFileSync(Path.join(tmpPath, dest), A.filter(isNonEmptyString).join('\n'));
 };
 
 var log = function (s) {
@@ -44,11 +44,15 @@ var log = function (s) {
 log("Creating target directories");
 
 var buildPath = './built';
-Fse.mkdirpSync(buildPath);
+var tmpPath = 'CRYPTPAD_TEMP_BUILD';
+// remove tmp path so we start fresh
+Fse.removeSync(tmpPath);
+// make a new temp path
+Fse.mkdirpSync(tmpPath);
 
 log("Copying static assets");
 var staticPath = 'static';
-Fse.copySync(staticPath, buildPath);
+Fse.copySync(staticPath, tmpPath);
 
 var DEFAULT_FAVICON = 'images/main-favicon.png';
 var DOMAIN = 'cryptpad.org';
@@ -92,7 +96,7 @@ write([
         return swap(Fs.readFileSync('parts/' + part + '.html', 'utf8'), Stats);
     }).join('\n'),
     footerPart,
-], 'built/index.html');
+], 'index.html');
 
 log("Creating research page"); // research.html
 write([
@@ -101,9 +105,9 @@ write([
         description: "Research projects",
         url: 'https://cryptpad.org/research.html',
     }),
-    Fs.readFileSync('parts/research.html', {encoding: 'utf8'}),
+    swap(Fs.readFileSync('parts/research.html', {encoding: 'utf8'}), Stats),
     footerPart,
-], 'built/research.html');
+], 'research.html');
 
 log("Creating education page"); // education.html
 write([
@@ -114,7 +118,7 @@ write([
     }),
     Fs.readFileSync('parts/education.html', {encoding: 'utf8'}),
     footerPart,
-], 'built/education.html');
+], 'education.html');
 
 
 log("Creating enterprise page"); // enterprise.html
@@ -126,7 +130,7 @@ write([
     }),
     Fs.readFileSync('parts/enterprise.html', {encoding: 'utf8'}),
     footerPart,
-], 'built/enterprise.html');
+], 'enterprise.html');
 
 log("Creating consulting page"); // consulting.html
 write([
@@ -137,7 +141,7 @@ write([
     }),
     Fs.readFileSync('parts/consulting.html', 'utf8'),
     footerPart,
-], 'built/consulting.html');
+], 'consulting.html');
 
 log("Creating support page"); // support.html
 write([
@@ -148,7 +152,7 @@ write([
     }),
     Fs.readFileSync('parts/support.html', 'utf8'),
     footerPart,
-], 'built/support.html');
+], 'support.html');
 
 log("Creating error page"); // error.html
 write([
@@ -159,9 +163,14 @@ write([
     }),
     Fs.readFileSync('parts/error.html', 'utf8'),
     footerPart,
-], 'built/error.html');
+], 'error.html');
 
 var instancePart = Fs.readFileSync('parts/instance.html', 'utf8');
+var Instances = require("./data/instances.json");
+
+var instanceParts = Instances.map(function (data) {
+    return swap(instancePart, data);
+}).join('\n');
 
 log("Creating instance directory page"); // instances.html
 write([
@@ -171,40 +180,15 @@ write([
         url: 'https://cryptpad.org/instances.html',
     }),
     Fs.readFileSync('parts/instances.html', {encoding: 'utf8'}),
-].concat([ // XXX keep a list of manually validated instances
-    {
-        title: 'CryptPad.fr',
-        url: 'https://cryptpad.fr',
-        description: 'The flagship instance that is hosted and administrated by the CryptPad core development team.',
-    },
-    {
-        title: 'pad.c3w.at',
-        url: 'https://pads.c3w.at',
-        description: 'Hosted by the Vienna chapter of the Chaos Computer Club',
-    },
-    {
-        title: 'pad.freifunk.duesseldorf.de',
-        url: 'https://pad.freifunk.duesseldorf.de',
-        description: 'Hosted by Freifunk Duesseldorf: a wireless community mesh network run by volunteers.',
-    },
-    {
-        title: 'pad.envs.net',
-        url: 'https://pad.envs.net',
-        description: 'One of many services hosted by envs.net, a minimalist, non-commercial shared linux system.',
-    },
-    {
-        title: 'pad.artemislena.eu',
-        url: 'https://pad.artemislena.eu',
-        description: 'In Germany. Using nixos, caddy, and podman',
-    },
-].map(function (data) {
-    return swap(instancePart, data);
-}).concat([footerPart])
-), 'built/instances.html');
+    instanceParts,
+    footerPart,
+], 'instances.html');
 
 log("Compiling less");
 Less.render(Fs.readFileSync("./styles/main.less", "utf8"), {}, function (err, output) {
     if (err) { return void console.error(err); }
-    Fs.writeFileSync(Path.join(buildPath, 'style.css'), output.css);
+    Fs.writeFileSync(Path.join(tmpPath, 'style.css'), output.css);
+    Fse.removeSync(buildPath);
+    Fs.renameSync(tmpPath, buildPath);
 });
 
