@@ -8,7 +8,8 @@ var Stats = require("./data/stats.json");
 var head = Fs.readFileSync('./parts/head.html', 'utf8');
 
 var swap = function (s, o) {
-    return s.replace(/\{\{([^}]+?)\}\}/g, function (all, token) {
+    return s
+    .replace(/\{\{([^}]+?)\}\}/g, function (all, token) {
         //console.log(token);
         var content = o[token];
 
@@ -34,7 +35,13 @@ var isNonEmptyString = function (s) {
 };
 
 var write = function (A, dest) {
-    Fs.writeFileSync(Path.join(tmpPath, dest), A.filter(isNonEmptyString).join('\n'));
+    var content = A
+        .filter(isNonEmptyString)
+        .join('\n')
+        .replace(/<!\-\-[\s\S]+?\-\->/g, '')
+        .replace(/\n[ \t]+?\n/mg, '')
+        .replace(/\n+/g, '\n');
+    Fs.writeFileSync(Path.join(tmpPath, dest), content);
 };
 
 var log = function (s) {
