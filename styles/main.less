@@ -28,17 +28,30 @@
 @breakpoint: 1000px;
 
 html {
-    font-size: 14px; // for rem units, makes responsive sizes easier
+    font-size: 8px; // for rem units, makes responsive sizes easier
 }
 
-html, body, div, h1 {
+@media screen and (max-width: @breakpoint) {
+    html {
+        font-size: 8px;
+    }
+}
+
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: @main-bg;
+}
+
+html, div, h1 {
     margin: 0;
     padding: 0;
     border: 0;
     outline: 0;
     vertical-align: baseline;
     background: transparent;
-    font-family: 'IBM Plex Mono', Verdana, Geneva, sans-serif;
+    font-family: 'Open Sans', Verdana, Geneva, sans-serif;
     color: @text-color;
 
 /*
@@ -48,11 +61,6 @@ html, body, div, h1 {
 */
 }
 
-@media screen and (max-width: @breakpoint) {
-    html {
-        font-size: 8px;
-    }
-}
 
 div:is(.full, .half, .quarter) {
     box-sizing: border-box;
@@ -62,19 +70,19 @@ div:is(.full, .half, .quarter) {
         text-align: center;
         margin-top: 30px;
         margin-bottom: 30px;
-        font-family: 'IBM Plex Mono', Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-family: 'IBM Plex Mono', monospace;
     }
     :is(h1, h2, h3, p, ul, blockquote, div.contain) {
         max-width: 50em;
         margin-left: auto;
         margin-right: auto;
     }
-    &:nth-child(odd) {
-        background: @main-bg;
-    }
-    &:nth-child(even) {
-        background: @alt-bg;
-    }
+    // &:nth-child(odd) {
+    //     background: @main-bg;
+    // }
+    // &:nth-child(even) {
+    //     background: @alt-bg;
+    // }
 }
 .full { min-height: 100vh; }
 .half { min-height: 50vh; }
@@ -118,7 +126,9 @@ h2 {
 // paragraph
 p {
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    line-height: 1.4;
+    padding: 10px;
 }
 a:hover {
     // I like this for a hover effect
@@ -162,12 +172,6 @@ h1, h2, h3 {
 }
 .align-center {
     text-align: center;
-}
-
-
-p {
-    line-height: 1.2em;
-    padding: 10px;
 }
 
 blockquote {
@@ -227,6 +231,7 @@ section.card { // XXX use flexbox
     flex-wrap: wrap;
     width: 60%;
     padding: 2rem;
+    padding-bottom: 20rem;
     margin: auto;
     justify-content: center;
     ul {
@@ -246,7 +251,7 @@ a.fake-button {
     background: @link-color;
     padding: 2rem;
     border-radius: 5px;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-decoration: none !important;
     margin: 3rem;
 }
