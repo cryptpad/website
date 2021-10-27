@@ -16,3 +16,18 @@
     }
 }
 
+@media screen and (max-width: @breakpoint) {
+    .wrapper {
+        flex-flow: column;
+    }
+    .footer-container {
+        flex-flow: column;
+        width: 100%;
+        justify-content: left;
+        ul:nth-child(2) {
+            display: none;
+        }
+    }
+}
+
+

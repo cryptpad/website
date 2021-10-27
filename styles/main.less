@@ -25,6 +25,8 @@
 @link-color: @cryptpad_color_brand;
 @link-color-dark: @cryptpad_color_brand_300;
 
+@breakpoint: 1000px;
+
 html {
     font-size: 14px; // for rem units, makes responsive sizes easier
 }
@@ -46,7 +48,7 @@ html, body, div, h1 {
 */
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: @breakpoint) {
     html {
         font-size: 8px;
     }
@@ -221,7 +223,7 @@ section.card { // XXX use flexbox
 
 .footer-container {
     display: flex;
-    flex-direction: row;
+    flex-flow: row;
     flex-wrap: wrap;
     width: 60%;
     padding: 2rem;
