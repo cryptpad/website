@@ -14,7 +14,7 @@ var addAnchors = function () {
     each(find('[id]'), function (block) {
         var id = block.getAttribute('id');
         if (!id) { return; }
-        each(find(':is(h1, h2, h3)', block), function (heading, i) {
+        each(find(':is(h2, h3)', block), function (heading, i) {
             if (i) { return; }
             var text = heading.innerText;
             var a = el('a', {

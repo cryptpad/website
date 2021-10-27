@@ -91,6 +91,13 @@ write([
         canonical: 'https://cryptpad.org/',
     }),
     [
+        'home/hero',
+        'home/suite',
+        'home/e2ee',
+        'home/open-source',
+
+
+/*
         'intro',
         'what',
         'users',
@@ -100,11 +107,14 @@ write([
         'services',
         'governance',
         'contribute',
+*/
     ].map(function (part) {
         return swap(Fs.readFileSync('parts/' + part + '.html', 'utf8'), Stats);
     }).join('\n'),
     footerPart,
 ], 'index.html');
+
+/*
 
 log("Creating research page"); // research.html
 write([
@@ -162,6 +172,20 @@ write([
     footerPart,
 ], 'support.html');
 
+log("Creating instance directory page"); // instances.html
+write([
+    templateHead({
+        title: 'CryptPad - publicly available instances',
+        description: "Find an instance that suits your needs",
+        url: 'https://cryptpad.org/instances.html',
+    }),
+    Fs.readFileSync('parts/instances.html', {encoding: 'utf8'}),
+    instanceParts,
+    footerPart,
+], 'instances.html');
+
+*/
+
 log("Creating error page"); // error.html
 write([
     templateHead({
@@ -179,18 +203,6 @@ var Instances = require("./data/instances.json");
 var instanceParts = Instances.map(function (data) {
     return swap(instancePart, data);
 }).join('\n');
-
-log("Creating instance directory page"); // instances.html
-write([
-    templateHead({
-        title: 'CryptPad - publicly available instances',
-        description: "Find an instance that suits your needs",
-        url: 'https://cryptpad.org/instances.html',
-    }),
-    Fs.readFileSync('parts/instances.html', {encoding: 'utf8'}),
-    instanceParts,
-    footerPart,
-], 'instances.html');
 
 log("Compiling less");
 Less.render(Fs.readFileSync("./styles/main.less", "utf8"), {}, function (err, output) {

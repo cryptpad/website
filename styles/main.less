@@ -1,6 +1,8 @@
-@import './styles/font.less';
+@import './styles/font.less';;
+@import './styles/grid.less';
 
 @cryptpad_color_grey_200: #EEEEEE;
+@cryptpad_color_grey_250: #E7E7E7;
 @cryptpad_color_grey_300: #E0E0E0;
 @cryptpad_color_grey_600: #757575;
 @cryptpad_color_grey_700: #616161;
@@ -12,16 +14,20 @@
 @cryptpad_color_brand_300: lighten(@cryptpad_color_brand, 30%);
 
 @main-bg: @cryptpad_color_grey_200;
-@alt-bg: @cryptpad_color_grey_300;
+@alt-bg: @cryptpad_color_grey_250;
 @text-color: @cryptpad_color_grey_800;
 
-
+// dark mode isn't going live in the first version
 @main-bg-dark: @cryptpad_color_grey_900;
 @alt-bg-dark: @cryptpad_color_grey_800;
 @text-color-dark: @cryptpad_color_grey_200;
 
 @link-color: @cryptpad_color_brand;
 @link-color-dark: @cryptpad_color_brand_300;
+
+html {
+    font-size: 14px; // for rem units, makes responsive sizes easier
+}
 
 html, body, div, h1 {
     margin: 0;
@@ -30,10 +36,19 @@ html, body, div, h1 {
     outline: 0;
     vertical-align: baseline;
     background: transparent;
-    font-family: 'Open Sans', Verdana, Geneva, sans-serif;
+    font-family: 'IBM Plex Mono', Verdana, Geneva, sans-serif;
     color: @text-color;
+
+/*
     @media screen and (prefers-color-scheme: dark) {
         color: @text-color-dark;
+    }
+*/
+}
+
+@media screen and (max-width: 1000px) {
+    html {
+        font-size: 8px;
     }
 }
 
@@ -62,6 +77,55 @@ div:is(.full, .half, .quarter) {
 .full { min-height: 100vh; }
 .half { min-height: 50vh; }
 .quarter { min-height: 25vh; }
+
+h1, h2 {
+    font-family: "IBM Plex Mono", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: normal !important;
+}
+
+* {
+    //border: 1px solid black;
+    box-sizing: border-box;
+}
+
+// I got annoyed fighting with different screen widths
+// trying to make the logo and text look good together
+// in the end I found a table to be easiest
+table.hero {
+    //margin-top: 5rem;
+    padding-top: 2.5rem;
+    margin: auto;
+    tr td:first-child  {
+        img {
+            max-height: 10rem;
+        }
+        padding: 0px;
+        min-width: 2rem;
+    }
+    h1 { padding-left: 1rem; }
+    td { padding: 0.5rem; }
+}
+
+h1 {
+    font-size: 7rem;
+    color: @link-color;
+}
+h2 {
+    font-size: 3.7rem;
+}
+// paragraph
+p {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 3rem;
+}
+a:hover {
+    // I like this for a hover effect
+    // but feel free to use something else if you hate it
+    text-decoration-style: wavy;
+}
+#footer li {
+    font-size: 2.2rem;
+}
 
 h1, h2, h3 {
     & > a {
@@ -122,6 +186,7 @@ a {
     color: @link-color;
 }
 
+/*
 @media screen and (prefers-color-scheme: dark) {
     html, body, div, h1 {
         color: @text-color-dark;
@@ -139,7 +204,9 @@ a {
         color: @link-color-dark !important;
     }
 }
-
+*/
+/*
+// used on pages that aren't included in the first version
 section.card { // XXX use flexbox
     width: 24em;
     margin: 2.5em;
@@ -150,21 +217,20 @@ section.card { // XXX use flexbox
     text-align: center;
     margin-bottom: 45px;
 }
+*/
 
 .footer-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 50%;
+    width: 60%;
+    padding: 2rem;
     margin: auto;
     justify-content: center;
-
     ul {
         flex: 1;
+        list-style: none;
     }
-
-
-
 }
 
 @import './styles/thermometer.less';
