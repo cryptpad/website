@@ -232,10 +232,15 @@ section.card { // XXX use flexbox
     ul {
         flex: 1;
         list-style: none;
+        a {
+            color: darken(@cryptpad_color_brand, 10%);
+        }
     }
 }
 
 a.fake-button {
+    font-family: "Open Sans";
+    font-weight: 700;
     display: inline-block;
     color: @cryptpad_color_grey_200;
     background: @link-color;
