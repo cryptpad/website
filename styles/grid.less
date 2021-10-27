@@ -17,15 +17,30 @@
 }
 
 @media screen and (max-width: @breakpoint) {
+    h1, h2, h3 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
     .wrapper {
         flex-flow: column;
     }
     .footer-container {
         flex-flow: column;
-        width: 100%;
+        width: 100% !important;
         justify-content: left;
-        ul:nth-child(2) {
-            display: none;
+        * {
+            //border: 1px solid red;
+        }
+        ul {
+            min-width: 100% !important;
+            padding: 0;
+            &:nth-child(2) {
+                display: none;
+            }
+            text-align: center;
+            li {
+                padding: 0.5rem;
+            }
         }
     }
 }
