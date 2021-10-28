@@ -1,14 +1,8 @@
 ﻿## Usage
 
-You need some very basic node dependencies:
-
-`npm i`
-
-then build it:
-
-`node build.js`
-
-and serve `cryptpad.org/built/` with your preferred static webserver.
+1. fetch dependencies: `npm i`
+2. build the site from source: `npm run build`
+3. serve the `built/` directory with `npm run serve` or your preferred webserver
 
 ### Optimizing images
 

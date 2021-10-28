@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node build.js",
     "optimize": "for i in static/images/*.png; do optipng $i;done;for i in static/images/*.jp*g;do jpegoptim $i;done",
-    "clean": "rm built/ -rf"
+    "clean": "rm built/ -rf",
+    "serve": "python3 -m 'http.server' --directory built/"
   },
   "repository": {
     "type": "git",
