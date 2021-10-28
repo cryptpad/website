@@ -11,6 +11,7 @@
 @cryptpad_color_grey_950: #121212;
 
 @cryptpad_color_brand: #0087FF;
+@cryptpad_color_brand_200: lighten(@cryptpad_color_brand, 20%);
 @cryptpad_color_brand_300: lighten(@cryptpad_color_brand, 30%);
 
 @main-bg: @cryptpad_color_grey_200;
@@ -23,19 +24,27 @@
 @text-color-dark: @cryptpad_color_grey_200;
 
 @link-color: @cryptpad_color_brand;
-@link-color-dark: @cryptpad_color_brand_300;
+@link-color-dark: @cryptpad_color_brand_200;
 
 @breakpoint: 1000px;
+
+//@import './styles/thermometer.less';
+//@import './styles/testimonials.less';
+//@import './styles/enterprise.less';
+@import './styles/hero.less';
+@import './styles/footer.less';
 
 html {
     font-size: 8px; // for rem units, makes responsive sizes easier
 }
 
+/*
 @media screen and (max-width: @breakpoint) {
     html {
         font-size: 8px;
     }
 }
+*/
 
 body {
     max-width: 900px;
@@ -53,12 +62,6 @@ html, div, h1, section {
     background: transparent;
     font-family: 'Open Sans', Verdana, Geneva, sans-serif;
     color: @text-color;
-
-/*
-    @media screen and (prefers-color-scheme: dark) {
-        color: @text-color-dark;
-    }
-*/
 }
 
 
@@ -77,12 +80,6 @@ section:is(.full, .half, .quarter) {
         margin-left: auto;
         margin-right: auto;
     }
-    // &:nth-child(odd) {
-    //     background: @main-bg;
-    // }
-    // &:nth-child(even) {
-    //     background: @alt-bg;
-    // }
 }
 .full { min-height: 100vh; }
 .half { min-height: 50vh; }
@@ -91,29 +88,6 @@ section:is(.full, .half, .quarter) {
 h1, h2 {
     font-family: "IBM Plex Mono", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-weight: normal !important;
-}
-
-* {
-    //border: 1px solid black;
-    box-sizing: border-box;
-}
-
-// I got annoyed fighting with different screen widths
-// trying to make the logo and text look good together
-// in the end I found a table to be easiest
-table.hero {
-    //margin-top: 5rem;
-    padding-top: 2.5rem;
-    margin: auto;
-    tr td:first-child  {
-        img {
-            max-height: 10rem;
-        }
-        padding: 0px;
-        min-width: 2rem;
-    }
-    h1 { padding-left: 1rem; }
-    td { padding: 0.5rem; }
 }
 
 h1 {
@@ -135,10 +109,6 @@ a:hover {
     // but feel free to use something else if you hate it
     text-decoration-style: wavy;
 }
-#footer li {
-    font-size: 2.2rem;
-}
-
 h1, h2, h3 {
     & > a {
         text-decoration: none;
@@ -174,14 +144,6 @@ h1, h2, h3 {
     text-align: center;
 }
 
-blockquote {
-    margin: 30px;
-    padding: 15px;
-    margin-top: 15px;
-    background: rgba(0, 0, 0, 0.1);
-    background: linear-gradient(90deg, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.05) 100%);
-}
-
 img  {
     max-width: 100%;
     &.contrast {
@@ -192,69 +154,15 @@ a {
     color: @link-color;
 }
 
+
 /*
 @media screen and (prefers-color-scheme: dark) {
-    html, body, div, h1, section {
+    html, body, div, section {
         color: @text-color-dark;
+        background: @main-bg-dark;
     }
-    section:is(.full, .half, .quarter) {
-        &:nth-child(odd) {
-            background: @main-bg-dark;
-        }
-        &:nth-child(even) {
-            background: @alt-bg-dark;
-        }
-    }
-
-    a {
-        color: @link-color-dark !important;
+    a:not(h1, .fake-button) {
+        color: @link-color-dark  !important;
     }
 }
 */
-/*
-// used on pages that aren't included in the first version
-section.card { // XXX use flexbox
-    width: 24em;
-    margin: 2.5em;
-    //max-width: 20em;
-    margin: auto;
-    display: inline-block;
-    border: 1px solid white;
-    text-align: center;
-    margin-bottom: 45px;
-}
-*/
-
-.footer-container {
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    width: 60%;
-    padding: 2rem;
-    padding-bottom: 20rem;
-    margin: auto;
-    justify-content: center;
-    ul {
-        flex: 1;
-        list-style: none;
-        a {
-            color: darken(@cryptpad_color_brand, 10%);
-            white-space: nowrap;
-        }
-    }
-}
-
-a.fake-button {
-    font-family: "Open Sans";
-    font-weight: 700;
-    display: inline-block;
-    color: @cryptpad_color_grey_200;
-    background: @link-color;
-    padding: 2rem;
-    border-radius: 5px;
-    font-size: 2.5rem;
-    text-decoration: none !important;
-    margin: 3rem;
-}
-
-//@import './styles/thermometer.less';

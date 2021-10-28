@@ -1,0 +1,31 @@
+// I got annoyed fighting with different screen widths
+// trying to make the logo and text look good together
+// in the end I found a table to be easiest
+table.hero {
+    //margin-top: 5rem;
+    padding-top: 2.5rem;
+    margin: auto;
+    tr td:first-child  {
+        img {
+            max-height: 10rem;
+        }
+        padding: 0px;
+        min-width: 2rem;
+    }
+    h1 { padding-left: 1rem; }
+    td { padding: 0.5rem; }
+}
+
+a.fake-button {
+    font-family: "Open Sans";
+    font-weight: 700;
+    display: inline-block;
+    color: @cryptpad_color_grey_200;
+    background: @link-color;
+    padding: 2rem;
+    border-radius: 5px;
+    font-size: 2.5rem;
+    text-decoration: none !important;
+    margin: 3rem;
+}
+
