@@ -44,7 +44,7 @@ body {
     background-color: @main-bg;
 }
 
-html, div, h1 {
+html, div, h1, section {
     margin: 0;
     padding: 0;
     border: 0;
@@ -62,7 +62,7 @@ html, div, h1 {
 }
 
 
-div:is(.full, .half, .quarter) {
+section:is(.full, .half, .quarter) {
     box-sizing: border-box;
     border: 1px solid transparent;
 
@@ -194,10 +194,10 @@ a {
 
 /*
 @media screen and (prefers-color-scheme: dark) {
-    html, body, div, h1 {
+    html, body, div, h1, section {
         color: @text-color-dark;
     }
-    div:is(.full, .half, .quarter) {
+    section:is(.full, .half, .quarter) {
         &:nth-child(odd) {
             background: @main-bg-dark;
         }
@@ -257,4 +257,4 @@ a.fake-button {
     margin: 3rem;
 }
 
-@import './styles/thermometer.less';
+//@import './styles/thermometer.less';
