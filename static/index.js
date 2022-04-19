@@ -24,7 +24,19 @@ var addAnchors = function () {
             heading.appendChild(a);
         });
     });
+    each(find('[data-url]'), function (block) {
+        var url = block.getAttribute('data-url');
+        if (!url) { return; }
+        var link = block.querySelector('[href]');
+        if (!link) { return; }
+        block.onclick = function () {
+            console.log(url);
+            link.click();
+        };
+    });
+
 };
+
 
 document.onreadystatechange = function () {
     if (document.readyState !== 'complete') { return; }
