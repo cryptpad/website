@@ -1,19 +1,42 @@
-// I got annoyed fighting with different screen widths
-// trying to make the logo and text look good together
-// in the end I found a table to be easiest
-table.hero {
-    //margin-top: 5rem;
-    padding-top: 2.5rem;
-    margin: auto;
-    tr td:first-child  {
-        img {
-            max-height: 10rem;
+
+section#intro {
+    display: flex;
+    margin: 30px 10px;
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 30px;
+        h2 {
+            text-align: left;
+            font-size: 4.5em;
+            margin: 1em 0 0.5em 0;
         }
-        padding: 0px;
-        min-width: 2rem;
+        p {
+            font-family: 'IBM Plex Mono';
+            text-align: left;
+            margin: 0;
+            padding-left: 0;
+        }
     }
-    h1 { padding-left: 1rem; }
-    td { padding: 0.5rem; }
+    .hero-img {
+        img {
+            max-width: 100%;
+            .shadow();
+        }
+    }
+    @media screen and (max-width: 770px) {
+        flex-direction: column;
+        .hero-text {
+            p {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+section#try-cryptpad {
+    text-align: center;
 }
 
 a.fake-button {
@@ -22,10 +45,13 @@ a.fake-button {
     display: inline-block;
     color: @cryptpad_color_grey_200;
     background: @link-color;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 5px;
-    font-size: 2.7rem;
+    font-size: 3rem;
     text-decoration: none !important;
     margin: 3rem;
+    &:hover{
+        background-color: fade(@link-color, 80%);
+    }
 }
 
