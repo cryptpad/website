@@ -41,7 +41,11 @@ var write = function (A, dest) {
         .replace(/<!\-\-[\s\S]+?\-\->/g, '')
         .replace(/\n[ \t]+?\n/mg, '')
         .replace(/\n+/g, '\n');
-    Fs.writeFileSync(Path.join(tmpPath, dest), content);
+
+    var path = Path.join(tmpPath, dest);
+    var dirPath = Path.dirname(path);
+    Fse.mkdirpSync(dirPath);
+    Fs.writeFileSync(path, content);
 };
 
 var log = function (s) {
@@ -61,7 +65,7 @@ log("Copying static assets");
 var staticPath = 'static';
 Fse.copySync(staticPath, tmpPath);
 
-var DEFAULT_FAVICON = 'images/main-favicon.png';
+var DEFAULT_FAVICON = '/images/main-favicon.png';
 var DOMAIN = 'cryptpad.org';
 var PREVIEW = 'https://cryptpad.org/images/shredder.png';
 
@@ -114,29 +118,27 @@ write([
     footerPart,
 ], 'index.html');
 
-/*
-
 log("Creating research page"); // research.html
 write([
     templateHead({
         title: 'CryptPad - research projects',
         description: "Research projects",
-        url: 'https://cryptpad.org/research.html',
+        url: 'https://cryptpad.org/research/',
     }),
     swap(Fs.readFileSync('parts/research.html', {encoding: 'utf8'}), Stats),
     footerPart,
-], 'research.html');
+], 'research/index.html');
 
 log("Creating education page"); // education.html
 write([
     templateHead({
         title: 'CryptPad - packages for education',
         description: "Protect the personal information of your institution's students and faculty",
-        url: 'https://cryptpad.org/education.html',
+        url: 'https://cryptpad.org/education/',
     }),
     Fs.readFileSync('parts/education.html', {encoding: 'utf8'}),
     footerPart,
-], 'education.html');
+], 'education/index.html');
 
 
 log("Creating enterprise page"); // enterprise.html
@@ -148,61 +150,110 @@ write([
     }),
     Fs.readFileSync('parts/enterprise.html', {encoding: 'utf8'}),
     footerPart,
-], 'enterprise.html');
+], 'enterprise/index.html');
 
 log("Creating consulting page"); // consulting.html
 write([
     templateHead({
         title: 'CryptPad - consulting services and custom development',
         description: 'Custom projects and training provided by the experienced CryptPad team',
-        url: 'https://cryptpad.org/consulting.html',
+        url: 'https://cryptpad.org/consulting/',
     }),
     Fs.readFileSync('parts/consulting.html', 'utf8'),
     footerPart,
-], 'consulting.html');
+], 'consulting/index.html');
 
 log("Creating support page"); // support.html
 write([
     templateHead({
         title: 'CryptPad - premium support packages',
         description: 'Support packages and private installations provided by the experienced CryptPad team',
-        url: 'https://cryptpad.org/support.html',
+        url: 'https://cryptpad.org/support/',
     }),
     Fs.readFileSync('parts/support.html', 'utf8'),
     footerPart,
-], 'support.html');
-
-log("Creating instance directory page"); // instances.html
-write([
-    templateHead({
-        title: 'CryptPad - publicly available instances',
-        description: "Find an instance that suits your needs",
-        url: 'https://cryptpad.org/instances.html',
-    }),
-    Fs.readFileSync('parts/instances.html', {encoding: 'utf8'}),
-    instanceParts,
-    footerPart,
-], 'instances.html');
-
-*/
+], 'support/index.html');
 
 log("Creating error page"); // error.html
 write([
     templateHead({
         title: 'CryptPad - Page not found',
         description: 'Page not found',
-        url: 'https://cryptpad.org/error.html',
+        url: 'https://cryptpad.org/error/',
     }),
     Fs.readFileSync('parts/error.html', 'utf8'),
     footerPart,
-], 'error.html');
+], 'error/index.html');
 
 var instancePart = Fs.readFileSync('parts/instance.html', 'utf8');
 var Instances = require("./data/instances.json");
 
-var instanceParts = Instances.map(function (data) {
+var str = s => typeof(s) === 'string';
+var Url = u => {
+    try {
+        return Boolean(new URL(u).href);
+    } catch (err) {
+        return false;
+    }
+};
+
+var instanceAttributes  = {
+    title: str,
+    url: Url,
+    description: str,
+    location: str,
+};
+
+var instanceParts = Instances
+.filter(data => {
+    return  Object.keys(instanceAttributes).every(k => {
+        return instanceAttributes[k](data[k]);
+    });
+})
+.map(function (data) {
+    data.id = data.title.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
+    //data.description = data.description.replace(/\n/g, '<br>');
     return swap(instancePart, data);
 }).join('\n');
+
+log("Creating instance directory page"); // instances.html
+write([
+    templateHead({
+        title: 'CryptPad - publicly available instances',
+        description: "Find an instance that suits your needs",
+        url: 'https://cryptpad.org/instances/',
+    }),
+    Fs.readFileSync('parts/instances.html', {encoding: 'utf8'}),
+    instanceParts,
+    footerPart,
+], 'instances/index.html');
+
+
+var testimonialPart = Fs.readFileSync('parts/testimonial.html', 'utf8');
+var testimonials = require("./data/testimonials.js");
+
+log("Creating testimonials page"); // testimonials.html
+write([
+    templateHead({
+        title: 'CryptPad - Testimonials',
+        description: "Hear what others have to say",
+        url: 'https://cryptpad.org/testimonials/',
+    }),
+    Fs.readFileSync('parts/testimonials.html', {encoding: 'utf8'}),
+    '<section class="half" id="testimonials"><div class="contain">',
+    testimonials.filter(t => {
+        return t.text && t.name;
+    }).sort(() => {
+        return Math.random() > 0.5? 1: -1;
+    }).slice(0, 10)
+    .map(t => {
+        t.id = t.text.slice(0, 10);
+        t.extra = !t.org?" ": `<p class="org name"><i>${t.org}</i></p>`;
+        return swap(testimonialPart, t);
+    }).join('\n'),
+    '</div></section>',
+    footerPart,
+], 'testimonials/index.html');
 
 log("Compiling less");
 Less.render(Fs.readFileSync("./styles/main.less", "utf8"), {}, function (err, output) {

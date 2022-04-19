@@ -1,27 +1,30 @@
 [
     {
-        "title": "CryptPad.fr",
+        "title": "cryptpad.fr",
         "url": "https://cryptpad.fr",
-        "description": "The flagship instance that is hosted and administrated by the CryptPad core development team."
-    },
-    {
-        "title": "pad.c3w.at",
-        "url": "https://pads.c3w.at",
-        "description": "Hosted by the Vienna chapter of the Chaos Computer Club"
-    },
-    {
-        "title": "pad.freifunk.duesseldorf.de",
-        "url": "https://pad.freifunk.duesseldorf.de",
-        "description": "Hosted by Freifunk Duesseldorf: a wireless community mesh network run by volunteers."
+        "description": "The flagship instance that is hosted and administrated by the CryptPad core development team. Premium subscriptions fund the project's continued development.",
+        "location": "France"
     },
     {
         "title": "pad.envs.net",
         "url": "https://pad.envs.net",
-        "description": "One of many services hosted by envs.net, a minimalist, non-commercial shared linux system."
+        "description": "envs.net is a minimalist, non-commercial shared unix system and will always be free to use.",
+        "location": "Germany"
+    },
+    {
+        "title": "pad.c3w.at",
+        "url": "https://pads.c3w.at",
+        "location": "Austria",
+        "description": "This is an independent community instance of CryptPad."
+    },
+    {
+        "title": "pad.freifunk.duesseldorf.de",
+        "url": "https://pad.freifunk.duesseldorf.de",
+        "location": "Germany"
     },
     {
         "title": "pad.artemislena.eu",
         "url": "https://pad.artemislena.eu",
-        "description": "In Germany. Using nixos, caddy, and podman"
+        "location": "Germany"
     }
 ]
