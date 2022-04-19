@@ -65,7 +65,7 @@ html, div, h1, section {
 }
 
 
-section:is(.full, .half, .quarter) {
+section {
     box-sizing: border-box;
     border: 1px solid transparent;
 
@@ -107,11 +107,14 @@ p {
     font-size: 2.5rem;
     line-height: 1.4;
     padding: 10px;
+    &.page-description {
+        text-align: center;
+    }
 }
 a:hover {
     // I like this for a hover effect
     // but feel free to use something else if you hate it
-    text-decoration-style: wavy;
+    text-decoration: none;
 }
 h1, h2, h3 {
     & > a {
@@ -163,15 +166,37 @@ a {
     border: 1px solid @cryptpad_color_grey_700;
 }
 
+.shadow() {
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
+}
+
 .rounded () {
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 section.instance {
-    min-height: ~"calc(50vh - 15px)";
-    margin-bottom: 15px;
-    .bordered();
+    //min-height: ~"calc(50vh - 15px)";
+    margin: 25px 10px 50px 10px;
+    padding: 15px;
+    background-color: white;
+    .shadow();
     .rounded();
+    h2 {
+        margin-top: 0px;
+        color: @cryptpad_color_brand;
+    }
+    p {
+        padding: 0px;
+        i {
+            margin-right: 10px;
+        }
+        &.instance-details {
+            color: @cryptpad_color_grey_600;
+        }
+    }
+    &:hover{
+        background-color: lighten(@cryptpad_color_brand, 45%);
+    }
 }
 
 div.contain {
@@ -210,7 +235,7 @@ div.contain {
                     flex-grow: 1;
                 }
                 .name {
-                    jusify-self: left;
+                    justify-self: left;
                     color: grey;
                 }
                 .org {

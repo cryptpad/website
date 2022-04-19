@@ -205,6 +205,10 @@ var instanceAttributes  = {
 };
 
 var instanceParts = Instances
+.map(data => {
+    data.title = data.title || data.url;
+    return data;
+})
 .filter(data => {
     return  Object.keys(instanceAttributes).every(k => {
         return instanceAttributes[k](data[k]);
