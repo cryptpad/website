@@ -1,11 +1,5 @@
 [
     {
-        "title": "cryptpad.fr",
-        "url": "https://cryptpad.fr",
-        "description": "The flagship instance that is hosted and administrated by the CryptPad core development team. Premium subscriptions fund the project's continued development.",
-        "location": "France"
-    },
-    {
         "title": "pad.envs.net",
         "url": "https://pad.envs.net",
         "description": "envs.net is a minimalist, non-commercial shared unix system and will always be free to use.",
