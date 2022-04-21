@@ -23,7 +23,7 @@
 @alt-bg-dark: @cryptpad_color_grey_800;
 @text-color-dark: @cryptpad_color_grey_200;
 
-@link-color: @cryptpad_color_brand;
+@link-color: darken(@cryptpad_color_brand, 10%);
 @link-color-dark: @cryptpad_color_brand_200;
 
 @breakpoint: 1000px;
@@ -93,7 +93,7 @@ h1, h2 {
 
 h1 {
     font-size: 7rem;
-    color: @link-color;
+    color: @cryptpad_color_brand;
 }
 h2 {
     font-size: 3.7rem;
@@ -109,14 +109,16 @@ p {
     line-height: 150%;
     padding: 10px;
 }
-a:hover {
-    // I like this for a hover effect
-    // but feel free to use something else if you hate it
-    text-decoration: none;
+a {
+    color: @link-color;
+    &:hover {
+        text-decoration: none;
+    }
 }
 h1, h2, h3 {
     & > a {
         text-decoration: none;
+        color: @cryptpad_color_brand;
         &:hover {
             text-decoration: underline;
         }
