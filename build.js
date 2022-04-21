@@ -90,8 +90,8 @@ var footerPart = Fs.readFileSync('./parts/footer.html', 'utf8');
 log("Creating home page"); // index.html
 write([
     templateHead({
-        title: 'CryptPad - the end-to-end encrypted collaboration suite',
-        description: 'An overview of the open-source project and its community',
+        title: 'CryptPad',
+        description: 'End-to-end encrypted collaboration suite',
         url: 'https://cryptpad.org',
         canonical: 'https://cryptpad.org/',
     }),
@@ -131,7 +131,7 @@ write([
 log("Creating education page"); // education.html
 write([
     templateHead({
-        title: 'CryptPad - packages for education',
+        title: 'CryptPad for education',
         description: "Protect the personal information of your institution's students and faculty",
         url: 'https://cryptpad.org/education/',
     }),
@@ -143,8 +143,8 @@ write([
 log("Creating enterprise page"); // enterprise.html
 write([
     templateHead({
-        title: 'CryptPad - packages for enterprise',
-        description: "Keep your clients' data safe and have peace of mind",
+        title: 'CryptPad for enterprise',
+        description: "Keep your business data safe and have peace of mind",
         url: 'https://cryptpad.org/enterprise.html',
     }),
     Fs.readFileSync('parts/enterprise.html', {encoding: 'utf8'}),
@@ -154,8 +154,8 @@ write([
 log("Creating consulting page"); // consulting.html
 write([
     templateHead({
-        title: 'CryptPad - consulting services and custom development',
-        description: 'Custom projects and training provided by the experienced CryptPad team',
+        title: 'CryptPad consulting services and custom development',
+        description: 'Custom projects and training provided by the CryptPad team',
         url: 'https://cryptpad.org/consulting/',
     }),
     Fs.readFileSync('parts/consulting.html', 'utf8'),
@@ -222,7 +222,7 @@ var instanceParts = Instances
 log("Creating instance directory page"); // instances.html
 write([
     templateHead({
-        title: 'CryptPad - publicly available instances',
+        title: 'CryptPad - Public instances',
         description: "Find an instance that suits your needs",
         url: 'https://cryptpad.org/instances/',
     }),
