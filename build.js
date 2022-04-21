@@ -184,7 +184,7 @@ write([
     }),
     Fs.readFileSync('parts/error.html', 'utf8'),
     footerPart,
-], 'error/index.html');
+], 'error.html');
 
 var instancePart = Fs.readFileSync('parts/instance.html', 'utf8');
 var Instances = require("./data/instances.json");
