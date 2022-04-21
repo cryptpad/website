@@ -4,6 +4,7 @@ var Path = require("path");
 var Less = require("less");
 
 var Stats = require("./data/stats.json");
+var cachebuster = Stats.cachebuster = +new Date();
 
 var head = Fs.readFileSync('./parts/head.html', 'utf8');
 
@@ -80,7 +81,7 @@ var templateHead = function (obj) {
         image: obj.image || PREVIEW,
         domain: obj.domain || DOMAIN,
         favicon: obj.favicon || DEFAULT_FAVICON,
-        cachebuster: +new Date(),
+        cachebuster: cachebuster,
     });
 };
 
