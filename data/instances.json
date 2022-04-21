@@ -6,10 +6,10 @@
         "location": "Germany"
     },
     {
-        "title": "pad.c3w.at",
+        "title": "pads.c3w.at",
         "url": "https://pads.c3w.at",
         "location": "Austria",
-        "description": "This is an independent community instance of CryptPad."
+        "_description": "This is an independent community instance of CryptPad."
     },
     {
         "title": "pad.freifunk.duesseldorf.de",
