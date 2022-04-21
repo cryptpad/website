@@ -50,8 +50,11 @@ a.fake-button {
     font-size: 3rem;
     text-decoration: none !important;
     margin: 3rem;
-    &:hover{
+    &:hover, &:focus{
         background-color: fade(@cryptpad_color_brand, 80%);
+    }
+    &:focus {
+        .shadow();
     }
 }
 
