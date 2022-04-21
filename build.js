@@ -68,7 +68,7 @@ Fse.copySync(staticPath, tmpPath);
 
 var DEFAULT_FAVICON = '/images/main-favicon.png';
 var DOMAIN = 'cryptpad.org';
-var PREVIEW = 'https://cryptpad.org/images/shredder.png';
+var PREVIEW = 'https://cryptpad.org/images/opengraph_preview.png';
 
 var templateHead = function (obj) {
     return swap(head, {
