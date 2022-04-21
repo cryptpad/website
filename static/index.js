@@ -29,7 +29,9 @@ var addAnchors = function () {
         if (!url) { return; }
         var link = block.querySelector('[href]');
         if (!link) { return; }
-        block.onclick = function () {
+        link.onclick = function (ev) { ev.stopPropagation(); };
+        block.onclick = function (ev) {
+            ev.preventDefault();
             console.log(url);
             link.click();
         };
