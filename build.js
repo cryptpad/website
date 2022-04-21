@@ -103,8 +103,6 @@ write([
 
 
 /*
-        'intro',
-        'what',
         'users',
         'testimonials',
         'open-source',
