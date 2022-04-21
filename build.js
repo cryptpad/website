@@ -11,7 +11,6 @@ var head = Fs.readFileSync('./parts/head.html', 'utf8');
 var swap = function (s, o) {
     return s
     .replace(/\{\{([^}]+?)\}\}/g, function (all, token) {
-        //console.log(token);
         var content = o[token];
 
         if (typeof(content) === 'number') {
@@ -35,7 +34,18 @@ var isNonEmptyString = function (s) {
     return s && typeof(s) === 'string';
 };
 
+var enabled = [
+    'index.html',
+    'error.html',
+    'instances/index.html',
+];
+
 var write = function (A, dest) {
+    if (!enabled.includes(dest)) {
+        return;
+    }
+    console.log(`Creating ${dest}`);
+
     var content = A
         .filter(isNonEmptyString)
         .join('\n')
@@ -87,7 +97,6 @@ var templateHead = function (obj) {
 
 var footerPart = Fs.readFileSync('./parts/footer.html', 'utf8');
 
-log("Creating home page"); // index.html
 write([
     templateHead({
         title: 'CryptPad - the end-to-end encrypted collaboration suite',
@@ -117,7 +126,6 @@ write([
     footerPart,
 ], 'index.html');
 
-log("Creating research page"); // research.html
 write([
     templateHead({
         title: 'CryptPad - research projects',
@@ -128,7 +136,6 @@ write([
     footerPart,
 ], 'research/index.html');
 
-log("Creating education page"); // education.html
 write([
     templateHead({
         title: 'CryptPad - packages for education',
@@ -140,7 +147,6 @@ write([
 ], 'education/index.html');
 
 
-log("Creating enterprise page"); // enterprise.html
 write([
     templateHead({
         title: 'CryptPad - packages for enterprise',
@@ -151,7 +157,6 @@ write([
     footerPart,
 ], 'enterprise/index.html');
 
-log("Creating consulting page"); // consulting.html
 write([
     templateHead({
         title: 'CryptPad - consulting services and custom development',
@@ -162,7 +167,6 @@ write([
     footerPart,
 ], 'consulting/index.html');
 
-log("Creating support page"); // support.html
 write([
     templateHead({
         title: 'CryptPad - premium support packages',
@@ -173,7 +177,6 @@ write([
     footerPart,
 ], 'support/index.html');
 
-log("Creating error page"); // error.html
 write([
     templateHead({
         title: 'CryptPad - Page not found',
@@ -219,7 +222,6 @@ var instanceParts = Instances
     return swap(instancePart, data);
 }).join('\n');
 
-log("Creating instance directory page"); // instances.html
 write([
     templateHead({
         title: 'CryptPad - publicly available instances',
@@ -231,11 +233,9 @@ write([
     footerPart,
 ], 'instances/index.html');
 
-
 var testimonialPart = Fs.readFileSync('parts/testimonial.html', 'utf8');
 var testimonials = require("./data/testimonials.js");
 
-log("Creating testimonials page"); // testimonials.html
 write([
     templateHead({
         title: 'CryptPad - Testimonials',
