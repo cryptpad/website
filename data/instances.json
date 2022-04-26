@@ -12,6 +12,12 @@
         "_description": "This is an independent community instance of CryptPad."
     },
     {
+        "title": "pad.tchncs.de",
+        "url": "https://pad.tchncs.de",
+        "location": "Germany",
+        "description": "CryptPad at tchncs.de"
+    },
+    {
         "title": "pad.freifunk.duesseldorf.de",
         "url": "https://pad.freifunk.duesseldorf.de",
         "location": "Germany"
