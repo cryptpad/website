@@ -206,7 +206,26 @@ var instanceAttributes  = {
     location: str,
 };
 
-var instanceParts = Instances
+
+var rand = function (n) {
+    return Math.floor(Math.random() * n);
+};
+var shuffle = function (A) {
+    var i = A.length;
+    var temp;
+    var r;
+
+    while (0 !== i) {
+        r = rand(i);
+        i--;
+        temp = A[i];
+        A[i] = A[r];
+        A[r] = temp;
+    }
+    return A;
+};
+
+var instanceParts = shuffle(Instances
 .map(data => {
     data.title = data.title || data.url;
     return data;
@@ -215,7 +234,7 @@ var instanceParts = Instances
     return  Object.keys(instanceAttributes).every(k => {
         return instanceAttributes[k](data[k]);
     });
-})
+}))
 .map(function (data) {
     data.id = data.title.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
     //data.description = data.description.replace(/\n/g, '<br>');
