@@ -15,7 +15,7 @@
         "title": "pad.tchncs.de",
         "url": "https://pad.tchncs.de",
         "location": "Germany",
-        "description": "CryptPad at tchncs.de"
+        "description": "The CryptPad instance of tchncs.de _ offering a fair amount of sttorage while trying not to conflict with the official offering."
     },
     {
         "title": "pad.freifunk.duesseldorf.de",
@@ -25,6 +25,8 @@
     {
         "title": "pad.artemislena.eu",
         "url": "https://pad.artemislena.eu",
-        "location": "Germany"
+        "location": "Germany",
+        "description": "Be crime do gay"
+
     }
 ]
