@@ -36,8 +36,8 @@
     },
     {
         "title": "kumipad.eu",
-        "_url": "https://kumipad.eu",
+        "url": "https://kumipad.eu",
         "location": "Austria",
-        "description": "A CryptPad instance operated by Kumi Systems"
+        "description": "A CryptPad instance operated by Kumi Systems."
     }
 ]
