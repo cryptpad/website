@@ -27,6 +27,17 @@
         "url": "https://pad.artemislena.eu",
         "location": "Germany",
         "description": "Be crime do gay"
-
+    },
+    {
+        "title": "cryptpad.piratenpartei.de",
+        "url": "https://cryptpad.piratenpartei.de",
+        "location": "Deutschland",
+        "description": "This CryptPad instance is hosted by the Pirate Party of Germany. We stand for privacy and digital sovereignty."
+    },
+    {
+        "title": "kumipad.eu",
+        "_url": "https://kumipad.eu",
+        "location": "Austria",
+        "description": "A CryptPad instance operated by Kumi Systems"
     }
 ]
