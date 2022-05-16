@@ -1,6 +1,7 @@
 @import './styles/font.less';;
 @import './styles/grid.less';
 
+@cryptpad_color_white: #FFF;
 @cryptpad_color_grey_200: #EEEEEE;
 @cryptpad_color_grey_250: #E7E7E7;
 @cryptpad_color_grey_300: #E0E0E0;
@@ -25,6 +26,9 @@
 
 @link-color: darken(@cryptpad_color_brand, 10%);
 @link-color-dark: @cryptpad_color_brand_200;
+
+@radius: 5px;
+@radius_L: 10px;
 
 @breakpoint: 1000px;
 
@@ -97,6 +101,7 @@ h1 {
 }
 h2 {
     font-size: 3.7rem;
+    color: @cryptpad_color_brand;
 }
 h3 {
     font-size: 2rem;
@@ -123,6 +128,10 @@ h1, h2, h3 {
             text-decoration: underline;
         }
     }
+}
+
+.left-aligned {
+    text-align: left;
 }
 
 .twenty {
@@ -172,6 +181,15 @@ a {
 
 .rounded () {
     border-radius: 10px;
+}
+
+
+.small-logos {
+    img {
+        max-width: 40% !important;
+        padding: 10px;
+        margin-top: 0px;
+    }
 }
 
 section.instance-wrapper {

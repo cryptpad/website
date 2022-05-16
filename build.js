@@ -38,6 +38,7 @@ var enabled = [
     'index.html',
     'error.html',
     'instances/index.html',
+    'about/index.html',
 ];
 
 var write = function (A, dest) {
@@ -176,6 +177,16 @@ write([
     Fs.readFileSync('parts/support.html', 'utf8'),
     footerPart,
 ], 'support/index.html');
+
+write([
+    templateHead({
+        title: 'About CryptPad',
+        description: 'About CryptPad',
+        url: 'https://cryptpad.org/about/',
+    }),
+    Fs.readFileSync('parts/about.html', 'utf8'),
+    footerPart,
+], 'about/index.html');
 
 write([
     templateHead({
