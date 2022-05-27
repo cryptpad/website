@@ -87,6 +87,7 @@ var templateHead = function (obj) {
         description: obj.description,
         url: obj.url,
         canonical: obj.url, //obj.canonical,
+        bodyclass: obj.bodyclass || 'basic',
 
         lang: 'en', // XXX
         image: obj.image || PREVIEW,
@@ -183,6 +184,7 @@ write([
         title: 'About CryptPad',
         description: 'About CryptPad',
         url: 'https://cryptpad.org/about/',
+        bodyclass: 'about',
     }),
     Fs.readFileSync('parts/about.html', 'utf8'),
     footerPart,
