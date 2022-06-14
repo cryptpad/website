@@ -1,26 +1,31 @@
 <section>
     <h1>Jobs on the CryptPad team</h1>
     <section id="preamble">
-        <p>CryptPad is developed by <a href="https://xwiki.com">XWiki SAS</a>, a French software company that has been producing open-source code since 2004.</p>
+        <p>CryptPad is developed by <a href="https://xwiki.com">XWiki SAS</a>, a French software company that has been producing open-source code since 2004. We are currently looking to hire for several new roles on our team.</p>
+    </section>
+    <section id="perks">
+        <h3>Perks</h3>
+        <p>We strive to provide an environment that is conducive to a good work/life balance. This includes a 7 hour work day, 25 vacation days per year (in addition to French statutory holidays), and a 4.5 day work week.</p>
+        <p>We have offices in Paris, France and Iaşi, Romania with subsidies for public transit or cycling. For those that prefer partial or fully remote work, a monthly budget for home office accommodations is available.</p>
+        <p>As a small company, we aim to help our team members grow and prefer to promote current team members into leadership roles.</p>
+        <!-- tie this back into personal career growth more clearly -->
+        <p>You have the opportunity to travel throughout Europe at the company's expense when promoting our projects at conferences.</p>
+        <!-- XXX make it less about academia and more about public research
+        <p>Team members that have an interest in continuing an academic background are welcome to publish papers to share the results of our latest research with the wider community.</p>
+        -->
     </section>
     <section id="limitations">
-        <h2>Limitations</h2>
+        <h3>Limitations</h3>
         <p>A portion of our funding comes from European and French grants. Funding from these sources can only be spent on salaries in the relevant jurisdiction. For this reason we will prefer candidates from France or other European Union member states.</p>
         <p>We are able to provide support for immigration to very promising candidates from beyond the EU.</p>
     </section>
-    <section id="perks">
-        <h2>Perks</h2>
-        <p>We strive to provide an environment that is conducive to a good work/life balance. This includes a 7 hour work day, 25 vacation days per year, and a 4.5 day work week.</p>
-        <p>We have offices in Paris, France and Iaşi, Romania with subsidies for public transit or cycling. For those that prefer partial or fully remote work, a monthly budget for home office accommodations is available.</p>
-        <p>As a small company, we aim to help our team members grow and prefer to promote current team members into leadership roles. You have the opportunity to travel throughout Europe at the company's expense when promoting our projects at conferences.</p>
-        <p>Team members that have an interest in continuing an academic background are welcome to publish papers to share the results of our latest research with the wider community.</p>
-    </section>
-    <section id="">
-        <h2>What we look for</h2>
+    <section id="traits">
+        <h3>What we look for</h3>
+        <p>Our current team primarily works remotely with flexible working hours. Since we work across several timezones we expect new team members to be able to manage their time well according to whatever schedule makes them the most productive. We avoid micro-managing and working overtime.</p>
+
         <ul>
-            <li>Experience with JavaScript and NodeJS</li>
             <li>Experience/interest in digital privacy issues</li>
-            <li>Experience/interest in web-browser ttechnologies</li>
+            <li>Experience/interest in web-browser technologies</li>
             <li>Familiarity with open-source software development</li>
             <li>Good communication skills</li>
             <li>English fluency, one additional spoken/written language preferred</li>
@@ -28,46 +33,56 @@
         </ul>
     </section>
     <section id="applying">
-        <h2>How to apply</h2>
-        <p>Send an email to <a href="mailto:jobs@xwiki.com">jobs@xwiki.com</a> with a brief introduction and a CV/Resumé attached. Include the job title in the subject line so we don't miss it.</p>
+        <h3>How to apply</h3>
+        <!-- share a project with us -->
+        <p>Send an email to <a href="mailto:jobs@xwiki.com">jobs@xwiki.com</a> with a CV/resumé attached and a brief introduction. Please include links to any relevant projects, profiles, code repositories, or contributions to open-source projects if possible. Finally, please include the job title in the subject line so we don't miss it.</p>
     </section>
-    <main>
+    <main id="roles">
         <h2>Roles</h2>
-        <section id="developer">
+        <section>
+            <p>The following roles are intended mostly as examples of what responsibilities need to be filled. Don't hesitate to apply if you don't fit neatly into one of these categories. In practice we often do multiple things.</p>
+            <p>We’re interested in incorporating skills we don’t already have, so don’t panic if you’re unfamiliar with anything listed above.</p>
+        </section>
+        <section id="developer" class="role">
             <h3>Web developer</h3>
-            <p>We're seeking a talented front-end developer with a focus on web application usability</p>
+            <p>We're seeking a front-end developer with a focus on web application usability</p>
             <ul>
-                <li>Front-end development with (vanilla) JavaScript technologies</li>
+                <!-- XXX consistent use of verbs -->
+                <li>Front-end development with JavaScript technologies (vanilla ES2015)</li>
                 <li>Help design and implement intuitive privacy controls and productivity-enhancing features</li>
                 <li>Improve platform accessibility for all users</li>
-                <li>Work with modern web APIs like SharedWorkers, ServiceWorkers, IndexedDB, and WebAssembly</li>
+                <li>Work with modern web APIs like SharedWorkers, ServiceWorkers, IndexedDB, and WebAssembly</li> <!-- willingness to learn, not necessarily experience -->
             </ul>
         </section>
-        <section id="fullstack">
+        <section id="fullstack" class="role">
             <h3>Full stack developer</h3>
-            <p>responsibilities</p>
+            <!-- XXX blurb -->
+            <p>We're seeking a more senior developer with experience deploying and maintaining web applications in a production environment</p>
             <ul>
-                <li>Linux server deployment and administration</li>
-                <li>Overseeing our release process: code review, quality assurance, testing</li>
+                <li>Experience with JavaScript and NodeJS (vanilla ES2015)</li>
+                <li>Linux server deployment and administration (we use the latest Debian and NGINX)</li>
+                <li>Overseeing our release process: code review, quality assurance, manual and automated testing</li>
                 <li>Participation in research projects, designing architecture for new features on the server and client</li>
             </ul>
         </section>
-        <section id="admin">
+        <section id="admin" class="role">
             <h3>Instance admin</h3>
-            <p>responsibilities</p>
+            <!-- XXX blurb -->
+            <p>We are seeking a dedicated team member to help manage CryptPad.fr, the flagship instance of the project. This is not necessarily a developer role</p>
             <ul>
                 <li>Non-technical instance administration</li>
-                <li>Answer support tickets and email</li>
-                <li>Provide assistance with billing issues</li>
-                <li>Monitor social media and make announcements</li>
+                <li>Answer support tickets, chat, email, and social media (Mastodon, Twitter, Reddit)</li>
+                <li>Help identify bugs and provide feedback to the developers</li>
+                <li>Provide assistance with billing issues (Stripe)</li>
             </ul>
         </section>
-        <section id="four">
-            <h3>Office technology specialist</h3>
-            <p>responsibilities</p>
+        <section id="office" class="role">
+            <h3>Office document engineer</h3>
+            <!-- XXX blurb -->
+            <p>We have integrated several of OnlyOffice's web editors into the CryptPad platform and are looking for a dedicated team member to work full time on improving this integration</p>
             <ul>
-                <li>Help stabilize our recently introduced office editors</li>
-                <li>Debug and improve WebAssembly file format converters</li>
+                <li>Help stabilize the sheet, document, and presentation editors</li>
+                <li>Debug and improve our clientside WebAssembly file format converters</li>
                 <li>Adhere to strict web application security practices</li>
             </ul>
         </section>
