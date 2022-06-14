@@ -1,42 +1,47 @@
 .tabs {
     // font-family: "lucida grande", sans-serif;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
   }
 
   [role="tablist"] {
     min-width: 550px;
+    z-index: 1;
+
   }
 
   [role="tab"],
   [role="tab"]:focus,
   [role="tab"]:hover {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     top: 2px;
-    margin: 0;
-    margin-top: 4px;
+    margin: 4px 5px 0px 0px;
     padding: 3px 3px 4px;
-    border: 1px solid hsl(219deg 1% 72%);
-    border-bottom: 2px solid hsl(219deg 1% 72%);
+    border: 0 solid hsl(219deg 1% 72%);
+    // border-bottom: 2px solid hsl(219deg 1% 72%);
     border-radius: 5px 5px 0 0;
     overflow: visible;
-    background: hsl(220deg 20% 94%);
+    background: linear-gradient(to bottom, @cryptpad_color_white 0%, @cryptpad_color_grey_300 100%);
     outline: none;
-    font-weight: bold;
+    cursor: pointer;
+    // font-weight: bold;
+    // .shadow();
   }
 
   [role="tab"][aria-selected="true"] {
     padding: 2px 2px 4px;
+    color: @cryptpad_color_brand;
     margin-top: 0;
-    border-width: 2px;
-    border-top-width: 6px;
-    border-top-color: rgb(36 116 214);
-    border-bottom-color: hsl(220deg 43% 99%);
+    border-width: 0px;
+    border-top-width: 1px;
+    border-top-color: @cryptpad_color_brand;
+    // border-bottom-color: hsl(220deg 43% 99%);
     background: hsl(220deg 43% 99%);
   }
 
-  [role="tab"][aria-selected="false"] {
-    border-bottom: 1px solid hsl(219deg 1% 72%);
-  }
+  // [role="tab"][aria-selected="false"] {
+  //   border-bottom: 1px solid hsl(219deg 1% 72%);
+  // }
 
   [role="tab"] span.focus {
     display: inline-block;
@@ -48,18 +53,27 @@
   [role="tab"]:focus span.focus,
   [role="tab"]:active span.focus {
     padding: 2px 4px;
-    border: 2px solid rgb(36 116 214);
+    border: 2px solid @cryptpad_color_brand;
     border-radius: 3px;
+  }
+
+  .tab-title {
+    font-family: "IBM Plex Mono";
+    font-size: 3rem;
+    font-weight: 500;
   }
 
   [role="tabpanel"] {
     padding: 5px;
-    border: 2px solid hsl(219deg 1% 72%);
+    position: relative;
+    z-index: 3;
+    // border: 2px solid hsl(219deg 1% 72%);
     border-radius: 0 5px 5px;
     background: hsl(220deg 43% 99%);
     min-height: 10em;
     min-width: 550px;
     overflow: auto;
+    // .shadow();
   }
 
   [role="tabpanel"].is-hidden {
