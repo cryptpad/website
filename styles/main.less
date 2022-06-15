@@ -41,6 +41,7 @@
 @import './styles/footer.less';
 @import './styles/nav.less';
 @import './styles/tabs.less';
+@import './styles/jobs.less';
 
 html {
     font-size: 8px; // for rem units, makes responsive sizes easier
@@ -79,8 +80,6 @@ section {
 
     :is(h1, h2, h3) {
         text-align: center;
-        margin-top: 60px;
-        margin-bottom: 30px;
         font-family: 'IBM Plex Mono', monospace;
     }
     :is(h1, h2, h3, p, ul, blockquote /*, div.contain */) {
@@ -94,20 +93,23 @@ section {
 .quarter { min-height: 25vh; }
 
 h1, h2 {
-    font-family: "IBM Plex Mono", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "IBM Plex Mono", Helvetica, Arial, sans-serif;
     font-weight: normal !important;
 }
 
 h1 {
     font-size: 7rem;
     color: @cryptpad_color_brand;
+    margin: 8rem 0 3rem 0;
 }
 h2 {
     font-size: 3.7rem;
     color: @cryptpad_color_brand;
+    margin: 6rem 0 2rem 0;
+
 }
 h3 {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 // paragraph
@@ -130,6 +132,21 @@ h1, h2, h3 {
         &:hover {
             text-decoration: underline;
         }
+    }
+}
+
+.btn {
+    font-size: 2.5rem;
+    padding: 1.5rem;
+    background-color: @cryptpad_color_white;
+    border-radius: @radius;
+    text-decoration: none;
+    i {
+        margin-right: 1rem;
+    }
+    &:hover {
+        color: @cryptpad_color_white;
+        background-color: @cryptpad_color_grey_700;
     }
 }
 
@@ -200,7 +217,7 @@ section.instance-wrapper {
     justify-content: center;
 }
 
-section.instance {
+section.instance, section.role {
     //min-height: ~"calc(50vh - 15px)";
     margin: 25px 10px 50px 10px;
     padding: 15px;
@@ -276,7 +293,13 @@ div.contain {
     }
 }
 
+/* XXX not sure why this was so specific
 section:first-child ul {
+    font-size: 2rem;
+}
+*/
+
+section ul {
     font-size: 2rem;
 }
 

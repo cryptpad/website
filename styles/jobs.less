@@ -1,0 +1,33 @@
+body.jobs {
+    section {
+        ul {
+            font-size: 2.1rem;
+        }
+        p {
+            font-size: 2.2rem;
+        }
+    }
+
+    main#roles {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        .role-list {
+            text-align: center;
+            margin: 0 auto;
+        }
+        section.role {
+
+            // XXX spacing above the heading is junk
+            // XXX don't highlight full block on hover
+            text-align: left;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            padding-bottom: 30px;
+
+            &:hover, &:focus {
+                background-color: @cryptpad_color_white;
+            }
+        }
+    }
+}
