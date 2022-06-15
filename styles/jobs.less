@@ -17,13 +17,15 @@ body.jobs {
             // XXX spacing above the heading is junk
             // XXX don't highlight full block on hover
 
-
             width: 100%;
             margin-bottom: 30px;
-            border-radius: 5px;
+            border-radius: 10px;
             padding-bottom: 30px;
             margin-left: auto;
             margin-right: auto;
+            &:hover, &:focus {
+                background-color: @cryptpad_color_white;
+            }
         }
     }
 }
