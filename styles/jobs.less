@@ -12,17 +12,19 @@ body.jobs {
         display: flex;
         justify-content: center;
         flex-direction: column;
+        .role-list {
+            text-align: center;
+            margin: 0 auto;
+        }
         section.role {
 
             // XXX spacing above the heading is junk
             // XXX don't highlight full block on hover
-
-            width: 100%;
+            text-align: left;
             margin-bottom: 30px;
             border-radius: 10px;
             padding-bottom: 30px;
-            margin-left: auto;
-            margin-right: auto;
+
             &:hover, &:focus {
                 background-color: @cryptpad_color_white;
             }
