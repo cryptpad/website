@@ -45,5 +45,11 @@
         "url": "https://kumipad.eu",
         "location": "Austria",
         "description": "A CryptPad instance operated by Kumi Systems."
+    },
+    {
+        "title": "pad.vern.cc",
+        "url": "https://pad.vern.cc",
+        "location": "a local server in New York, United States",
+        "description": "This is the CryptPad isntance of ~vern (vern.cc)"
     }
 ]
