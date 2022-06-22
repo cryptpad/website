@@ -6,3 +6,9 @@
 * social media icons
 * translations
 
+
+* pricing
+  * layout for tabs without javascript
+  * linking directly to a tab
+    * `.org/pricing/#edu`
+
