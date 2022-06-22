@@ -250,7 +250,8 @@ var shuffle = function (A) {
     return A;
 };
 
-var instanceParts = shuffle(Instances
+
+var validInstances = shuffle(Instances
 .map(data => {
     data.title = data.title || data.url;
     return data;
@@ -259,12 +260,15 @@ var instanceParts = shuffle(Instances
     return  Object.keys(instanceAttributes).every(k => {
         return instanceAttributes[k](data[k]);
     });
-}))
+}));
+
+var instanceParts = validInstances
 .map(function (data) {
     data.id = data.title.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
     //data.description = data.description.replace(/\n/g, '<br>');
     return swap(instancePart, data);
-}).join('\n');
+})
+.join('\n');
 
 write([
     templateHead({
@@ -276,6 +280,7 @@ write([
     instanceParts,
     footerPart,
 ], 'instances/index.html');
+console.log(`Listing ${validInstances.length} public third-party instances`);
 
 var testimonialPart = Fs.readFileSync('parts/testimonial.html', 'utf8');
 var testimonials = require("./data/testimonials.js");
