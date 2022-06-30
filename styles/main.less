@@ -137,7 +137,7 @@ h1, h2, h3 {
 
 .btn {
     font-size: 2.5rem;
-    padding: 1.5rem;
+    padding: 1.3rem;
     background-color: @cryptpad_color_white;
     border-radius: @radius;
     text-decoration: none;
@@ -146,6 +146,14 @@ h1, h2, h3 {
     }
     &:hover {
         color: @cryptpad_color_white;
+        background-color: @cryptpad_color_grey_700;
+    }
+}
+
+.btn.primary {
+    background-color: @cryptpad_color_brand;
+    color: @cryptpad_color_white;
+    &:hover {
         background-color: @cryptpad_color_grey_700;
     }
 }
@@ -305,6 +313,8 @@ section ul {
 
 ul.icon-list {
     list-style-type: none;
+    columns: 2;
+    line-height: 160%;
     padding: 0 10px;
     i {
         width: 2em;
@@ -314,6 +324,114 @@ ul.icon-list {
 
 section[data-url] {
     cursor: pointer;
+}
+
+// pricing cards
+
+.plan-cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 3rem 0;
+
+    .plan-card, .sub-card {
+        box-sizing: border-box;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        h2 {
+            margin-top: 2rem;
+        }
+    }
+
+    .sub-cards { // small cards with free/cheaper options
+        width: 23%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 2rem;
+        .sub-card {
+            p {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .plan-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: fit-content(10rem) 1fr 1fr fit-content(10rem);
+        width: 23%;
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            li {
+                .fa {
+                    width: 2em;
+                    text-align: center;
+                }
+            }
+        }
+        .btn { // purchase button
+            display: block;
+            text-align: center;
+        }
+    }
+
+    .price {
+        text-align: center;
+        margin: 0 0 2rem 0;
+        div {
+            color: @cryptpad_color_brand;
+            font-family: 'IBM Plex Mono';
+            font-weight: 500;
+        }
+        .large { font-size: 4.2rem;}
+        .medium { font-size: 3rem;}
+        .small { font-size: 2rem; margin-bottom: 2rem;}
+    }
+}
+
+@media  screen and (max-width: 1100px) {
+    .plan-cards-container {
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem;
+        .sub-cards {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: max-content;
+            width: 100%;
+            column-gap: 2rem;
+            // .sub-card {
+            //     width: 45%;
+            // }
+        }
+        .plan-card {
+            width: 100%;
+            grid-template-columns: fit-content(12rem) 1fr fit-content(25%) fit-content(25%);
+            margin-top: 2rem;
+            h2, ul, .btn {
+                margin: auto 20px;
+            }
+            ul {
+                text-align: left;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:840px) {
+    ul.icon-list {
+        columns:1;
+    }
+    .plan-cards-container {
+        .plan-card {
+            grid-template-columns: 1fr;
+            ul {
+                text-align: center;
+            }
+        }
+    }
 }
 
 /*

@@ -1,10 +1,11 @@
 .tabs {
     // font-family: "lucida grande", sans-serif;
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+    margin: 0 2rem;
   }
 
   [role="tablist"] {
-    min-width: 550px;
+    // min-width: 550px;
     z-index: 1;
 
   }
@@ -68,10 +69,10 @@
     position: relative;
     z-index: 3;
     // border: 2px solid hsl(219deg 1% 72%);
-    border-radius: 0 5px 5px;
+    border-radius: 0 10px 10px;
     background: hsl(220deg 43% 99%);
     min-height: 10em;
-    min-width: 550px;
+    // min-width: 550px;
     overflow: auto;
     // .shadow();
   }
@@ -82,4 +83,18 @@
 
   [role="tabpanel"] p {
     margin: 0;
+  }
+
+  @media screen and (max-width:780px) {
+    .tab-title {
+      &[aria-selected="false"]{
+        i {
+          margin: 0 2rem;
+        }
+        .tab-title-text {
+          display: none;
+        }
+
+      }
+    }
   }
