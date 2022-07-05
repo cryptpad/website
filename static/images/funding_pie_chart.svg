@@ -85,7 +85,7 @@
   <text class="pieTitleText" x="-87.883354" y="-213.65756" style="font-family:'IBM Plex Mono';font-size:20px;font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Funding sources</text>
   <g class="legend" transform="translate(216,-50.091152)">
    <rect width="18" height="18" style="fill:#66c2a5;stroke:#66c2a5"/>
-   <text x="22" y="14" style="font-family:'Open Sans';font-size:16px;font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Subscriptions on CytpPad.fr</text>
+   <text x="22" y="14" style="font-family:'Open Sans';font-size:16px;font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Subscriptions on CryptPad.fr</text>
   </g>
   <g class="legend" transform="translate(216,-21.091153)">
    <rect width="18" height="18" style="fill:#fc8d62;stroke:#fc8d62"/>
