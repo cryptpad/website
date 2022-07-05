@@ -40,7 +40,8 @@ var enabled = [
     'instances/index.html',
     'about/index.html',
     'jobs/index.html',
-    'pricing/index.html'
+    'pricing/index.html',
+    'edu/index.html'
 ];
 
 var write = function (A, dest) {
@@ -153,12 +154,12 @@ write([
 write([
     templateHead({
         title: 'CryptPad for education',
-        description: "Protect the personal information of your institution's students and faculty",
-        url: 'https://cryptpad.org/education/',
+        description: "Dedicated instances for schools, universities, and research",
+        url: 'https://cryptpad.org/edu/',
     }),
     Fs.readFileSync('parts/education.html', {encoding: 'utf8'}),
     footerPart,
-], 'education/index.html');
+], 'edu/index.html');
 
 
 write([

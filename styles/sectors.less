@@ -1,0 +1,21 @@
+
+.sector {
+    display: inline-block;
+    background-color: @cryptpad_color_white;
+    font-size: 0.8em;
+    padding: 0.3rem 1.5rem;
+    color: @cryptpad_color_grey_900;
+    border-radius: @radius_L;
+    transform: rotate(-5deg);
+    .shadow();
+}
+
+.arguments {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .item {
+        h2 {
+            margin: 2rem auto;
+        }
+    }
+}
