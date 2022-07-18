@@ -51,5 +51,11 @@
         "url": "https://pad.vern.cc",
         "location": "a local server in New York, United States",
         "description": "This is the CryptPad instance of ~vern (vern.cc)"
+    },
+    {
+        "title": "Ébauche FACiLe",
+        "url": "https://ebauche.facil.services/",
+        "location": "Québec",
+        "description": "Instance publique de CryptPad opérée par FACiL."
     }
 ]
