@@ -57,5 +57,11 @@
         "url": "https://ebauche.facil.services/",
         "location": "Québec",
         "description": "Instance publique de CryptPad opérée par FACiL."
+    },
+    {
+        "title": "NicFab CryptPad",
+        "url": "https://cryptpad.nicfab.it",
+        "location": "🇮🇹 Italy",
+        "description": "It is an independent community instance of CryptPad."
     }
 ]
