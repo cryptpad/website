@@ -41,7 +41,9 @@ var enabled = [
     'about/index.html',
     'jobs/index.html',
     'pricing/index.html',
-    'edu/index.html'
+    'edu/index.html',
+    'enterprise/index.html',
+    'nonprofit/index.html'
 ];
 
 var write = function (A, dest) {
@@ -161,16 +163,25 @@ write([
     footerPart,
 ], 'edu/index.html');
 
-
 write([
     templateHead({
         title: 'CryptPad for enterprise',
-        description: "Keep your business data safe and have peace of mind",
-        url: 'https://cryptpad.org/enterprise.html',
+        description: "Dedicated instances for businesses of all sizes",
+        url: 'https://cryptpad.org/enterprise/',
     }),
     Fs.readFileSync('parts/enterprise.html', {encoding: 'utf8'}),
     footerPart,
 ], 'enterprise/index.html');
+
+write([
+    templateHead({
+        title: 'CryptPad for nonprofits',
+        description: "Dedicated instances for nonprofits, ",
+        url: 'https://cryptpad.org/nonprofit/',
+    }),
+    Fs.readFileSync('parts/nonprofit.html', {encoding: 'utf8'}),
+    footerPart,
+], 'nonprofit/index.html');
 
 write([
     templateHead({
