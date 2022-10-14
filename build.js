@@ -44,6 +44,7 @@ var enabled = [
     'edu/index.html',
     'enterprise/index.html',
     'nonprofit/index.html'
+    //'testimonials/index.html',
 ];
 
 var write = function (A, dest) {
@@ -106,7 +107,7 @@ var footerPart = Fs.readFileSync('./parts/footer.html', 'utf8');
 
 write([
     templateHead({
-        title: 'CryptPad',
+        title: 'CryptPad.org',
         description: 'End-to-end encrypted collaboration suite',
         url: 'https://cryptpad.org',
         canonical: 'https://cryptpad.org/',
