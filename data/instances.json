@@ -63,5 +63,11 @@
         "title": "NicFab CryptPad",
         "location": "🇮🇹 Italy",
         "description": "Independent CryptPad instance operated by NicFab."
-      }
+    },
+    {
+        "url": "https://cryptpad.disroot.org",
+        "title": "cryptpad.disroot.org",
+        "location": "Netherlands",
+        "description": "This CryptPad instance is hosted by Disroot.org."
+    }
 ]
