@@ -69,5 +69,11 @@
         "title": "cryptpad.disroot.org",
         "location": "Netherlands",
         "description": "This CryptPad instance is hosted by Disroot.org."
+    },
+    {
+        "url": "https://cryptpad.malacher.fr",
+        "title": "CipherPad",
+        "location": "France",
+        "description": "Instance hosted by individuals for free and available for everyone."
     }
 ]
