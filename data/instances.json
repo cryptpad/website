@@ -42,12 +42,6 @@
         "description": "Instance publique de CryptPad opérée par FACiL."
     },
     {
-        "url": "https://cryptpad.nicfab.eu",
-        "title": "NicFab CryptPad",
-        "location": "🇮🇹 Italy",
-        "description": "Independent CryptPad instance operated by NicFab."
-    },
-    {
         "url": "https://cryptpad.disroot.org",
         "title": "cryptpad.disroot.org",
         "location": "Netherlands",
