@@ -64,11 +64,5 @@
         "title": "CipherPad",
         "location": "France",
         "description": "Instance hosted by individuals for free and available for everyone."
-    },
-    {
-        "url": "https://pad.e3t.cc",
-        "title": "pad.e3t.cc",
-        "location": "United States",
-        "description": "This is a community instance of CryptPad run by e3team."
     }
 ]
