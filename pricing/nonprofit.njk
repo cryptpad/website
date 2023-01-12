@@ -6,36 +6,31 @@ sector: Nonprofits
 icon: fa-users
 layout: layouts/pricing_sector
 benefits:
-  - Protect volunteers and people at-risk: "Marginalized and vulnerable people are the most impacted by the surveillance economy. CryptPad’s end-to-end encryption protects everyone’s privacy and digital rights. Share resources, conduct research, organize a campaign, all without forcing people onto surveillance platforms."
-  - 100% collaborative: "CryptPad offers many features to facilitate teamwork and collaboration, real-time editing of course but also: contacts, shared folders, team drives, sharing, and granular access control."
-  - Align your tools with your message: "Whichever cause you are fighting for, we doubt that giant corporations extracting billions of dollars from personal data are a good match for your ideals. Invest in open and secure tools that would still exist in the world you are striving to build."
-  - Support an open-source project: "CryptPad is fully open-source and freely available. We are funded by public grants and our users, not investors looking to monetize user data and make an exit. Are you receiving donations or grants from the public? When you buy our services you invest in making this project sustainable and help us improve it for everyone."
+  - title: Protect volunteers and people at-risk
+    text: "Marginalized and vulnerable people are the most impacted by the surveillance economy. CryptPad’s end-to-end encryption protects everyone’s privacy and digital rights. Share resources, conduct research, organize a campaign, all without forcing people onto surveillance platforms."
+  - title: 100% collaborative
+    text: "CryptPad offers many features to facilitate teamwork and collaboration, real-time editing of course but also: contacts, shared folders, team drives, sharing, and granular access control."
+  - title: Align your tools with your message
+    text: "Whichever cause you are fighting for, we doubt that giant corporations extracting billions of dollars from personal data are a good match for your ideals. Invest in open and secure tools that would still exist in the world you are striving to build."
+  - title: Support an open-source project
+    text: "CryptPad is fully open-source and freely available. We are funded by public grants and our users, not investors looking to monetize user data and make an exit. Are you receiving donations or grants from the public? When you buy our services you invest in making this project sustainable and help us improve it for everyone."
+plans:
+  - users: 100
+    storage: 200GB
+    admin_support: 1
+    price_euro_yearly: "3,600"
+  - storage: "500GB"
+    users: 200
+    admin_support: 2
+    price_euro_yearly: "7,200"
+  - users: 500
+    storage: "1TB"
+    admin_support: 4
+    price_euro_yearly: "18,000"
 ---
-
-{% import "components/cards.njk" as cards %}
 
 <p>The following pricing is for a managed CryptPad instance for your nonprofit.<br>See our <a href="/pricing/">pricing page</a> for all the ways to subscribe.</p>
 <p class="pricing-desc"><span class="price large">€3</span> per user/month <span class="discount">50% OFF</span> Enterprise pricing</p>
 
-<div class="plan-cards-container">
-    {{ cards.plan(
-      users=100,
-      storage="200GB",
-      admin_support=1,
-      price_euro_yearly="3,600"
-    )}}
-    {{ cards.plan(
-      users=200,
-      storage="500GB",
-      admin_support=2,
-      price_euro_yearly="7,200"
-    )}}
-    {{ cards.plan(
-      users=500,
-      storage="1TB",
-      admin_support=4,
-      price_euro_yearly="18,000"
-    )}}
-</div>
 
 

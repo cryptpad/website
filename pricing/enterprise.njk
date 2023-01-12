@@ -6,36 +6,33 @@ sector: Enterprise
 icon: fa-briefcase
 layout: layouts/pricing_sector
 benefits:
-  - Full-featured collaborative office suite: "Get rid of Microsoft Office &amp; licences headaches, we’ll together define your needs and help you setup your own CryptPad instance for your whole organization. Either you are a small company or a huge one we have the appropriate solutions for you."
-  - Expertise from the developers: "Benefit from the direct expertise of CryptPad developers. There is no intermediary! You’ll get security, scaling recommendations and best practices and be able to influence the roadmap."
-  - Help fund open source software: "Since its inception in 2014 at XWiki SAS headquarters, we’ve been standing on the shoulders of our funding company. We’ve also relied on research grants but that’s with companies like yours that will be able to secure an even brighter future for CryptPad."
-  - A support team you can count on: "Defining your needs, setting up your instance, training your teams,maintaining it over-time &amp; giving support to your users, we are here for you! You can already take a look at <a href='https://docs.cryptpad.fr/en/user_guide/index.html'>our user guide</a> in the official documentation."
+  - title: Full-featured collaborative office suite
+    text: "CryptPad provides all the features needed for effective collaboration. From a suite of applications (Document, Sheets, Presentation, Kanban, Forms, and more) to team-drives and granular access-control, we have your needs covered."
+  - title: Secure your information
+    text: "Ransomware attacks, data-leaks, and other security risks are on the rise. Ensure that your business information, and that of your partners/customers, is properly secured with end-to-end encryption."
+  - title: An open-source project here to stay
+    text: "CryptPad is actively developed by a full-time team of five at XWiki SAS, a company that has been making open-source software for over 15 years."
+  - title: A support team you can count on
+    text: "Defining your needs, setting up your instance, training your teams,maintaining it over-time &amp; giving support to your users, we are here for you! You can already take a look at <a href='https://docs.cryptpad.fr/en/user_guide/index.html'>our user guide</a> in the official documentation."
+plans:
+  - small:
+    users: 100
+    storage: 200GB
+    admin_support: 1
+    price_euro_yearly: "7,200"
+  - medium:
+    storage: "500GB"
+    users: 200
+    admin_support: 2
+    price_euro_yearly: "14,400"
+  - large:
+    users: 500
+    storage: "1TB"
+    admin_support: 4
+    price_euro_yearly: "36,000"
 ---
 
-{% import "components/cards.njk" as cards %}
 
 <p>The following pricing is for a managed CryptPad instance for your enterprise.<br>See our <a href="/pricing/">pricing page</a> for all the ways to subscribe.</p>
 <p class="pricing-desc"><span class="price large">€6</span> per user/month</p>
-
-<div class="plan-cards-container">
-  {{ cards.plan(
-    users=100,
-    storage="200GB",
-    admin_support=1,
-    price_euro_yearly="7,200"
-  )}}
-  {{ cards.plan(
-    users=200,
-    storage="500GB",
-    admin_support=2,
-    price_euro_yearly="14,400"
-  )}}
-  {{ cards.plan(
-    users=500,
-    storage="1TB",
-    admin_support=4,
-    price_euro_yearly="36,000"
-  )}}
-</div>
-
 

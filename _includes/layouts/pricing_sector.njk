@@ -1,5 +1,7 @@
 {% extends "layouts/main.njk" %}
 
+{% import "components/cards.njk" as cards %}
+
 {% block content %}
 
     <section class="half">
@@ -8,17 +10,16 @@
         </span></h1>
         <section class="your-own">
             {% include "components/instance_arguments.njk" %}
-            <div class="your-own-preview"><img src="/images/instance_edu.png" alt=""></div>
+            <div class="your-own-preview"><img src="{{ image }}" alt=""></div>
     </section>
 
     <section class="arguments">
         <h2>Benefits for {{ sector }}</h2>
         <div class="items">
             {% for benefit in benefits %}
-                {% set item = benefit | keyValue%}
                 <div class="item">
-                    <h3>{{item.key}}</h3>
-                    <p>{{item.value | safe}}</p>
+                    <h3>{{ benefit.title }}</h3>
+                    <p>{{ benefit.text | safe}}</p>
                 </div>
             {% endfor %}
         </div>
@@ -27,7 +28,18 @@
     <section class="pricing">
       <h2>Pricing</h2>
 
-    {{ content | safe }}
+        {{ content | safe }}
+
+        <div class="plan-cards-container">
+            {% for plan in plans %}
+                {{ cards.plan(
+                    users = plan.users,
+                    storage = plan.storage,
+                    admin_support = plan.admin_support,
+                    price_euro_yearly = plan.price_euro_yearly
+                )}}
+            {% endfor %}
+        </div>
 
     </section>
 
