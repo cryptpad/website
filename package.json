@@ -5,7 +5,7 @@
   "main": "build.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "optimize": "for i in static/images/*.png; do optipng $i;done;for i in static/images/*.jp*g;do jpegoptim $i;done",
+    "optimize": "for i in _static/images/*.png; do optipng $i;done;for i in _static/images/*.jp*g;do jpegoptim $i;done",
     "clean": "rm built/ -rf",
     "serve": "python3 -m 'http.server' --directory built/",
     "generate": "npx @11ty/eleventy --input=. --output=built",

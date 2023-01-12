@@ -1,0 +1,67 @@
+---
+title: CryptPad for enterprise
+description: Dedicated instances for businesses of all sizes
+layout: layouts/main
+eleventyExcludeFromCollections: true
+---
+
+{% import "components/cards.njk" as cards %}
+
+<section class="half">
+    <h1>CryptPad for <span class="sector-title"><i aria-hidden="true" class="fa fa-briefcase"></i> Enterprise</span></h1>
+    <section class="your-own">
+        {% include "components/instance_arguments.njk" %}
+        <div class="your-own-preview"><img src="/images/instance_enterprise.png" alt=""></div>
+    </section>
+    <section class="arguments">
+        <h2>Benefits for enterprise</h2>
+        <div class="items">
+            <div class="item">
+                <h3>Full-featured collaborative office suite</h3>
+                <p>Get rid of Microsoft Office &amp; licences headaches, we’ll together define your needs and help you setup your own CryptPad instance for your whole organization. Either you are a small company or a huge one we have the appropriate solutions for you.</p>
+            </div>
+            <div class="item">
+                <h3>Expertise from the developers</h3>
+                <p>Benefit from the direct expertise of CryptPad developers. There is no intermediary! You’ll get security, scaling recommendations and best practices and be able to influence the roadmap.</p>
+            </div>
+            <div class="item">
+                <h3>Help fund open source software</h3>
+                <p>Since its inception in 2014 at XWiki SAS headquarters, we’ve been standing on the shoulders of our funding company. We’ve also relied on research grants but that’s with companies like yours that will be able to secure an even brighter future for CryptPad.</p>
+            </div>
+            <div class="item">
+                <h3>A support team you can count on</h3>
+                <p>Defining your needs, setting up your instance, training your teams,
+                maintaining it over-time &amp; giving support to your users, we are here
+                for you! You can already take a look at
+                <a href="https://docs.cryptpad.fr/en/user_guide/index.html">our user
+                guide</a> in the official documentation.</p>
+            </div>
+        </div>
+    </section>
+    <section class="pricing">
+      <h2>Pricing</h2>
+      <p>The following pricing is for a managed CryptPad instance for your enterprise.<br>See our <a href="/pricing/">pricing page</a> for all the ways to subscribe.</p>
+      <p class="pricing-desc"><span class="price large">€6</span> per user/month</p>
+      <div class="plan-cards-container">
+        {{ cards.plan(
+          users=100,
+          storage="200GB",
+          admin_support=1,
+          price_euro_yearly="7,200"
+        )}}
+        {{ cards.plan(
+          users=200,
+          storage="500GB",
+          admin_support=2,
+          price_euro_yearly="14,400"
+        )}}
+        {{ cards.plan(
+          users=500,
+          storage="1TB",
+          admin_support=4,
+          price_euro_yearly="36,000"
+        )}}
+        </div>
+  </section>
+</section>
+

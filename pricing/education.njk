@@ -1,0 +1,66 @@
+---
+title: CryptPad for education
+description: Dedicated instances for schools, universities, and research
+layout: layouts/main
+eleventyExcludeFromCollections: true
+---
+
+{% import "components/cards.njk" as cards %}
+
+<section class="half">
+    <h1>CryptPad for <span class="sector-title"><i aria-hidden="true" class="fa fa-graduation-cap"></i> Education</span></h1>
+    <section class="your-own">
+        {% include "components/instance_arguments.njk" %}
+        <div class="your-own-preview"><img src="/images/instance_edu.png" alt=""></div>
+    </section>
+  <section class="arguments">
+    <h2>Benefits for education</h2>
+    <div class="items">
+        <div class="item">
+          <h3>Safe online space</h3>
+          <p>In their <a href="https://www.hrw.org/StudentsNotProducts">damning report of education technology</a> Human Rights Watch found that 89% of the 150 products they examined “monitored or could monitor children, in most cases secretly and without the consent of children or their parents”. With CryptPad students can learn without being surveilled and tracked.</p>
+        </div>
+        <div class="item">
+          <h3>Complete teaching suite</h3>
+          <p>CyptPad has everything you need to give classes, from text documents to whiteboards, forms, and spreadsheets, all in one secure place.</p>
+        </div>
+        <div class="item">
+          <h3>Data protection built in</h3>
+          <p>CryptPad is built to collect as little data as possible, and to protect what it stores with encryption and security measures. There is no premium or add-on to protect data, it’s the default. CyptPad helps you pass GDPR compliance with top honors!</p>
+        </div>
+        <div class="item">
+          <h3 id="support-on-call">Support on call</h3>
+          <p>CryptPad comes with a built-in private ticket system to manage support requests and assist users. In most cases, a link to the right place in our <a href="https://docs.cryptpad.org/en/user_guide/index.html">extensive documentation</a> solves the issue. Your administrators have direct contact with our team to resolve any problems quickly.</p>
+        </div>
+    </div>
+  </section>
+  <section class="pricing">
+      <h2>Pricing</h2>
+      <p>The following pricing is for a managed CryptPad instance for your educational institution.<br>See our <a href="/pricing/">pricing page</a> for all the ways to subscribe.</p>
+      <p class="pricing-desc"><span class="price large">€3</span> per user/month <span class="discount">50% OFF</span> Enterprise pricing</p>
+      <p class="price-desc">Additional benefit for education: <strong>only staff are counted as users, student accounts are FREE</strong>.</p>
+      <div class="plan-cards-container">
+        {{ cards.plan(
+          users=100,
+          storage="200GB",
+          admin_support=1,
+          price_euro_yearly="3,600"
+        )}}
+        {{ cards.plan(
+          users=200,
+          storage="500GB",
+          admin_support=2,
+          price_euro_yearly="7,200"
+        )}}
+        {{ cards.plan(
+          users=500,
+          storage="1TB",
+          admin_support=4,
+          price_euro_yearly="18,000"
+        )}}
+        </div>
+  </section>
+
+
+</section>
+
