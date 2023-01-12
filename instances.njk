@@ -22,8 +22,8 @@ eleventyExcludeFromCollections: true
     <p><a href="https://docs.cryptpad.fr/en/admin_guide/admin_panel.html#list-my-instance-in-public-directories">Learn how to have your instance included in this list</a>.</p>
 </section>
 
-{# XXX Shuffle this list #}
-{% for instance in instances %}
+
+{% for instance in instances | shuffle %}
     {{ cards.instance(
             title=instance.title,
             url=instance.url,

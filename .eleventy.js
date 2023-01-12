@@ -10,6 +10,12 @@ module.exports = (function(eleventyConfig) {
         console.log(d);
       });
 
+    eleventyConfig.addFilter("shuffle", (arr) => {
+      arr.sort(() => {
+        return 0.5 - Math.random();
+      });
+      return arr;
+    });
     // set nunjucks as markdown template engine
     // could be useful for custom processing like mermaid
     // return {
