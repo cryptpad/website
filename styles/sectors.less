@@ -1,5 +1,5 @@
 
-.sector {
+.sector-title {
     display: inline-block;
     background-color: @cryptpad_color_white;
     font-size: 0.8em;
@@ -10,8 +10,8 @@
     .shadow();
 }
 
-section.your-own, section.arguments {
-    margin-top: 15rem;
+section.your-own, section.arguments, section.pricing {
+    margin-top: 10rem;
 }
 
 .your-own {
@@ -19,6 +19,7 @@ section.your-own, section.arguments {
     grid-template-rows: 1fr;
     grid-template-columns: 0.75fr 1fr;
     grid-gap: 3rem;
+    margin: 0 2rem;
     .your-own-text {
         ul.icon-list {
             columns: 1;
@@ -33,11 +34,9 @@ section.your-own, section.arguments {
 }
 
 .arguments {
-    h2 {
-        margin-bottom: 2rem;
-    }
+    margin: 0 2rem;
     .items {
-            display: grid;
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 3rem;
         .item {
