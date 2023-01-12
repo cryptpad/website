@@ -2,8 +2,7 @@
 
 module.exports = (function(eleventyConfig) {
     // Copy /images to /public
-    eleventyConfig.addPassthroughCopy('static');
-    eleventyConfig.addPassthroughCopy({'static': '/'});
+    eleventyConfig.addPassthroughCopy({'_static': '/'});
 
     // Debug filter
     eleventyConfig.addFilter("log", (d) => {

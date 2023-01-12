@@ -7,8 +7,9 @@ var fs = require("fs");
 
 module.exports = function () {
   // Compile LESS into CSS
-  const inputFile = path.join(__dirname, "../styles/main.less");
+  const inputFile = path.join(__dirname, "../_styles/main.less");
   const outputFile = path.join(__dirname, "../built/style.css");
+  console.log(path.resolve(inputFile));
 
   fs.readFile(inputFile, function (error, data) {
     data = data.toString();
