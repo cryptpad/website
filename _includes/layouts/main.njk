@@ -6,24 +6,25 @@
     <meta name="referrer" content="no-referrer" />
 
     <!-- HTML Meta Tags -->
-    <title>{{site.title}}</title>
+    <title>{% if title %}{{title}} - {% endif %}{{site.title}}</title>
+
     <link rel="stylesheet" href="/style.css">
 
-    <meta name="description" content="{{site.description}}">
+    <meta name="description" content="{{description or site.description}}">
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="{{site.url}}">
+    <meta property="og:url" content="{{site.url}}{{page.url}}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{site.title}}">
-    <meta property="og:description" content="{{site.description}}">
+    <meta property="og:title" content="{{title or site.title}}">
+    <meta property="og:description" content="{{description or site.description}}">
     <meta property="og:image" content="{{site.image}}">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="{{site.domain}}">
-    <meta property="twitter:url" content="{{site.url}}">
-    <meta name="twitter:title" content="{{site.title}}">
-    <meta name="twitter:description" content="{{site.description}}">
+    <meta property="twitter:url" content="{{site.url}}{{page.url}}">
+    <meta name="twitter:title" content="{{title or site.title}}">
+    <meta name="twitter:description" content="{{description or site.description}}">
     <meta name="twitter:image" content="{{site.image}}">
 
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
@@ -40,9 +41,11 @@
 
     <nav>
         <div class="logo">
-            <a href="/"><img src="images/CryptPad_logo_text_horizontal.svg" alt="Return to homepage"></a>
+            <a href="/"><img src="/images/CryptPad_logo_text_horizontal.svg" alt="Return to homepage"></a>
         </div>
-        <a href="/about/" class="btn"><i class="fa fa-question-circle-o"></i>About</a>
+        {% if '/about' not in page.url %}
+            <a href="/about/" class="btn"><i class="fa fa-question-circle-o"></i>About</a>
+        {% endif %}
     </nav>
 
     {% block content %}
