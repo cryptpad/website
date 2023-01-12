@@ -15,6 +15,13 @@ module.exports = (function(eleventyConfig) {
       });
       return arr;
     });
+
+    // Key / Value filter
+    eleventyConfig.addFilter("keyValue", (d) => {
+      let key = Object.keys(d)[0];
+      let value = Object.values(d)[0];
+      return {"key": key, "value": value};
+    });
     // set nunjucks as markdown template engine
     // could be useful for custom processing like mermaid
     // return {

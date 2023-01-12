@@ -1,0 +1,34 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+
+    <section class="half">
+        <h1>CryptPad for <span class="sector-title">
+            <i aria-hidden="true" class="fa {{icon}}"></i> {{sector}}
+        </span></h1>
+        <section class="your-own">
+            {% include "components/instance_arguments.njk" %}
+            <div class="your-own-preview"><img src="/images/instance_edu.png" alt=""></div>
+    </section>
+
+    <section class="arguments">
+        <h2>Benefits for {{ sector }}</h2>
+        <div class="items">
+            {% for benefit in benefits %}
+                {% set item = benefit | keyValue%}
+                <div class="item">
+                    <h3>{{item.key}}</h3>
+                    <p>{{item.value | safe}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="pricing">
+      <h2>Pricing</h2>
+
+    {{ content | safe }}
+
+    </section>
+
+{% endblock %}
