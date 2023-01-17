@@ -8,7 +8,6 @@
     <!-- HTML Meta Tags -->
     <title>{% if title %}{{title}} - {% endif %}{{site.title}}</title>
 
-    <link rel="stylesheet" href="/style.css">
 
     <meta name="description" content="{{description or site.description}}">
     <meta property="og:url" content="{{site.url}}{{page.url}}">
@@ -28,14 +27,12 @@
     <meta name="twitter:description" content="{{description or site.description}}">
     <meta name="twitter:image" content="{{site.url}}{{image or site.image}}">
 
-    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-
     <meta name="robots" content="index, archive" />
-    <meta name="canonical" href="{{site.canonical}}" />
+    <meta name="canonical" href="{{site.url}}{{page.url}}" />
 
     <link type="image/png" rel="icon" href="{{site.favicon}}" />
-    {# <link rel="stylesheet" href="/style.css?ver={{site.cachebuster}}" />  #}
-    <script src="/index.js?ver={{site.cachebuster}}"></script>
+    <link rel="stylesheet" href="/style.css?ver={{cache.buster}}">
+    <script src="/index.js?ver={{cache.buster}}"></script>
 </head>
 
 <body>
