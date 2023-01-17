@@ -1,6 +1,7 @@
 
 
 module.exports = (function(eleventyConfig) {
+    eleventyConfig.addWatchTarget("_styles");
     // Copy /images to /public
     eleventyConfig.addPassthroughCopy({'_static': '/'});
 

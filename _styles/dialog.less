@@ -6,8 +6,8 @@
 [role="dialog"] {
   box-sizing: border-box;
   padding: 15px;
-  border: 1px solid #000;
   background-color: #fff;
+  border-radius: @radius_L;
   min-height: 100vh;
 }
 
@@ -27,82 +27,112 @@
   }
 }
 
-.dialog_label {
-  text-align: center;
+.dialogs {
+  .dialog_label {
+    text-align: center;
+  }
+
+  .form-element {
+    margin-bottom: 1.25rem ;
+  }
+
+  input, textarea {
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+    font-size: 2rem;
+    border: 1px solid ;
+    border-radius: @radius;
+    padding: 1rem;
+  }
+
+  input, textarea {
+    display: block;
+    width: 100%;
+  }
+
+  .dialog_form_actions {
+    display: flex;
+    justify-content: flex-end;
+    button {
+      margin-left: 2rem;
+    }
+  }
 }
 
-.dialog_form {
-  margin: 15px;
-}
 
-.dialog_form .label_text {
-  box-sizing: border-box;
-  padding-right: 0.5em;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: bold;
-  width: 30%;
-  text-align: right;
-}
 
-.dialog_form .label_info {
-  box-sizing: border-box;
-  padding-right: 0.5em;
-  font-size: 12px;
-  width: 30%;
-  text-align: right;
-  display: inline-block;
-}
+// .dialog_form {
+//   margin: 15px;
+// }
 
-.dialog_form_item {
-  margin: 10px 0;
-  font-size: 0;
-}
+// .dialog_form .label_text {
+//   box-sizing: border-box;
+//   padding-right: 0.5em;
+//   display: inline-block;
+//   font-size: 16px;
+//   font-weight: bold;
+//   width: 30%;
+//   text-align: right;
+// }
 
-.dialog_form_item .wide_input {
-  box-sizing: border-box;
-  max-width: 70%;
-  width: 27em;
-}
+// .dialog_form .label_info {
+//   box-sizing: border-box;
+//   padding-right: 0.5em;
+//   font-size: 12px;
+//   width: 30%;
+//   text-align: right;
+//   display: inline-block;
+// }
 
-.dialog_form_item .city_input {
-  box-sizing: border-box;
-  max-width: 70%;
-  width: 17em;
-}
+// .dialog_form_item {
+//   margin: 10px 0;
+//   font-size: 0;
+// }
 
-.dialog_form_item .state_input {
-  box-sizing: border-box;
-  max-width: 70%;
-  width: 15em;
-}
+// .dialog_form_item .wide_input {
+//   box-sizing: border-box;
+//   max-width: 70%;
+//   width: 27em;
+// }
 
-.dialog_form_item .zip_input {
-  box-sizing: border-box;
-  max-width: 70%;
-  width: 9em;
-}
+// .dialog_form_item .city_input {
+//   box-sizing: border-box;
+//   max-width: 70%;
+//   width: 17em;
+// }
 
-.dialog_form_actions {
-  text-align: right;
-  padding: 0 20px 20px;
-}
+// .dialog_form_item .state_input {
+//   box-sizing: border-box;
+//   max-width: 70%;
+//   width: 15em;
+// }
 
-.dialog_close_button {
-  float: right;
-  position: absolute;
-  top: 10px;
-  left: 92%;
-  height: 25px;
-}
+// .dialog_form_item .zip_input {
+//   box-sizing: border-box;
+//   max-width: 70%;
+//   width: 9em;
+// }
 
-.dialog_close_button img {
-  border: 0;
-}
+// .dialog_form_actions {
+//   text-align: right;
+//   padding: 0 20px 20px;
+// }
 
-.dialog_desc {
-  padding: 10px 20px;
-}
+// .dialog_close_button {
+//   float: right;
+//   position: absolute;
+//   top: 10px;
+//   left: 92%;
+//   height: 25px;
+// }
+
+// .dialog_close_button img {
+//   border: 0;
+// }
+
+// .dialog_desc {
+//   padding: 10px 20px;
+// }
 
 /* native <dialog> element uses the ::backdrop pseudo-element */
 
