@@ -17,11 +17,18 @@ app.use(Express.static(Path.resolve('built')));
 
 // Post to gitlab
 const postGitlab = (data, cb) => {
-    let org = data.org;
+    if (!data) { return cb(new Error("Missing data")); }
     let contact = data.contact;
+    let org = data.org || contact;
     let email = data.email;
     let comments = data.comments;
     let plan = data.plan;
+
+    if (['contact', 'email', 'plan'].some((key) => {
+        return !data[key];
+    })) {
+        return cb(new Error("Missing data"));
+    }
 
     let content = {
         title: `${plan}: ${org}`,
@@ -61,7 +68,7 @@ ${comments}`
 app.post('/post', (req, res) => {
     postGitlab(req.body, (err) => {
         if (err) {
-            return res.send({error: err});
+            return res.send({error: err.message || err});
         }
         res.send({});
     });
