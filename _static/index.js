@@ -39,8 +39,56 @@ var addAnchors = function () {
 
 };
 
+var addFormHandlers = function () {
+    var els = document.getElementsByClassName('contact-form');
+    Array.prototype.forEach.call(els, function(el) {
+        el.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            var data = new FormData(el);
+            var body = JSON.stringify({
+                org: data.get('org'),
+                contact: data.get('contact'),
+                email: data.get('email'),
+                comments: data.get('comments').replace(/\n/g, '\n\n'),
+                plan: data.get('plan'),
+            });
+
+            // Post the data
+            fetch('/post', {
+                method: 'POST',
+                body: body,
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+            }).then(function (response) {
+                if (response.ok) { return response.json(); }
+                return Promise.reject(response);
+            }).then(function (data) {
+                if (data && data.error) {
+                    console.error(data.error);
+                    if (window.replaceDialog) { replaceDialog('dialog-contact-error'); }
+                    return;
+                }
+                if (window.replaceDialog) { replaceDialog('dialog-contact-success'); }
+            }).catch(function (error) {
+                console.error(error);
+                if (window.replaceDialog) { replaceDialog('dialog-contact-error'); }
+            });
+
+            return false;
+        });
+    });
+};
+
 
 document.onreadystatechange = function () {
     if (document.readyState !== 'complete') { return; }
     addAnchors();
+    try {
+        addFormHandlers();
+    } catch (e) {
+        console.error(e);
+    }
 };
