@@ -17,6 +17,7 @@ app.use(Express.static(Path.resolve('built')));
 
 // Post to gitlab
 const postGitlab = (data, cb) => {
+    if (!data) { return cb(new Error("Missing data")); }
     let org = data.org;
     let contact = data.contact;
     let email = data.email;
