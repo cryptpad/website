@@ -7,6 +7,11 @@ var fs = require("fs");
 
 module.exports = function () {
   // Compile LESS into CSS
+  const built = path.join(__dirname, "../built");
+  if (!fs.existsSync(built)){
+    fs.mkdirSync(built);
+  }
+
   const inputFile = path.join(__dirname, "../_styles/main.less");
   const outputFile = path.join(__dirname, "../built/style.css");
   console.log(path.resolve(inputFile));
