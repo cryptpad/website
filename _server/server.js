@@ -40,7 +40,7 @@ ${comments}`
     // Local testing: don't push to gitlab
     if (config.gitlab.url === 'localhost') {
         console.log(content);
-        return cb({});
+        return cb();
     }
 
     Axios.post(`${config.gitlab.url}/api/v4/projects/${config.gitlab.projectID}/issues`, content, {

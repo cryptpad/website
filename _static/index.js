@@ -42,8 +42,11 @@ var addAnchors = function () {
 var addFormHandlers = function () {
     var els = document.getElementsByClassName('contact-form');
     Array.prototype.forEach.call(els, function(el) {
+        var sending = false;
         el.addEventListener('submit', function (e) {
             e.preventDefault();
+            if (sending) { return; }
+            sending = true;
 
             // Get form data
             var data = new FormData(el);
@@ -66,6 +69,7 @@ var addFormHandlers = function () {
                 if (response.ok) { return response.json(); }
                 return Promise.reject(response);
             }).then(function (data) {
+                sending = false;
                 if (data && data.error) {
                     console.error(data.error);
                     if (window.replaceDialog) { replaceDialog('dialog-contact-error'); }
@@ -73,6 +77,7 @@ var addFormHandlers = function () {
                 }
                 if (window.replaceDialog) { replaceDialog('dialog-contact-success'); }
             }).catch(function (error) {
+                sending = false;
                 console.error(error);
                 if (window.replaceDialog) { replaceDialog('dialog-contact-error'); }
             });
