@@ -9,6 +9,7 @@
   background-color: #fff;
   border-radius: @radius_L;
   min-height: 100vh;
+  font-size: 2rem;
 }
 
 @media screen and (min-width: 640px) {
@@ -23,7 +24,7 @@
 
     min-width: calc(640px - (15px * 2)); /* == breakpoint - left+right margin */
     min-height: auto;
-    box-shadow: 0 19px 38px rgb(0 0 0 / 12%), 0 15px 12px rgb(0 0 0 / 22%);
+    .shadow();
   }
 }
 
@@ -39,7 +40,7 @@
   input, textarea {
     box-sizing: border-box;
     margin-top: 0.5rem;
-    font-size: 2rem;
+
     border: 1px solid ;
     border-radius: @radius;
     padding: 1rem;
@@ -50,15 +51,15 @@
     width: 100%;
   }
 
-  .dialog_form_actions {
-    display: flex;
-    justify-content: flex-end;
-    button {
-      margin-left: 2rem;
-    }
-  }
 }
 
+.dialog_form_actions {
+  display: flex;
+  justify-content: flex-end;
+  button {
+    margin-left: 2rem;
+  }
+}
 
 
 // .dialog_form {

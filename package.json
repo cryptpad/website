@@ -12,10 +12,6 @@
     "build": "npx @11ty/eleventy --input=. --output=built",
     "dev": "npx @11ty/eleventy --serve --output=built"
   },
-  "repository": {
-    "type": "git",
-    "url": "ssh://ansuz@macsween.ca/home/ansuz/repo/cryptpad.org.git"
-  },
   "author": "ansuz",
   "license": "ISC",
   "dependencies": {
