@@ -2,10 +2,10 @@
 
 - [ ] responsive styles on new pages (pricing, sectors)
 
-- [ ] review `built` diff
-  - index.js is gone
-  - [ ] error page
-  - [ ] instance card links
+- [x] review `built` diff
+  - [x] re-added index.js
+  - [x] error page
+  - [x] instance card links
 
 ## previous todos
 
