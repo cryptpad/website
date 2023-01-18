@@ -212,7 +212,7 @@ aria.Utils = aria.Utils || {};
 
     this.addListeners();
     aria.OpenDialogList.push(this);
-    this.clearDialog();
+    // this.clearDialog();
     this.dialogNode.className = 'default_dialog'; // make visible
 
     if (this.focusFirst) {
@@ -225,6 +225,7 @@ aria.Utils = aria.Utils || {};
   }; // end Dialog constructor
 
   aria.Dialog.prototype.clearDialog = function () {
+    console.log('pewpew');
     Array.prototype.map.call(
       this.dialogNode.querySelectorAll('input'),
       function (input) {
