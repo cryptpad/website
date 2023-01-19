@@ -15,6 +15,7 @@
 
 {% macro plan(sector="None", users=0, storage=0, admin_support=0, price_euro_yearly=0) %}
 <div class="plan-card instance-plan">
+    {% include "components/xwiki_badge.njk" %}
     <h2>{{users}} Users</h2>
     <ul>
         <li><i class="fa fa-database"></i>{{storage}} storage</li>

@@ -10,7 +10,9 @@
         </span></h1>
         <section class="your-own">
             {% include "components/instance_arguments.njk" %}
-            <div class="your-own-preview"><img src="{{ image }}" alt=""></div>
+            <div class="your-own-preview">
+                <img src="{{ image }}" alt="">
+            </div>
     </section>
 
     <section class="arguments">
@@ -29,9 +31,20 @@
     <script src="/scripts/utils.js?ver={{cache.buster}}"></script>
 
     <section class="pricing">
-      <h2>Pricing</h2>
+      <h2>Pricing for {{ sector }}</h2>
 
-        {{ content | safe }}
+      <p>This pricing is for your own CryptPad instance, provided and managed by XWiki SAS.<br>Please see the <a href="/pricing/">pricing page</a> for all the ways to subscribe and support the project.</p>
+
+      <p class="pricing-desc">
+        {{ price | log }}
+        <span class="price large">{{ price.user }}</span> per user/month
+        {% if price.discount %}
+            <span class="discount">{{ price.discount }} OFF</span> Enterprise pricing
+        {% endif %}
+      </p>
+      {% if price.additional %}
+        <p>{{ price.additional | safe }}</p>
+      {% endif %}
 
         <div class="plan-cards-container">
             {% for plan in plans %}

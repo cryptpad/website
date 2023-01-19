@@ -6,7 +6,7 @@ layout: layouts/main
 
 <section>
     <h1>Pricing</h1>
-    <p>There are various ways to benefit from CryptPad and support the project.</p>
+    <p>Choose your preferred way of using CryptPad and supporting the project:</p>
 
 </section>
 <section>
@@ -25,8 +25,14 @@ layout: layouts/main
           <i class="fa fa-book"></i> Documentation
         </a>
       </div>
+      <div class="sub-card">
+        <a href="https://docs.cryptpad.org/en/admin_guide/index.html" class="btn primary">
+          <i class="fa fa-book"></i> Donations
+        </a>
+      </div>
     </div>
-    <div class="plan-card">
+    <div class="plan-card pricing">
+      {% include "components/xwiki_badge.njk" %}
       <h2>CryptPad.fr</h2>
         <p>The flagship instance offers paid plans with additional storage and priority support for individuals, teams, and organizations.</p>
         <div class="price">
@@ -36,9 +42,9 @@ layout: layouts/main
         <i class="fa fa-ticket"></i> See plans
       </a>
     </div>
-    <div class="plan-card">
+    <div class="plan-card pricing">
+      {% include "components/xwiki_badge.njk" %}
       <h2>Managed Instances</h2>
-
       <p>Your own CryptPad instance, hosted and managed</p>
       <div class="price">
         <div class="medium">from €3.6K /year</div>
