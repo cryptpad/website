@@ -12,33 +12,10 @@
         "_description": "This is an independent community instance of CryptPad."
     },
     {
-        "title": "pad.tchncs.de",
-        "url": "https://pad.tchncs.de",
-        "location": "Germany",
-        "description": "The CryptPad instance of tchncs.de – offering a fair amount of storage while trying not to conflict with the official offering."
-    },
-    {
-        "title": "pad.freifunk.duesseldorf.de",
-        "url": "https://pad.freifunk.duesseldorf.de",
-        "location": "Germany"
-    },
-    {
-        "title": "pad.artemislena.eu",
-        "url": "https://pad.artemislena.eu",
-        "location": "Germany",
-        "description": "Be crime do gay"
-    },
-    {
         "title": "cryptpad.piratenpartei.de",
         "url": "https://cryptpad.piratenpartei.de",
         "location": "Deutschland",
         "description": "This CryptPad instance is hosted by the Pirate Party of Germany. We stand for privacy and digital sovereignty."
-    },
-    {
-        "title": "cryptpad.cz",
-        "url": "https://cryptpad.cz",
-        "location": "Czech Republic",
-        "description": "This CryptPad instance is hosted by NoLog.cz activist IT collective on our own bare metal servers located in Prague."
     },
     {
         "title": "kumipad.eu",
@@ -59,9 +36,15 @@
         "description": "Instance publique de CryptPad opérée par FACiL."
     },
     {
-        "url": "https://cryptpad.nicfab.eu",
-        "title": "NicFab CryptPad",
-        "location": "🇮🇹 Italy",
-        "description": "Independent CryptPad instance operated by NicFab."
-      }
+        "url": "https://cryptpad.disroot.org",
+        "title": "cryptpad.disroot.org",
+        "location": "Netherlands",
+        "description": "This CryptPad instance is hosted by Disroot.org."
+    },
+    {
+        "url": "https://cryptpad.malacher.fr",
+        "title": "CipherPad",
+        "location": "France",
+        "description": "Instance hosted by individuals for free and available for everyone."
+    }
 ]
