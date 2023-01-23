@@ -36,7 +36,6 @@
       <p>This pricing is for your own CryptPad instance, provided and managed by XWiki SAS.<br>Please see the <a href="/pricing/">pricing page</a> for all the ways to subscribe and support the project.</p>
 
       <p class="pricing-desc">
-        {{ price | log }}
         <span class="price large">{{ price.user }}</span> per user/month
         {% if price.discount %}
             <span class="discount">{{ price.discount }} OFF</span> Enterprise pricing
