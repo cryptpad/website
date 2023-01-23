@@ -14,7 +14,7 @@ Copy `config.example.js` to `config.js` and add relevant data: Gitlab token, ins
 from the repo root
 
 ```
-node _serve/server.js
+node _server/server.js
 ```
 
 and also `npm run dev` so that changes to the 11ty site are build on each save
