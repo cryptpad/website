@@ -1,0 +1,15 @@
+---
+layout: layouts/main
+
+---
+
+
+{% for testimonial in testimonials_survey.responses %}
+    {% if testimonial.q6 == "Yes" %}
+        <p>
+            {{ testimonial._time }}<br>
+            {{ testimonial.q1 }}<br>{{ testimonial.q2 }} - {{ testimonial.q5 }}<br>
+            email: {{ testimonial.q7 }}
+        </p>
+    {% endif %}
+{% endfor %}

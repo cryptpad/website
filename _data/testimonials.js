@@ -132,7 +132,7 @@ module.exports = [
         org: 'RWTH Aachen University',
     },
     {
-        text: `It's easy to use and every option makes sense. It is great to share specific folders or documents. 
+        text: `It's easy to use and every option makes sense. It is great to share specific folders or documents.
         It is great that you do not register via google, Facebook or another Data collecting company. It gives the feeling of a secure, data minimised work platform.`,
         org: 'Rassismuskritisches Netzwerk der Region Trier (work against racism)',
     },
