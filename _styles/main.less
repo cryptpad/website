@@ -1,0 +1,477 @@
+@import './_styles/font.less';;
+@import './_styles/grid.less';
+
+@cryptpad_color_white: #FFF;
+@cryptpad_color_grey_200: #EEEEEE;
+@cryptpad_color_grey_250: #E7E7E7;
+@cryptpad_color_grey_300: #E0E0E0;
+@cryptpad_color_grey_400: #BDBDBD;
+@cryptpad_color_grey_500: #9E9E9E;
+@cryptpad_color_grey_600: #757575;
+@cryptpad_color_grey_700: #616161;
+@cryptpad_color_grey_800: #424242;
+@cryptpad_color_grey_900: #212121;
+@cryptpad_color_grey_950: #121212;
+
+@cryptpad_color_brand: #0087FF;
+@cryptpad_color_brand_200: lighten(@cryptpad_color_brand, 20%);
+@cryptpad_color_brand_300: lighten(@cryptpad_color_brand, 30%);
+
+@main-bg: @cryptpad_color_grey_200;
+@alt-bg: @cryptpad_color_grey_250;
+@text-color: @cryptpad_color_grey_800;
+
+// dark mode isn't going live in the first version
+@main-bg-dark: @cryptpad_color_grey_900;
+@alt-bg-dark: @cryptpad_color_grey_800;
+@text-color-dark: @cryptpad_color_grey_200;
+
+@link-color: darken(@cryptpad_color_brand, 10%);
+@link-color-dark: @cryptpad_color_brand_200;
+
+@radius: 5px;
+@radius_L: 10px;
+
+@breakpoint: 1000px;
+
+//@import './_styles/thermometer.less';
+//@import './_styles/testimonials.less';
+//@import './_styles/enterprise.less';
+@import './_styles/hero.less';
+@import './_styles/footer.less';
+@import './_styles/nav.less';
+@import './_styles/jobs.less';
+@import './_styles/sectors.less';
+@import 'dialog.less';
+
+html {
+    font-size: 8px; // for rem units, makes responsive sizes easier
+}
+
+/*
+@media screen and (max-width: @breakpoint) {
+    html {
+        font-size: 8px;
+    }
+}
+*/
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: @main-bg;
+}
+
+html, div, h1, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: 'Open Sans', Verdana, Geneva, sans-serif;
+    color: @text-color;
+}
+
+
+section {
+    box-sizing: border-box;
+    border: 1px solid transparent;
+
+    :is(h1, h2, h3) {
+        text-align: center;
+        font-family: 'IBM Plex Mono', monospace;
+    }
+    :is(h1, h2, h3, p, ul, blockquote /*, div.contain */) {
+        max-width: 50em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.full { min-height: 100vh; }
+.half { min-height: 50vh; }
+.quarter { min-height: 25vh; }
+
+h1, h2 {
+    font-family: "IBM Plex Mono", Helvetica, Arial, sans-serif;
+    font-weight: normal !important;
+}
+
+h1 {
+    font-size: 7rem;
+    color: @cryptpad_color_brand;
+    margin: 8rem 0 3rem 0;
+}
+h2 {
+    font-size: 3.7rem;
+    color: @cryptpad_color_brand;
+    margin: 6rem 0 5rem 0;
+
+}
+h3 {
+    font-size: 2.5rem;
+}
+
+// paragraph
+p {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2.5rem;
+    line-height: 150%;
+    padding: 10px;
+}
+a {
+    color: @link-color;
+    &:hover {
+        text-decoration: none;
+    }
+}
+h1, h2, h3 {
+    & > a {
+        text-decoration: none;
+        color: @cryptpad_color_brand;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+button {
+    border: 0;
+}
+
+.btn {
+    font-size: 2.5rem;
+    padding: 1.3rem;
+    background-color: @cryptpad_color_white;
+    border-radius: @radius;
+    text-decoration: none;
+    i {
+        margin-right: 1rem;
+    }
+    &:hover {
+        color: @cryptpad_color_white;
+        background-color: @cryptpad_color_grey_700;
+    }
+}
+
+.btn.primary {
+    background-color: @cryptpad_color_brand;
+    color: @cryptpad_color_white;
+    &:hover {
+        background-color: @cryptpad_color_grey_700;
+    }
+}
+
+.left-aligned {
+    text-align: left;
+}
+
+.twenty {
+    max-width: 20%;
+}
+.thirty {
+    max-width: 30%;
+}
+
+.fifty {
+    max-width: 50%;
+}
+
+.left {
+    float: left;
+    margin-right: 15px;
+}
+.right {
+    float: right;
+    margin-left: 15px;
+}
+.align-right {
+    text-align: right;
+}
+.align-center {
+    text-align: center;
+}
+
+img  {
+    max-width: 100%;
+    &.contrast {
+        background: @main-bg;
+    }
+}
+a {
+    color: @link-color;
+}
+
+button {
+    cursor:pointer;
+}
+
+.bordered () {
+    box-shadow: 5px 5px @cryptpad_color_grey_600;
+    border: 1px solid @cryptpad_color_grey_700;
+}
+
+.shadow() {
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
+}
+
+.rounded () {
+    border-radius: 10px;
+}
+
+
+.small-logos {
+    img {
+        max-width: 40% !important;
+        padding: 10px;
+        margin-top: 0px;
+    }
+}
+
+section.instance-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+section.instance, section.role {
+    //min-height: ~"calc(50vh - 15px)";
+    margin: 25px 10px 50px 10px;
+    padding: 15px;
+    background-color: white;
+    max-width: 100rem;
+    flex-grow: 1;
+    .shadow();
+    .rounded();
+    h2 {
+        margin-top: 0px;
+        color: @cryptpad_color_brand;
+    }
+    p {
+        padding: 0px;
+        i {
+            min-width: 30px;
+            padding: 0 5px 0 0;
+            text-align: center;
+        }
+        &.instance-details {
+            color: @cryptpad_color_grey_600;
+        }
+    }
+    &:hover, &:focus {
+        background-color: lighten(@cryptpad_color_brand, 45%);
+    }
+}
+
+div.contain {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+    //text-align: center;
+    justify-content: space-around;
+    div, section {
+        &.card {
+            //fleg: 0 0 8rem;
+            margin: 10px;
+
+            .bordered();
+            text-align: center;
+            width: ~"calc(50% - 30px)"; //35rem; //25vw;
+            min-width: 35rem;
+            .rounded();
+            b, p, i {
+                font-size: 2rem;
+            }
+            &.testimonial {
+                text-align: left !important;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                p {
+                    margin: 5px;
+                    width: 90%;
+                }
+                .text {
+                    flex-grow: 1;
+                }
+                .name {
+                    justify-self: left;
+                    color: grey;
+                }
+                .org {
+                    margin-top: -2rem;
+                }
+                .name, .org {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+/* XXX not sure why this was so specific
+section:first-child ul {
+    font-size: 2rem;
+}
+*/
+
+section ul {
+    font-size: 2.5rem;
+}
+
+ul.icon-list {
+    list-style-type: none;
+    columns: 2;
+    line-height: 160%;
+    padding: 0 10px;
+    i {
+        width: 2em;
+        text-align: center;
+    }
+}
+
+section[data-url] {
+    cursor: pointer;
+}
+
+// pricing cards
+
+.large { font-size: 4.2rem;}
+.medium { font-size: 3rem;}
+.small { font-size: 2rem; margin-bottom: 2rem;}
+
+.pricing-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span.price {
+        color: @cryptpad_color_brand;
+        font-family: 'IBM Plex Mono';
+        font-weight: 500;
+        margin-right: 1rem;
+    }
+    span.discount {
+        background: white;
+        color: @cryptpad_color_brand;
+        font-family: 'IBM Plex Mono';
+        font-size: 1.5em;
+        margin: 1rem 2rem;
+        border-radius: @radius;
+        padding: 0.5rem 1rem;
+        transform: rotate(-5deg);
+        .shadow();
+    }
+}
+
+.plan-cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 8rem 0;
+    font-size: 2.3rem;
+
+    .plan-card, .sub-card {
+        box-sizing: border-box;
+        padding: 1rem;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        background-color: white;
+        h2 {
+            margin: 2rem auto 0 auto;
+        }
+        p {
+            margin: 0;
+        }
+        &.noshow {
+            background-color: transparent;
+            box-shadow: none;
+            padding: 0;
+        }
+    }
+
+    .plan-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30%;
+        border-radius: 1.5rem;
+        position: relative;
+        .badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            transform: rotate(10deg);
+            border-radius: @radius_L;
+            a {
+                display: flex;
+                line-height: 3rem;
+                align-items: center;
+                border-radius: @radius;
+                color: @cryptpad_color_grey_900;
+                padding: 0.4rem 1rem 0.4rem 0.4rem;
+                background-color: @cryptpad_color_white;
+                text-decoration: none;
+                img {
+                    max-height: 3.75rem;
+                    margin: 0 0.5rem 0 0;
+                }
+            }
+            .shadow();
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 1rem 0;
+            li {
+                .fa {
+                    width: 2em;
+                    text-align: center;
+                }
+            }
+        }
+
+        .btn {
+            font-family: 'IBM Plex Mono', monospace;
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+        }
+    }
+
+    .sub-card {
+        border-radius: 1rem;
+        margin-top: 2rem;
+        p {
+            padding: 0 1rem 1rem 1rem;
+        }
+    }
+
+    .price {
+        text-align: center;
+        margin: 0 0 2rem 0;
+        div {
+            color: @cryptpad_color_brand;
+            font-family: 'IBM Plex Mono';
+            font-weight: 500;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .plan-cards-container {
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem;
+        .plan-card {
+            width: 100%;
+            max-width: 60ch;
+            margin: 2rem 0 2rem 0;
+            &.instance-plan {
+                max-width: 40ch;
+            }
+        }
+    }
+}
+

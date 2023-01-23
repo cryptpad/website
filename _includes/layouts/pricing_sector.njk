@@ -1,0 +1,90 @@
+{% extends "layouts/main.njk" %}
+
+{% import "components/cards.njk" as cards %}
+
+{% block content %}
+
+    <section class="half">
+        <h1>CryptPad for <span class="sector-title">
+            <i aria-hidden="true" class="fa {{icon}}"></i> {{sector}}
+        </span></h1>
+        <section class="your-own">
+            {% include "components/instance_arguments.njk" %}
+            <div class="your-own-preview">
+                <img src="{{ image }}" alt="">
+            </div>
+    </section>
+
+    <section class="arguments">
+        <h2>Benefits for {{ sector }}</h2>
+        <div class="items">
+            {% for benefit in benefits %}
+                <div class="item">
+                    <h3>{{ benefit.title }}</h3>
+                    <p>{{ benefit.text | safe}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <script src="/scripts/dialog.js?ver={{cache.buster}}"></script>
+    <script src="/scripts/utils.js?ver={{cache.buster}}"></script>
+
+    <section class="pricing">
+      <h2>Pricing for {{ sector }}</h2>
+
+      <p>This pricing is for your own CryptPad instance, provided and managed by XWiki SAS.<br>Please see the <a href="/pricing/">pricing page</a> for all the ways to subscribe and support the project.</p>
+
+      <p class="pricing-desc">
+        <span class="price large">{{ price.user }}</span> per user/month
+        {% if price.discount %}
+            <span class="discount">{{ price.discount }} OFF</span> Enterprise pricing
+        {% endif %}
+      </p>
+      {% if price.additional %}
+        <p>{{ price.additional | safe }}</p>
+      {% endif %}
+
+        <div class="plan-cards-container">
+            {% for plan in plans %}
+                {{ cards.plan(
+                    sector = sector,
+                    users = plan.users,
+                    storage = plan.storage,
+                    admin_support = plan.admin_support,
+                    price_euro_yearly = plan.price_euro_yearly
+                )}}
+            {% endfor %}
+        </div>
+    </section>
+
+    <div role="dialog"
+         id="dialog-contact-success"
+         aria-labelledby="dialog-success-label"
+         aria-modal="true"
+         class="hidden">
+        <div id="dialog-success-label">
+            Thank you for contacting us! your message has been sent and we will be in touch shortly.
+        </div>
+        <div class="dialog_form_actions">
+            <button class="btn " type="button" onclick="closeDialog(this)">
+                Close
+            </button>
+        </div>
+    </div>
+    <div role="dialog"
+         id="dialog-contact-error"
+         aria-labelledby="dialog-error-label"
+         aria-modal="true"
+         class="hidden">
+        <div id="dialog-error-label">
+            Something went wrong while sending your message. Please try again or contact us by email at sales@cryptpad.fr
+        </div>
+        <div class="dialog-form-actions">
+            <button class="btn " type="button" onclick="closeDialog(this)">
+                Close
+            </button>
+        </div>
+    </div>
+
+{% endblock %}

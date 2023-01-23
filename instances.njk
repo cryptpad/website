@@ -1,0 +1,32 @@
+---
+title: Public instances
+description: Find an instance that suits your needs
+layout: layouts/main
+---
+
+{% import "components/cards.njk" as cards %}
+
+<section>
+    <h1>CryptPad Instances</h1>
+    <p>CryptPad is open-source so anyone can install and offer the service. This page lists instances that are open to the public.</p>
+
+        {{ cards.instance(
+            title="CryptPad.fr",
+            url="https://cryptpad.fr",
+            description="The flagship instance that is hosted and administrated by the CryptPad development team. Additional storage space and priority support are available as part of subscription plans that fund the project's development.",
+            location="France"
+        )}}
+
+    <p>The CryptPad instances listed below are third-party services, they are not affiliated with the development team in any capacity. In order to be listed here these services have passed a series of checks to ensure they use an up-to-date version of CryptPad and have the recommended security and privacy settings. Requests for support should be directed to their administrators.</p>
+    <p><a href="https://docs.cryptpad.fr/en/admin_guide/admin_panel.html#list-my-instance-in-public-directories">Learn how to have your instance included in this list</a>.</p>
+</section>
+
+
+{% for instance in instances | shuffle %}
+    {{ cards.instance(
+        title=instance.title,
+        url=instance.url,
+        description=instance.description,
+        location=instance.location
+    )}}
+{% endfor %}

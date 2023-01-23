@@ -1,0 +1,29 @@
+
+
+{% macro instance(title='', url='', description='', location='') %}
+<section class="instance-wrapper">
+    <section class="instance" tabindex="0" data-url="{{url}}">
+        <h2>{{title}}</h2>
+        <p>{{description}}</p>
+        <p class="instance-details">
+            <i class="fa fa-link"></i><a tabindex="-1" href="{{url}}" target="_blank">{{url}}</a><br>
+            <i class="fa fa-map-pin"></i>Hosted in {{location}}<br>
+        </p>
+    </section>
+</section>
+{% endmacro %}
+
+{% macro plan(sector="None", users=0, storage=0, admin_support=0, price_euro_yearly=0) %}
+<div class="plan-card instance-plan">
+    {% include "components/xwiki_badge.njk" %}
+    <h2>{{users}} Users</h2>
+    <ul>
+        <li><i class="fa fa-database"></i>{{storage}} storage</li>
+        <li><i class="fa fa-wrench"></i>{{admin_support}} admin support</li>
+    </ul>
+    <div class="price">
+        <div class="medium">€{{price_euro_yearly}}/year</div>
+    </div>
+    {% include "components/contact_form.njk" %}
+</div>
+{% endmacro %}

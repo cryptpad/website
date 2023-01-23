@@ -1,0 +1,69 @@
+
+.sector-title {
+    display: inline-block;
+    background-color: @cryptpad_color_white;
+    font-size: 0.8em;
+    padding: 0.3rem 1.5rem;
+    color: @cryptpad_color_grey_900;
+    border-radius: @radius_L;
+    transform: rotate(-5deg);
+    .shadow();
+}
+
+section.your-own, section.arguments, section.pricing {
+    margin-top: 10rem;
+}
+
+.your-own {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.75fr 1fr;
+    grid-gap: 3rem;
+    margin: 0 2rem;
+    .your-own-text {
+        ul.icon-list {
+            columns: 1;
+        }
+    }
+    .your-own-preview {
+        img {
+            border-radius: @radius_L;
+            .shadow();
+        }
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .your-own {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+}
+
+.arguments {
+    margin: 0 2rem;
+    .items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 3rem;
+        .item {
+            background-color: white;
+            border-radius: @radius_L;
+            height: fit-content;
+            padding: 2rem;
+            .shadow();
+            h3 {
+                margin: 2rem auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .arguments {
+        .items {
+            grid-template-columns: repeat(1, 1fr);
+
+        }
+    }
+}

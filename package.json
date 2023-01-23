@@ -5,20 +5,21 @@
   "main": "build.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node build.js",
-    "optimize": "for i in static/images/*.png; do optipng $i;done;for i in static/images/*.jp*g;do jpegoptim $i;done",
+    "optimize": "for i in _static/images/*.png; do optipng $i;done;for i in _static/images/*.jp*g;do jpegoptim $i;done",
     "clean": "rm built/ -rf",
     "serve": "python3 -m 'http.server' --directory built/",
-    "watch": "find build.js package.json parts static styles data ! -path '**.*.swp' | entr -s 'npm run build'"
-  },
-  "repository": {
-    "type": "git",
-    "url": "ssh://ansuz@macsween.ca/home/ansuz/repo/cryptpad.org.git"
+    "generate": "npx @11ty/eleventy --input=. --output=built",
+    "build": "npx @11ty/eleventy --input=. --output=built",
+    "dev": "npx @11ty/eleventy --serve --output=built"
   },
   "author": "ansuz",
   "license": "ISC",
   "dependencies": {
+    "@11ty/eleventy": "^1.0.2",
     "fs-extra": "^10.0.0",
-    "less": "^4.1.1"
+    "less": "^4.1.1",
+    "body-parser": "~1.17.1",
+    "express": "~4.18.2",
+    "axios": "^1.2.3"
   }
 }

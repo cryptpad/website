@@ -1,0 +1,53 @@
+---
+title: Pricing
+description: Find an instance that suits your needs
+layout: layouts/main
+---
+
+<section>
+    <h1>Pricing</h1>
+    <p>Choose your preferred way of using CryptPad and supporting the project:</p>
+</section>
+
+<section>
+  <div class="plan-cards-container">
+    <div class="plan-card">
+      <h2>FREE</h2>
+        <p>Free account on a public instance</p>
+        <a href="/instances/" class="btn primary">
+          <i class="fa fa-list-ul"></i> See the list
+        </a>
+        <p>Self-hosting</p>
+        <a href="https://docs.cryptpad.org/en/admin_guide/index.html" class="btn primary">
+          <i class="fa fa-book"></i> Documentation
+        </a>
+        <p>To support the project</p>
+        <a href="https://docs.cryptpad.org/en/admin_guide/index.html" class="btn primary">
+          <i class="fa fa-open-collective"></i> Donate
+        </a>
+    </div>
+    <div class="plan-card pricing">
+      {% include "components/xwiki_badge.njk" %}
+      <h2>CryptPad.fr</h2>
+        <p>The flagship instance offers paid plans with additional storage and priority support for individuals, teams, and organizations.</p>
+        <div class="price">
+          <div class="medium">€5 to €100 /month</div>
+        </div>
+      <a href="https://cryptpad.fr/accounts" class="btn primary">
+        <i class="fa fa-ticket"></i> See plans
+      </a>
+    </div>
+    <div class="plan-card pricing">
+      {% include "components/xwiki_badge.njk" %}
+      <h2>Managed Instances</h2>
+      <p>Your own CryptPad instance, hosted and managed</p>
+      <div class="price">
+        <div class="medium">from €3.6K /year</div>
+      </div>
+        <a href="/pricing/enterprise/" class="btn primary"><i class="fa fa-briefcase"></i> Enterprise</a>
+        <a href="/pricing/nonprofit/" class="btn primary"><i class="fa fa-users"></i> Nonprofit</a>
+        <a href="/pricing/education/" class="btn primary"><i class="fa fa-graduation-cap"></i> Education</a>
+
+    </div>
+  </div>
+</section>

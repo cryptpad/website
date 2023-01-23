@@ -1,0 +1,9 @@
+{
+    "title": "CryptPad.org",
+    "url": "http://localhost:8080",
+    "description": "End-to-end encrypted collaborative office suite",
+    "image": "/images/opengraph_preview.png",
+    "canonical": "https://cryptpad.org/",
+    "favicon": "/images/main-favicon.png",
+    "lang": "en"
+}

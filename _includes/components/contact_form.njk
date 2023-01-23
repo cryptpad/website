@@ -1,0 +1,42 @@
+
+<button type="button" class="btn primary" onclick="openDialog('dialog-{{users}}', this)">
+    <i class="fa fa-comments"></i> Get in touch
+</button>
+
+    <div id="dialog_layer" class="dialogs">
+      <div role="dialog"
+           id="dialog-{{users}}"
+           aria-labelledby="dialog-{{users}}_label"
+           aria-modal="true"
+           class="hidden">
+        <h2 id="dialog-{{users}}_label" class="dialog_label">
+            <i class="fa fa-comments"></i> Get in touch
+        </h2>
+        <form class="contact-form" autocomplete="off" method="post">
+            <div class="form-element">
+              <label for="org-{{users}}">Organization</label>
+              <input name="org" id="org-{{users}}" type="text" placeholder="Organization name"/>
+              <input type="hidden" name="plan" id="plan" value="{{sector}}-{{users}}" />
+            </div>
+            <div class="form-element">
+                <label for="contact-{{users}}">Contact</label>
+                <input name="contact" id="contact-{{users}}" type="text" value="" placeholder="Person name" required/>
+            </div>
+            <div class="form-element">
+                <label for="email-{{users}}">Email address</label>
+                <input name="email" id="email-{{users}}" type="email" value="" placeholder="contact@email.tld" required/>
+            </div>
+            <div class="form-element">
+              <label for="comments-{{users}}">Please add any specifications or comments</label>
+              <textarea autocomplete="off" name="comments" name="comments" id="comments-{{users}}" rows="10">sector: {{sector}}&#10;users: {{users}}</textarea>
+            </div>
+
+            <div class="dialog_form_actions">
+                <button class="btn " type="button" onclick="closeDialog(this)">
+                  Cancel
+                </button>
+                <button class="btn primary">Send</button>
+              </div>
+        </form>
+      </div>
+    </div>
