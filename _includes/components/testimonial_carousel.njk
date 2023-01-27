@@ -1,3 +1,5 @@
+
+{% macro carousel(sector="") %}
 <script src="/scripts/carousel-prev-next.js?ver={{cache.buster}}"></script>
 
 <noscript>
@@ -98,32 +100,30 @@
          class="carousel-items"
          aria-live="off">
       {% for testimonial in testimonials.responses | shuffle %}
-        <div class="carousel-item active"
-            role="group"
-            aria-roledescription="slide"
-            aria-label="1 of 6">
-          <div class="carousel-image">
-              <p class="testimonial-quote">{{ testimonial.q1 }}</p>
-              <p>
-                {% if testimonial.q2 %}
-                  {{ testimonial.q2 }}
-                  {% else %}
-                    *****
-                {% endif %}
-                {% if testimonial.q5 %}
-                - {{ testimonial.q5 }}
-                {% endif %}
-                </p>
+        {% if (sector == "") or (testimonial.sector == sector) %}
+          <div class="carousel-item active"
+              role="group"
+              aria-roledescription="slide"
+              aria-label="1 of 6">
+            <div class="testimonial">
+                <p class="testimonial-quote">{{ testimonial.q1 }}</p>
+                <p class="testimonial-name">
+                  {% if testimonial.q2 %}
+                    {{ testimonial.q2 }}
+                    {% else %}
+                      *****
+                  {% endif %}
+                  {% if testimonial.q5 %}
+                  - {{ testimonial.q5 }}
+                  {% endif %}
+                  </p>
+            </div>
           </div>
-          {# <div class="carousel-caption">
-            <h3>
-              <a href="#" id="carousel-label-1">
-                Dynamic Europe: Amsterdam, Prague, Berlin
-              </a>
-            </h3>
-          </div> #}
-        </div>
+        {% endif %}
       {% endfor %}
     </div>
   </div>
 </section>
+
+{% endmacro %}
+

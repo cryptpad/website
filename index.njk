@@ -21,9 +21,13 @@ layout: layouts/main
 
 <section>
     <h2>Testimonials</h2>
-    <p>We asked users what they love about CryptPad </p>
-    {% include "components/testimonial_carousel.njk" %}
-    <p><a href="{{ site.testimonial_survey }}">Submit a testimonial</a></p>
+    <p>We asked users what they love about CryptPad.<br>
+        <a href="{{ site.testimonial_survey }}">Submit a testimonial</a><br>
+        <a href="/testimonials/">See all</a>
+    </p>
+    {% import "components/testimonial_carousel.njk" as testimonial with context %}
+    {{ testimonial.carousel() }}
+
 </section>
 
 <section id="a-full-suite">

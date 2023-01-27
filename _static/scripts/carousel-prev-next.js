@@ -125,7 +125,7 @@ var CarouselPreviousNext = function (node, options) {
 
   this.enableOrDisableAutoRotation(options.norotate);
   this.updatePlaying(!options.paused && !options.norotate);
-  this.setAccessibleStyling(options.moreaccessible);
+  // this.setAccessibleStyling(options.moreaccessible);
   this.rotateSlides();
 };
 
@@ -138,13 +138,13 @@ CarouselPreviousNext.prototype.enableOrDisableAutoRotation = function (
 };
 
 /* Public function to update controls/caption styling */
-CarouselPreviousNext.prototype.setAccessibleStyling = function (accessible) {
-  if (accessible) {
-    this.domNode.classList.add('carousel-moreaccessible');
-  } else {
-    this.domNode.classList.remove('carousel-moreaccessible');
-  }
-};
+// CarouselPreviousNext.prototype.setAccessibleStyling = function (accessible) {
+//   if (accessible) {
+//     this.domNode.classList.add('carousel-moreaccessible');
+//   } else {
+//     this.domNode.classList.remove('carousel-moreaccessible');
+//   }
+// };
 
 CarouselPreviousNext.prototype.showCarouselItem = function (index) {
   this.currentIndex = index;
