@@ -105,19 +105,7 @@
               role="group"
               aria-roledescription="slide"
               aria-label="1 of 6">
-            <div class="testimonial">
-                <p class="testimonial-quote">{{ testimonial.q1 }}</p>
-                <p class="testimonial-name">
-                  {% if testimonial.q2 %}
-                    {{ testimonial.q2 }}
-                    {% else %}
-                      *****
-                  {% endif %}
-                  {% if testimonial.q5 %}
-                  - {{ testimonial.q5 }}
-                  {% endif %}
-                  </p>
-            </div>
+            {% include "components/testimonial_item.njk" %}
           </div>
         {% endif %}
       {% endfor %}

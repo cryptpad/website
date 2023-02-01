@@ -476,3 +476,17 @@ section[data-url] {
     }
 }
 
+.card-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 90rem;
+    .card {
+        margin: 2rem;
+        background-color: @cryptpad_color_white;
+        border-radius: @radius_L;
+        width: 100%;
+        .shadow();
+    }
+}
