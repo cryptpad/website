@@ -2,14 +2,20 @@
 {% macro carousel(sector="") %}
 <script src="/scripts/carousel-prev-next.js?ver={{cache.buster}}"></script>
 
+{% set testimonials = testimonials.responses | shuffle %}
+
 <noscript>
   {# XXX TODO: handle no script scenario #}
   {# hide the container with all testimonial slides and only show 4 randomized at each build #}
   <style type="text/css">
-      .pagecontainer {display:none;}
+      #myCarousel {display:none;}
   </style>
-  <div class="noscriptmsg">
-  You don't have javascript enabled.  Good luck with that.
+  <div class="card-page">
+    {% for testimonial in testimonials %}
+      {% if loop.index0 < 4 %}
+          <div class="card">{% include "components/testimonial_item.njk" %}</div>
+      {% endif %}
+    {% endfor %}
   </div>
 </noscript>
 
@@ -99,7 +105,7 @@
     <div id="myCarousel-items"
          class="carousel-items"
          aria-live="off">
-      {% for testimonial in testimonials.responses | shuffle %}
+      {% for testimonial in testimonials %}
         {% if (sector == "") or (testimonial.sector == sector) %}
           <div class="carousel-item active"
               role="group"
