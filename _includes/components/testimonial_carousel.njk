@@ -5,8 +5,6 @@
 {% set testimonials = testimonials.responses | shuffle %}
 
 <noscript>
-  {# XXX TODO: handle no script scenario #}
-  {# hide the container with all testimonial slides and only show 4 randomized at each build #}
   <style type="text/css">
       #myCarousel {display:none;}
   </style>
@@ -22,7 +20,7 @@
 <section id="myCarousel"
          class="carousel"
          aria-roledescription="carousel"
-         aria-label="Highlighted television shows">
+         aria-label="Testimonials">
   <div class="carousel-inner">
     <div class="controls">
       <button type="button"

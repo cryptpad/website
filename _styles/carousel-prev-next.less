@@ -11,13 +11,14 @@ img.reload {
 .carousel {
   margin: 0 auto;
   max-width: 900px;
-  background-color: #fff;
-  border-radius: @radius_L;
-  .shadow();
 }
 
 .carousel .carousel-inner {
   position: relative;
+  margin: 0 2rem;
+  background-color: #fff;
+  border-radius: @radius_L;
+  .shadow();
 }
 
 // .carousel .carousel-items {
@@ -26,7 +27,7 @@ img.reload {
 
 .carousel .carousel-items.focus {
   padding: 2px;
-  border: solid 3px #005a9c;
+  border: solid 3px @cryptpad_color_brand;
 }
 
 .carousel .carousel-item {
@@ -65,7 +66,6 @@ img.reload {
 // .carousel-moreaccessible .carousel-item .carousel-caption span.contrast:hover {
 //   background-color: transparent;
 // }
-
 
 
 /* Shared CSS for Pause, Previous and Next Buttons */
@@ -194,7 +194,7 @@ img.reload {
 
 // .carousel-moreaccessible .carousel-items.focus .carousel-image a {
 //   padding: 2px;
-//   border: 3px solid #005a9c;
+//   border: 3px solid ;
 // }
 
 /* More accessible caption styling */
@@ -230,7 +230,7 @@ img.reload {
 
 // .carousel-moreaccessible .carousel-item .carousel-caption a:focus {
 //   padding: 4px;
-//   border: 2px solid #005a9c;
+//   border: 2px solid ;
 //   background-color: transparent;
 //   color: black;
 //   outline: none;
