@@ -2,8 +2,33 @@
 title: Jobs
 description: Join our team
 layout: layouts/main
----
+jobs:
+  - title: Junior developer
+    role: We're seeking a front-end developer with a focus on accessibility
+    tasks:
+      - Develop front-end code with JavaScript (vanilla ES2015)
+      - Help design and implement intuitive privacy controls and productivity-enhancing features
+      - Contribute to the  CryptPad's user interface more standardized and accessible
+      - Improve accessibility to make CryptPad fully WCAG compliant
+    salary: €35K - €45K yearly gross incl. bonus and extras (based on French tax regime)
+  - title: Privacy engineer
+    role: We're seeking a software engineer with a focus on privacy and security
+    tasks:
+        - Review code and identify security risks in new and existing features
+        - Make security recommendations to peers on the development team
+        - Apply a user-centric approach, making cryptography and security useful to people
+        - Implement and maintain CryptPad's privacy roadmap
+    salary: €50K - €60K yearly gross incl. bonus and extras (based on French tax regime)
+  - title: Senior developer
+    role: We're seeking a full stack developer with experience deploying and maintaining web applications in a production environment
+    tasks:
+        - Develop front-end and server code with JavaScript and NodeJS (vanilla ES2015)
+        - Deploy and administer Linux servers (Debian and NGINX)
+        - "Contribute to the release process: code review, quality assurance, manual and automated testing"
+        - Participate in research projects, designing architecture for new features on the server and client
+    salary: €50K - €60K yearly gross incl. bonus and extras (based on French tax regime)
 
+---
 
 <section class="jobs">
     <h1>Jobs</h1>
@@ -59,29 +84,18 @@ layout: layouts/main
             <p>We are interested in incorporating skills we don’t already have, so don’t panic if you’re unfamiliar with anything listed below.</p>
         </section>
         <div class="role-list">
-            <section id="developer" class="role">
-                <h3>Junior developer</h3>
-                <p>We're seeking a front-end developer with a focus on web application usability</p>
-                <ul>
-                    <li>Develop front-end code with JavaScript (vanilla ES2015)</li>
-                    <li>Help design and implement intuitive privacy controls and productivity-enhancing features</li>
-                    <li>Improve platform accessibility for all users</li>
-                    <!-- <li>Localize</li> -->
-                    <li>Work with modern web APIs like SharedWorkers, ServiceWorkers, IndexedDB, and WebAssembly</li>
-                </ul>
-                <p>Salary range: €35K - €45K yearly gross incl. bonus and extras (based on French tax regime)</p>
-            </section>
-            <section id="fullstack" class="role">
-                <h3>Senior developer</h3>
-                <p>We're seeking a full stack developer with experience deploying and maintaining web applications in a production environment</p>
-                <ul>
-                    <li>Develop front-end and server code with JavaScript and NodeJS (vanilla ES2015)</li>
-                    <li>Deploy and administer Linux servers (Debian and NGINX)</li>
-                    <li>Oversee the release process: code review, quality assurance, manual and automated testing</li>
-                    <li>Participate in research projects, designing architecture for new features on the server and client</li>
-                </ul>
-                <p>Salary range: €50K - €60K yearly gross incl. bonus and extras (based on French tax regime)</p>
-            </section>
+            {% for job in jobs %}
+                <section id="developer" class="role">
+                    <h3>{{ job.title }}</h3>
+                    <p>{{ job.role }}</p>
+                    <ul>
+                        {% for task in job.tasks %}
+                            <li>{{ task }}</li>
+                        {% endfor %}
+                    </ul>
+                    <p>Salary range: {{job.salary}}</p>
+                </section>
+            {% endfor %}
             <section id="xwiki" class="role">
                 <h3>more jobs at XWiki</h3>
                 <p>Our parent company XWiki is also hiring, please check <a href="https://xwiki.com/en/company/jobs">their jobs page</a> for more information</p>
