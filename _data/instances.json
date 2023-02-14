@@ -18,12 +18,6 @@
         "description": "This CryptPad instance is hosted by the Pirate Party of Germany. We stand for privacy and digital sovereignty."
     },
     {
-        "title": "kumipad.eu",
-        "url": "https://kumipad.eu",
-        "location": "Austria",
-        "description": "A CryptPad instance operated by Kumi Systems."
-    },
-    {
         "title": "pad.vern.cc",
         "url": "https://pad.vern.cc",
         "location": "a local server in New York, United States",
