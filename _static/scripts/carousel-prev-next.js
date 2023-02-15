@@ -25,6 +25,15 @@ var CarouselPreviousNext = function (node, options) {
 
   this.carouselItemNodes = node.querySelectorAll('.carousel-item');
 
+  var arr = Array.prototype.slice.apply(this.carouselItemNodes).map(function (el) {
+    return {el: el, rdm: Math.random()};
+  }).sort(function (a, b) {
+    return a.rdm - b.rdm;
+  }).map(function (obj) {
+    return obj.el;
+  });
+  this.carouselItemNodes = arr;
+
   this.containerNode = node.querySelector('.carousel-items');
   this.liveRegionNode = node.querySelector('.carousel-items');
   this.pausePlayButtonNode = null;
@@ -176,7 +185,7 @@ CarouselPreviousNext.prototype.nextCarouselItem = function () {
 };
 
 CarouselPreviousNext.prototype.rotateSlides = function () {
-  if (!this.isAutoRotationDisabled) {
+  if (!this.isAutoRotationDisabled && CarouselPreviousNext.isVisible) {
     if (
       (!this.hasFocus && !this.hasHover && this.isPlayingEnabled) ||
       this.hasUserActivatedPlay
@@ -290,9 +299,23 @@ window.addEventListener(
       carouselOptions[checkbox.value] = checkbox.checked;
     });
 
+    CarouselPreviousNext.isVisible = true;
+
     carouselEls.forEach(function (node) {
       carousels.push(new CarouselPreviousNext(node, carouselOptions));
     });
+
+    try {
+        var onIntersection = function (entries) {
+            if (entries[0].intersectionRatio <= 0) {
+                CarouselPreviousNext.isVisible = false;
+                return;
+            }
+            CarouselPreviousNext.isVisible = true;
+        };
+        var obs = new IntersectionObserver(onIntersection);
+        obs.observe(document.getElementById('myCarousel'));
+    } catch (e) { console.error(e); }
 
     // add change event to checkboxes
     checkboxes.forEach(function (checkbox) {
