@@ -230,6 +230,48 @@ button {
     }
 }
 
+section.features {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 2rem;
+    margin: 2rem 2rem;
+    box-sizing: border-box;
+    @media screen and (max-width: 770px) {
+        grid-template-rows: 1fr fit-content 1fr;
+        grid-template-columns: 1fr;
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
+        // max-width: 350px;
+        min-width: 0;
+        // &.grow {
+        //     max-width: 450px;
+        //     min-width: 0;
+        // }
+        a {
+            text-decoration: none;
+            color: @cryptpad_color_brand;
+            border-radius: @radius_L;
+            &:focus {
+                border: 2px solid @cryptpad_color_brand;
+            }
+        }
+        img {
+            max-width: 100%;
+        }
+        p {
+            font-size: 3rem;
+            margin: 0;
+            // text-align: left;
+            font-family: "IBM Plex Mono", monospace;
+        }
+    }
+}
+
 section.instance-wrapper {
     display: flex;
     justify-content: center;
