@@ -43,10 +43,10 @@ layout: layouts/main
 <section id="testimonials">
     <h2>Testimonials</h2>
     <p>We asked users what they love about CryptPad.<br>
-        <a href="{{ site.testimonial_survey }}">Submit a testimonial</a> - 
-        <a href="/testimonials/">See all</a>
+        <a href="{{ site.testimonial_survey }}">Submit a testimonial</a>
     </p>
     {% import "components/testimonial_carousel.njk" as testimonial with context %}
     {{ testimonial.carousel() }}
+    <p><a href="/testimonials/">See all {{ testimonials.responses | length }} Testimonials</a></p>
 
 </section>
