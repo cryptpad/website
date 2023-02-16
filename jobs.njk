@@ -4,6 +4,7 @@ description: Join our team
 layout: layouts/main
 jobs:
   - title: Junior developer
+    slug: junior-dev
     role: We're seeking a front-end developer with a focus on accessibility
     tasks:
         - Develop front-end code with JavaScript (vanilla ES2015)
@@ -12,6 +13,7 @@ jobs:
         - Improve accessibility towards making CryptPad fully WCAG compliant
     salary: €35K - €45K yearly gross incl. bonus and extras (based on French tax regime)
   - title: Privacy and Cryptography Engineer
+    slug: privacy-eng
     role: We're seeking a software engineer with a focus on privacy and security. Recent PhD graduates in relevant fields are highly encouraged to apply.
     tasks:
         - Review code and identify security risks in new and existing features
@@ -20,6 +22,7 @@ jobs:
         - Implement and maintain CryptPad's privacy roadmap
     salary: €45K - €60K yearly gross incl. bonus and extras (based on French tax regime)
   - title: Senior developer
+    slug: senior-dev
     role: We're seeking a full stack developer with experience deploying and maintaining web applications in a production environment
     tasks:
         - Develop front-end and server code with JavaScript and NodeJS (vanilla ES2015)
@@ -85,7 +88,7 @@ jobs:
         </section>
         <div class="role-list">
             {% for job in jobs %}
-                <section id="developer" class="role">
+                <section id={{ job.slug }} class="role">
                     <h3>{{ job.title }}</h3>
                     <p>{{ job.role }}</p>
                     <ul>
