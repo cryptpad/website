@@ -1,0 +1,13 @@
+<div class="testimonial">
+    <p class="testimonial-quote">{{ testimonial.q1 }}</p>
+    <p class="testimonial-name">
+      {% if testimonial.q2 %}
+        {{ testimonial.q2 }}
+        {% else %}
+          *****
+      {% endif %}
+      {% if testimonial.q5 %}
+      - {{ testimonial.q5 }}
+      {% endif %}
+    </p>
+</div>

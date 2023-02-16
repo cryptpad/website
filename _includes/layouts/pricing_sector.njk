@@ -27,6 +27,14 @@
         </div>
     </section>
 
+    <section>
+        <h2>{{sector}} testimonials</h2>
+        <p class="align-center"><a href="{{site.testimonial_survey}}">Submit your own</a></p>
+        {% import "components/testimonial_carousel.njk" as testimonial with context %}
+        {{ testimonial.carousel(sector=sector) }}
+    </section>
+
+
     <script src="/scripts/dialog.js?ver={{cache.buster}}"></script>
     <script src="/scripts/utils.js?ver={{cache.buster}}"></script>
 

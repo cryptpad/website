@@ -1,0 +1,22 @@
+---
+layout: layouts/main
+title: Testimonials
+description: We asked users what they love about CryptPad
+---
+
+<section>
+    <h1>{{ title }}</h1>
+    <p>We asked users what they love about CryptPad, this is what they answered.</p>
+    <p><a href="{{ site.testimonial_survey }}">Submit a testimonial</a></p>
+</section>
+
+<section>
+    <h2>{{ testimonials.responses | length }} testimonials</h2>
+    <div class="card-page">
+        {% for testimonial in testimonials.responses | shuffle %}
+            <div class="card">
+                {% include "components/testimonial_item.njk" %}
+            </div>
+        {% endfor %}
+    </div>
+</section>
