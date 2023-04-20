@@ -18,12 +18,6 @@
         "description": "This CryptPad instance is hosted by the Pirate Party of Germany. We stand for privacy and digital sovereignty."
     },
     {
-        "title": "pad.vern.cc",
-        "url": "https://pad.vern.cc",
-        "location": "a local server in New York, United States",
-        "description": "This is the CryptPad instance of ~vern (vern.cc)"
-    },
-    {
         "title": "Ébauche FACiLe",
         "url": "https://ebauche.facil.services/",
         "location": "Québec",
