@@ -10,6 +10,49 @@
   },
   "responses": [
     {
+      "_time": "2023-03-22T10:31:48.373Z",
+      "_name": "Guest",
+      "q1": "It just works! And it works much better than its closest commercial competitor, google docs. I have no misgivings whatsoever whenever I propose to use it. Also, it was easy to set up an own instance.",
+      "q2": "Nils Erik Flick",
+      "q3": "free account on cryptpad.fr",
+      "q4": "Yes",
+      "q5": "Hamburg Werbefrei, popular initiative aimed at reducing aggressive advertising in public spaces.",
+      "q6": "Yes",
+      "sector": "Nonprofits"
+    },
+    {
+      "_time": "2023-03-22T18:55:38.735Z",
+      "_name": "Guest",
+      "q1": "It's realy easy and fast to setup a collaborative document.",
+      "q2": "Thomas Behrmann",
+      "q3": "free account on cryptpad.fr",
+      "q4": "Yes",
+      "q5": "VDIni Club Bremen",
+      "q6": "Yes",
+      "sector": "Nonprofits"
+    },
+    {
+      "_time": "2023-03-26T12:30:34.859Z",
+      "_name": "Guest",
+      "q1": "CryptPad is ideal for spinning up an isntant collaborative document without any setup (personal account, etc.), which allows us to use it very flexibly.",
+      "q2": "Dominik George",
+      "q3": "free account on cryptpad.fr",
+      "q4": "Yes",
+      "q5": "Teckids e.V.",
+      "q6": "Yes",
+      "sector": "Nonprofits"
+    },
+    {
+      "_time": "2023-05-01T05:16:14.326Z",
+      "_name": "Guest",
+      "q1": "It is very nicely designed and works well. Really happy I found it!",
+      "q2": "Bob",
+      "q3": "free account on cryptpad.fr",
+      "q4": "Personal use only",
+      "q5": "",
+      "q7": ""
+    },
+    {
       "_time": "2021-11-24T09:43:31.950Z",
       "_name": "Guest",
       "q1": "That is like google docs, but with high privacy standards included",
