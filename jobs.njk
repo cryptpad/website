@@ -3,33 +3,13 @@ title: Jobs
 description: Join our team
 layout: layouts/main
 jobs:
-  - title: Junior developer
-    slug: junior-dev
-    role: We're seeking a front-end developer with a focus on accessibility
+  - title: All roles are currently filled
+    slug: no-roles
+    role: We are not actively interviewing at the moment, but we may do so again in the future. Please send us your details to be considered for future roles, especially if you work in the following areas
     tasks:
-        - Develop front-end code with JavaScript (vanilla ES2015)
-        - Help design and implement intuitive privacy controls and productivity-enhancing features
-        - Contribute to making CryptPad's user interface more standardized and accessible
-        - Improve accessibility towards making CryptPad fully WCAG compliant
-    salary: €35K - €45K yearly gross incl. bonus and extras (based on French tax regime)
-  - title: Privacy and Cryptography Engineer
-    slug: privacy-eng
-    role: We're seeking a software engineer with a focus on privacy and security. Recent PhD graduates in relevant fields are highly encouraged to apply.
-    tasks:
-        - Review code and identify security risks in new and existing features
-        - Make security recommendations to peers on the development team
-        - Apply a user-centric approach, making cryptography and security useful to people
-        - Implement and maintain CryptPad's privacy roadmap
-    salary: €45K - €60K yearly gross incl. bonus and extras (based on French tax regime)
-  - title: Senior developer
-    slug: senior-dev
-    role: We're seeking a full stack developer with experience deploying and maintaining web applications in a production environment
-    tasks:
-        - Develop front-end and server code with JavaScript and NodeJS (vanilla ES2015)
-        - "Contribute to the release process: code review, quality assurance, manual and automated testing"
-        - Participate in research projects, designing architecture for new features on the server and client
-        - Contribute to the OnlyOffice code-base to improve integration with CryptPad
-    salary: €50K - €60K yearly gross incl. bonus and extras (based on French tax regime)
+        - Accessibility (WCAG compliance)
+        - Cryptography applied to web-applications
+        - Web development for privacy
 
 ---
 
@@ -96,7 +76,9 @@ jobs:
                             <li>{{ task }}</li>
                         {% endfor %}
                     </ul>
-                    <p>Salary range: {{job.salary}}</p>
+                    {% if job.salary %}
+                        <p>Salary range: {{job.salary}}</p>
+                    {% endif %}
                 </section>
             {% endfor %}
             <section id="xwiki" class="role">
