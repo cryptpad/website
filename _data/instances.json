@@ -40,5 +40,11 @@
         "url": "https://cryptpad.piratenpartei-bw.de",
         "location": "Deutschland",
         "description": "CryptPad Instanz der Piratenpartei Baden-Württemberg."
+    },
+    {
+        "title": "NicFab CryptPad",
+        "url": "https://cryptpad.nicfab.eu",
+        "location": "Italy",
+        "description": "Independent CryptPad instance operated by NicFab."
     }
 ]
