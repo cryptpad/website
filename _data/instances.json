@@ -46,5 +46,11 @@
         "url": "https://cryptpad.nicfab.eu",
         "location": "Italy",
         "description": "Independent CryptPad instance operated by NicFab."
-    }
+    },
+    {
+	"title": "Conesphere Cryptpad",
+	"url": "https://pad.conesphere.cloud",
+	"location": "Austria",
+	"description": "This instance is operated by Conesphere GmbH https://conesphere.com"
+    } 
 ]
