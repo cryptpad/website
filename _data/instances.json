@@ -46,5 +46,11 @@
 	"url": "https://pad.conesphere.cloud",
 	"location": "Austria",
 	"description": "This instance is operated by Conesphere GmbH https://conesphere.com"
-    } 
+    },
+    {
+	"title": "cryptpad.private.coffee",
+	"url": "https://cryptpad.private.coffee",
+	"location": "Austria",
+	"description": "An independent community instance of CryptPad brought to you by Private.coffee."
+    }
 ]
