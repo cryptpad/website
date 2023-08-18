@@ -131,3 +131,35 @@ plans_discount:
     {% endfor %}
 </div>
 </section>
+
+<script src="/scripts/dialog.js?ver={{cache.buster}}"></script>
+<script src="/scripts/utils.js?ver={{cache.buster}}"></script>
+
+<div role="dialog"
+         id="dialog-contact-success"
+         aria-labelledby="dialog-success-label"
+         aria-modal="true"
+         class="hidden">
+        <div id="dialog-success-label">
+            Thank you for contacting us! your message has been sent and we will be in touch shortly.
+        </div>
+        <div class="dialog_form_actions">
+            <button class="btn " type="button" onclick="closeDialog(this)">
+                Close
+            </button>
+        </div>
+    </div>
+    <div role="dialog"
+         id="dialog-contact-error"
+         aria-labelledby="dialog-error-label"
+         aria-modal="true"
+         class="hidden">
+        <div id="dialog-error-label">
+            Something went wrong while sending your message. Please try again or contact us by email at sales@cryptpad.fr
+        </div>
+        <div class="dialog-form-actions">
+            <button class="btn " type="button" onclick="closeDialog(this)">
+                Close
+            </button>
+        </div>
+    </div>
