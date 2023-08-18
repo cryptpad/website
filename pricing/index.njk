@@ -84,12 +84,50 @@ plans_discount:
       <h2>Managed Instances</h2>
       <p>Your own CryptPad instance, hosted and managed</p>
       <div class="price">
-        <div class="medium">from €3.6K /year</div>
+        <div class="medium">from €3K /year</div>
       </div>
-        <a href="/pricing/enterprise/" class="btn primary"><i class="fa fa-briefcase"></i> Enterprise</a>
-        <a href="/pricing/nonprofit/" class="btn primary"><i class="fa fa-users"></i> Nonprofit</a>
-        <a href="/pricing/education/" class="btn primary"><i class="fa fa-graduation-cap"></i> Education</a>
+        <a href="#full" class="btn primary"><i class="fa fa-briefcase"></i> Enterprise</a>
+        <a href="#discount" class="btn primary"><i class="fa fa-users"></i> Nonprofit</a>
+        <a href="#discount" class="btn primary"><i class="fa fa-graduation-cap"></i> Education</a>
 
     </div>
   </div>
+</section>
+
+{% import "components/cards.njk" as cards %}
+
+<section class="pricing">
+  <h2 id="full">Enterprise pricing</h2>
+  <p>Your own CryptPad instance, ☁️ cloud or 🏠 on-premise support</p>
+  <div class="plan-cards-container">
+    {% for plan in plans_full %}
+        {{ cards.plan(
+            name = plan.name,
+            sector = plan.sector,
+            users = plan.users,
+            storage = plan.storage,
+            support_time = plan.support_time,
+            custom_time = plan.custom_time,
+            price_euro_yearly = plan.price_euro_yearly
+        )}}
+    {% endfor %}
+</div>
+</section>
+
+<section class="pricing">
+  <h2 id="discount">Discount pricing for education and nonprofits</h2>
+  <p>CryptPad instances for education and non-profit benefit from <span class="discount">50% OFF</span> Enterprise pricing ☁️ cloud or 🏠 on-premise support</p>
+  <div class="plan-cards-container">
+    {% for plan in plans_discount %}
+        {{ cards.plan(
+            name = plan.name,
+            sector = plan.sector,
+            users = plan.users,
+            storage = plan.storage,
+            support_time = plan.support_time,
+            custom_time = plan.custom_time,
+            price_euro_yearly = plan.price_euro_yearly
+        )}}
+    {% endfor %}
+</div>
 </section>
