@@ -10,14 +10,14 @@
     .shadow();
 }
 
-section.your-own, section.arguments, section.pricing {
+section.your-own, section.pricing {
     margin-top: 10rem;
 }
 
 .your-own {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 0.75fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 3rem;
     margin: 0 2rem;
     .your-own-text {
@@ -26,9 +26,11 @@ section.your-own, section.arguments, section.pricing {
         }
     }
     .your-own-preview {
+        text-align: center;
         img {
             border-radius: @radius_L;
             .shadow();
+            max-width: 80%;
         }
     }
 }
@@ -37,6 +39,11 @@ section.your-own, section.arguments, section.pricing {
     .your-own {
         grid-template-rows: 1fr auto;
         grid-template-columns: 1fr;
+        .your-own-preview {
+            img {
+                max-width: 100%;
+            }
+        }
     }
 }
 
