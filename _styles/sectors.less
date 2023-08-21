@@ -14,6 +14,18 @@ section.your-own, section.pricing {
     margin-top: 5rem;
 }
 
+section.your-own {
+    .your-own-preview {
+        text-align: center;
+        margin: 1rem auto;
+        max-width: 85%;
+        img {
+            border-radius: @radius_L;
+            .shadow();
+        }
+    }
+}
+
 // .your-own {
 //     display: grid;
 //     grid-template-rows: 1fr;
@@ -35,17 +47,17 @@ section.your-own, section.pricing {
 //     }
 // }
 
-@media screen and (max-width: 760px) {
-    .your-own {
-        grid-template-rows: 1fr auto;
-        grid-template-columns: 1fr;
-        .your-own-preview {
-            img {
-                max-width: 100%;
-            }
-        }
-    }
-}
+// @media screen and (max-width: 760px) {
+//     .your-own {
+//         grid-template-rows: 1fr auto;
+//         grid-template-columns: 1fr;
+//         .your-own-preview {
+//             img {
+//                 max-width: 100%;
+//             }
+//         }
+//     }
+// }
 
 .arguments {
     margin: 0 2rem;
