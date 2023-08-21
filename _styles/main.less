@@ -375,6 +375,13 @@ ul.icon-list {
     }
 }
 
+@media screen and (max-width: 1000px) {
+ul.icon-list {
+    columns: 1;
+    width: fit-content;
+}
+}
+
 section[data-url] {
     cursor: pointer;
 }
@@ -415,10 +422,10 @@ span.discount {
     color: @cryptpad_color_brand;
     font-family: 'IBM Plex Mono';
     font-size: 1.5em;
-    margin: 1rem 2rem;
+    margin: 1rem;
+    line-height: 250%;
     border-radius: @radius;
     padding: 0.5rem 1rem;
-    transform: rotate(-5deg);
     .shadow();
 }
 
