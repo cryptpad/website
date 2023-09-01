@@ -46,7 +46,7 @@ plans_discount:
     price_euro_yearly: "12,500"
 ---
 
-<section class="pricing">
+<section>
     <h1>Pricing</h1>
     <p>Choose your preferred way of using CryptPad and supporting the project:</p>
 </section>
@@ -82,7 +82,7 @@ plans_discount:
     <div class="plan-card pricing">
       {% include "components/xwiki_badge.njk" %}
       <h2>Your Own Instance</h2>
-      <p>Fully hosted and managed,<br>or on-premise support</p>
+      <p>Fully hosted and managed on cloud,<br>or on-premise support</p>
       <div class="price">
         <div class="medium">from €3K /year</div>
       </div>
@@ -96,24 +96,45 @@ plans_discount:
 
 {% import "components/cards.njk" as cards %}
 
-<section class="pricing">
-  <h2>Your own CryptPad instance</h2>
-    <ul class="icon-list">
-        <li><i class="fa fa-home" aria-hidden="true"></i>Your own domain</li>
-        <li><i class="fa fa-paint-brush" aria-hidden="true"></i>Customizations such as logo and colors</li>
-        <li><i class="fa fa-lock"></i>Control over where encrypted data are stored</li>
-        <li><i class="fa fa-hdd-o" aria-hidden="true"></i>Administer storage quotas and upload limits</li>
-        <li><i class="fa fa-handshake-o" aria-hidden="true"></i>Single Sign On integration (coming end 2023)</li>
-        <li><i class="fa fa-cloud" aria-hidden="true"></i>Fully managed instance incl. backups</li>
-        <li><i class="fa fa-home" aria-hidden="true"></i>Or on-premise with first class support</li>
-        <li><i class="fa fa-sun" aria-hidden="true"></i>Updates with new features</li>
-        <li><i class="fa fa-life-ring" aria-hidden="true"></i>Support for your administrators</li>
-    </ul>
 
-  <h2 id="full">Enterprise pricing</h2>
-  <p><i class="fa fa-cloud" aria-hidden="true"></i> cloud or <i class="fa fa-home" aria-hidden="true"></i> on-premise support</p>
+  <section>
+    <h2>Your own CryptPad instance</h2>
+      <ul class="icon-list">
+          <li><i class="fa fa-home" aria-hidden="true"></i>Your own domain</li>
+          <li><i class="fa fa-paint-brush" aria-hidden="true"></i>Customizations such as logo and colors</li>
+          <li><i class="fa fa-lock"></i>Control over where encrypted data are stored</li>
+          <li><i class="fa fa-hdd-o" aria-hidden="true"></i>Administer storage quotas and upload limits</li>
+          <li><i class="fa fa-handshake-o" aria-hidden="true"></i>Single Sign On integration (coming end 2023)</li>
+          <li><i class="fa fa-cloud" aria-hidden="true"></i>Fully managed cloud instance incl. backups</li>
+          <li><i class="fa fa-home" aria-hidden="true"></i>Or on-premise with first class support</li>
+          <li><i class="fa fa-sun" aria-hidden="true"></i>Updates with new features</li>
+          <li><i class="fa fa-life-ring" aria-hidden="true"></i>Support for your administrators</li>
+      </ul>
+  </section>
+
+  <section>
+    <h2 id="full">Enterprise pricing</h2>
+    <p><i class="fa fa-cloud" aria-hidden="true"></i> cloud hosting and support or <i class="fa fa-home" aria-hidden="true"></i> on-premise support</p>
+    <div class="plan-cards-container">
+      {% for plan in plans_full %}
+          {{ cards.plan(
+              name = plan.name,
+              sector = plan.sector,
+              users = plan.users,
+              storage = plan.storage,
+              support_time = plan.support_time,
+              custom_time = plan.custom_time,
+              price_euro_yearly = plan.price_euro_yearly
+          )}}
+      {% endfor %}
+    </div>
+  </section>
+
+<section>
+  <h2 id="discount">Discount pricing for education and nonprofits</h2>
+  <p><span class="discount">50% OFF</span> Enterprise pricing<br><i class="fa fa-cloud" aria-hidden="true"></i> cloud hosting and support or <i class="fa fa-home" aria-hidden="true"></i> on-premise support</p>
   <div class="plan-cards-container">
-    {% for plan in plans_full %}
+    {% for plan in plans_discount %}
         {{ cards.plan(
             name = plan.name,
             sector = plan.sector,
@@ -124,24 +145,9 @@ plans_discount:
             price_euro_yearly = plan.price_euro_yearly
         )}}
     {% endfor %}
-</div>
-
-<h2 id="discount">Discount pricing for education and nonprofits</h2>
-<p><span class="discount">50% OFF</span> Enterprise pricing<br><i class="fa fa-cloud" aria-hidden="true"></i> cloud or <i class="fa fa-home" aria-hidden="true"></i> on-premise support</p>
-<div class="plan-cards-container">
-  {% for plan in plans_discount %}
-      {{ cards.plan(
-          name = plan.name,
-          sector = plan.sector,
-          users = plan.users,
-          storage = plan.storage,
-          support_time = plan.support_time,
-          custom_time = plan.custom_time,
-          price_euro_yearly = plan.price_euro_yearly
-      )}}
-  {% endfor %}
-</div>
+  </div>
 </section>
+
 
 <script src="/scripts/dialog.js?ver={{cache.buster}}"></script>
 <script src="/scripts/utils.js?ver={{cache.buster}}"></script>

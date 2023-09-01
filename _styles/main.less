@@ -292,6 +292,7 @@ section.instance, section.role {
         color: @cryptpad_color_brand;
     }
     p {
+        text-align: left;
         padding: 0px;
         i {
             min-width: 30px;
@@ -392,7 +393,7 @@ section[data-url] {
 .medium { font-size: 3rem;}
 .small { font-size: 2rem; margin-bottom: 2rem;}
 
-section.pricing {
+section {
     p {
         text-align: center;
     }
@@ -433,7 +434,7 @@ span.discount {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 8rem 0;
+    margin: 4rem 0;
     font-size: 2.3rem;
 
     .plan-card, .sub-card {
@@ -461,28 +462,6 @@ span.discount {
         width: 30%;
         border-radius: 1.5rem;
         position: relative;
-        .badge {
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            transform: rotate(10deg);
-            border-radius: @radius_L;
-            a {
-                display: flex;
-                line-height: 3rem;
-                align-items: center;
-                border-radius: @radius;
-                color: @cryptpad_color_grey_900;
-                padding: 0.4rem 1rem 0.4rem 0.4rem;
-                background-color: @cryptpad_color_white;
-                text-decoration: none;
-                img {
-                    max-height: 3.75rem;
-                    margin: 0 0.5rem 0 0;
-                }
-            }
-            .shadow();
-        }
 
         ul {
             list-style-type: none;
@@ -525,6 +504,34 @@ span.discount {
             font-weight: 500;
         }
     }
+}
+
+.title-badge{
+    display: flex;
+    justify-content: center;
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    transform: rotate(10deg);
+    border-radius: @radius_L;
+    a {
+        display: flex;
+        line-height: 3rem;
+        align-items: center;
+        border-radius: @radius;
+        color: @cryptpad_color_grey_900;
+        padding: 0.4rem 1rem 0.4rem 0.4rem;
+        background-color: @cryptpad_color_white;
+        text-decoration: none;
+        img {
+            max-height: 3.75rem;
+            margin: 0 0.5rem 0 0;
+        }
+    }
+    .shadow();
 }
 
 @media screen and (max-width: 1000px) {
