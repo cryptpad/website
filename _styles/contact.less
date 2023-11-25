@@ -1,0 +1,49 @@
+/* Add your other Less imports here */
+
+/* Your existing color and styling variables */
+
+.Contact {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+}
+
+#preamble {
+    margin-bottom: 2rem;
+}
+
+.card {
+    .shadow(); 
+    display:flex;
+    border-radius: @radius_L;
+    width: 150px;
+    height: 100px;
+    margin: 1rem;
+    background-color: @cryptpad_color_white;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        color: @cryptpad_color_white;
+        background-color: @cryptpad_color_brand_300;
+        }
+    img {
+        width: 40px;
+        max-width: 100%;
+        margin-right: 2rem;
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+        display: flex;
+        }
+    a {
+        text-decoration: none; 
+    }
+    p {
+        color: @cryptpad_color_brand; 
+        margin: 0; 
+    }
+}
+
+
