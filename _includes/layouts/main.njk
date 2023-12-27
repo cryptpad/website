@@ -43,14 +43,22 @@
             </div>
         <div id="navMenu" class="navMenu hidden vh">
             <ul>
-                <li><a href="https://cryptpad.fr/features.html" class="btn"><i class="fa fa-info-circle"></i>Pricing</a></li>
-                <li><a href="https://docs.cryptpad.org/" class="btn"><i class="fa fa-book"></i>Documentation</a></li>
+                <li><a href="https://cryptpad.fr/features.html" class="btn"><i class="fa fa-info-circle"></i><span>Pricing</span></a></li>
+                <li><a href="https://docs.cryptpad.org/" class="btn"><i class="fa fa-book"></i><span>Documentation</span></a></li>
                 {% if '/about' not in page.url %}
-                    <li><a href="/about/" class="btn"><i class="fa fa-question-circle-o"></i>About</a></li>
+                    <li><a href="/about/" class="btn"><i class="fa fa-question-circle-o"></i><span>About</span></a></li>
                 {% endif %}
-                <li><a href="https://opencollective.com/cryptpad/contribute/" class="btn"><i class="fa fa-money"></i>Donate</a></li>
+                <li><a href="https://opencollective.com/cryptpad/contribute/" class="btn"><i class="fa fa-money"></i><span>Donate</span></a></li>
             </ul>
         </div>
+        <div class="navButtons">
+        <a href="https://cryptpad.fr/features.html" class="btn"><i class="fa fa-info-circle"></i>Pricing</a>
+        <a href="https://docs.cryptpad.org/" class="btn"><i class="fa fa-book"></i>Documentation</a>
+        {% if '/about' not in page.url %}
+            <a href="/about/" class="btn"><i class="fa fa-question-circle-o"></i>About</a>
+        {% endif %}
+        <a href="https://opencollective.com/cryptpad/contribute/" class="btn"><i class="fa fa-money"></i>Donate</a>
+    </div>
     </nav>
 
     {% block content %}

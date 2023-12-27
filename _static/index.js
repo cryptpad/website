@@ -149,13 +149,31 @@ closeNavMenu.addEventListener('click', function () {
 });
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  var hamburgerButton = document.getElementById('hamburger');
+  var myNavMenu = document.getElementById('navMenu');
+  var navButtons = document.querySelector('.navButtons');
+
+  function updateVisibility() {
+      var isSmallScreen = window.innerWidth <= 1000;
+      hamburgerButton.style.display = isSmallScreen ? 'block' : 'none';
+      myNavMenu.style.display = isSmallScreen ? 'flex' : 'none';
+      navButtons.style.display = isSmallScreen ? 'none' : 'flex';
+  }
+  updateVisibility();
+  window.addEventListener('resize', updateVisibility);
+
+});
+
+
 document.onreadystatechange = function () {
-    if (document.readyState !== 'complete') { return; }
-    addAnchors();
-    try {
-        addFormHandlers();
-    } catch (e) {
-        console.error(e);
-    }
+  if (document.readyState !== 'complete') { return; }
+  addAnchors();
+  try {
+      addFormHandlers();
+  } catch (e) {
+      console.error(e);
+  }
 };
+
 
