@@ -87,82 +87,52 @@ var addFormHandlers = function () {
     });
 };
 
-window.addEventListener('load', function () {
-    let myHamburger = document.getElementById('hamburger'),
-    myNavMenu = document.getElementById('navMenu'),
-    closeNavMenu = document.getElementById('closeNavMenu'),
-    main = document.querySelector('main'),
-    myMenuLinks = document.querySelectorAll('nav button, nav a'),
-    transitionTime = 400, // This matches what's in the CSS for the transition
-    overlay = document.createElement('div');
-
-document.body.appendChild(overlay);
-
-function doMenuOpen () {
-  myHamburger.setAttribute('aria-expanded', true);
-  myNavMenu.classList.remove('vh');
-  myNavMenu.classList.remove('hidden');
-  main.classList.add('menuOpen');
-  myHamburger.classList.add('menuOpen');
-  myHamburger.classList.add('hamburger-z');
-  window.setTimeout(function () {
-    closeNavMenu.focus();
-    overlay.classList.add('overlay');
-    overlay.addEventListener('click', function () {
-      doMenuClose();
-    }, false);
-
-    document.addEventListener('keyup', function (e) {
-      // 27 = ESC key
-      if (e.keyCode === 27) {
-        doMenuClose();
-      }
-    }, false);
-  }, transitionTime);
-}
-
-function doMenuClose () {
-  myHamburger.setAttribute('aria-expanded', false);
-  myNavMenu.classList.add('hidden');
-  main.classList.remove('menuOpen');
-  myHamburger.classList.remove('menuOpen');
-  overlay.classList.remove('overlay');
-  window.setTimeout(function () {
-    myNavMenu.classList.add('vh');
-    myHamburger.focus();
-    overlay.classList.remove('overlay');
-    myHamburger.classList.remove('hamburger-z');
-  }, transitionTime);
-}
-
-myHamburger.addEventListener('click', function () {
-  if (myNavMenu.classList.contains('hidden')) {
-    doMenuOpen();
-  } else {
-    doMenuClose();
-  }
-}, false);
-
-closeNavMenu.addEventListener('click', function () {
-  doMenuClose();
-}, false);
-});
-
-
 document.addEventListener('DOMContentLoaded', function () {
-  var hamburgerButton = document.getElementById('hamburger');
-  var myNavMenu = document.getElementById('navMenu');
-  var navButtons = document.querySelector('.navButtons');
+    var myHamburger = document.getElementById('hamburger');
+    var myNavMenu = document.getElementById('navMenu');
+    var navButtons = document.querySelector('.navButtons');
 
-  function updateVisibility() {
-      var isSmallScreen = window.innerWidth <= 1000;
-      hamburgerButton.style.display = isSmallScreen ? 'block' : 'none';
-      myNavMenu.style.display = isSmallScreen ? 'flex' : 'none';
-      navButtons.style.display = isSmallScreen ? 'none' : 'flex';
-  }
-  updateVisibility();
-  window.addEventListener('resize', updateVisibility);
+    function doMenuOpen() {
+        myHamburger.setAttribute('aria-expanded', true);
+        myNavMenu.classList.remove('vh', 'hidden');
+    }
 
+    function doMenuClose() {
+        myHamburger.setAttribute('aria-expanded', false);
+        myNavMenu.classList.add('hidden');
+    }
+
+    function toggleMenu() {
+        if (myNavMenu.classList.contains('hidden')) {
+            doMenuOpen();
+        } else {
+            doMenuClose();
+        }
+    }
+
+    myHamburger.addEventListener('click', toggleMenu);
+    var isSmallScreen = window.innerWidth <= 1000;
+    myHamburger.style.display = isSmallScreen ? 'block' : 'none';
+    myNavMenu.style.display = isSmallScreen ? 'flex' : 'none';
+    navButtons.style.display = isSmallScreen ? 'none' : 'flex';
+
+
+    window.addEventListener('resize', function () {
+        var isSmallScreen = window.innerWidth <= 1000;
+        myHamburger.style.display = isSmallScreen ? 'block' : 'none';
+
+        if (isSmallScreen) {
+            myNavMenu.style.display = 'flex';
+            navButtons.style.display = 'none';
+            if (!myNavMenu.classList.contains('hidden')) {
+                doMenuClose();
+            }
+        } else {
+            myNavMenu.style.display = 'none';
+            navButtons.style.display = 'flex';
+            myNavMenu.classList.add('hidden');
+        }
+    });
 });
 
 
