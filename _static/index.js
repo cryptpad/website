@@ -90,49 +90,28 @@ var addFormHandlers = function () {
 document.addEventListener('DOMContentLoaded', function () {
     var myHamburger = document.getElementById('hamburger');
     var myNavMenu = document.getElementById('navMenu');
-    var navButtons = document.querySelector('.navButtons');
 
     function doMenuOpen() {
         myHamburger.setAttribute('aria-expanded', true);
-        myNavMenu.classList.remove('vh', 'hidden');
+        myNavMenu.style.display='flex';
     }
 
     function doMenuClose() {
         myHamburger.setAttribute('aria-expanded', false);
-        myNavMenu.classList.add('hidden');
+        myNavMenu.style.display='none';
+    
     }
 
     function toggleMenu() {
-        if (myNavMenu.classList.contains('hidden')) {
+        display = window.getComputedStyle(myNavMenu, null).display;
+        if(display == 'none'){
             doMenuOpen();
         } else {
             doMenuClose();
         }
     }
-
     myHamburger.addEventListener('click', toggleMenu);
-    var isSmallScreen = window.innerWidth <= 1000;
-    myHamburger.style.display = isSmallScreen ? 'block' : 'none';
-    myNavMenu.style.display = isSmallScreen ? 'flex' : 'none';
-    navButtons.style.display = isSmallScreen ? 'none' : 'flex';
 
-
-    window.addEventListener('resize', function () {
-        var isSmallScreen = window.innerWidth <= 1000;
-        myHamburger.style.display = isSmallScreen ? 'block' : 'none';
-
-        if (isSmallScreen) {
-            myNavMenu.style.display = 'flex';
-            navButtons.style.display = 'none';
-            if (!myNavMenu.classList.contains('hidden')) {
-                doMenuClose();
-            }
-        } else {
-            myNavMenu.style.display = 'none';
-            navButtons.style.display = 'flex';
-            myNavMenu.classList.add('hidden');
-        }
-    });
 });
 
 
