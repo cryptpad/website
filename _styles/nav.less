@@ -32,6 +32,17 @@ nav {
         width: 220px;
         font-size: 16px;
         border-radius: @radius_L;
+
+        ul {
+            list-style: none;
+            padding-left: 0 !important;
+            margin: 10px 0;
+        }
+    
+        ul li {
+            padding: 10px 0;
+            list-style: none;
+        }
     }
     .navButtons {
         display: none;
@@ -46,16 +57,6 @@ nav {
         font-size: 3.5em;
     }
 
-    ul {
-        list-style: none;
-        padding-left: 0 !important;
-        margin: 10px 0;
-    }
-
-    ul li {
-        padding: 10px 0;
-        list-style: none;
-    }
     .fa
     {
         padding-bottom: 5px;
@@ -79,18 +80,19 @@ nav {
         height: auto;
         width: auto;
         font-size: inherit;
+
+        ul {
+            display: flex;
+        }
+    
+        ul li {
+            padding: 0 2px;
+            list-style: none;
+        }
     }
 
     .hamburger {
         display: none;
     }
 
-    ul {
-        display: flex;
-    }
-
-    ul li {
-        padding: 0 2px;
-        list-style: none;
-    }
 }
