@@ -3,46 +3,60 @@ title: Pricing
 description: Choose your preferred way of using CryptPad and supporting the project
 layout: layouts/main
 plans_full:
+  - name: Mini
+    sector: enterprise
+    users: 50
+    storage: 100GB
+    support_time: "2 days (critical)"
+    price_euro_yearly: "3,000"
   - name: Small
     sector: enterprise
     users: 250
     storage: 200GB
+    sso: "SSO Guide"
     support_time: "2 days"
     price_euro_yearly: "6,000"
   - name: Medium
     sector: enterprise
     storage: "500GB"
+    sso: "SSO Guide + help"
     users: 500
-    support_time: "1 day"
-    custom_time: "4 days"
+    support_time: "1 day (critical)<br>2 days"
     price_euro_yearly: "12,500"
   - name: Large
     sector: enterprise
     users: 1000
+    sso: "SSO Install session"
     storage: "1TB"
-    support_time: "4 hours"
-    custom_time: "8 days"
+    support_time: "1 day"
     price_euro_yearly: "25,000"
 plans_discount:
+  - name: Mini
+    sector: discount
+    users: 50
+    storage: 100GB
+    support_time: "2 days (critical)"
+    price_euro_yearly: "1,500"
   - name: Small
     sector: discount
     users: 250
     storage: 200GB
+    sso: "SSO Guide"
     support_time: "2 days"
     price_euro_yearly: "3,000"
   - name: Medium
     sector: discount
     storage: "500GB"
     users: 500
-    support_time: "1 day"
-    custom_time: "4 days"
+    sso: "SSO Guide + help"
+    support_time: "1 day (critical)<br>2 days"
     price_euro_yearly: "6,250"
   - name: Large
     sector: discount
     users: 1000
     storage: "1TB"
-    support_time: "4 hours"
-    custom_time: "8 days"
+    sso: "SSO Install session"
+    support_time: "1 day"
     price_euro_yearly: "12,500"
 ---
 
@@ -53,7 +67,7 @@ plans_discount:
 
 <section>
   <div class="plan-cards-container">
-    <div class="plan-card">
+    <div class="plan-card pricing">
       <h2>FREE</h2>
         <p>Free account on a public instance</p>
         <a href="/instances/" class="btn primary">
@@ -84,7 +98,7 @@ plans_discount:
       <h2>Your Own Instance</h2>
       <p>Fully hosted and managed on cloud, or on-premise support</p>
       <div class="price">
-        <div class="medium">from €3K /year</div>
+        <div class="medium">from €1.5K /year</div>
       </div>
         <a href="#full" class="btn primary"><i class="fa fa-briefcase"></i> Enterprise</a>
         <a href="#discount" class="btn primary"><i class="fa fa-users"></i> Nonprofit</a>
@@ -104,7 +118,7 @@ plans_discount:
           <li><i class="fa fa-paint-brush" aria-hidden="true"></i>Customizations such as logo and colors</li>
           <li><i class="fa fa-lock"></i>Control over where encrypted data are stored</li>
           <li><i class="fa fa-hdd-o" aria-hidden="true"></i>Administer storage quotas and upload limits</li>
-          <li><i class="fa fa-handshake-o" aria-hidden="true"></i>Single Sign On integration (coming end 2023)</li>
+          <li><i class="fa fa-handshake-o" aria-hidden="true"></i>Single Sign On (SSO) integration</li>
           <li><i class="fa fa-cloud" aria-hidden="true"></i>Fully managed cloud instance incl. backups</li>
           <li><i class="fa fa-home" aria-hidden="true"></i>Or on-premise with first class support</li>
           <li><i class="fa fa-sun" aria-hidden="true"></i>Updates with new features</li>
@@ -121,6 +135,7 @@ plans_discount:
               name = plan.name,
               sector = plan.sector,
               users = plan.users,
+              sso = plan.sso,
               storage = plan.storage,
               support_time = plan.support_time,
               price_euro_yearly = plan.price_euro_yearly
@@ -138,6 +153,7 @@ plans_discount:
             name = plan.name,
             sector = plan.sector,
             users = plan.users,
+            sso = plan.sso,
             storage = plan.storage,
             support_time = plan.support_time,
             price_euro_yearly = plan.price_euro_yearly

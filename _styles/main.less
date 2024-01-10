@@ -460,19 +460,23 @@ span.discount {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 30%;
+        width: 23%;
         border-radius: 1.5rem;
         position: relative;
+        &.pricing {
+            width:30%;
+        }
 
         ul {
             list-style-type: none;
             padding-left: 0;
             line-height: 1.5em;
-            margin: 1rem 0;
+            margin: 1rem 0 0 2em;
             li {
                 .fa {
                     width: 2em;
                     text-align: center;
+                    margin-left: -2em;
                 }
             }
         }
@@ -494,7 +498,7 @@ span.discount {
     }
 
     .price {
-        margin: 0 0 2rem 0;
+        margin: 1.5rem 0;
         flex-grow: 1;
         display: flex;
         align-items: center;
@@ -547,6 +551,9 @@ span.discount {
             margin: 2rem 0 2rem 0;
             &.instance-plan {
                 max-width: 40ch;
+            }
+            &.pricing {
+                width: 100%;
             }
         }
     }

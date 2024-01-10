@@ -13,18 +13,15 @@
 </section>
 {% endmacro %}
 
-{% macro plan(name="", sector="None", users=0, storage=0, support_time="", custom_time="", price_euro_yearly=0) %}
+{% macro plan(name="", sector="None", users=0, storage=0, sso="", support_time="", custom_time="", price_euro_yearly=0) %}
 <div class="plan-card instance-plan">
     {# {% include "components/xwiki_badge.njk" %} #}
-    <h2>{{name}} server</h2>
+    <h2>{{name}}</h2>
     <ul>
-        <li><i class="fa fa-users"></i>{{users}} regular users</li>
-        <li><i class="fa fa-database"></i>{{storage}} storage</li>
-        <li><i class="fa fa-address-card"></i>Single Sign On coming soon</li>
-        <li><i class="fa fa-wrench"></i>Max response time: {{support_time}}</li>
-        {% if custom_time %}
-            <li><i class="fa fa-ticket"></i>Roadmap tickets: {{custom_time}}</li>
-        {% endif %}
+        <li><i aria-hidden="true" class="fa fa-users"></i>{{users}} users</li>
+        <li><i aria-hidden="true" class="fa fa-database"></i>{{storage}} storage</li>
+        {% if sso %}<li><i aria-hidden="true" class="fa fa-address-card"></i>{{sso}}</li>{% endif %}
+        <li><i aria-hidden="true" class="fa fa-wrench"></i>Response time<br>{{support_time | safe}}</li>
     </ul>
     <div class="price">
         <div class="medium">€{{price_euro_yearly}}/year</div>
