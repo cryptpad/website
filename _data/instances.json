@@ -12,12 +12,6 @@
         "description": "This CryptPad instance is hosted by the Pirate Party of Germany. We stand for privacy and digital sovereignty."
     },
     {
-        "title": "Ébauche FACiLe",
-        "url": "https://ebauche.facil.services/",
-        "location": "Québec",
-        "description": "Instance publique de CryptPad opérée par FACiL."
-    },
-    {
         "url": "https://cryptpad.disroot.org",
         "title": "cryptpad.disroot.org",
         "location": "Netherlands",
