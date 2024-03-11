@@ -1,10 +1,12 @@
 <ul>
+    {% if '/pricing' not in page.url %}
     <li>
-        <a href="https://cryptpad.fr/features.html" class="btn">
-            <i class="fa fa-info-circle" aria-hidden="true"></i>
+        <a href="/pricing" class="btn">
+            <i class="fa fa-ticket" aria-hidden="true"></i>
             <span>Pricing</span>
         </a>
     </li>
+    {% endif %}
     <li>
         <a href="https://docs.cryptpad.org/" class="btn">
             <i class="fa fa-book" aria-hidden="true"></i>

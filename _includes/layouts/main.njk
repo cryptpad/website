@@ -36,13 +36,15 @@
 </head>
 
 <body>
-    <nav aria-labelledby="hamburger">
-    <div class="logo">
-    <a href="/"><img src="/images/CryptPad_logo_text_horizontal.svg" alt="Return to homepage"></a>
-    </div>
+    <nav>
+        <div class="logo">
+            <a href="/" aria-label="Return to homepage">
+                <img src="/images/CryptPad_logo_text_horizontal.svg" alt="CryptPad logo">
+            </a>
+        </div>
     <!--start of hamburger menu -->
     <button id="hamburger" class="hamburger" aria-label="Show Navigation Menu" aria-expanded="false" tabindex="0"><i class="fa fa-bars"></i></button>
-    <div id="navMenu">
+    <div id="dropDown">
     {% include "components/navButtons.njk" %}
     </div>
     <!--end of hamburger menu and start of navbuttons for large screens -->

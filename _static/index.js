@@ -87,9 +87,11 @@ var addFormHandlers = function () {
     });
 };
 
+// Hamburger Menu
+
 document.addEventListener('DOMContentLoaded', function () {
     var myHamburger = document.getElementById('hamburger');
-    var myNavMenu = document.getElementById('navMenu');
+    var myNavMenu = document.getElementById('dropDown');
 
     function doMenuOpen() {
         myHamburger.setAttribute('aria-expanded', true);
@@ -99,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function doMenuClose() {
         myHamburger.setAttribute('aria-expanded', false);
         myNavMenu.style.display='none';
-    
+
     }
 
     function toggleMenu() {

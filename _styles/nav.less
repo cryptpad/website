@@ -19,30 +19,33 @@ nav {
     }
 }
 
-@media screen and (max-width: @breakpoint) { 
-    #navMenu {
+@media screen and (max-width: @breakpoint) {
+    #dropDown {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 10rem;
-        right: 2rem; 
-        background-color: white; 
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-        height: 220px;
-        width: 220px;
-        font-size: 16px;
+        right: 2rem;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        //width: 220px;
+
         border-radius: @radius_L;
 
         ul {
             list-style: none;
             padding-left: 0 !important;
             margin: 10px 0;
+            li {
+                padding: 10px 0;
+                list-style: none;
+                a.btn {
+                    line-height: 150%;
+                    margin: 0 0.5em;
+                }
+            }
         }
-    
-        ul li {
-            padding: 10px 0;
-            list-style: none;
-        }
+
     }
     .navButtons {
         display: none;
@@ -57,13 +60,13 @@ nav {
         margin-right: 1rem;
     }
 
-    #hamburger.i{
-        font-size: 1.3em;
+    #hamburger {
+        background-color: white;
     }
 }
 
 @media screen and (min-width: @breakpoint) {
-    #navMenu{
+    #dropDown {
         display: none;
     }
     .navButtons {
@@ -80,7 +83,6 @@ nav {
         ul {
             display: flex;
         }
-    
         ul li {
             padding: 0 2px;
             list-style: none;
