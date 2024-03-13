@@ -30,9 +30,15 @@
         "description": "CryptPad Instanz der Piratenpartei Baden-Württemberg."
     },
     {
-	"title": "cryptpad.private.coffee",
-	"url": "https://cryptpad.private.coffee",
-	"location": "Austria",
-	"description": "An independent community instance of CryptPad brought to you by Private.coffee."
+	   "title": "cryptpad.private.coffee",
+	   "url": "https://cryptpad.private.coffee",
+      "location": "Austria",
+	   "description": "An independent community instance of CryptPad brought to you by Private.coffee."
+    },
+    {
+       "title": "cryptpad.bolha.tools",
+       "url": "https://cryptpad.bolha.tools",
+      "location": "Canada/Brasil",
+       "description": "The is the Cryptpad instance of Bolha.io Collective"
     }
 ]
