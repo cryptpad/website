@@ -46,5 +46,11 @@
        "url": "https://cryptpad.jpeg.gay",
       "location": "California, United States",
        "description": "This is purely a community-led radical-server hosting cryptpad"
+    },
+    {
+       "title": "ComputerLiebe Cryptpad",
+       "url": "https://notes.dunst.be",
+      "location": "Germany",
+       "description": "'This is an independent Cryptpad instance - hosted by ComputerLiebe."
     }
 ]
