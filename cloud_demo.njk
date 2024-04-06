@@ -1,0 +1,93 @@
+---
+layout: layouts/main
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptPad | {{ title }}</title>
+  <link rel="stylesheet" href="_styles/demo-form.less"> 
+</head>
+<body>
+  <header>
+    <div class="logo">
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Test drive the end-to-end encrypted office suite</h2>
+      <p>Your CryptPad Cloud URL</p>
+      <input type="text" value="https://my-test.demo.crypt.com" readonly>
+    </section>
+    <section class="form">
+      <h3>You're almost done!</h3>
+      <p>Please, tell us more about yourself so we can customize your testing instance.</p>
+      <form>
+        <div class="form-group">
+          <label for="firstName">Your first name</label>
+          <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Your last name</label>
+          <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="organization">The name of your organization</label>
+          <input type="text" id="organization" name="organization" required>
+        </div>
+        <div class="form-group">
+          <label for="deployment">For what type of deployment are you testing?</label>
+          <select id="deployment" name="deployment">
+            <option value="">Select</option>
+            <option value="on-premise">On-Premise</option>
+            <option value="cloud">Cloud</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="teamSize">What is the size of your team?</label>
+          <select id="teamSize" name="teamSize">
+            <option value="">Select</option>
+            <option value="1-10">1-10</option>
+            <option value="11-50">11-50</option>
+            <option value="51-200">51-200</option>
+            <option value="200+">200+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="solution">What type of solution are you interested in?</label>
+          <select id="solution" name="solution">
+            <option value="">Select</option>
+            <option value="document-editing">Document Editing</option>
+            <option value="real-time-collaboration">Real-time Collaboration</option>
+            <option value="secure-file-sharing">Secure File Sharing</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="problem">What problem are you expecting CryptPad to help you with?</label>
+          <textarea id="problem" name="problem" rows="4"></textarea>
+        </div>
+        <div class="checkbox-group">
+          <label for="newsletter">
+            <input type="checkbox" id="newsletter" name="newsletter">
+            To receive our monthly newsletter with CryptPad updates and events
+          </label>
+          <label for="partners">
+            <input type="checkbox" id="partners" name="partners">
+            To share the above information with CryptPad partners, so they may get in touch to help with my project
+        </label>
+      </div>
+        <button type="submit">Get Your Free Trial</button>
+      </form>
+    </section>
+  </main>
+
+</body>
+</html>

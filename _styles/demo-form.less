@@ -1,0 +1,84 @@
+/* Base styles (consider including these in your main stylesheet) */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Form section styles */
+
+.form {
+  background-color: #e0f2f1; /* Light blue background */
+  padding: 20px; /* Add padding */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 40px; /* Add some margin */
+}
+
+/* Form group styles (adapted from provided code) */
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex; /* Arrange label and input side-by-side */
+  align-items: center; /* Vertically align label and input */
+}
+
+.form-group label {
+  flex: 0 0 120px; /* Fix label width */
+  margin-right: 10px; /* Add spacing between label and input */
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* Adjust these styles for specific input types (if needed) */
+
+.form-group textarea {
+  height: 100px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #4CAF50; /* Green for focus */
+}
+
+/* Checkbox group styling (from provided code) */
+
+.checkbox-group label {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Button styles (from provided code) */
+
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45A049;
+}
