@@ -1,33 +1,70 @@
-/* Base styles (consider including these in your main stylesheet) */
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
-
-/* Form section styles */
 
 .form {
-  background-color: #e0f2f1; /* Light blue background */
-  padding: 20px; /* Add padding */
-  border-radius: 5px; /* Rounded corners */
-  margin-bottom: 40px; /* Add some margin */
+  padding: 20px;
+  border-radius: @radius_L;
+  margin-bottom: 10rem;
 }
 
-/* Form group styles (adapted from provided code) */
+section p{
+ font-size: 2rem;
+}
+
+.url-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid @cryptpad_color_grey_300;
+  background-color: @cryptpad_color_grey_250;
+  border-radius: @radius;
+  padding: 10px;
+  width: 50rem;
+  margin: 0 auto;
+}
+
+.url-prefix-box,
+.url-suffix-box {
+  background-color: @cryptpad_color_grey_250;
+  padding: 5px 10px;
+  border-radius: @radius;
+  font-size: 2rem;
+}
+
+.url-input {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  color: inherit;
+}
 
 .form-group {
   margin-bottom: 15px;
-  display: flex; /* Arrange label and input side-by-side */
-  align-items: center; /* Vertically align label and input */
 }
 
 .form-group label {
-  flex: 0 0 120px; /* Fix label width */
-  margin-right: 10px; /* Add spacing between label and input */
   font-weight: bold;
+  font-size: 16px;
+}
+
+.form-card {
+  background-color: @cryptpad_color_white;
+  padding: 20px;
+  border-radius: @radius_L;
+  box-shadow: 0 0 10px @cryptpad_color_grey_950;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.checkbox-group label {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+.form-group input::placeholder,
+.form-group select::placeholder,
+.form-group textarea::placeholder {
+  color: @cryptpad_color_grey_500;
 }
 
 .form-group input,
@@ -35,50 +72,29 @@ body {
 .form-group textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid @cryptpad_color_grey_300;
   border-radius: 3px;
   box-sizing: border-box;
 }
-
-/* Adjust these styles for specific input types (if needed) */
+.section form h2{
+  color: inherit;
+}
 
 .form-group textarea {
   height: 100px;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: #4CAF50; /* Green for focus */
-}
+.validate-account{
+  img{
+    width: 4rem;
+    position: absolute;
+    left: .5rem;
+  }
 
-/* Checkbox group styling (from provided code) */
-
-.checkbox-group label {
-  display: inline-block;
-  margin-right: 15px;
-}
-
-.checkbox-group input[type="checkbox"] {
-  margin-right: 5px;
-}
-
-/* Button styles (from provided code) */
-
-button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-top: 15px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-button:hover {
-  background-color: #45A049;
+  border: 1px solid @cryptpad_color_grey_800;
+  padding: 1rem 1rem 1rem 5rem;
+  position: relative;
+  margin: 1.5rem auto 3.4rem auto;
+  max-width: 32rem;
 }
