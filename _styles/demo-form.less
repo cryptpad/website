@@ -1,100 +1,146 @@
-
-.form {
-  padding: 20px;
-  border-radius: @radius_L;
-  margin-bottom: 10rem;
+h1, h2 {
+  text-align: center;
 }
 
-section p{
- font-size: 2rem;
-}
-
-.url-container {
-  display: flex;
-  align-items: center;
-  border: 1px solid @cryptpad_color_grey_300;
-  background-color: @cryptpad_color_grey_250;
-  border-radius: @radius;
-  padding: 10px;
-  width: 50rem;
-  margin: 0 auto;
-}
-
-.url-prefix-box,
-.url-suffix-box {
-  background-color: @cryptpad_color_grey_250;
-  padding: 5px 10px;
-  border-radius: @radius;
-  font-size: 2rem;
-}
-
-.url-input {
-  border: none;
-  background-color: transparent;
-  font-family: inherit;
-  color: inherit;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.form-card {
+.form-container{
   background-color: @cryptpad_color_white;
   padding: 20px;
   border-radius: @radius_L;
-  box-shadow: 0 0 10px @cryptpad_color_grey_950;
-}
+  box-shadow: 0 0 10px @cryptpad_color_grey_800;
+  width: 80%;
+  margin: 0 auto;
 
-.card-body {
-  padding: 0;
-}
-
-.checkbox-group label {
-  display: inline-block;
-  margin-right: 15px;
-  font-size: 16px;
-}
-
-.form-group input::placeholder,
-.form-group select::placeholder,
-.form-group textarea::placeholder {
-  color: @cryptpad_color_grey_500;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid @cryptpad_color_grey_300;
-  border-radius: 3px;
-  box-sizing: border-box;
-}
-.section form h2{
-  color: inherit;
-}
-
-.form-group textarea {
-  height: 100px;
-}
-
-.validate-account{
-  img{
-    width: 4rem;
-    position: absolute;
-    left: .5rem;
+  .form {
+    padding: 20px;
+    border-radius: @radius_L;
+    margin-bottom: 10rem;
+    text-align: left;
   }
 
-  text-align: center;
-  border: 1px solid @cryptpad_color_grey_800;
-  padding: 1rem 1rem 1rem 5rem;
-  position: relative;
-  margin: 1.5rem auto 3.4rem auto;
-  max-width: 32rem;
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    .form-group{
+      margin-right: 2rem;
+      max-width: 50%;
+    }
+  }  
+
+  section {
+    margin-top: 2rem;
+  }
+
+  section p {
+    font-size: 2rem;
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 2rem;
+    padding: 0;
+    color: @cryptpad_color_grey_700;
+  }
+
+  h3{
+    text-align: left;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+    min-width: 50%;
+  }
+
+  .form-group label {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .checkbox-group label {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 16px;
+  }
+
+  .form-group input::placeholder,
+  .form-group select::placeholder,
+  .form-group textarea::placeholder {
+    color: @cryptpad_color_grey_500;
+  }
+
+  .form-group textarea {
+    height: 100px;
+  }
+
+  .url-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid @cryptpad_color_grey_300;
+    background-color: @cryptpad_color_grey_250;
+    border-radius: @radius;
+    padding: 10px;
+    max-width: fit-content;
+    margin: 0 auto;
+  }
+
+  label[for="instanceName"]{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #262626;
+    display: block;
+    text-align: center;
+  }
+  
+  .url-prefix-box,
+  .url-suffix-box {
+    background-color: @cryptpad_color_grey_250;
+    padding: 5px 10px;
+    border-radius: @radius;
+    font-size: 2rem;
+  }
+  
+  .url-input {
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    color: inherit;
+  }
+
+  .validate-account {
+    img {
+      width: 4rem;
+      position: absolute;
+      left: .5rem;
+    }
+
+    text-align: center;
+    border: 1px solid @cryptpad_color_grey_800;
+    padding: 1rem 1rem 1rem 5rem;
+    position: relative;
+    margin: 1.5rem auto 3.4rem auto;
+    max-width: 32rem;
+  }
+
+  .form-card {
+    background-color: @cryptpad_color_white;
+    padding: 20px;
+    border-radius: @radius_L;
+    box-shadow: 0 0 10px @cryptpad_color_grey_950;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid @cryptpad_color_grey_300;
+    border-radius: @radius;
+    box-sizing: border-box;
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  .form-group textarea {
+    height: 100%;
+  }
 }
