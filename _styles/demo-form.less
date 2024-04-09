@@ -1,6 +1,7 @@
-h1, h2 {
+h1, h2, h3 {
   text-align: center;
 }
+
 
 .form-container{
   background-color: @cryptpad_color_white;
@@ -19,13 +20,17 @@ h1, h2 {
 
   .form-row {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+    margin-right: 0;
+    justify-items: space-between;
     .form-group{
-      margin-right: 2rem;
       max-width: 50%;
+      align-self: flex-end;
     }
   }  
+
+  /*.form-group:not(:last-child) {
+    margin-right: 2rem;
+  }*/
 
   section {
     margin-top: 2rem;
@@ -64,6 +69,7 @@ h1, h2 {
   .form-group select::placeholder,
   .form-group textarea::placeholder {
     color: @cryptpad_color_grey_500;
+    
   }
 
   .form-group textarea {
