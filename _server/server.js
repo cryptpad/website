@@ -78,7 +78,7 @@ app.post('/post', (req, res) => {
 let sendToCloudServer = (method, path, body, cb) => {
     let url = `${config.cloud.baseUrl}${path}`;
     let data;
-    console.log(url)
+    
     if (method === 'GET') {
         url += '?' + (new URLSearchParams(body)).toString();
     } else {
@@ -93,11 +93,8 @@ let sendToCloudServer = (method, path, body, cb) => {
         password: config.cloud.password
       },
       data: data
-    }).then(response => {
-        if (response.ok) { return response.json(); }
-        cb(response);
-    }).then(json => {
-        cb(void 0, json);
+    }).then(res => {
+        cb(res.data);
     }).catch(err => {
         cb(err);
     });
@@ -119,7 +116,6 @@ function validateInstanceName(data) {
 
     return true;
 }
-const util = require('util');
 
 app.post('/cloud/available', (req, res) => {
     let body = req.body;    
@@ -134,7 +130,7 @@ app.post('/cloud/available', (req, res) => {
     let url = "/instances/available"
 
     sendToCloudServer('GET', url, body, (err, json) => {
-        console.log("error:", err);
+        console.log("err:", err);
         if (err) {
             return res.status(400).send(err);
         }
