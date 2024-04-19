@@ -22,7 +22,7 @@ h1, h2, h3 {
     display: flex;
     margin-right: 0;
     justify-content: space-between;
-    flex-wrap: wrap;
+    max-width: 99%;
     .form-group{
       max-width:20rem;
       align-self: flex-start;
@@ -34,21 +34,21 @@ h1, h2, h3 {
     .form-row {
       flex-direction: column; 
       align-items: center; 
+      flex-wrap: wrap;
     }
-  
     .form-row .form-group {
       max-width: 100%; 
       align-self: stretch; 
     }
     .url-container{
-      width: auto;
+      max-width: 40rem;
     .url-prefix-box,
     .url-suffix-box {
-      max-width: 10rem;
+      max-width: 30rem;
       font-size: 1.5rem;
     }
     .url-input {
-      max-width: 10rem;
+      max-width: 30%;
       font-size: 1.5rem;
     }
   }
@@ -72,19 +72,15 @@ h1, h2, h3 {
     text-align: left;
   }
 
+  .form-row{
   .form-group {
     margin-bottom: 2rem;
     min-width: 50%;
   }
+}
 
   .form-group label {
     font-weight: bold;
-    font-size: 2rem;
-  }
-
-  .checkbox-group label {
-    display: inline-block;
-    margin-right: 15px;
     font-size: 2rem;
   }
 
@@ -100,13 +96,13 @@ h1, h2, h3 {
 
   .url-container {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     font-family: 'IBM Plex Mono', monospace;
     border: 0.2rem solid @cryptpad_color_grey_300;
     background-color: @cryptpad_color_grey_200;
     border-radius: @radius;
-    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     max-width: 60rem;
     margin: 0 auto;
   }

@@ -11,6 +11,7 @@ layout: layouts/main
   <h1>Demo Instance</h1>
   <h3>Test drive the end-to-end encrypted office suite</h3>
   <link rel="stylesheet" href="_styles/demo-form.css"> 
+  <script src="/scripts/demo.js?ver={{cache.buster}}"></script>
 </head>
 <body>
   <header>
@@ -26,12 +27,13 @@ layout: layouts/main
           <div class="url-prefix-box">https://</div>
           <input type="text" class="url-input" id="subdomain" placeholder="demoname">
           <div class="url-suffix-box">.demo.crypt.com</div>
+          <div id="instanceErrorContainer"></div>
         </div>
       </section>
       <section class="form">
         <h3>You're almost done!</h3>
         <p>Please, tell us more about yourself so we can customize your testing instance.</p>
-        <form>
+        <form id="demoForm">
           <div class="form-row">
             <div class="form-group">
               <label for="firstName">First name</label>
@@ -85,24 +87,14 @@ layout: layouts/main
           </div>
           <div class="form-group">
             <label for="problem">What problem are you expecting CryptPad to help you with?</label>
-            <textarea id="problem" name="problem" rows="4" placeholder="Describe here your problem"></textarea>
+            <textarea id="problem" name="problem" rows="4" placeholder="Describe here your problem max: 500 characters"></textarea>
           </div>
-          <div class="checkbox-group">
-            <p>You agree:</p>
-            <label for="newsletter">
-              <input type="checkbox" id="newsletter" name="newsletter">
-              To receive our monthly newsletter with CryptPad updates and events
-            </label>
-            <label for="partners">
-              <input type="checkbox" id="partners" name="partners">
-              To share the above information with CryptPad partners, so they may get in touch to help with my project
-            </label>
-          </div>
+          <div id="error-message" class="error-message"></div>
           <p>
             After creating your testing instance we send you a few onboarding communications to help you make the most of your CryptPad instance.
             By filling you data, checking the communication options above and by clicking on <b>Create</b> you agree with our  <a href="https://cryptpad.fr/code/#/2/code/view/j18D9zbfY98cwWPGHPv91vllEYOy0tCGk1gCD5UOzlk/present/">Terms of Service</a> and <a href="https://cryptpad.fr/pad/#/2/pad/view/GcNjAWmK6YDB3EO2IipRZ0fUe89j43Ryqeb4fjkjehE/">Privacy Policy</a>.
           </p>
-          <button type="submit" class="btn primary">Create</button>   
+          <button type="submit" class="btn primary" id="submitBtn">Create</button>   
           <p class="validate-account"> <img src="https://xwiki.com/en/download/XWikiComCode/TryXWikiCloud/Info_XWiki_grey.svg" alt="Information Icon"> Please validate the account in the next 4 hours.</p>
         </form>
       </section>
