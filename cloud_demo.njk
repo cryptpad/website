@@ -12,6 +12,7 @@ layout: layouts/main
   <h3>Test drive the end-to-end encrypted office suite</h3>
   <link rel="stylesheet" href="_styles/demo-form.css"> 
   <script src="/scripts/demo.js?ver={{cache.buster}}"></script>
+  
 </head>
 <body>
   <header>
@@ -23,11 +24,10 @@ layout: layouts/main
     <div class="form-container">
       <label for="instanceName">Your CryptPad Cloud URL</label>
       <section class="hero" id="instanceName">
-        <div class="url-container">
+        <div class="url-container" id="urlContainer">
           <div class="url-prefix-box">https://</div>
           <input type="text" class="url-input" id="subdomain" placeholder="demoname">
           <div class="url-suffix-box">.demo.crypt.com</div>
-          <div id="instanceErrorContainer"></div>
         </div>
       </section>
       <section class="form">
@@ -89,7 +89,6 @@ layout: layouts/main
             <label for="problem">What problem are you expecting CryptPad to help you with?</label>
             <textarea id="problem" name="problem" rows="4" placeholder="Describe here your problem max: 500 characters"></textarea>
           </div>
-          <div id="error-message" class="error-message"></div>
           <p>
             After creating your testing instance we send you a few onboarding communications to help you make the most of your CryptPad instance.
             By filling you data, checking the communication options above and by clicking on <b>Create</b> you agree with our  <a href="https://cryptpad.fr/code/#/2/code/view/j18D9zbfY98cwWPGHPv91vllEYOy0tCGk1gCD5UOzlk/present/">Terms of Service</a> and <a href="https://cryptpad.fr/pad/#/2/pad/view/GcNjAWmK6YDB3EO2IipRZ0fUe89j43Ryqeb4fjkjehE/">Privacy Policy</a>.

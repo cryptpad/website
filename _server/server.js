@@ -103,18 +103,9 @@ let sendToCloudServer = (method, path, body, cb) => {
 
 function validateInstanceName(data) {
     let instanceName = data.instanceName;
-    if(typeof instanceName !== 'string'){
-        console.log("Instance name should be a string")
-        return false;
-        }
-    else if (instanceName.trim() === '') {
-        console.log("Please input your instance name.");
-        return false;
-    } else if (instanceName.length > 200){
-        console.log("Instance name is too long.");
+    if (typeof(instanceName) !== "string" || !instanceName.trim() || instanceName.length > 200) {
         return false;
     }
-
     return true;
 }
 

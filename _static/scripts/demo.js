@@ -1,10 +1,62 @@
 'use strict';
 
-//const configExample = require("../../_server/config.example");
 
 window.addEventListener('load', function () {
   let form = document.querySelector('form');
   let instanceNameInput = document.getElementById('subdomain'); 
+
+  function displayGlobalError(message) {
+    const errorMessage = document.createElement('div');
+    errorMessage.textContent = message;
+    errorMessage.classList.add('global-error-message');
+    const submitButton = document.getElementById('submitBtn');
+    submitButton.parentNode.insertBefore(errorMessage, submitButton.nextSibling);
+}
+
+
+  function clearGlobalError() {
+      const globalErrorMessage = document.querySelector('.global-error-message');
+      if (globalErrorMessage) {
+          globalErrorMessage.parentNode.removeChild(globalErrorMessage);
+      }
+  }
+
+
+
+  function displayFieldError(fieldId, message) {
+    clearFieldError(fieldId); // Clear any previous errors of the same type
+    let field = document.getElementById(fieldId);
+    let errorContainer = document.createElement('div');
+    let errorElement = document.createElement('span');
+    let errorMessage = document.createElement('div');
+    errorElement.innerHTML = '<i class="fa fa-exclamation-circle"></i>';
+    errorMessage.textContent = message;
+    errorContainer.appendChild(errorElement);
+    errorContainer.appendChild(errorMessage);
+    errorContainer.classList.add('error-container');
+    field.parentNode.insertBefore(errorContainer, field.nextSibling);
+    field.classList.add('error');
+}
+
+
+
+function clearFieldError(fieldId) {
+  let errorContainers = document.querySelectorAll(`#${fieldId} + .error-container`);
+  errorContainers.forEach(container => {
+      container.parentNode.removeChild(container);
+  });
+  let field = document.getElementById(fieldId);
+  field.classList.remove('error');
+}
+
+
+function clearAllFieldErrors() {
+  let formFields = form.querySelectorAll('input, textarea');
+  formFields.forEach(field => {
+      clearFieldError(field.id);
+  });
+}
+
 
   let postToServer = (url, params, cb) => {
     fetch(url, {
@@ -21,36 +73,35 @@ window.addEventListener('load', function () {
     });
 };
 
- instanceNameInput.addEventListener('change', function () {
-    let url = "http://localhost:3004/cloud/available";
-    let params = {
+instanceNameInput.addEventListener('change', function () {
+  let url = "http://localhost:3004/cloud/available";
+  let params = {
       instanceName: instanceNameInput.value
-    };
-    postToServer(url, params, (err, json) => {
-      console.log(json)
-        if (err || json.error) {
-          // Handle error
-          console.log("Errorrr");
-          return;
-        }
-        console.log(json.status)
-        if (json.status) {
-          // Handle available name
-          console.log("The name is available");
-          return;
-        }
-        // Handle unavailable name
-        console.log("The name is not available");
-    });
-  
+  };
+  clearFieldError("urlContainer");
+  postToServer(url, params, (err, json) => {
+    if (err || json.error) {
+      displayFieldError("urlContainer", "Error checking instance name availability");
+        return;
+    }
+    if (json.status) {
+        console.log("The name is available");
+        return;
+    }
+    displayFieldError("urlContainer","The name is not available");
+  });
+
 });
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
+    clearGlobalError();
+    clearAllFieldErrors();
 
     if (validateForm()) {
       console.log("Form validation successfull.");
     } else {
+      displayGlobalError("Some errors prevented this form from being submitted.");
       console.log("Form validation failed. Please check your inputs.");
     }
 });
@@ -60,6 +111,7 @@ function validateForm() {
   let lastName = document.getElementById('lastName').value;
   let phoneNumber = document.getElementById('phoneNumber').value;
   let problem = document.getElementById('problem').value;
+  let email = document.getElementById('email').value;
   
   const maxLengths = {
     firstName: 50,
@@ -68,33 +120,47 @@ function validateForm() {
     problem: 500
   };
 
-  if (firstName.trim() === '') {
-    console.log("Please input your first name.");
+  if (typeof firstName !== 'string'|| !isNaN(parseFloat(firstName))){
+    displayFieldError('firstName', "The first name should only be composed of characters");
+    return false;
+  }
+  else if(firstName.trim() === '') {
+    displayFieldError('firstName', "The first name should not be empty");
     return false;
   } else if (firstName.length > maxLengths.firstName){
-    console.log("First name is too long.");
+    displayFieldError('firstName', "The first name is too long");
     return false;
   }
 
-  if (lastName.trim() === '') {
-    console.log("Please input your last name.");
-    return false;
-  } else if (lastName.length > maxLengths.lastName){
-    console.log("Last name is too long.");
+  if (typeof lastName !== 'string' || !isNaN(parseFloat(lastName))){
+    displayFieldError('lastName', "The last name should only be composed of characters");
     return false;
   }
+  else if (lastName.trim() === '') {
+    displayFieldError('firstName', "The last name should not be empty");
+    return false;
+  } else if (lastName.length > maxLengths.lastName){
+    displayFieldError('firstName', "The last name is too long");
+    return false;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    displayFieldError('email', "Wrong e-mail format");
+    return false;
+}
 
   const phonePattern = /^\+?\d{1,3}[-.\s]?\(?\d{1,3}\)?[-.\s]?\d{3,}$/;//for international phone formats
   if (phoneNumber.trim() === '') {
-    console.log("Please input your phone number.");
+    displayFieldError('phoneNumber', "The phone number should not be empty");
     return false;
   } else if (!phonePattern.test(phoneNumber)) {
-    console.log("Invalid phone number format.");
+    displayFieldError('phoneNumber', "Wrong phone number format");
     return false;
   }
 
    if(problem.length > maxLengths.problem){
-    console.log("Please limit your problem description to 500 characters.");
+    displayFieldError('problem', "The problem description should not exceed 500 characters");
     return false;
    }
 

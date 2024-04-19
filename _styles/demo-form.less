@@ -30,6 +30,41 @@ h1, h2, h3 {
     }
   }  
 
+  .error-container {
+  margin-top: 5px; 
+  display: flex;
+  align-items: center;
+}
+
+.error-container span {
+  margin-right: 5px; 
+  color: red; 
+  font-size: 1.5em;
+}
+
+.error-container div {
+  color: red; 
+  font-size: 1.5em;
+}
+
+#instanceName{
+  .error-container{
+    margin-left: 32rem;
+  }
+}
+
+
+.global-error-message {
+    margin-left: 10rem;
+    color: white;
+    font-size: 1.5rem;
+    background-color: rgb(212, 104, 104);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+
+
   @media screen and (max-width: @breakpoint) {
     .form-row {
       flex-direction: column; 
