@@ -86,43 +86,40 @@ let sendToCloudServer = (method, path, body, cb) => {
     }
     
     Axios({
-      method: method,
-      url: url,
-      auth: {
-        username: config.cloud.name,
-        password: config.cloud.password
-      },
-      data: data
-    }).then(res => {
-        cb(res.data);
-    }).catch(err => {
-        cb(err);
-    });
+        method: method,
+        url: url,
+        auth: {
+          username: config.cloud.name,
+          password: config.cloud.password
+        },
+        data: data
+      }).then(res => {
+          cb(void 0, res.data);
+      }).catch(err => {
+          cb(err);
+      });
+  
 };
 
 function validateInstanceName(data) {
     let instanceName = data.instanceName;
-    if (instanceName.trim() === '') {
+    if(typeof instanceName !== 'string'){
+        console.log("Instance name should be a string")
+        return false;
+        }
+    else if (instanceName.trim() === '') {
         console.log("Please input your instance name.");
         return false;
     } else if (instanceName.length > 200){
         console.log("Instance name is too long.");
         return false;
     }
-    else if(typeof instanceName !== 'string'){
-    console.log("Instance name should be a string")
-    return false;
-    }
 
     return true;
 }
 
 app.post('/cloud/available', (req, res) => {
-    let body = req.body;    
-     // Validate form fields
-  
-
-// Inside the /cloud/available route handler
+    let body = req.body;   
     
      if (!validateInstanceName(body)) {
         return res.status(400).json({ error: "Invalid form data" });
@@ -130,7 +127,6 @@ app.post('/cloud/available', (req, res) => {
     let url = "/instances/available"
 
     sendToCloudServer('GET', url, body, (err, json) => {
-        console.log("err:", err);
         if (err) {
             return res.status(400).send(err);
         }
