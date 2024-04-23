@@ -79,15 +79,21 @@ instanceNameInput.addEventListener('change', function () {
       instanceName: instanceNameInput.value
   };
   clearFieldError("urlContainer");
+
   postToServer(url, params, (err, json) => {
-    if (err || json.error) {
-      displayFieldError("urlContainer", "Error checking instance name availability");
+    if (err) {
+        displayFieldError("urlContainer", "Error checking instance name availability");
         return;
+    }
+    else if(json.error){
+      displayFieldError("urlContainer", json.error);
+      return;
     }
     if (json.status) {
         console.log("The name is available");
         return;
     }
+    console.log(json)
     displayFieldError("urlContainer","The name is not available");
   });
 
@@ -98,11 +104,34 @@ instanceNameInput.addEventListener('change', function () {
     clearGlobalError();
     clearAllFieldErrors();
 
+    let url = "http://localhost:3004/cloud/create";
+    let params = {
+        instanceName: document.getElementById('subdomain').value,
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        email: document.getElementById('email').value,
+        phoneNumber: document.getElementById('phoneNumber').value,
+        company:  document.getElementById('organization').value,
+        lang: "en",
+        instanceType: "cryptpad",
+        limits:  "Products.CryptadDemoPlan"
+    };
     if (validateForm()) {
-      console.log("Form validation successfull.");
+      postToServer(url, params, (err, json) => {
+        if (err || json.error) {
+          displayGlobalError("Some errors prevented this form from being submitted.");
+          return;
+        }
+        if (json.status) {
+            console.log("The instance is being created");
+            return;
+        }
+        displayGlobalError("Some errors prevented this form from being submitted.");
+
+      });
     } else {
       displayGlobalError("Some errors prevented this form from being submitted.");
-      console.log("Form validation failed. Please check your inputs.");
+      console.log("Failed because of validation error");
     }
 });
 

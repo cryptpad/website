@@ -79,7 +79,7 @@ let sendToCloudServer = (method, path, body, cb) => {
     let url = `${config.cloud.baseUrl}${path}`;
     let data;
     
-    if (method === 'GET') {
+    if (method === 'GET' || method === 'PUT') {
         url += '?' + (new URLSearchParams(body)).toString();
     } else {
         data = JSON.parse(JSON.stringify(body));
@@ -101,9 +101,32 @@ let sendToCloudServer = (method, path, body, cb) => {
   
 };
 
+const checkStatus = (jobId) => {
+    const url = `${config.cloud.baseUrl}/instances/${jobId}/state`;
+
+    Axios.get(url, {
+        auth: {
+            username: config.cloud.name,
+            password: config.cloud.password
+        }
+    }).then(response => {
+        const { progress } = response.data;
+        if (progress === 1) {
+            console.log("Instance creation completed!");
+        } else {
+            setTimeout(() => {
+                checkStatus(jobId);
+            }, 1000);
+        }
+    }).catch(error => {
+        console.error("Error checking instance status:", error);
+    });
+};
+
+
 function validateInstanceName(data) {
     let instanceName = data.instanceName;
-    if (typeof(instanceName) !== "string" || !instanceName.trim() || instanceName.length > 200) {
+    if (typeof(instanceName) !== "string" || !instanceName.trim() || instanceName.length > 200  || instanceName === instanceName.toUpperCase()) {
         return false;
     }
     return true;
@@ -119,10 +142,29 @@ app.post('/cloud/available', (req, res) => {
 
     sendToCloudServer('GET', url, body, (err, json) => {
         if (err) {
+            console.log(err)
             return res.status(400).send(err);
         }
         res.json(json);
     })
+
+});
+
+app.post('/cloud/create', (req, res) => {
+    let body = req.body;  
+    let url = "/create"
+    console.log(body);
+    sendToCloudServer('PUT', url, body, (err, json) => {
+        if (err) {
+            return res.status(400).send(err);
+        }
+        const { jobId } = json.creationProgressInfo.jobId;
+        
+        console.log("Instance creation started. Checking status...");
+        checkStatus(jobId);
+        res.json(json);
+    })
+    
 });
 
 // Start the server
