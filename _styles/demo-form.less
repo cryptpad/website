@@ -30,6 +30,36 @@ h1, h2, h3 {
     }
   }  
 
+  .badge {
+    position: absolute; 
+    top: 40rem; 
+    right: 15rem;
+    transform: rotate(20deg);
+    width: 20rem; 
+    height: fit-content;
+    border-radius: @radius_L;
+    font-size: 2rem;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+  
+  
+  .badge a img {
+    max-height: 3.75rem;
+    margin: 0 0.5rem 0 0;
+  }
+  
+  .badge a {
+    display: flex;
+    line-height: 3rem;
+    align-items: center;
+    border-radius: 5px;
+    color: #212121;
+    padding: 0.4rem 1rem 0.4rem 0.4rem;
+    background-color: #FFF;
+    text-decoration: none;
+  }
+  
   .error-container {
   margin-top: 5px; 
   display: flex;
