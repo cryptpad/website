@@ -101,28 +101,6 @@ let sendToCloudServer = (method, path, body, cb) => {
   
 };
 
-const checkStatus = (jobId) => {
-    const url = `${config.cloud.baseUrl}/instances/${jobId}/state`;
-
-    Axios.get(url, {
-        auth: {
-            username: config.cloud.name,
-            password: config.cloud.password
-        }
-    }).then(response => {
-        const { progress } = response.data;
-        if (progress === 1) {
-            console.log("Instance creation completed!");
-        } else {
-            setTimeout(() => {
-                checkStatus(jobId);
-            }, 1000);
-        }
-    }).catch(error => {
-        console.error("Error checking instance status:", error);
-    });
-};
-
 
 function validateInstanceName(data) {
     let instanceName = data.instanceName;
@@ -151,21 +129,39 @@ app.post('/cloud/available', (req, res) => {
 });
 
 app.post('/cloud/create', (req, res) => {
-    let body = req.body;  
-    let url = "/create"
+    let body = req.body;
+    let url = "/create";
     console.log(body);
     sendToCloudServer('PUT', url, body, (err, json) => {
         if (err) {
             return res.status(400).send(err);
         }
-        const { jobId } = json.creationProgressInfo.jobId;
-        
         console.log("Instance creation started. Checking status...");
-        checkStatus(jobId);
         res.json(json);
-    })
-    
+    });
 });
+
+app.get('/cloud/create/:jobId/progress', (req, res) => {
+    const jobId = req.params.jobId;
+    const url = `${config.cloud.baseUrl}/instances/${jobId}/state`;
+    Axios.get(url, {
+        auth: {
+            username: config.cloud.name,
+            password: config.cloud.password
+        }
+    }).then(response => {
+        const { creationProgressInfo } = response.data;
+        console.log(creationProgressInfo)
+        const progress = creationProgressInfo.progress;
+        console.log('Progress data fetched:', progress);
+        res.json({ progress });
+    }).catch(error => {
+        console.error('Error fetching progress data:', error);
+        res.status(500).json({ error: 'Error fetching progress data' });
+    });
+});
+
+
 
 // Start the server
 app.listen(config.httpPort, config.httpAddress, () => {

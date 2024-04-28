@@ -118,12 +118,16 @@ instanceNameInput.addEventListener('change', function () {
     };
     if (validateForm()) {
       postToServer(url, params, (err, json) => {
-        if (err || json.error) {
+        if (err) {
           displayGlobalError("Some errors prevented this form from being submitted.");
           return;
         }
-        if (json.status) {
-            console.log("The instance is being created");
+        console.log(json)
+        console.log(json.instanceCreationStatus)
+        if (json.instanceCreationStatus) {
+            localStorage.setItem('jsonData', JSON.stringify(json));
+            console.log("The instance is being created and data was saved to local storage");
+            window.location.href = "/demo_loading";
             return;
         }
         displayGlobalError("Some errors prevented this form from being submitted.");

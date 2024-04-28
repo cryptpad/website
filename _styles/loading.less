@@ -1,0 +1,149 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: @cryptpad_color_grey_200;
+}
+
+header {
+  text-align: center;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  height: 80rem; 
+  margin: 20px auto; 
+}
+
+.row {
+  display: flex; 
+  text-align: center; 
+  margin-bottom: 10rem;
+  padding: 20px;
+}
+
+.row:first-child {
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.row:first-child > * {
+  margin: 10px;
+}
+
+.loading-bar-container {
+  position: relative;
+  width: 100rem; 
+  height: 2.5rem;
+  background-color: #ddd;
+  border-radius: @radius_L;
+}
+
+.loading-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #007bff;
+  transition: width .5s ease-in-out;
+}
+
+.progress-indicator {
+  position: absolute;
+  font-size: 2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  left: 0;
+  transform: translateX(-100%);
+  color: @cryptpad_color_white;
+  font-weight: bold;
+  transition: left 0.5s ease;
+}
+
+.image-container {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  margin: 10px; 
+  border-radius: @radius_L;
+}
+
+.image-container:hover {
+  box-shadow: 0 0 20px rgba(96, 90, 90, 0.3);
+}
+
+.image-container a {
+  color: #0087FF;
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: transparent;
+  display: flex; 
+  flex-direction: column;
+  margin: 10px; 
+  width: 35rem; 
+  height: 40rem;
+}
+
+.image-holder {
+  border-radius: @radius_L;
+  overflow: hidden;
+  text-align: center;
+  p {
+    font-size: 1.8rem;
+  }
+}
+
+.image-holder {
+  border-radius: @radius_L;
+  overflow: hidden;
+  text-align: center;
+}
+
+.image-holder img {
+  width: 25rem;
+  height: 25rem; 
+}
+
+.image-holder h4.text-center {
+  color: #0087FF;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.image-holder p {
+  font-size: 1.8rem;
+  margin-top: 10px;
+  color: @cryptpad_color_grey_800;
+  font-weight: normal;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+  transform: translateY(100%);
+}
+
+.image-holder:hover .overlay {
+  transform: translateY(0);
+}
+
+.overlay h4, .overlay p {
+  margin: 0;
+}
