@@ -50,10 +50,9 @@ h1, h2, h3 {
 
 .loading-bar {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 0;
   height: 100%;
+  border-radius: @radius_L;
   background-color: #007bff;
   transition: width .5s ease-in-out;
 }
@@ -61,10 +60,6 @@ h1, h2, h3 {
 .progress-indicator {
   position: absolute;
   font-size: 2rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  left: 0;
-  transform: translateX(-100%);
   color: @cryptpad_color_white;
   font-weight: bold;
   transition: left 0.5s ease;
