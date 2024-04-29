@@ -79,11 +79,9 @@ let sendToCloudServer = (method, path, body, cb) => {
     let url = `${config.cloud.baseUrl}${path}`;
     let data;
     
-    if (method === 'GET' || method === 'PUT') {
-        url += '?' + (new URLSearchParams(body)).toString();
-    } else {
-        data = JSON.parse(JSON.stringify(body));
-    }
+
+    url += '?' + (new URLSearchParams(body)).toString();
+
     
     Axios({
         method: method,
@@ -136,6 +134,7 @@ app.post('/cloud/create', (req, res) => {
         if (err) {
             return res.status(400).send(err);
         }
+        console.log("This is from cloud/create", json);
         console.log("Instance creation started. Checking status...");
         res.json(json);
     });

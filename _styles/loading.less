@@ -44,6 +44,7 @@ h1, h2, h3 {
   position: relative;
   width: 100rem; 
   height: 2.5rem;
+  left: 0;
   background-color: #ddd;
   border-radius: @radius_L;
 }
@@ -64,6 +65,37 @@ h1, h2, h3 {
   font-weight: bold;
   transition: left 0.5s ease;
 }
+
+
+@keyframes moveLines {
+  0% {
+    background-position: 0 0; 
+  }
+  100% {
+    background-position: 100% 0; 
+  }
+}
+
+.loading-bar {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  border-radius: @radius_L;
+  background-color: #007bff;
+  background-image: linear-gradient(
+    -45deg, 
+    rgba(255, 255, 255, 0.2) 25%, 
+    transparent 25%, 
+    transparent 50%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    rgba(255, 255, 255, 0.2) 75%, 
+    transparent 75%, 
+    transparent
+  );
+  background-size: 30px 30px; 
+  animation: moveLines 10s linear infinite; 
+}
+
 
 .image-container {
   display: flex; 
@@ -141,4 +173,24 @@ h1, h2, h3 {
 
 .overlay h4, .overlay p {
   margin: 0;
+}
+
+
+@media (max-width: @breakpoint) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+  
+  .loading-bar-container {
+    width: 80%;
+    left: 0;
+  }
+  .row .h2{
+    font-size: 2.5rem;
+  }
+  .container{
+    height: 80%;
+  }
 }
