@@ -81,32 +81,29 @@ instanceNameInput.addEventListener('change', function () {
   clearFieldError("urlContainer");
 
   postToServer(url, params, (err, json) => {
-    if (err) {
-        displayFieldError("urlContainer", "Error checking instance name availability");
-        return;
-    }
-    else if(json.error){
-      displayFieldError("urlContainer", json.error);
-      return;
-    }
+  if (err || json.error) {
+    displayFieldError("urlContainer", "Error checking instance name availability");
+    console.log(json.error)
+    return;
+  }
+  if (json.errorType == "subdomain_contains_special_chars") {
+    displayFieldError("urlContainer", "Instance name should not contain special characters");
+    return;
+  }
 
-    if (json.errorType == "subdomain_contains_special_chars") {
-      displayFieldError("urlContainer", "Instance name should not contain special characters");
-      return;
-    }
+  else if(instanceNameInput.value.length > 250){
+    displayFieldError("urlContainer", "Instance name should not exceed 250 characters");
+    return;
+  }
 
-    else if(instanceNameInput.value.length > 250){
-      displayFieldError("urlContainer", "Instance name should not exceed 250 characters");
+  if (json.status) {
+      console.log("The name is available");
       return;
-    }
+  }
+  console.log(json)
+  displayFieldError("urlContainer","The name is not available");
+});
 
-    if (json.status) {
-        console.log("The name is available");
-        return;
-    }
-    console.log(json)
-    displayFieldError("urlContainer","The name is not available");
-  });
 
 });
 
