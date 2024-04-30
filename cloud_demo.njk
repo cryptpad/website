@@ -1,109 +1,98 @@
 ---
+title: CryptPad Cloud Demo
+description: Test drive your own CryptPad instance
 layout: layouts/main
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CryptPad | {{ title }}</title>
+<section>
   <h1>Demo Instance</h1>
   <h3>Test drive the end-to-end encrypted office suite</h3>
-  <link rel="stylesheet" href="_styles/demo-form.css"> 
-  <script src="/scripts/demo.js?ver={{cache.buster}}"></script>
-  
-</head>
-<body>
-  <header>
-    <div class="logo">
-    </div>
-  </header>
+</section>
 
-  <main>
-    <div class="form-container">
-      <label for="instanceName">Your CryptPad Cloud URL</label>
-      <section class="hero" id="instanceName">
-        <div class="url-container" id="urlContainer">
-          <div class="url-prefix-box">https://</div>
-          <input type="text" class="url-input" id="subdomain" placeholder="demoname">
-          <div class="url-suffix-box">.demo.crypt.com</div>
+<section>
+  <div class="form-container">
+    <label for="instanceName">Your CryptPad Cloud URL</label>
+    <section class="hero" id="instanceName">
+      <div class="url-container" id="urlContainer">
+        <div class="url-prefix-box">https://</div>
+        <input type="text" class="url-input" id="subdomain" placeholder="demoname">
+        <div class="url-suffix-box">.demo.crypt.com</div>
+      </div>
+    </section>
+    <section class="form">
+      <h3>You're almost done!</h3>
+      <p>Please, tell us more about yourself so we can customize your testing instance.</p>
+      <form id="demoForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" name="firstName" required placeholder="Your first name">
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" name="lastName" required placeholder="Your last name">
+          </div>
         </div>
-      </section>
-      <section class="form">
-        <h3>You're almost done!</h3>
-        <p>Please, tell us more about yourself so we can customize your testing instance.</p>
-        <form id="demoForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First name</label>
-              <input type="text" id="firstName" name="firstName" required placeholder="Your first name">
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last name</label>
-              <input type="text" id="lastName" name="lastName" required placeholder="Your last name">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="phoneNumber">Phone number</label>
-              <input type="text" id="phoneNumber" name="phoneNumber" required placeholder="Your phone number">
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="yourname@company.com">
-            </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phoneNumber">Phone number</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" required placeholder="Your phone number">
           </div>
           <div class="form-group">
-            <label for="organization">Organization</label>
-            <input type="text" id="organization" name="organization" required placeholder="The name of your organization">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="yourname@company.com">
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="deployment">For what type of deployment are you testing?</label>
-              <select id="deployment" name="deployment" placeholder="Choose type of deployment">
-                <option value="on-premise">On-Premise</option>
-                <option value="cloud">Cloud</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="teamSize">What is the size of your team?</label>
-              <select id="teamSize" name="teamSize" placeholder="Choose team size">
-                <option value="1-10">1-10</option>
-                <option value="11-50">11-50</option>
-                <option value="51-200">51-200</option>
-                <option value="200+">200+</option>
-              </select>
-            </div>
-          </div>
+        </div>
+        <div class="form-group">
+          <label for="organization">Organization</label>
+          <input type="text" id="organization" name="organization" required placeholder="The name of your organization">
+        </div>
+        <div class="form-row">
           <div class="form-group">
-            <label for="solution">What type of solution are you interested in?</label>
-            <select id="solution" name="solution" placeholder="Choose solution type">
-              <option value="document-editing">Document Editing</option>
-              <option value="real-time-collaboration">Real-time Collaboration</option>
-              <option value="secure-file-sharing">Secure File Sharing</option>
-              <option value="other">Other</option>
+            <label for="deployment">For what type of deployment are you testing?</label>
+            <select id="deployment" name="deployment" placeholder="Choose type of deployment">
+              <option value="on-premise">On-Premise</option>
+              <option value="cloud">Cloud</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="problem">What problem are you expecting CryptPad to help you with?</label>
-            <textarea id="problem" name="problem" rows="4" placeholder="Describe here your problem max: 500 characters"></textarea>
+            <label for="teamSize">What is the size of your team?</label>
+            <select id="teamSize" name="teamSize" placeholder="Choose team size">
+              <option value="1-10">1-10</option>
+              <option value="11-50">11-50</option>
+              <option value="51-200">51-200</option>
+              <option value="200+">200+</option>
+            </select>
           </div>
-          <p>
-            After creating your testing instance we send you a few onboarding communications to help you make the most of your CryptPad instance.
-            By filling you data, checking the communication options above and by clicking on <b>Create</b> you agree with our  <a href="https://cryptpad.fr/code/#/2/code/view/j18D9zbfY98cwWPGHPv91vllEYOy0tCGk1gCD5UOzlk/present/">Terms of Service</a> and <a href="https://cryptpad.fr/pad/#/2/pad/view/GcNjAWmK6YDB3EO2IipRZ0fUe89j43Ryqeb4fjkjehE/">Privacy Policy</a>.
-          </p>
-          <button type="submit" class="btn primary" id="submitBtn">Create</button>   
-          <p class="validate-account"> <img src="https://xwiki.com/en/download/XWikiComCode/TryXWikiCloud/Info_XWiki_grey.svg" alt="Information Icon"> Please validate the account in the next 4 hours.</p>
-          <div class="XWiki-signature">
-            <a href="https://xwiki.com" target="_blank">
-            <img src="/images/logo_XWiki.svg" alt="XWiki Logo">
-            <span>By XWiki SAS</span>
-          </a>
-          </div>
-        </form>
-      </section>
-    </div>
-  </main>
-</body>
-</html>
+        </div>
+        <div class="form-group">
+          <label for="solution">What type of solution are you interested in?</label>
+          <select id="solution" name="solution" placeholder="Choose solution type">
+            <option value="document-editing">Document Editing</option>
+            <option value="real-time-collaboration">Real-time Collaboration</option>
+            <option value="secure-file-sharing">Secure File Sharing</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="problem">What problem are you expecting CryptPad to help you with?</label>
+          <textarea id="problem" name="problem" rows="4" placeholder="Describe here your problem max: 500 characters"></textarea>
+        </div>
+        <p>
+          After creating your testing instance we send you a few onboarding communications to help you make the most of your CryptPad instance.
+          By filling you data, checking the communication options above and by clicking on <b>Create</b> you agree with our  <a href="https://cryptpad.fr/code/#/2/code/view/j18D9zbfY98cwWPGHPv91vllEYOy0tCGk1gCD5UOzlk/present/">Terms of Service</a> and <a href="https://cryptpad.fr/pad/#/2/pad/view/GcNjAWmK6YDB3EO2IipRZ0fUe89j43Ryqeb4fjkjehE/">Privacy Policy</a>.
+        </p>
+        <button type="submit" class="btn primary" id="submitBtn">Create</button>
+        <p class="validate-account"> <img src="https://xwiki.com/en/download/XWikiComCode/TryXWikiCloud/Info_XWiki_grey.svg" alt="Information Icon"> Please validate the account in the next 4 hours.</p>
+        <div class="XWiki-signature">
+          <a href="https://xwiki.com" target="_blank">
+          <img src="/images/logo_XWiki.svg" alt="XWiki Logo">
+          <span>By XWiki SAS</span>
+        </a>
+        </div>
+      </form>
+    </section>
+  </div>
+</section>
+
+<script src="/scripts/demo.js?ver={{cache.buster}}"></script>
