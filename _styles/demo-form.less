@@ -5,14 +5,14 @@ h1, h2, h3 {
 
 .form-container{
   background-color: @cryptpad_color_white;
-  padding: 20px;
+  padding: 4rem;
   border-radius: @radius_L;
-  box-shadow: 0 0 10px @cryptpad_color_grey_800;
+  box-shadow: 0 0 2rem @cryptpad_color_grey_800;
   width: 80%;
   margin: 0 auto;
 
   .form {
-    padding: 20px;
+    padding: 4rem;
     border-radius: @radius_L;
     margin-bottom: 10rem;
     text-align: left;
@@ -58,13 +58,13 @@ h1, h2, h3 {
 
   
   .error-container {
-  margin-top: 5px; 
-  display: flex;
-  align-items: center;
-}
+    margin-top: 1rem;
+    display: flex;
+    text-align: center; 
+  }
 
 .error-container span {
-  margin-right: 5px; 
+  margin-right: 1rem; 
   color: red; 
   font-size: 1.5em;
 }
@@ -76,7 +76,9 @@ h1, h2, h3 {
 
 #instanceName{
   .error-container{
-    margin-left: 25%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center; 
   }
 }
 
@@ -87,8 +89,9 @@ h1, h2, h3 {
     font-size: 1.5rem;
     background-color: rgb(212, 104, 104);
     padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    border-radius: @radius;
     display: inline-block;
+    margin: 0 auto;
 }
 
 
@@ -125,7 +128,7 @@ h1, h2, h3 {
     font-size: 2rem;
     text-align: left;
     margin-left: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
     padding: 0;
     color: @cryptpad_color_grey_700;
   }
@@ -163,8 +166,8 @@ h1, h2, h3 {
     border: 0.2rem solid @cryptpad_color_grey_300;
     background-color: @cryptpad_color_grey_200;
     border-radius: @radius;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 1rem;
+    padding-right: 1rem;
     max-width: 60rem;
     margin: 0 auto;
   }
@@ -179,7 +182,7 @@ h1, h2, h3 {
   
   .url-prefix-box,
   .url-suffix-box {
-    padding: 5px 10px;
+    padding: 2rem 2.5rem;
     border-radius: @radius;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 2rem;
@@ -201,7 +204,7 @@ h1, h2, h3 {
     }
 
     text-align: center;
-    border: 1px solid @cryptpad_color_grey_800;
+    border: 0.1rem solid @cryptpad_color_grey_800;
     padding: 1rem 1rem 1rem 5rem;
     position: relative;
     margin: 1.5rem auto 3.4rem auto;
@@ -212,7 +215,7 @@ h1, h2, h3 {
     background-color: @cryptpad_color_white;
     padding: 2.5rem;
     border-radius: @radius_L;
-    box-shadow: 0 0 10px @cryptpad_color_grey_950;
+    box-shadow: 0 0 2rem @cryptpad_color_grey_950;
     width: 100%;
     margin: 0 auto;
   }
@@ -222,7 +225,7 @@ h1, h2, h3 {
   .form-group textarea {
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 1.5rem;
     font-family: 'Open Sans', Verdana, Geneva, sans-serif;
     border: 0.2rem solid @cryptpad_color_grey_300;
     border-radius: @radius;

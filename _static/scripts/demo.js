@@ -89,6 +89,17 @@ instanceNameInput.addEventListener('change', function () {
       displayFieldError("urlContainer", json.error);
       return;
     }
+
+    if (json.errorType == "subdomain_contains_special_chars") {
+      displayFieldError("urlContainer", "Instance name should not contain special characters");
+      return;
+    }
+
+    else if(instanceNameInput.value.length > 250){
+      displayFieldError("urlContainer", "Instance name should not exceed 250 characters");
+      return;
+    }
+
     if (json.status) {
         console.log("The name is available");
         return;
