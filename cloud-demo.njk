@@ -6,21 +6,23 @@ layout: layouts/main
 
 <section>
   <h1>Demo Instance</h1>
-  <h3>Test drive the end-to-end encrypted office suite</h3>
+  <p>Test drive the end-to-end encrypted office suite</p>
 </section>
 
 <section>
   <div class="form-container">
-    <label for="instanceName">Your CryptPad Cloud URL</label>
+    <h3>Your CryptPad Cloud URL</h3>
     <section class="hero" id="instanceName">
       <div class="url-container" id="urlContainer">
         <div class="url-prefix-box">https://</div>
-        <input type="text" class="url-input" id="subdomain" placeholder="demoname">
-        <div class="url-suffix-box">.demo.crypt.com</div>
+        <div class="input-sizer">
+          <input type="text" class="url-input " id="subdomain" onInput="this.parentNode.dataset.value = this.value" size="8" placeholder="demoname">
+        </div>
+        <div class="url-suffix-box">.cryptpad.cloud</div>
       </div>
     </section>
+
     <section class="form">
-      <h3>You're almost done!</h3>
       <p>Please, tell us more about yourself so we can customize your testing instance.</p>
       <form id="demoForm">
         <div class="form-row">
@@ -80,16 +82,18 @@ layout: layouts/main
         </div>
         <p>
           After creating your testing instance we send you a few onboarding communications to help you make the most of your CryptPad instance.
-          By filling you data, checking the communication options above and by clicking on <b>Create</b> you agree with our  <a href="https://cryptpad.fr/code/#/2/code/view/j18D9zbfY98cwWPGHPv91vllEYOy0tCGk1gCD5UOzlk/present/">Terms of Service</a> and <a href="https://cryptpad.fr/pad/#/2/pad/view/GcNjAWmK6YDB3EO2IipRZ0fUe89j43Ryqeb4fjkjehE/">Privacy Policy</a>.
+          By filling you data, checking the communication options above and by clicking on <b>Create</b> you agree with our <a href="https://xwiki.com/en/company/PrivacyPolicy">Privacy Policy [EN] </a>.
         </p>
-        <button type="submit" class="btn primary" id="submitBtn">Create</button>
-        <p class="validate-account"> <img src="https://xwiki.com/en/download/XWikiComCode/TryXWikiCloud/Info_XWiki_grey.svg" alt="Information Icon"> Please validate the account in the next 4 hours.</p>
-        <div class="XWiki-signature">
-          <a href="https://xwiki.com" target="_blank">
-          <img src="/images/logo_XWiki.svg" alt="XWiki Logo">
-          <span>By XWiki SAS</span>
-        </a>
-        </div>
+        <section>
+          <button type="submit" class="btn primary" id="submitBtn">Create</button>
+          <p class="validate-account"> <i class="fa fa-bullhorn"></i> Please validate the account in the next 4 hours.</p>
+          <div class="XWiki-signature">
+            <a href="https://xwiki.com" target="_blank">
+              <img src="/images/logo_XWiki.svg" alt="XWiki Logo">
+              <span>CryptPad Cloud is provided by XWiki SAS</span>
+            </a>
+          </div>
+        </section>
       </form>
     </section>
   </div>

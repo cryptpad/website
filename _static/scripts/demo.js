@@ -3,25 +3,7 @@
 
 window.addEventListener('load', function () {
   let form = document.querySelector('form');
-  let instanceNameInput = document.getElementById('subdomain'); 
-
-  function displayGlobalError(message) {
-    const errorMessage = document.createElement('div');
-    errorMessage.textContent = message;
-    errorMessage.classList.add('global-error-message');
-    const submitButton = document.getElementById('submitBtn');
-    submitButton.parentNode.insertBefore(errorMessage, submitButton.nextSibling);
-}
-
-
-  function clearGlobalError() {
-      const globalErrorMessage = document.querySelector('.global-error-message');
-      if (globalErrorMessage) {
-          globalErrorMessage.parentNode.removeChild(globalErrorMessage);
-      }
-  }
-
-
+  let instanceNameInput = document.getElementById('subdomain');
 
   function displayFieldError(fieldId, message) {
     clearFieldError(fieldId); // Clear any previous errors of the same type
@@ -109,9 +91,8 @@ instanceNameInput.addEventListener('change', function () {
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
-    clearGlobalError();
     clearAllFieldErrors();
-
+    let submitButton = document.getElementById('submitBtn');
     let url = "http://localhost:3004/cloud/create";
     let params = {
         instanceName: document.getElementById('subdomain').value,
@@ -127,7 +108,7 @@ instanceNameInput.addEventListener('change', function () {
     if (validateForm()) {
       postToServer(url, params, (err, json) => {
         if (err) {
-          displayGlobalError("Some errors prevented this form from being submitted.");
+          displayFieldError('submitButton',"Some errors prevented this form from being submitted.");
           return;
         }
         console.log(json)
@@ -135,14 +116,14 @@ instanceNameInput.addEventListener('change', function () {
         if (json.instanceCreationStatus) {
             localStorage.setItem('jsonData', JSON.stringify(json));
             console.log("The instance is being created and data was saved to local storage");
-            window.location.href = "/demo_loading";
+            window.location.href = "/demo-loading";
             return;
         }
-        displayGlobalError("Some errors prevented this form from being submitted.");
+        displayFieldError('submitButton',"Some errors prevented this form from being submitted.");
 
       });
     } else {
-      displayGlobalError("Some errors prevented this form from being submitted.");
+      displayFieldError('submitButton',"Some errors prevented this form from being submitted.");
       console.log("Failed because of validation error");
     }
 });
@@ -153,7 +134,7 @@ function validateForm() {
   let phoneNumber = document.getElementById('phoneNumber').value;
   let problem = document.getElementById('problem').value;
   let email = document.getElementById('email').value;
-  
+
   const maxLengths = {
     firstName: 50,
     lastName: 50,
