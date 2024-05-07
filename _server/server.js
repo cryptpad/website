@@ -149,9 +149,8 @@ app.get('/cloud/create/:jobId/progress', (req, res) => {
         console.log(creationProgressInfo);
         const progress = creationProgressInfo.progress;
         console.log('Progress data fetched:', progress);
-
-        if (progress === 1 && creationProgressInfo.instanceURL) {
-            res.redirect(creationProgressInfo.instanceURL);
+        if (progress === 1) {
+            res.json({ progress, instanceURL: creationProgressInfo.instanceURL });
         } else {
             res.json({ progress });
         }
@@ -160,7 +159,6 @@ app.get('/cloud/create/:jobId/progress', (req, res) => {
         res.status(500).json({ error: 'Error fetching progress data' });
     });
 });
-
 
 
 

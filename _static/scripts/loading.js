@@ -10,7 +10,7 @@ const updateLoadingBar = (progress) => {
         if (progress <= 0.5) {
             progressIndicator.style.left = `${newWidth}px`;
         } else {
-            progressIndicator.style.left = `${containerWidth / 2}px`;
+            progressIndicator.style.left = `${containerWidth / 2 - 5}px`;
         }
         progressIndicator.textContent = `${Math.round(progress * 100)}%`;
     }
@@ -21,14 +21,13 @@ const fetchProgressData = () => {
     var jsonDataString = localStorage.getItem('jsonData');
     var jsonData = JSON.parse(jsonDataString);
     var creationProgressInfo = jsonData.creationProgressInfo;
-    console.log("Inside fetchProgData");
-    console.log(jsonData);
     if (!creationProgressInfo) {
         console.error('creationProgressInfo not found in jsonData');
         return;
     }
 
     const jobId = creationProgressInfo.jobId;
+    console.log("jobId:", jobId);
 
     if (!jobId) {
         console.error('jobId not found in creationProgressInfo');
@@ -42,14 +41,20 @@ const fetchProgressData = () => {
             return response.json();
         })
         .then(data => {
-            console.log(data);
             const progress = data.progress;
-            console.log("Progress:", progress);
             updateLoadingBar(progress);
             if (progress < 1) {
                 setTimeout(fetchProgressData, 1000);
             } else {
                 console.log("Instance creation completed!");
+                const instanceURL = data.instanceURL;
+                if (instanceURL) {
+                    setTimeout(() => {
+                        window.location.href = instanceURL;
+                    }, 2000);
+                } else {
+                    console.error('Instance already in use!');
+                }
             }
         })
         .catch(error => {
