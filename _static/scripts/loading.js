@@ -27,7 +27,6 @@ const fetchProgressData = () => {
     }
 
     const jobId = creationProgressInfo.jobId;
-    console.log("jobId:", jobId);
 
     if (!jobId) {
         console.error('jobId not found in creationProgressInfo');

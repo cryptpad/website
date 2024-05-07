@@ -72,15 +72,14 @@ instanceNameInput.addEventListener('change', function () {
     displayFieldError("urlContainer", "Instance name should contain more characters");
     return;
   }
-  else if(instanceNameInput.value.length > 250){
-    displayFieldError("urlContainer", "Instance name should not exceed 250 characters");
+  else if(instanceName.length > 70){
+    displayFieldError("urlContainer", "Instance name should not exceed 70 characters");
     return;
   }
 
   postToServer(url, params, (err, json) => {
   if (err || json.error) {
     displayFieldError("urlContainer", "Error checking instance name availability");
-    console.log(json.error)
     return;
   }
 
@@ -132,7 +131,6 @@ instanceNameInput.addEventListener('change', function () {
       });
     } else {
       displaySubmitButtonError("Some errors prevented this form from being submitted.");
-      console.log("Failed because of validation error");
     }
 });
 

@@ -125,12 +125,10 @@ app.post('/cloud/available', (req, res) => {
 app.post('/cloud/create', (req, res) => {
     let body = req.body;
     let url = "/create";
-    console.log(body);
     sendToCloudServer('PUT', url, body, (err, json) => {
         if (err) {
             return res.status(400).send(err);
         }
-        console.log("This is from cloud/create", json);
         console.log("Instance creation started. Checking status...");
         res.json(json);
     });
@@ -146,9 +144,7 @@ app.get('/cloud/create/:jobId/progress', (req, res) => {
         }
     }).then(response => {
         const { creationProgressInfo } = response.data;
-        console.log(creationProgressInfo);
         const progress = creationProgressInfo.progress;
-        console.log('Progress data fetched:', progress);
         if (progress === 1) {
             res.json({ progress, instanceURL: creationProgressInfo.instanceURL });
         } else {

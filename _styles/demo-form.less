@@ -90,26 +90,9 @@ h1, h2, h3 {
       align-self: stretch;
     }
     .url-container {
-      max-width: 40rem;
-      .url-prefix-box,
-      .url-suffix-box {
-        max-width: 30rem;
-        font-size: 1.5rem;
-      }
-      .url-input {
-        font-size: 1.5rem;
-      }
+      max-width: 100%;
+      font-size: 1.5rem;
     }
-    .input-sizer{
-      min-width: 30%;
-      padding: 0;
-    }
-    .form-container{
-    .validate-account{
-      padding: 0;
-      margin: 0;
-    }
-  }
   }
 
   section {
@@ -186,7 +169,7 @@ h1, h2, h3 {
 
   .url-prefix-box,
   .url-suffix-box {
-    padding: 2rem;
+    padding: 2rem 0;
     border-radius: @radius;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 2rem;
@@ -210,7 +193,6 @@ h1, h2, h3 {
   .validate-account {
     text-align: center;
     border: 0.1rem solid @cryptpad_color_grey_800;
-    padding: 1rem 1rem 1rem 5rem;
     position: relative;
     margin: 1.5rem auto 3.4rem auto;
     min-width: 95%;
