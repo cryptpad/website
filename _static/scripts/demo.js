@@ -5,6 +5,11 @@ window.addEventListener('load', function () {
   let form = document.querySelector('form');
   let instanceNameInput = document.getElementById('subdomain');
 
+  function displaySubmitButtonError(message) {
+    const errorContainer = document.getElementById('submitButtonError');
+    errorContainer.innerHTML = `<span><i class="fa fa-exclamation-circle"></i></span><div>${message}</div>`;
+  }
+
   function displayFieldError(fieldId, message) {
     clearFieldError(fieldId); // Clear any previous errors of the same type
     let field = document.getElementById(fieldId);
@@ -57,10 +62,20 @@ function clearAllFieldErrors() {
 
 instanceNameInput.addEventListener('change', function () {
   let url = "http://localhost:3004/cloud/available";
+  let instanceName =  instanceNameInput.value;
   let params = {
       instanceName: instanceNameInput.value
   };
   clearFieldError("urlContainer");
+
+  if(instanceName.length <= 4){
+    displayFieldError("urlContainer", "Instance name should contain more characters");
+    return;
+  }
+  else if(instanceNameInput.value.length > 250){
+    displayFieldError("urlContainer", "Instance name should not exceed 250 characters");
+    return;
+  }
 
   postToServer(url, params, (err, json) => {
   if (err || json.error) {
@@ -68,13 +83,9 @@ instanceNameInput.addEventListener('change', function () {
     console.log(json.error)
     return;
   }
+
   if (json.errorType == "subdomain_contains_special_chars") {
     displayFieldError("urlContainer", "Instance name should not contain special characters");
-    return;
-  }
-
-  else if(instanceNameInput.value.length > 250){
-    displayFieldError("urlContainer", "Instance name should not exceed 250 characters");
     return;
   }
 
@@ -82,7 +93,6 @@ instanceNameInput.addEventListener('change', function () {
       console.log("The name is available");
       return;
   }
-  console.log(json)
   displayFieldError("urlContainer","The name is not available");
 });
 
@@ -111,19 +121,17 @@ instanceNameInput.addEventListener('change', function () {
           displayFieldError('submitButton',"Some errors prevented this form from being submitted.");
           return;
         }
-        console.log(json)
-        console.log(json.instanceCreationStatus)
+
         if (json.instanceCreationStatus) {
             localStorage.setItem('jsonData', JSON.stringify(json));
-            console.log("The instance is being created and data was saved to local storage");
             window.location.href = "/demo-loading";
             return;
         }
-        displayFieldError('submitButton',"Some errors prevented this form from being submitted.");
+        displaySubmitButtonError("Some errors prevented this form from being submitted.");
 
       });
     } else {
-      displayFieldError('submitButton',"Some errors prevented this form from being submitted.");
+      displaySubmitButtonError("Some errors prevented this form from being submitted.");
       console.log("Failed because of validation error");
     }
 });

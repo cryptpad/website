@@ -78,11 +78,9 @@ app.post('/post', (req, res) => {
 let sendToCloudServer = (method, path, body, cb) => {
     let url = `${config.cloud.baseUrl}${path}`;
     let data;
-    
 
     url += '?' + (new URLSearchParams(body)).toString();
 
-    
     Axios({
         method: method,
         url: url,
@@ -96,7 +94,6 @@ let sendToCloudServer = (method, path, body, cb) => {
       }).catch(err => {
           cb(err);
       });
-  
 };
 
 
@@ -109,8 +106,7 @@ function validateInstanceName(data) {
 }
 
 app.post('/cloud/available', (req, res) => {
-    let body = req.body;   
-    
+    let body = req.body;
      if (!validateInstanceName(body)) {
         return res.status(400).json({ error: "Invalid form data" });
     }
@@ -150,15 +146,22 @@ app.get('/cloud/create/:jobId/progress', (req, res) => {
         }
     }).then(response => {
         const { creationProgressInfo } = response.data;
-        console.log(creationProgressInfo)
+        console.log(creationProgressInfo);
         const progress = creationProgressInfo.progress;
         console.log('Progress data fetched:', progress);
-        res.json({ progress });
+
+        if (progress === 1 && creationProgressInfo.instanceURL) {
+            res.redirect(creationProgressInfo.instanceURL);
+        } else {
+            res.json({ progress });
+        }
     }).catch(error => {
         console.error('Error fetching progress data:', error);
         res.status(500).json({ error: 'Error fetching progress data' });
     });
 });
+
+
 
 
 

@@ -64,7 +64,10 @@ h1, h2, h3 {
     color: @cryptpad_color_red;
     font-size: 1.5em;
   }
-
+  .error-container#submitButtonError {
+    text-align: center;
+    margin: 1rem;
+  }
   .error-container div {
     color: @cryptpad_color_red;
     font-size: 1.5em;
@@ -94,7 +97,6 @@ h1, h2, h3 {
         font-size: 1.5rem;
       }
       .url-input {
-        max-width: 30%;
         font-size: 1.5rem;
       }
     }
@@ -104,7 +106,7 @@ h1, h2, h3 {
     margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
   }
 
@@ -145,8 +147,6 @@ h1, h2, h3 {
     align-items: center;
     position: relative;
     padding: .25em .5em;
-    margin: 5px;
-
     &.stacked {
       padding: .5em;
       align-items: stretch;
@@ -176,7 +176,7 @@ h1, h2, h3 {
 
   .url-prefix-box,
   .url-suffix-box {
-    padding: 2rem 2.5rem;
+    padding: 2rem;
     border-radius: @radius;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 2rem;
@@ -188,6 +188,7 @@ h1, h2, h3 {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 2rem;
     margin-right: 0.1rem;
+    width: auto;
   }
 
   .btn.primary {
