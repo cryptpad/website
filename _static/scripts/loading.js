@@ -5,7 +5,6 @@ const updateLoadingBar = (progress) => {
         const container = loadingBar.parentElement;
         const containerWidth = container.offsetWidth;
         const newWidth = containerWidth * progress;
-        const clampedProgress = Math.max(0, Math.min(progress, 1));
         loadingBar.style.width = `${newWidth}px`;
         if (progress <= 0.5) {
             progressIndicator.style.left = `${newWidth}px`;
