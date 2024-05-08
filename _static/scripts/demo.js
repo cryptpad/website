@@ -69,7 +69,7 @@ instanceNameInput.addEventListener('change', function () {
   clearFieldError("urlContainer");
 
   if(instanceName.length <= 4){
-    displayFieldError("urlContainer", "Instance name should contain more characters");
+    displayFieldError("urlContainer", "Instance name should contain more than 4 characters");
     return;
   }
   else if(instanceName.length > 70){
@@ -101,7 +101,7 @@ instanceNameInput.addEventListener('change', function () {
   form.addEventListener('submit', function (event) {
     event.preventDefault();
     clearAllFieldErrors();
-    let submitButton = document.getElementById('submitBtn');
+    let instanceName = document.getElementById('submitBtn');
     let url = "http://localhost:3004/cloud/create";
     let params = {
         instanceName: document.getElementById('subdomain').value,
@@ -135,6 +135,7 @@ instanceNameInput.addEventListener('change', function () {
 });
 
 function validateForm() {
+  let instanceNameInput = document.getElementById('subdomain');
   let firstName = document.getElementById('firstName').value;
   let lastName = document.getElementById('lastName').value;
   let phoneNumber = document.getElementById('phoneNumber').value;
@@ -148,6 +149,10 @@ function validateForm() {
     problem: 500
   };
 
+  if(instanceNameInput.value === ""){
+    displayFieldError('urlContainer', "Please input a name for your instance!");
+    return false;
+  }
   if (typeof firstName !== 'string'|| !isNaN(parseFloat(firstName))){
     displayFieldError('firstName', "The first name should only be composed of characters");
     return false;
