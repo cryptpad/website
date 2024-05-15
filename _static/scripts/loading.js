@@ -49,6 +49,7 @@ const fetchProgressData = () => {
                 const instanceURL = data.instanceURL;
                 if (instanceURL) {
                     setTimeout(() => {
+                        // comment this to develop the loading page
                         window.location.href = instanceURL;
                     }, 2000);
                 } else {
