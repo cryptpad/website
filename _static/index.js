@@ -87,13 +87,44 @@ var addFormHandlers = function () {
     });
 };
 
+// Hamburger Menu
+
+document.addEventListener('DOMContentLoaded', function () {
+    var myHamburger = document.getElementById('hamburger');
+    var myNavMenu = document.getElementById('dropDown');
+
+    function doMenuOpen() {
+        myHamburger.setAttribute('aria-expanded', true);
+        myNavMenu.style.display='flex';
+    }
+
+    function doMenuClose() {
+        myHamburger.setAttribute('aria-expanded', false);
+        myNavMenu.style.display='none';
+
+    }
+
+    function toggleMenu() {
+        display = window.getComputedStyle(myNavMenu, null).display;
+        if(display == 'none'){
+            doMenuOpen();
+        } else {
+            doMenuClose();
+        }
+    }
+    myHamburger.addEventListener('click', toggleMenu);
+
+});
+
 
 document.onreadystatechange = function () {
-    if (document.readyState !== 'complete') { return; }
-    addAnchors();
-    try {
-        addFormHandlers();
-    } catch (e) {
-        console.error(e);
-    }
+  if (document.readyState !== 'complete') { return; }
+  addAnchors();
+  try {
+      addFormHandlers();
+  } catch (e) {
+      console.error(e);
+  }
 };
+
+

@@ -36,14 +36,21 @@
 </head>
 
 <body>
-
     <nav>
         <div class="logo">
-            <a href="/"><img src="/images/CryptPad_logo_text_horizontal.svg" alt="Return to homepage"></a>
+            <a href="/" aria-label="Return to homepage">
+                <img src="/images/CryptPad_logo_text_horizontal.svg" alt="CryptPad logo">
+            </a>
         </div>
-        {% if '/about' not in page.url %}
-            <a href="/about/" class="btn"><i class="fa fa-question-circle-o"></i>About</a>
-        {% endif %}
+    <!--start of hamburger menu -->
+    <button id="hamburger" class="hamburger" aria-label="Show Navigation Menu" aria-expanded="false" tabindex="0"><i class="fa fa-bars"></i></button>
+    <div id="dropDown">
+    {% include "components/navButtons.njk" %}
+    </div>
+    <!--end of hamburger menu and start of navbuttons for large screens -->
+    <div class="navButtons">
+    {% include "components/navButtons.njk" %}
+    </div>
     </nav>
 
     {% block content %}
