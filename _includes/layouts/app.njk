@@ -1,0 +1,41 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+<section class="app-title">
+    <h1><i class="app-{{shortname}} {{iconfont}} {{icon}}"></i> {{title}}</h1>
+    <p class="left-aligned">{{long_description}}</p>
+    <p>{{dependency}}</p>
+</section>
+
+<section id="try-cryptpad">
+    <a class="fake-button app-{{shortname}}" href="https://cryptpad.fr/{{shortname}}/">Try {{title}} on cryptpad.fr <i class="fa fa-arrow-right"></i></a>
+    <p><a href="https://docs.cryptpad.org/en/user_guide/apps/{{shortname}}.html">View the {{title}} documentation</a></p>
+</section>
+
+<section class="arguments">
+    <div class="items">
+        {% for feature in features %}
+            <div class="item">
+                <h3>{{ feature.title }}</h3>
+                <p>{{ feature.text | safe}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section>
+    <p>Other apps:</p>
+    <p class="other-apps">
+        {% for app in collections.apps %}
+            {% if app.data.title != title %}
+                <a href="{{app.url}}">
+                    <i class="app-{{app.data.shortname}} {{app.data.iconfont}} {{app.data.icon}}"></i>
+                    {{app.data.title}}
+                </a>
+            {% endif %}
+        {% endfor %}
+    </p>
+</section>
+
+{% endblock %}
+

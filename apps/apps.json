@@ -1,0 +1,5 @@
+{
+    "layout": "layouts/app.njk",
+    "tags": "apps",
+    "iconfont": "cptools"
+}
