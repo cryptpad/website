@@ -15,10 +15,10 @@
   "author": "ansuz",
   "license": "ISC",
   "dependencies": {
-    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy": "^2.0.1",
     "axios": "^1.2.3",
     "body-parser": "^1.20.1",
-    "express": "~4.18.2",
+    "express": "^4.19.2",
     "fs-extra": "^10.0.0",
     "less": "^4.2.0"
   }
