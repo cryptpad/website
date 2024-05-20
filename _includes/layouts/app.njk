@@ -26,7 +26,7 @@
 <section>
     <p>Other apps:</p>
     <p class="other-apps">
-        {% for app in collections.apps %}
+        {% for app in collections.apps|sort(attribute="data.title") %}
             {% if app.data.title != title %}
                 <a href="{{app.url}}">
                     <i class="app-{{app.data.shortname}} {{app.data.iconfont}} {{app.data.icon}}"></i>
@@ -38,4 +38,3 @@
 </section>
 
 {% endblock %}
-
