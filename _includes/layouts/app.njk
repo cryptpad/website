@@ -12,6 +12,13 @@
     <p><a href="https://docs.cryptpad.org/en/user_guide/apps/{{shortname}}.html">View the {{title}} documentation</a></p>
 </section>
 
+
+{% if image %}
+<section class="app-preview-image">
+    <img src="{{image}}" alt="preview of the {{title}} application">
+</section>
+{% endif %}
+
 <section class="arguments">
     <div class="items">
         {% for feature in features %}

@@ -82,7 +82,7 @@
             <li>Apps</li>
             {% for app in collections.apps|sort(attribute="data.title")%}
                 <li>
-                <a href="app.url">
+                <a href="{{app.url}}">
                     <i aria-hidden="true" class="{{app.data.iconfont}} {{app.data.icon}}"></i>{{app.data.title}}
                 </a>
             </li>

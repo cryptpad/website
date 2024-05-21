@@ -35,15 +35,42 @@ a.fake-button {
     }
 }
 
-.other-apps {
+// App lists
+
+.other-apps, .apps {
     a {
         display: inline-block;
         background-color: white;
-        padding: 1rem;
+        color: @text-color;
         text-decoration: none;
+        .shadow();
+    }
+}
+
+.other-apps {
+    a {
+        padding: 1rem;
         border-radius: @radius;
         margin: 1rem;
+    }
+}
+
+.apps {
+    text-align: left;
+    a {
+        font-size: 1.5em;
+        padding: 2rem;
+        border-radius: @radius_L;
+        margin: 2rem;
+    }
+}
+
+.app-preview-image {
+    margin: 0 2rem 5rem 2rem;
+    img {
+        border-radius: @radius_L;
         .shadow();
+        max-width: 100%;
     }
 }
 
