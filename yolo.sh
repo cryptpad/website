@@ -1,1 +1,1 @@
-git push ssh://cryptpad@agile.cryptpad.fr:/home/cryptpad/cryptpad.org.git main && ssh cryptpad@agile.cryptpad.fr "cd /home/cryptpad/cryptpad.org && git pull origin main && npm run clean && npx @11ty/eleventy --input=. --output=built"
+ssh cryptpad@agile.cryptpad.fr "cd /home/cryptpad/cryptpad.org && git pull origin main && npm run clean && npx @11ty/eleventy --input=. --output=built"
