@@ -4,7 +4,7 @@
 <section class="app-title">
     <h1><i class="app-{{shortname}} {{iconfont}} {{icon}}"></i> {{title}}</h1>
     <p class="left-aligned">{{long_description}}</p>
-    <p>{{dependency}}</p>
+    {{ dependency | markdown | safe }}
 </section>
 
 <section id="try-cryptpad">
