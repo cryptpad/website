@@ -1,0 +1,23 @@
+---
+layout: layouts/main.njk
+eleventyExcludeFromCollections: true
+---
+
+{% block content %}
+
+<section>
+    <h1>Apps</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec ultrices dui. Curabitur tristique lorem lacus, quis ultricies lorem fermentum sed. Aenean eleifend vitae nisl et tincidunt. Sed non volutpat arcu.</p>
+    <p class="apps">
+        {% for app in collections.apps|sort(attribute="data.title") %}
+            {% if app.data.title != title %}
+                <a href="{{app.url}}">
+                    <i class="app-{{app.data.shortname}} {{app.data.iconfont}} {{app.data.icon}}"></i>
+                    {{app.data.title}}
+                </a>
+            {% endif %}
+        {% endfor %}
+    </p>
+</section>
+
+{% endblock content %}
