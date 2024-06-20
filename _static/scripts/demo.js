@@ -11,6 +11,11 @@ window.addEventListener('load', function () {
 
   checkmark.style.display = 'none';
 
+  function hideStatus() {
+    spinner.style.display = 'none';
+    checkmark.style.display = 'none';
+  }
+
   function displaySubmitButtonError(message) {
     const errorContainer = document.getElementById('submitButtonError');
     errorContainer.innerHTML = `<span><i class="fa fa-exclamation-circle"></i></span><div>${message}</div>`;
@@ -18,8 +23,7 @@ window.addEventListener('load', function () {
 
   function displayFieldError(fieldId, message) {
     clearFieldError(fieldId); // Clear any previous errors of the same type
-    spinner.style.display = 'none';
-    checkmark.style.display = 'none';
+    hideStatus();
     let field = document.getElementById(fieldId);
     let errorContainer = document.createElement('div');
     let errorElement = document.createElement('span');
@@ -91,7 +95,7 @@ instanceNameInput.addEventListener('input', function () {
     displayFieldError("urlContainer", "Instance name should contain more than 4 characters");
     return;
   }
-  else if(instanceName.length > 70){
+  else if(instanceName.length >= 70){
     displayFieldError("urlContainer", "Instance name should not exceed 70 characters");
     return;
   }
@@ -122,7 +126,6 @@ instanceNameInput.addEventListener('input', function () {
   form.addEventListener('submit', function (event) {
     event.preventDefault();
     clearAllFieldErrors();
-    let instanceName = document.getElementById('submitBtn');
     let url = "http://localhost:3004/cloud/create";
     let params = {
         instanceName: document.getElementById('subdomain').value,
@@ -191,10 +194,10 @@ function validateForm() {
     return false;
   }
   else if (lastName.trim() === '') {
-    displayFieldError('firstName', "The last name should not be empty");
+    displayFieldError('lastName', "The last name should not be empty");
     return false;
   } else if (lastName.length > maxLengths.lastName){
-    displayFieldError('firstName', "The last name is too long");
+    displayFieldError('lastName', "The last name is too long");
     return false;
   }
 

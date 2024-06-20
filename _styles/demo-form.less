@@ -91,6 +91,15 @@
       max-width: 100%;
       font-size: 1.5rem;
     }
+    .char-count {
+      display: none;
+    }
+    .url-prefix-box {
+      display: none;
+    }
+    .url-suffix-box {
+      padding-left: 0;
+    }
   }
 
   section {
@@ -218,8 +227,10 @@
 
   .char-count {
     position: absolute;
+    color: @cryptpad_color_grey_500;
     bottom: 1.5rem;
     right: 1.5rem;
+    font-size: 1.5rem;
     pointer-events: none;
   }
 
