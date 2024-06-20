@@ -6,6 +6,8 @@ window.addEventListener('load', function () {
   let instanceNameInput = document.getElementById('subdomain');
   let spinner = document.getElementById('spinner');
   let checkmark = document.getElementById('checkmark');
+  let problemTextarea = document.getElementById('problem');
+  let charCount = document.getElementById('charCount');
 
   checkmark.style.display = 'none';
 
@@ -50,20 +52,26 @@ function clearAllFieldErrors() {
   });
 }
 
+function updateCharCount() {
+  charCount.textContent = `Character count: ${problemTextarea.value.length} / 700`;
+}
 
-  let postToServer = (url, params, cb) => {
-    fetch(url, {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(params)
-    }).then(response => {
-        if (response.ok) { return response.json(); }
-        cb(response);
-    }).then(json => {
-        cb(void 0, json);
-    });
+problemTextarea.addEventListener('input', updateCharCount);
+
+
+let postToServer = (url, params, cb) => {
+  fetch(url, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(params)
+  }).then(response => {
+      if (response.ok) { return response.json(); }
+      cb(response);
+  }).then(json => {
+      cb(void 0, json);
+  });
 };
 
 instanceNameInput.addEventListener('input', function () {
