@@ -4,6 +4,10 @@
 window.addEventListener('load', function () {
   let form = document.querySelector('form');
   let instanceNameInput = document.getElementById('subdomain');
+  let spinner = document.getElementById('spinner');
+  let checkmark = document.getElementById('checkmark');
+
+  checkmark.style.display = 'none';
 
   function displaySubmitButtonError(message) {
     const errorContainer = document.getElementById('submitButtonError');
@@ -12,6 +16,8 @@ window.addEventListener('load', function () {
 
   function displayFieldError(fieldId, message) {
     clearFieldError(fieldId); // Clear any previous errors of the same type
+    spinner.style.display = 'none';
+    checkmark.style.display = 'none';
     let field = document.getElementById(fieldId);
     let errorContainer = document.createElement('div');
     let errorElement = document.createElement('span');
@@ -68,6 +74,11 @@ instanceNameInput.addEventListener('input', function () {
   };
   clearFieldError("urlContainer");
 
+
+  if(checkmark.style.display === 'none'){
+    spinner.style.display = 'inline-block';
+  }
+
   if(instanceName.length <= 4){
     displayFieldError("urlContainer", "Instance name should contain more than 4 characters");
     return;
@@ -78,21 +89,23 @@ instanceNameInput.addEventListener('input', function () {
   }
 
   postToServer(url, params, (err, json) => {
-  if (err || json.error) {
-    displayFieldError("urlContainer", "Error checking instance name availability");
-    return;
-  }
-
-  if (json.errorType == "subdomain_contains_special_chars") {
-    displayFieldError("urlContainer", "Instance name should not contain special characters");
-    return;
-  }
-
-  if (json.status) {
-      console.log("The name is available");
+    if (err || json.error) {
+      displayFieldError("urlContainer", "Error checking instance name availability");
       return;
-  }
-  displayFieldError("urlContainer","The name is not available");
+    }
+
+    if (json.errorType == "subdomain_contains_special_chars") {
+      displayFieldError("urlContainer", "Instance name should not contain special characters");
+      return;
+    }
+
+    if (json.status) {
+        console.log("The name is available");
+        spinner.style.display = 'none';
+        checkmark.style.display = 'inline-block';
+        return;
+    }
+    displayFieldError("urlContainer","The name is not available");
 });
 
 

@@ -19,6 +19,10 @@ layout: layouts/main
           <input type="text" class="url-input " id="subdomain" onInput="this.parentNode.dataset.value = this.value" size="12" placeholder="demoname">
         </div>
         <div class="url-suffix-box">.cryptpad.cloud</div>
+        <div class="status-icon" id="statusIcon">
+          <i class="fa fa-spinner fa-spin" id="spinner" style="display:none;"></i>
+          <i class="fa fa-check" id="checkmark" style="display:none;"></i>
+        </div>
       </div>
     </section>
 
