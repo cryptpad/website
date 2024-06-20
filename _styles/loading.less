@@ -1,18 +1,3 @@
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: @cryptpad_color_grey_200;
-}
-
-header {
-  text-align: center;
-}
-
-h1, h2, h3 {
-  text-align: center;
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -45,7 +30,7 @@ h1, h2, h3 {
   width: 100rem;
   height: 2.5rem;
   left: 0;
-  background-color: #ddd;
+  background-color: @cryptpad_color_grey_300;
   border-radius: @radius_L;
 }
 
@@ -53,9 +38,21 @@ h1, h2, h3 {
   position: absolute;
   width: 0;
   height: 100%;
+  background-color: @cryptpad_color_brand;
   border-radius: @radius_L;
-  background-color: #007bff;
   transition: width .5s ease-in-out;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 30px 30px;
+  animation: moveLines 10s linear infinite;
 }
 
 .progress-indicator {
@@ -76,27 +73,6 @@ h1, h2, h3 {
   }
 }
 
-.loading-bar {
-  position: absolute;
-  width: 0;
-  height: 100%;
-  border-radius: @radius_L;
-  background-color: #007bff;
-  background-image: linear-gradient(
-    -45deg,
-    rgba(255, 255, 255, 0.2) 25%,
-    transparent 25%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 0.2) 75%,
-    transparent 75%,
-    transparent
-  );
-  background-size: 30px 30px;
-  animation: moveLines 10s linear infinite;
-}
-
-
 .image-container {
   display: flex;
   flex-direction: column;
@@ -106,28 +82,14 @@ h1, h2, h3 {
 }
 
 .image-container:hover {
-  box-shadow: 0 0 20px rgba(96, 90, 90, 0.3);
+  .shadow();
 }
 
 .image-container a {
-  color: #0087FF;
-  border-radius: 10px;
   text-decoration: none;
-  background-color: transparent;
-  display: flex;
-  flex-direction: column;
   margin: 10px;
   width: 35rem;
   height: 40rem;
-}
-
-.image-holder {
-  border-radius: @radius_L;
-  overflow: hidden;
-  text-align: center;
-  p {
-    font-size: 1.8rem;
-  }
 }
 
 .image-holder {
@@ -142,7 +104,7 @@ h1, h2, h3 {
 }
 
 .image-holder h4.text-center {
-  color: #0087FF;
+  color: @cryptpad_color_brand;
   font-size: 2.2rem;
   text-align: center;
   margin-top: 10px;
@@ -150,31 +112,7 @@ h1, h2, h3 {
 
 .image-holder p {
   font-size: 1.8rem;
-  margin-top: 10px;
-  color: @cryptpad_color_grey_800;
-  font-weight: normal;
 }
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  text-align: center;
-  padding: 1rem;
-  transition: transform 0.3s ease;
-  transform: translateY(100%);
-}
-
-.image-holder:hover .overlay {
-  transform: translateY(0);
-}
-
-.overlay h4, .overlay p {
-  margin: 0;
-}
-
 
 @media (max-width: @breakpoint) {
   .row {
@@ -183,7 +121,7 @@ h1, h2, h3 {
     margin-bottom: 5rem;
   }
 
-  .loading-bar-container {
+  .loading-bar-container, .loading-bar {
     width: 100%;
   }
   .row .h2{

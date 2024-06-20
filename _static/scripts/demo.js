@@ -60,7 +60,7 @@ function clearAllFieldErrors() {
     });
 };
 
-instanceNameInput.addEventListener('change', function () {
+instanceNameInput.addEventListener('input', function () {
   let url = "http://localhost:3004/cloud/available";
   let instanceName =  instanceNameInput.value;
   let params = {
