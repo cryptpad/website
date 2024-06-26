@@ -10,6 +10,7 @@ window.addEventListener('load', function () {
   let charCount = document.getElementById('charCount');
 
   checkmark.style.display = 'none';
+  spinner.style.display = 'none';
 
   function hideStatus() {
     spinner.style.display = 'none';
@@ -95,8 +96,8 @@ instanceNameInput.addEventListener('input', function () {
     displayFieldError("urlContainer", "Instance name should contain more than 4 characters");
     return;
   }
-  else if(instanceName.length >= 70){
-    displayFieldError("urlContainer", "Instance name should not exceed 70 characters");
+  else if(instanceName.length >= 64){
+    displayFieldError("urlContainer", "Instance name should not exceed 65 characters");
     return;
   }
 
