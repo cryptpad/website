@@ -52,5 +52,11 @@
        "url": "https://pad.4d2.org",
        "location": "Finland",
        "description": "CryptPad instance courtesy of 4d2 dot org"
-    } 
+    },
+    {
+       "title": "NL Cryptpad",
+       "url": "https://cryptpad.noleron.com",
+       "location": "Ukraine",
+       "description": "Український інстанс Cryptpad. powered by noleron.com"
+    }
 ]
