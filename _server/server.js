@@ -146,7 +146,7 @@ app.get('/cloud/create/:jobId/progress', (req, res) => {
         const { creationProgressInfo } = response.data;
         const progress = creationProgressInfo.progress;
         if (progress === 1) {
-            res.json({ progress, instanceURL: creationProgressInfo.instanceURL });
+            res.json({ progress, instanceURL: creationProgressInfo.instanceURL, installToken: creationProgressInfo.instanceInstallationToken });
         } else {
             res.json({ progress });
         }

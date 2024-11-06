@@ -48,8 +48,7 @@ const fetchProgressData = () => {
                 const instanceURL = data.instanceURL;
                 if (instanceURL) {
                     setTimeout(() => {
-                        // comment this to develop the loading page
-                        window.location.href = instanceURL;
+                        window.location.href = `${data.instanceURL}/install/#${data.installToken}`;
                     }, 2000);
                 } else {
                     console.error('Instance already in use!');
