@@ -76,6 +76,14 @@ jobs:
                             <li>{{ task }}</li>
                         {% endfor %}
                     </ul>
+                    {% if job.detailedOffers %}
+                    <p>More information:</p>
+                    <ul>
+                        {% for info in job.detailedOffers %}
+                        <li><a href="{{info.url}}">{{info.title}}</a></li>
+                        {% endfor%}
+                        </ul>
+                    {% endif %}
                     {% if job.salary %}
                         <p>Salary range: {{job.salary}}</p>
                     {% endif %}
