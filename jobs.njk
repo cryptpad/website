@@ -3,9 +3,22 @@ title: Jobs
 description: Join our team
 layout: layouts/main
 jobs:
+  - title: Internship in Security and Privacy
+    slug: pqc-internship
+    detailedOffers:
+    - title: Access Control in CryptPad
+      url: https://cryptpad.fr/pad/#/2/pad/view/edTpjKFfd75EtRa05uOL6wWNJscWKG+CPbjWMYlgTLQ/embed/
+    - title: Post-Quantum integration in CryptPad
+      url: https://cryptpad.fr/pad/#/2/pad/view/84oHc6JCTcPqtwkXfZI4qZL6lvYqjlc3HTFeCPURARI/embed/
+    role: "For Master students in cryptography or cybersecurity, CryptPad opens one internship role in either “Access Control in CryptPad” or ”Post-Quantum integration in CryptPad” for a duration of four to six months. The internship will cover the following topics:"
+    tasks:
+    - Advanced cryptography;
+    - Web development/web applications in vanilla javascript and/or typescript;
+    - Complexity and performance analyses;
+    - Open-source software development.
   - title: All roles are currently filled
     slug: no-roles
-    role: We are not actively interviewing at the moment, but we may do so again in the future. Please send us your details to be considered for future roles, especially if you work in the following areas
+    role: We are not actively interviewing at the moment for full time positions, but we may do so again in the future. Please send us your details to be considered for future roles, especially if you work in the following areas
     tasks:
         - Accessibility (WCAG compliance)
         - Cryptography applied to web-applications
@@ -76,6 +89,14 @@ jobs:
                             <li>{{ task }}</li>
                         {% endfor %}
                     </ul>
+                    {% if job.detailedOffers %}
+                    <p>More information:</p>
+                    <ul>
+                        {% for info in job.detailedOffers %}
+                        <li><a href="{{info.url}}">{{info.title}}</a></li>
+                        {% endfor%}
+                        </ul>
+                    {% endif %}
                     {% if job.salary %}
                         <p>Salary range: {{job.salary}}</p>
                     {% endif %}
