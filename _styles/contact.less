@@ -1,0 +1,56 @@
+.contact {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+}
+
+#contact-preamble {
+    margin-bottom: 2rem;
+}
+
+
+
+#contact-cards {
+    &.card-container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .card {
+        display: flex;
+        width: 150px;
+        height: 100px;
+        margin: 1rem;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        &:hover {
+            color: @cryptpad_color_white;
+            background-color: @cryptpad_color_brand_300;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        img {
+            width: 40px;
+            margin-right: 2rem;
+            margin-left: 2rem;
+            margin-bottom: 5px;
+        }
+
+        i {
+            font-size: 2em;
+            margin-right: 1em;
+            margin-left: 1em;
+            margin-bottom: 5px;
+            color: @cryptpad_color_brand !important;
+        }
+    }
+}

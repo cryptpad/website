@@ -12,12 +12,6 @@
         "description": "This CryptPad instance is hosted by the Pirate Party of Germany. We stand for privacy and digital sovereignty."
     },
     {
-        "title": "Ébauche FACiLe",
-        "url": "https://ebauche.facil.services/",
-        "location": "Québec",
-        "description": "Instance publique de CryptPad opérée par FACiL."
-    },
-    {
         "url": "https://cryptpad.disroot.org",
         "title": "cryptpad.disroot.org",
         "location": "Netherlands",
@@ -36,15 +30,21 @@
         "description": "CryptPad Instanz der Piratenpartei Baden-Württemberg."
     },
     {
-        "title": "NicFab CryptPad",
-        "url": "https://cryptpad.nicfab.eu",
-        "location": "Italy",
-        "description": "Independent CryptPad instance operated by NicFab."
+	   "title": "cryptpad.private.coffee",
+	   "url": "https://cryptpad.private.coffee",
+      "location": "Austria",
+	   "description": "An independent community instance of CryptPad brought to you by Private.coffee."
     },
     {
-	"title": "cryptpad.private.coffee",
-	"url": "https://cryptpad.private.coffee",
-	"location": "Austria",
-	"description": "An independent community instance of CryptPad brought to you by Private.coffee."
+       "title": "cryptpad.bolha.tools",
+       "url": "https://cryptpad.bolha.tools",
+      "location": "Canada/Brasil",
+       "description": "The is the Cryptpad instance of Bolha.io Collective"
+    },
+    {
+       "title": "ComputerLiebe Cryptpad",
+       "url": "https://notes.dunst.be",
+      "location": "Germany",
+       "description": "'This is an independent Cryptpad instance - hosted by ComputerLiebe."
     }
 ]

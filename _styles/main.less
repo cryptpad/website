@@ -42,6 +42,7 @@
 @import './_styles/footer.less';
 @import './_styles/nav.less';
 @import './_styles/jobs.less';
+@import './_styles/contact.less';
 @import './_styles/sectors.less';
 @import 'dialog.less';
 @import 'carousel-prev-next.less';
@@ -284,7 +285,7 @@ section.instance-wrapper {
 
 section.instance, section.role {
     //min-height: ~"calc(50vh - 15px)";
-    margin: 25px 10px 50px 10px;
+    margin: 25px 10px;
     padding: 15px;
     background-color: white;
     max-width: 100rem;
@@ -463,19 +464,23 @@ span.discount {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 30%;
+        width: 23%;
         border-radius: 1.5rem;
         position: relative;
+        &.pricing {
+            width:30%;
+        }
 
         ul {
             list-style-type: none;
             padding-left: 0;
             line-height: 1.5em;
-            margin: 1rem 0;
+            margin: 1rem 0 0 2em;
             li {
                 .fa {
                     width: 2em;
                     text-align: center;
+                    margin-left: -2em;
                 }
             }
         }
@@ -497,7 +502,7 @@ span.discount {
     }
 
     .price {
-        margin: 0 0 2rem 0;
+        margin: 1.5rem 0;
         flex-grow: 1;
         display: flex;
         align-items: center;
@@ -551,6 +556,9 @@ span.discount {
             &.instance-plan {
                 max-width: 40ch;
             }
+            &.pricing {
+                width: 100%;
+            }
         }
     }
 }
@@ -561,11 +569,12 @@ span.discount {
     align-items: center;
     margin: 0 auto;
     max-width: 90rem;
-    .card {
-        margin: 2rem;
-        background-color: @cryptpad_color_white;
-        border-radius: @radius_L;
-        width: 100%;
-        .shadow();
-    }
+}
+
+.card {
+    margin: 2rem;
+    background-color: @cryptpad_color_white;
+    border-radius: @radius_L;
+    width: 100%;
+    .shadow();
 }
