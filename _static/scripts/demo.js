@@ -108,7 +108,7 @@ instanceNameInput.addEventListener('input', function () {
     }
 
     if (json.errorType == "subdomain_contains_special_chars") {
-      displayFieldError("urlContainer", "Instance name should not contain special characters");
+      displayFieldError("urlContainer", "Instance name should not contain capital letters or special characters");
       return;
     }
 
