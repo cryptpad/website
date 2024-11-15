@@ -14,7 +14,7 @@ app.use(BodyParser.urlencoded({ extended: true }));
 app.use(BodyParser.json());
 
 // trying solution to cors error found here: https://www.reddit.com/r/react/comments/uc90b7/hi_im_consuming_an_api_form_an_express_server_my/
-const whitelist = ["http://localhost:3004"]; 
+const whitelist = ["http://localhost:3005"]; 
 
 const corsOptions = { 
     origin: (origin, callback) => { 
@@ -30,6 +30,7 @@ app.use(cors(corsOptions));
 // end temp solution 
 
 // app.use(cors());
+
 // Serve the content to test locally
 app.use(Express.static(Path.resolve('built')));
 
