@@ -80,7 +80,7 @@ let postToServer = (url, params, cb) => {
 };
 
 instanceNameInput.addEventListener('input', function () {
-  let url = "http://localhost:3004/cloud/available";
+  let url = "/cloud/available";
   let instanceName =  instanceNameInput.value;
   let params = {
       instanceName: instanceNameInput.value
@@ -127,7 +127,7 @@ instanceNameInput.addEventListener('input', function () {
   form.addEventListener('submit', function (event) {
     event.preventDefault();
     clearAllFieldErrors();
-    let url = "http://localhost:3004/cloud/create";
+    let url = "/cloud/create";
     let params = {
         instanceName: document.getElementById('subdomain').value,
         firstName: document.getElementById('firstName').value,

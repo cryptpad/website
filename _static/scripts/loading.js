@@ -31,7 +31,7 @@ const fetchProgressData = () => {
         console.error('jobId not found in creationProgressInfo');
         return;
     }
-    fetch(`http://localhost:3004/cloud/create/${jobId}/progress`)
+    fetch(`/cloud/create/${jobId}/progress`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
