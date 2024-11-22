@@ -119,17 +119,25 @@ let postWebmecanik = (data) => {
         }
     }
 
-    Axios({
-        url,
-        method: "POST",
+    let id = new URL(url).searchParams.get('formId');
+    formData.append('mauticform[formId]', id);
+    formData.append('mauticform[language]', 'en');
+    formData.append('mauticform[instance_name]', null);
+    formData.append('mauticform[instance_type]', null);
+    formData.append('mauticform[return]', '');
+    formData.append('mauticform[formName]', 'cryptpadclouddemocreationen');
+    formData.append('mauticform[messenger]', 1);
+
+    Axios.post(url, formData, {
         headers: {
             'Content-Type': 'multipart/form-data'
-        },
-        body: formData
+        }
     }).catch(error => {
         console.error("Error while posting to webmecanik");
+        console.error(url);
         console.error(formData);
         console.error(error.response?.data || error.message);
+        console.error(error.response?.status);
     });
 
 };
