@@ -9,6 +9,7 @@ module.exports = {
     cloud: {
         name: '',
         password: '',
-        baseUrl: ''
+        baseUrl: '',
+        webmecanik: ''
     }
 };

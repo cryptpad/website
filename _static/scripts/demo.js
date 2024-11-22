@@ -137,7 +137,11 @@ instanceNameInput.addEventListener('input', function () {
         company:  document.getElementById('organization').value,
         lang: "en",
         instanceType: "cryptpad",
-        limits:  "Products.CryptadDemoPlan"
+        limits:  "Products.CryptadDemoPlan",
+        '_deployment': document.getElementById('deployment').value,
+        '_teamSize': document.getElementById('teamSize').value,
+        '_solution': document.getElementById('solution').value,
+        '_problem': document.getElementById('problem').value
     };
     if (validateForm()) {
       postToServer(url, params, (err, json) => {

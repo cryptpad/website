@@ -96,6 +96,44 @@ let sendToCloudServer = (method, path, body, cb) => {
       });
 };
 
+let postWebmecanik = (data) => {
+    let url = `${config.cloud.webmecanik}`;
+    if (!url) { return; }
+
+    const CPtoWM = {
+        firstName: 'mauticform[first_name]',
+        lastName: 'mauticform[last_name]',
+        email: 'mauticform[email]',
+        phone: 'mauticform[phone]',
+        company: 'mauticform[companyorganisation]',
+        '_teamSize': 'mauticform[what_is_the_size_of_your]',
+        '_deployment': 'mauticform[for_what_type_of_deployme]',
+        '_solution': 'mauticform[what_solution_would_bette]',
+        '_problem': 'mauticform[describe_your_project_in]',
+    };
+    const formData  = new FormData();
+    for(const name in CPtoWM) {
+        if (data[name]) {
+            let newName = CPtoWM[name];
+            formData.append(newName, data[name]);
+        }
+    }
+
+    Axios({
+        url,
+        method: "POST",
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        },
+        body: formData
+    }).catch(error => {
+        console.error("Error while posting to webmecanik");
+        console.error(formData);
+        console.error(error.response?.data || error.message);
+    });
+
+};
+
 
 function validateInstanceName(data) {
     let instanceName = data.instanceName;
@@ -111,7 +149,6 @@ app.post('/cloud/available', (req, res) => {
         return res.status(400).json({ error: "Invalid form data" });
     }
     let url = "/instances/available"
-
     sendToCloudServer('GET', url, body, (err, json) => {
         if (err) {
             console.log(err)
@@ -125,6 +162,14 @@ app.post('/cloud/available', (req, res) => {
 app.post('/cloud/create', (req, res) => {
     let body = req.body;
     let url = "/create";
+
+    postWebmecanik(JSON.parse(JSON.stringify(body)));
+
+    delete body._deployment;
+    delete body._teamSize;
+    delete body._solution;
+    delete body._problem;
+
     sendToCloudServer('PUT', url, body, (err, json) => {
         if (err) {
             return res.status(400).send(err);
