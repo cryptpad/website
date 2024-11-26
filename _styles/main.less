@@ -160,12 +160,19 @@ button {
         color: @cryptpad_color_white;
         background-color: @cryptpad_color_grey_700;
     }
+    &[disabled] {
+        color: @cryptpad_color_white;
+        background-color: @cryptpad_color_grey_700;
+    }
 }
 
 .btn.primary {
     background-color: @cryptpad_color_brand;
     color: @cryptpad_color_white;
     &:hover {
+        background-color: @cryptpad_color_grey_700;
+    }
+    &[disabled] {
         background-color: @cryptpad_color_grey_700;
     }
 }

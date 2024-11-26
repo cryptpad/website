@@ -144,7 +144,10 @@ instanceNameInput.addEventListener('input', function () {
         '_problem': document.getElementById('problem').value
     };
     if (validateForm()) {
+      const submit = document.getElementById('submitBtn');
+      if (submit) { submit.setAttribute('disabled', 'disabled'); }
       postToServer(url, params, (err, json) => {
+        if (submit) { submit.removeAttribute('disabled'); }
         if (err) {
           console.error(err);
           displaySubmitButtonError("Some errors prevented this form from being submitted.");
