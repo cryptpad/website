@@ -146,7 +146,8 @@ instanceNameInput.addEventListener('input', function () {
     if (validateForm()) {
       postToServer(url, params, (err, json) => {
         if (err) {
-          displayFieldError('submitButton',"Some errors prevented this form from being submitted.");
+          console.error(err);
+          displaySubmitButtonError("Some errors prevented this form from being submitted.");
           return;
         }
 

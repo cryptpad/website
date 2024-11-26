@@ -104,7 +104,7 @@ let postWebmecanik = (data) => {
         firstName: 'mauticform[first_name]',
         lastName: 'mauticform[last_name]',
         email: 'mauticform[email]',
-        phone: 'mauticform[phone]',
+        phoneNumber: 'mauticform[phone]',
         company: 'mauticform[companyorganisation]',
         '_teamSize': 'mauticform[what_is_the_size_of_your]',
         '_deployment': 'mauticform[for_what_type_of_deployme]',
