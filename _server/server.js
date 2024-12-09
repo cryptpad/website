@@ -100,12 +100,14 @@ let postWebmecanik = (data) => {
     let url = `${config.cloud.webmecanik}`;
     if (!url) { return; }
 
+    // XXX newsletter_opt_in
     const CPtoWM = {
         firstName: 'mauticform[first_name]',
         lastName: 'mauticform[last_name]',
         email: 'mauticform[email]',
         phoneNumber: 'mauticform[phone]',
         company: 'mauticform[companyorganisation]',
+        instanceName: 'mauticform[instance_name]',
         '_teamSize': 'mauticform[what_is_the_size_of_your]',
         '_deployment': 'mauticform[for_what_type_of_deployme]',
         '_solution': 'mauticform[what_solution_would_bette]',
@@ -122,8 +124,7 @@ let postWebmecanik = (data) => {
     let id = new URL(url).searchParams.get('formId');
     formData.append('mauticform[formId]', id);
     formData.append('mauticform[language]', 'en');
-    formData.append('mauticform[instance_name]', null);
-    formData.append('mauticform[instance_type]', null);
+    formData.append('mauticform[instance_type]', 'cryptpad');
     formData.append('mauticform[return]', '');
     formData.append('mauticform[formName]', 'cryptpadclouddemocreationen');
     formData.append('mauticform[messenger]', 1);
