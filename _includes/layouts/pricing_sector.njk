@@ -15,9 +15,15 @@
             </div>
     </section>
 
+    {% if (sector == "Enterprise") %}
+        {% set anchor = "full" %}
+    {% else %}
+        {% set anchor = "discount" %}
+    {% endif %}
+
     <section class="CTA">
         {% if price %}
-            <a class="fake-button" href="/pricing">{{sector}} pricing<i class="fa fa-arrow-right"></i></a>
+            <a class="fake-button" href="/pricing#{{anchor}}">{{sector}} pricing<i class="fa fa-arrow-right"></i></a>
         {% endif %}
     </section>
 
@@ -42,7 +48,7 @@
 
     <section class="CTA">
         {% if price %}
-            <a class="fake-button" href="/pricing">{{sector}} pricing<i class="fa fa-arrow-right"></i></a>
+            <a class="fake-button" href="/pricing#{{anchor}}">{{sector}} pricing<i class="fa fa-arrow-right"></i></a>
         {% endif %}
     </section>
 
