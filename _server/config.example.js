@@ -7,6 +7,7 @@ module.exports = {
         projectID: 0
     },
     cloud: {
+        disable: false,
         name: '',
         password: '',
         baseUrl: '',

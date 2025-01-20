@@ -66,29 +66,21 @@
   }
 
   .error-container {
-    margin-top: 1rem;
     display: flex;
-    text-align: center;
+    align-items: baseline;
+    font-size: 2.5rem;
+    color: @cryptpad_color_red;
   }
 
-  .error-container span{
+  .error-container i {
     margin-right: 1rem;
-    color: @cryptpad_color_red;
-    font-size: 1.5em;
   }
-  .error-container#submitButtonError {
+  .error-container span{
     text-align: center;
-    margin: 1rem;
-  }
-  .error-container div {
-    color: @cryptpad_color_red;
-    font-size: 1.5em;
   }
 
-  #instanceName .error-container {
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
+  .error-container#submitButtonError {
+    margin: 1rem;
   }
 
   @media screen and (max-width: @breakpoint) {

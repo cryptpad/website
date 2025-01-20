@@ -19,7 +19,7 @@ window.addEventListener('load', function () {
 
   function displaySubmitButtonError(message) {
     const errorContainer = document.getElementById('submitButtonError');
-    errorContainer.innerHTML = `<span><i class="fa fa-exclamation-circle"></i></span><div>${message}</div>`;
+    errorContainer.innerHTML = `<i class="fa fa-exclamation-circle"></i><span>${message}</span>`;
   }
 
   function displayFieldError(fieldId, message) {
@@ -27,9 +27,9 @@ window.addEventListener('load', function () {
     hideStatus();
     let field = document.getElementById(fieldId);
     let errorContainer = document.createElement('div');
-    let errorElement = document.createElement('span');
-    let errorMessage = document.createElement('div');
-    errorElement.innerHTML = '<i class="fa fa-exclamation-circle"></i>';
+    let errorElement = document.createElement('i');
+    let errorMessage = document.createElement('span');
+    errorElement.classList.add('fa','fa-exclamation-circle');
     errorMessage.textContent = message;
     errorContainer.appendChild(errorElement);
     errorContainer.appendChild(errorMessage);
@@ -112,7 +112,10 @@ instanceNameInput.addEventListener('input', function () {
       return;
     }
 
-    if (json.status) {
+    if (json?.offline) {
+        return;
+    }
+    if (json?.status) {
         console.log("The name is available");
         spinner.style.display = 'none';
         checkmark.style.display = 'inline-block';
@@ -148,13 +151,17 @@ instanceNameInput.addEventListener('input', function () {
       const submit = document.getElementById('submitBtn');
       if (submit) { submit.setAttribute('disabled', 'disabled'); }
       postToServer(url, params, (err, json) => {
+        if (json?.offline) {
+            displaySubmitButtonError("The demo service is not available at the moment. Your information was sent and we will contact you as soon as demos are available again.");
+            return;
+        }
+
         if (submit) { submit.removeAttribute('disabled'); }
         if (err) {
           console.error(err);
           displaySubmitButtonError("Some errors prevented this form from being submitted.");
           return;
         }
-
         if (json.instanceCreationStatus) {
             localStorage.setItem('jsonData', JSON.stringify(json));
             window.location.href = "/demo-loading";

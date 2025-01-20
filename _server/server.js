@@ -16,6 +16,8 @@ app.use(cors());
 // Serve the content to test locally
 app.use(Express.static(Path.resolve('built')));
 
+const XNNG_DISABLED = !!config.cloud?.disable;
+
 // Post to gitlab
 const postGitlab = (data, cb) => {
     if (!data) { return cb(new Error("Missing data")); }
@@ -97,10 +99,13 @@ let sendToCloudServer = (method, path, body, cb) => {
 };
 
 let postWebmecanik = (data) => {
-    let url = `${config.cloud.webmecanik}`;
+    let url = config.cloud.webmecanik;
     if (!url) { return; }
 
-    // XXX newsletter_opt_in
+    if (XNNG_DISABLED) {
+        data.company = `[ERROR DEMO NOT LAUNCHED] ${data.company}`;
+    }
+
     const CPtoWM = {
         firstName: 'mauticform[first_name]',
         lastName: 'mauticform[last_name]',
@@ -154,6 +159,11 @@ function validateInstanceName(data) {
 }
 
 app.post('/cloud/available', (req, res) => {
+    if (XNNG_DISABLED) {
+        return res.json({
+            offline: true
+        });
+    }
     let body = req.body;
      if (!validateInstanceName(body)) {
         return res.status(400).json({ error: "Invalid form data" });
@@ -174,6 +184,12 @@ app.post('/cloud/create', (req, res) => {
     let url = "/create";
 
     postWebmecanik(JSON.parse(JSON.stringify(body)));
+
+    if (XNNG_DISABLED) {
+        return res.json({
+            offline: true
+        });
+    }
 
     delete body._deployment;
     delete body._teamSize;
