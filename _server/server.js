@@ -190,7 +190,7 @@ app.post('/cloud/create', (req, res) => {
     let webMecData = JSON.parse(JSON.stringify(body));
 
     const sendMail = (error) => {
-        let subject = `CryptPad.org Cloud form: ${body.company}`;
+        let subject = `Error during CryptPad Cloud instance creation`;
         let content = JSON.stringify(body, 0, 2);
         Mail.send(subject, content, (err, info) => {
             if (err) {
