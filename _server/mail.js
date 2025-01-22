@@ -14,7 +14,7 @@ Mail.send = (subject, content, cb) => {
     const smtpTransport = Nodemailer.createTransport({
         host: config.mail?.host,
         port: config.mail?.port,
-        tls: config.mail?.tls?
+        tls: config.mail?.tls,
         auth: {
             user: config.mail?.user,
             pass: config.mail?.password
