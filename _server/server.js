@@ -8,6 +8,7 @@ const BodyParser = require('body-parser');
 const Axios = require('axios');
 const config = require('./config');
 const cors = require('cors');
+const Mail = require('./mail');
 
 const app = Express();
 app.use(BodyParser.urlencoded({ extended: true }));
@@ -98,11 +99,11 @@ let sendToCloudServer = (method, path, body, cb) => {
       });
 };
 
-let postWebmecanik = (data) => {
+let postWebmecanik = (data, xnngDown) => {
     let url = config.cloud.webmecanik;
     if (!url) { return; }
 
-    if (XNNG_DISABLED) {
+    if (XNNG_DISABLED || xnngDown) {
         data.company = `[ERROR DEMO NOT LAUNCHED] ${data.company}`;
     }
 
@@ -172,7 +173,10 @@ app.post('/cloud/available', (req, res) => {
     sendToCloudServer('GET', url, body, (err, json) => {
         if (err) {
             console.log(err)
-            return res.status(400).send(err);
+            return res.json({
+                offline: true // hide server errors
+            });
+            //return res.status(400).send(err);
         }
         res.json(json);
     })
@@ -183,12 +187,24 @@ app.post('/cloud/create', (req, res) => {
     let body = req.body;
     let url = "/create";
 
-    postWebmecanik(JSON.parse(JSON.stringify(body)));
+    let webMecData = JSON.parse(JSON.stringify(body));
+
+    const sendMail = (error) => {
+        let subject = `CryptPad.org Cloud form: ${body.company}`;
+        let content = JSON.stringify(body, 0, 2);
+        Mail.send(subject, content, (err, info) => {
+            if (err) {
+                res.status(400).send(error);
+                return void postWebmecanik(webMecData, true);
+            }
+            res.json({
+                offline: true
+            });
+        });
+    };
 
     if (XNNG_DISABLED) {
-        return res.json({
-            offline: true
-        });
+        return void sendMail();
     }
 
     delete body._deployment;
@@ -198,8 +214,9 @@ app.post('/cloud/create', (req, res) => {
 
     sendToCloudServer('PUT', url, body, (err, json) => {
         if (err) {
-            return res.status(400).send(err);
+            return void sendMail(err);
         }
+        postWebmecanik(webMecData);
         console.log("Instance creation started. Checking status...");
         res.json(json);
     });

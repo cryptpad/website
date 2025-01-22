@@ -12,5 +12,13 @@ module.exports = {
         password: '',
         baseUrl: '',
         webmecanik: ''
+    },
+    mail: { // sent when xnng is down
+        sendTo: '',
+        tls: true,
+        user: '',
+        password: '',
+        host: '',
+        port: ''
     }
 };
