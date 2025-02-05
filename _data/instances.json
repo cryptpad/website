@@ -6,12 +6,6 @@
        "location": "Germany"
     },
     {
-       "title": "cryptpad.piratenpartei.de",
-       "url": "https://cryptpad.piratenpartei.de",
-       "location": "Deutschland",
-       "description": "This CryptPad instance is hosted by the Pirate Party of Germany. We stand for privacy and digital sovereignty."
-    },
-    {
        "url": "https://cryptpad.disroot.org",
        "title": "cryptpad.disroot.org",
        "location": "Netherlands",
