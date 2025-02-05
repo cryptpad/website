@@ -18,6 +18,12 @@
        "description": "This CryptPad instance is hosted by Disroot.org."
     },
     {
+      "url": "https://cryptpad.private.coffee",
+      "title": "cryptpad.private.coffee",
+      "location": "Austria",
+      "description": "An independent community instance of CryptPad brought to you by Private.coffee."
+    },
+    {
        "url": "https://cryptpad.malacher.fr",
        "title": "CipherPad",
        "location": "France",
