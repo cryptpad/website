@@ -413,9 +413,12 @@ section {
 
 section.CTA {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 8em;
+    @media screen and (max-width: 770px) {
+        flex-direction: column;
+    }
 }
 
 .pricing-desc {
