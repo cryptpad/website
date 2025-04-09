@@ -1,0 +1,261 @@
+
+.form-container {
+  background-color: @cryptpad_color_white;
+  padding: 4rem;
+  border-radius: @radius_L;
+  width: 80%;
+  margin: 0 auto;
+  resize: none;
+  .shadow();
+
+  .form {
+    border-radius: @radius_L;
+    margin-bottom: 10rem;
+    text-align: left;
+  }
+
+  .form-group {
+    margin-bottom: 2rem;
+  }
+
+  .checkbox-group {
+    font-size: 2.5rem;
+    label {
+        display: flex;
+        align-items: center;
+    }
+    input {
+        width: 2.5rem;
+        align-self: stretch;
+        margin-right: 0.5rem;
+        margin-left: 0;
+    }
+  }
+
+  .form-row {
+    display: flex;
+    margin-right: 0;
+    justify-content: space-between;
+    max-width: 99%;
+    .form-group {
+      max-width:20rem;
+      align-self: flex-start;
+      margin-right: 1rem;
+    }
+  }
+
+  .XWiki-signature {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+  }
+
+  .XWiki-signature a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .XWiki-signature span {
+    font-size: 2.5rem;
+  }
+
+  .XWiki-signature img {
+    max-height: 4rem;
+    margin-right: 0.5rem;
+  }
+
+  p.disclaimer {
+    font-size: 2rem;
+    max-width: 100%;
+  }
+
+  .error-container {
+    display: flex;
+    align-items: baseline;
+    font-size: 2rem;
+    color: @cryptpad_color_red;
+  }
+
+  .error-container i {
+    margin-right: 1rem;
+  }
+  .error-container span{
+    text-align: center;
+  }
+
+  .error-container#submitButtonError {
+    margin: 1rem;
+  }
+
+  @media screen and (max-width: @breakpoint) {
+    .form-row {
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .form-row .form-group {
+      max-width: 100%;
+      align-self: stretch;
+    }
+    .url-container {
+      max-width: 100%;
+      font-size: 1.5rem;
+    }
+    .char-count {
+      display: none;
+    }
+    .url-prefix-box {
+      display: none;
+    }
+    .url-suffix-box {
+      padding-left: 0;
+    }
+  }
+
+  section {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section p {
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 5rem;
+    padding: 0;
+  }
+
+  .form-row .form-group {
+    min-width: 50%;
+  }
+
+  .form-group label {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  .form-group textarea {
+    height: 100%;
+  }
+
+  .url-container {
+    display: flex;
+    justify-content: center;
+    border: 0.2rem solid @cryptpad_color_grey_300;
+    background-color: @cryptpad_color_grey_200;
+    border-radius: @radius;
+    padding: 0 1rem;
+    margin: 0 auto;
+  }
+
+  .input-sizer {
+    display: inline-grid;
+    vertical-align: top;
+    align-items: center;
+    position: relative;
+    padding: .25em .5em;
+    &.stacked {
+      padding: .5em;
+      align-items: stretch;
+    }
+
+    &::after,
+    input,
+    textarea {
+      width: auto;
+      min-width: 1em;
+      grid-area: 1 / 2;
+      padding: 0.25em;
+      margin: 0;
+      background: none;
+      appearance: none;
+      border: none;
+    }
+
+    &::after {
+      content: attr(data-value) ' ';
+      visibility: hidden;
+      white-space: pre-wrap;
+    }
+  }
+
+  .url-prefix-box,
+  .url-suffix-box {
+    padding: 2rem 1rem;
+    border-radius: @radius;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 2rem;
+  }
+
+  .url-input {
+    border: none;
+    background-color: transparent;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 2rem;
+    margin-right: 0.1rem;
+    width: auto;
+  }
+
+  .btn.primary {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .validate-account {
+    text-align: center;
+    border: 0.1rem solid @cryptpad_color_grey_800;
+    text-align: left;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    font-size: 2rem;
+    max-width: unset;
+  }
+
+  .form-card {
+    background-color: @cryptpad_color_white;
+    padding: 2.5rem;
+    border-radius: @radius_L;
+    width: 100%;
+    margin: 0 auto;
+    .shadow();
+  }
+
+  .status-icon {
+    display: flex;
+    align-items: center;
+  }
+
+  #checkmark.fa.fa-check {
+    font-size: 2rem;
+    color: @cryptpad_color_green;
+  }
+
+  .textarea-container {
+    position: relative;
+  }
+
+  .char-count {
+    position: absolute;
+    color: @cryptpad_color_grey_500;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    pointer-events: none;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-family: 'Open Sans', Verdana, Geneva, sans-serif;
+    border: 0.2rem solid @cryptpad_color_grey_300;
+    border-radius: @radius;
+    box-sizing: border-box;
+    margin-right: 2rem;
+    margin-bottom: 0;
+    resize: none;
+  }
+}

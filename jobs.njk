@@ -7,9 +7,9 @@ jobs:
     slug: no-roles
     role: We are not actively interviewing at the moment, but we may do so again in the future. Please send us your details to be considered for future roles, especially if you work in the following areas
     tasks:
-        - Accessibility (WCAG compliance)
-        - Cryptography applied to web-applications
-        - Web development for privacy
+        - Accessibility (WCAG compliance);
+        - Cryptography applied to web-applications;
+        - Web development for privacy.
 
 ---
 
@@ -76,6 +76,14 @@ jobs:
                             <li>{{ task }}</li>
                         {% endfor %}
                     </ul>
+                    {% if job.detailedOffers %}
+                    <p>More information:</p>
+                    <ul>
+                        {% for info in job.detailedOffers %}
+                        <li><a href="{{info.url}}">{{info.title}}</a></li>
+                        {% endfor%}
+                        </ul>
+                    {% endif %}
                     {% if job.salary %}
                         <p>Salary range: {{job.salary}}</p>
                     {% endif %}

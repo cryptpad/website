@@ -1,56 +1,44 @@
 [
     {
-        "title": "pad.envs.net",
-        "url": "https://pad.envs.net",
-        "description": "envs.net is a minimalist, non-commercial shared unix system and will always be free to use.",
-        "location": "Germany"
+       "title": "pad.envs.net",
+       "url": "https://pad.envs.net",
+       "description": "envs.net is a minimalist, non-commercial shared unix system and will always be free to use.",
+       "location": "Germany"
     },
     {
-        "title": "cryptpad.piratenpartei.de",
-        "url": "https://cryptpad.piratenpartei.de",
-        "location": "Deutschland",
-        "description": "This CryptPad instance is hosted by the Pirate Party of Germany. We stand for privacy and digital sovereignty."
+       "url": "https://cryptpad.disroot.org",
+       "title": "cryptpad.disroot.org",
+       "location": "Netherlands",
+       "description": "This CryptPad instance is hosted by Disroot.org."
     },
     {
-        "url": "https://cryptpad.disroot.org",
-        "title": "cryptpad.disroot.org",
-        "location": "Netherlands",
-        "description": "This CryptPad instance is hosted by Disroot.org."
-    },
-    {
-        "url": "https://cryptpad.malacher.fr",
-        "title": "CipherPad",
-        "location": "France",
-        "description": "Instance hosted by individuals for free and available for everyone."
-    },
-    {
-        "title": "Piratenpartei Baden-Württemberg",
-        "url": "https://cryptpad.piratenpartei-bw.de",
-        "location": "Deutschland",
-        "description": "CryptPad Instanz der Piratenpartei Baden-Württemberg."
-    },
-    {
-	   "title": "cryptpad.private.coffee",
-	   "url": "https://cryptpad.private.coffee",
+      "url": "https://cryptpad.private.coffee",
+      "title": "cryptpad.private.coffee",
       "location": "Austria",
-	   "description": "An independent community instance of CryptPad brought to you by Private.coffee."
+      "description": "An independent community instance of CryptPad brought to you by Private.coffee."
+    },
+    {
+       "url": "https://cryptpad.malacher.fr",
+       "title": "CipherPad",
+       "location": "France",
+       "description": "Instance hosted by individuals for free and available for everyone."
     },
     {
        "title": "cryptpad.bolha.tools",
        "url": "https://cryptpad.bolha.tools",
-      "location": "Canada/Brasil",
+       "location": "Canada/Brasil",
        "description": "The is the Cryptpad instance of Bolha.io Collective"
     },
     {
-       "title": "cryptpad.jpeg.gay",
-       "url": "https://cryptpad.jpeg.gay",
-      "location": "California, United States",
-       "description": "This is purely a community-led radical-server hosting cryptpad"
+       "title": "pad.4d2.org",
+       "url": "https://pad.4d2.org",
+       "location": "United States of America",
+       "description": "CryptPad instance courtesy of 4d2 dot org"
     },
     {
-       "title": "ComputerLiebe Cryptpad",
-       "url": "https://notes.dunst.be",
-      "location": "Germany",
-       "description": "'This is an independent Cryptpad instance - hosted by ComputerLiebe."
+       "title": "NL Cryptpad",
+       "url": "https://cryptpad.noleron.com",
+       "location": "Ukraine",
+       "description": "Український інстанс Cryptpad. powered by noleron.com"
     }
 ]

@@ -1,0 +1,116 @@
+---
+title: CryptPad Cloud Demo
+description: Test drive your own CryptPad instance
+layout: layouts/main
+---
+
+<section>
+  <h1>Try CryptPad Cloud</h1>
+  <p >Test drive your own instance of CryptPad. Keep it with a subscription plan if it fits your needs</p>
+</section>
+
+<section>
+  <div class="form-container">
+    <h3>Your CryptPad Cloud URL</h3>
+    <section class="hero" id="instanceName">
+      <div class="url-container" id="urlContainer">
+        <div class="url-prefix-box">https://</div>
+        <div class="input-sizer">
+          <input type="text" class="url-input " id="subdomain" onInput="this.parentNode.dataset.value = this.value" size="25" maxlength="64" placeholder="demoname">
+        </div>
+        <div class="url-suffix-box">.cryptpad.cloud</div>
+        <div class="status-icon" id="statusIcon">
+          <i class="fa fa-spinner fa-spin" id="spinner" style="display:none;"></i>
+          <i class="fa fa-check" id="checkmark" style="display:none;"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="form">
+      <p>Please share some information to understand your needs and keep in touch:</p>
+      <form id="demoForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" name="firstName" required placeholder="Your first name">
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" name="lastName" required placeholder="Your last name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phoneNumber">Phone number</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" required placeholder="Your phone number">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="yourname@company.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="organization">Organization</label>
+          <input type="text" id="organization" name="organization" placeholder="The name of your organization">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="deployment">For what type of deployment are you testing?</label>
+            <select id="deployment" name="deployment" placeholder="Choose type of deployment">
+              <option value="on-premise">On-Premise</option>
+              <option value="cloud">Cloud</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="teamSize">What is the size of your team?</label>
+            <select id="teamSize" name="teamSize" placeholder="Choose team size">
+              <option value="1-10">1-10</option>
+              <option value="11-50">11-50</option>
+              <option value="51-200">51-200</option>
+              <option value="200+">200+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="solution">What type of solution are you interested in?</label>
+          <select id="solution" name="solution" placeholder="Choose solution type">
+            <option value="document-editing">Document Editing</option>
+            <option value="real-time-collaboration">Real-time Collaboration</option>
+            <option value="secure-file-sharing">Secure File Sharing</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="problem">What problem are you expecting CryptPad to help you with?</label>
+          <div class="textarea-container">
+            <textarea id="problem" name="problem" rows="5" maxlength="700" placeholder="Describe here your problem (max: 700 characters)"></textarea>
+            <div class="char-count" id="charCount">Character count: 0 / 700</div>
+          </div>
+        </div>
+        <div class="checkbox-group">
+          <label for="newsletter">
+            <input type="checkbox" id="newsletter" name="newsletter">
+            Subscribe to the CryptPad newsletter
+          </label>
+        </div>
+        <p class="disclaimer">
+          By filling in your data and clicking <b>Launch demo instance</b>, you agree to XWiki SAS' <a href="https://xwiki.com/en/company/PrivacyPolicy">Privacy Policy</a>. You also agree to receive emails from our company and partners pertaining to your request. You can always visit our <a href="https://news.xwiki.com/cryptpadpreferencecenteren">subscription center</a> to update your preferences.
+        </p>
+        <section>
+          <div class="error-container" id="submitButtonError"></div>
+          <button type="submit" class="btn primary" id="submitBtn"><i class="fa fa-rocket" aria-hidden="true"></i> Launch demo instance</button>
+          {# XXX check exact timing and wording #}
+          <p class="validate-account"><i class="fa fa-warning"></i> Once you create your demo instance you will receive an email to validate your account. Please validate within 4 hours to keep your demo for an additional 10 days.</p>
+          <div class="XWiki-signature">
+            <a href="https://xwiki.com" target="_blank">
+              <img src="/images/logo_XWiki.svg" alt="XWiki Logo">
+              <span>CryptPad Cloud is provided by XWiki SAS</span>
+            </a>
+          </div>
+        </section>
+      </form>
+    </section>
+  </div>
+</section>
+
+<script src="/scripts/demo.js?ver={{cache.buster}}"></script>

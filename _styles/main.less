@@ -12,6 +12,8 @@
 @cryptpad_color_grey_800: #424242;
 @cryptpad_color_grey_900: #212121;
 @cryptpad_color_grey_950: #121212;
+@cryptpad_color_red: #ff1100;
+@cryptpad_color_green: green;
 
 @cryptpad_color_brand: #0087FF;
 @cryptpad_color_brand_200: lighten(@cryptpad_color_brand, 20%);
@@ -46,6 +48,9 @@
 @import 'dialog.less';
 @import 'carousel-prev-next.less';
 @import './_styles/testimonials.less';
+@import './_styles/demo-form.less';
+@import './_styles/loading.less';
+@import './_styles/top-banner.less';
 
 html {
     font-size: 8px; // for rem units, makes responsive sizes easier
@@ -157,12 +162,19 @@ button {
         color: @cryptpad_color_white;
         background-color: @cryptpad_color_grey_700;
     }
+    &[disabled] {
+        color: @cryptpad_color_white;
+        background-color: @cryptpad_color_grey_700;
+    }
 }
 
 .btn.primary {
     background-color: @cryptpad_color_brand;
     color: @cryptpad_color_white;
     &:hover {
+        background-color: @cryptpad_color_grey_700;
+    }
+    &[disabled] {
         background-color: @cryptpad_color_grey_700;
     }
 }
@@ -282,7 +294,7 @@ section.instance-wrapper {
 
 section.instance, section.role {
     //min-height: ~"calc(50vh - 15px)";
-    margin: 25px 10px 50px 10px;
+    margin: 25px 10px;
     padding: 15px;
     background-color: white;
     max-width: 100rem;
@@ -403,9 +415,12 @@ section {
 
 section.CTA {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 8em;
+    @media screen and (max-width: 770px) {
+        flex-direction: column;
+    }
 }
 
 .pricing-desc {
@@ -566,11 +581,12 @@ span.discount {
     align-items: center;
     margin: 0 auto;
     max-width: 90rem;
-    .card {
-        margin: 2rem;
-        background-color: @cryptpad_color_white;
-        border-radius: @radius_L;
-        width: 100%;
-        .shadow();
-    }
+}
+
+.card {
+    margin: 2rem;
+    background-color: @cryptpad_color_white;
+    border-radius: @radius_L;
+    width: 100%;
+    .shadow();
 }
