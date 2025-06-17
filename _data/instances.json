@@ -46,5 +46,11 @@
       "url": "https://cryptpad.blablalinux.be",
       "location": "Belgique",
       "description": "Ceci est une instance communautaire et indépendante de CryptPad."
+    },
+    {
+      "title": "Fediverse Foundation",
+      "url": "https://docs.fediverse.foundation",
+      "location": "Austria",
+      "description": "Docs, powered by you and the Fediverse Foundation!"
     }
 ]
