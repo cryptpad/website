@@ -1,4 +1,4 @@
-
+const markdownIt = require("markdown-it");
 
 module.exports = (function(eleventyConfig) {
     eleventyConfig.addWatchTarget("_styles");
@@ -29,4 +29,11 @@ module.exports = (function(eleventyConfig) {
     // return {
     //     markdownTemplateEngine: "njk, md"
     // }
+    const md = new markdownIt({
+      html: true,
+    });
+
+    eleventyConfig.addFilter("markdown", (content) => {
+      return md.render(content);
+    });
 });
