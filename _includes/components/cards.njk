@@ -6,8 +6,8 @@
         <h2>{{title}}</h2>
         <p>{{description}}</p>
         <p class="instance-details">
-            <i class="fa fa-link"></i><a tabindex="-1" href="{{url}}" target="_blank">{{url}}</a><br>
-            <i class="fa fa-map-pin"></i>Hosted in {{location}}<br>
+            <i data-lucide="link"></i><a tabindex="-1" href="{{url}}" target="_blank">{{url}}</a><br>
+            <i data-lucide="map-pin"></i>Hosted in {{location}}<br>
         </p>
     </section>
 </section>
@@ -18,10 +18,10 @@
     {# {% include "components/xwiki_badge.njk" %} #}
     <h2>{{name}}</h2>
     <ul>
-        <li><i aria-hidden="true" class="fa fa-users"></i>{{users}} users</li>
-        <li><i aria-hidden="true" class="fa fa-database"></i>{{storage}} storage</li>
-        {% if sso %}<li><i aria-hidden="true" class="fa fa-address-card"></i>{{sso}}</li>{% endif %}
-        <li><i aria-hidden="true" class="fa fa-wrench"></i>Response time<br>{{support_time | safe}}</li>
+        <li><i aria-hidden="true" data-lucide="users"></i>{{users}} users</li>
+        <li><i aria-hidden="true" data-lucide="database"></i>{{storage}} storage</li>
+        {% if sso %}<li><i aria-hidden="true" data-lucide="id-card"></i>{{sso}}</li>{% endif %}
+        <li><i aria-hidden="true" data-lucide="wrench"></i>Response time<br>{{support_time | safe}}</li>
     </ul>
     <div class="price">
         <div class="medium">€{{price_euro_yearly}}/year</div>

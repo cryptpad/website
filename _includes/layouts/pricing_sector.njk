@@ -6,7 +6,7 @@
 
     <section class="half">
         <h1>CryptPad for <span class="sector-title">
-            <i aria-hidden="true" class="fa {{icon}}"></i> {{sector}}
+            <i aria-hidden="true" data-lucide="{{icon}}"></i> {{sector}}
         </span></h1>
         <section class="your-own">
             {# {% include "components/instance_arguments.njk" %} #}
@@ -23,7 +23,7 @@
 
     <section class="CTA">
         {% if price %}
-            <a class="fake-button" href="/pricing#{{anchor}}">{{sector}} pricing<i class="fa fa-arrow-right"></i></a>
+            <a class="fake-button" href="/pricing#{{anchor}}">{{sector}} pricing<i data-lucide="arrow-right"></i></a>
         {% endif %}
     </section>
 
@@ -48,7 +48,7 @@
 
     <section class="CTA">
         {% if price %}
-            <a class="fake-button" href="/pricing#{{anchor}}">{{sector}} pricing<i class="fa fa-arrow-right"></i></a>
+            <a class="fake-button" href="/pricing#{{anchor}}">{{sector}} pricing<i data-lucide="arrow-right"></i></a>
         {% endif %}
     </section>
 
