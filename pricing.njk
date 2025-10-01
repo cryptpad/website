@@ -71,15 +71,15 @@ plans_discount:
       <h2>FREE</h2>
         <p>Free account on a public instance</p>
         <a href="/instances/" class="btn primary">
-          <i class="fa fa-list-ul"></i> See the list
+          <i data-lucide="list"></i> See the list
         </a>
         <p>Self-hosting</p>
         <a href="https://docs.cryptpad.org/en/admin_guide/index.html" class="btn primary">
-          <i class="fa fa-book"></i> Documentation
+          <i data-lucide="book"></i> Documentation
         </a>
         <p>To support the project</p>
         <a href="https://opencollective.com/cryptpad" class="btn primary">
-          <i class="fa fa-open-collective"></i> Donate
+          <i data-lucide="hand-coins"></i> Donate
         </a>
     </div>
     <div class="plan-card pricing">
@@ -90,7 +90,7 @@ plans_discount:
           <div class="medium">€5 to €100 /month</div>
         </div>
       <a href="https://cryptpad.fr/accounts" class="btn primary">
-        <i class="fa fa-ticket"></i> See plans
+        <i data-lucide="tickets"></i> See plans
       </a>
     </div>
     <div class="plan-card pricing">
@@ -100,9 +100,9 @@ plans_discount:
       <div class="price">
         <div class="medium">from €1.5K /year</div>
       </div>
-        <a href="#full" class="btn primary"><i class="fa fa-briefcase"></i> Enterprise</a>
-        <a href="#discount" class="btn primary"><i class="fa fa-users"></i> Nonprofit</a>
-        <a href="#discount" class="btn primary"><i class="fa fa-graduation-cap"></i> Education</a>
+        <a href="#full" class="btn primary"><i data-lucide="briefcase"></i> Enterprise</a>
+        <a href="#discount" class="btn primary"><i data-lucide="users"></i> Nonprofit</a>
+        <a href="#discount" class="btn primary"><i data-lucide="graduation-cap"></i> Education</a>
 
     </div>
   </div>
@@ -114,21 +114,21 @@ plans_discount:
   <section>
     <h2>Your own CryptPad instance</h2>
       <ul class="icon-list">
-          <li><i class="fa fa-home" aria-hidden="true"></i>Your own domain</li>
-          <li><i class="fa fa-paint-brush" aria-hidden="true"></i>Customizations such as logo and colors</li>
-          <li><i class="fa fa-lock"></i>Control over where encrypted data are stored</li>
-          <li><i class="fa fa-hdd-o" aria-hidden="true"></i>Administer storage quotas and upload limits</li>
-          <li><i class="fa fa-handshake-o" aria-hidden="true"></i>Single Sign On (SSO) integration</li>
-          <li><i class="fa fa-cloud" aria-hidden="true"></i>Fully managed cloud instance incl. backups</li>
-          <li><i class="fa fa-home" aria-hidden="true"></i>Or on-premise with first class support</li>
-          <li><i class="fa fa-sun" aria-hidden="true"></i>Updates with new features</li>
-          <li><i class="fa fa-life-ring" aria-hidden="true"></i>Support for your administrators</li>
+          <li><i data-lucide="house" aria-hidden="true"></i>Your own domain</li>
+          <li><i data-lucide="paintbrush" aria-hidden="true"></i>Customizations such as logo and colors</li>
+          <li><i data-lucide="lock"></i>Control over where encrypted data are stored</li>
+          <li><i data-lucide="hard-drive" aria-hidden="true"></i>Administer storage quotas and upload limits</li>
+          <li><i data-lucide="handshake" aria-hidden="true"></i>Single Sign On (SSO) integration</li>
+          <li><i data-lucide="cloud" aria-hidden="true"></i>Fully managed cloud instance incl. backups</li>
+          <li><i data-lucide="house" aria-hidden="true"></i>Or on-premise with first class support</li>
+          <li><i data-lucide="sun" aria-hidden="true"></i>Updates with new features</li>
+          <li><i data-lucide="life-buoy" aria-hidden="true"></i>Support for your administrators</li>
       </ul>
   </section>
 
   <section>
     <h2 id="full">Enterprise pricing</h2>
-    <p><i class="fa fa-cloud" aria-hidden="true"></i> cloud hosting and support or <i class="fa fa-home" aria-hidden="true"></i> on-premise support</p>
+    <p><i data-lucide="cloud" aria-hidden="true"></i> cloud hosting and support or <i data-lucide="house" aria-hidden="true"></i> on-premise support</p>
     <div class="plan-cards-container">
       {% for plan in plans_full %}
           {{ cards.plan(
@@ -143,13 +143,13 @@ plans_discount:
       {% endfor %}
     </div>
     <div class="align-center">
-      <a class="fake-button" href="/try-cloud/">Launch Demo<i class="fa fa-rocket"></i></a>
+      <a class="fake-button" href="/try-cloud/">Launch Demo<i data-lucide="rocket"></i></a>
     </div>
   </section>
 
 <section>
   <h2 id="discount">Discount pricing for education and nonprofits</h2>
-  <p><span class="discount">50% OFF</span> Enterprise pricing<br><i class="fa fa-cloud" aria-hidden="true"></i> cloud hosting and support or <i class="fa fa-home" aria-hidden="true"></i> on-premise support</p>
+  <p><span class="discount">50% OFF</span> Enterprise pricing<br><i data-lucide="cloud" aria-hidden="true"></i> cloud hosting and support or <i data-lucide="house" aria-hidden="true"></i> on-premise support</p>
   <div class="plan-cards-container">
     {% for plan in plans_discount %}
         {{ cards.plan(
@@ -164,7 +164,7 @@ plans_discount:
     {% endfor %}
   </div>
   <div class="align-center">
-    <a class="fake-button" href="/try-cloud/">Launch Demo<i class="fa fa-rocket"></i></a>
+    <a class="fake-button" href="/try-cloud/">Launch Demo<i data-lucide="rocket"></i></a>
   </div>
 </section>
 

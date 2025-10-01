@@ -155,9 +155,6 @@ button {
     background-color: @cryptpad_color_white;
     border-radius: @radius;
     text-decoration: none;
-    i {
-        margin-right: 1rem;
-    }
     svg {
         width: 1.2em;
         height: 1.2em;
@@ -391,9 +388,12 @@ ul.icon-list {
     columns: 2;
     line-height: 160%;
     padding: 0 10px;
-    i {
-        width: 2em;
-        text-align: center;
+    li {
+        display: inline-flex;
+        align-items: center;
+    }
+    svg {
+        margin-right: 0.5rem;
     }
 }
 
@@ -503,7 +503,8 @@ span.discount {
 
         .btn {
             font-family: 'IBM Plex Mono', monospace;
-            display: block;
+            display: inline-flex;
+            justify-content: center;
             text-align: center;
             margin-top: 1rem;
         }
