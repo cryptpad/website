@@ -43,7 +43,8 @@ section#try-cryptpad {
 a.fake-button {
     font-family: "IBM Plex Mono";
     font-weight: 700;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     color: @cryptpad_color_grey_200;
     background: @cryptpad_color_brand;
     padding: 1.5rem;
@@ -57,7 +58,7 @@ a.fake-button {
     &:focus {
         .shadow();
     }
-    i {
+    svg {
         margin-left: 0.75em;
     }
 }

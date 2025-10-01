@@ -389,7 +389,7 @@ ul.icon-list {
     line-height: 160%;
     padding: 0 10px;
     li {
-        display: inline-flex;
+        display: flex;
         align-items: center;
     }
     svg {
@@ -417,6 +417,15 @@ section[data-url] {
 section {
     p {
         text-align: center;
+        svg {
+            margin-right: 0.5rem;
+            margin-left: 0.5rem;
+        }
+        .flex {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
     }
 }
 
@@ -492,8 +501,12 @@ span.discount {
             padding-left: 0;
             line-height: 1.5em;
             margin: 1rem 0 0 2em;
+            display: flex;
+            flex-direction: column;
             li {
-                .fa {
+                display: inline-flex;
+                align-items: center;
+                svg {
                     width: 2em;
                     text-align: center;
                     margin-left: -2em;

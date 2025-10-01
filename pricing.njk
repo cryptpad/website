@@ -128,7 +128,7 @@ plans_discount:
 
   <section>
     <h2 id="full">Enterprise pricing</h2>
-    <p><i data-lucide="cloud" aria-hidden="true"></i> cloud hosting and support or <i data-lucide="house" aria-hidden="true"></i> on-premise support</p>
+    <p class="flex"><span><i data-lucide="cloud" aria-hidden="true"></i> cloud hosting and support or <i data-lucide="house" aria-hidden="true"></i> on-premise support</span></p>
     <div class="plan-cards-container">
       {% for plan in plans_full %}
           {{ cards.plan(
@@ -149,7 +149,7 @@ plans_discount:
 
 <section>
   <h2 id="discount">Discount pricing for education and nonprofits</h2>
-  <p><span class="discount">50% OFF</span> Enterprise pricing<br><i data-lucide="cloud" aria-hidden="true"></i> cloud hosting and support or <i data-lucide="house" aria-hidden="true"></i> on-premise support</p>
+  <p class="flex"><span><span class="discount">50% OFF</span> Enterprise pricing</span> <br> <span><i data-lucide="cloud" aria-hidden="true"></i> cloud hosting and support or <i data-lucide="house" aria-hidden="true"></i> on-premise support</span></p>
   <div class="plan-cards-container">
     {% for plan in plans_discount %}
         {{ cards.plan(
