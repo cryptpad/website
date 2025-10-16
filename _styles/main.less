@@ -80,6 +80,9 @@ html, div, h1, section {
     color: @text-color;
 }
 
+a:focus-visible {
+    border-radius: @radius;
+}
 
 section {
     box-sizing: border-box;
@@ -249,6 +252,14 @@ button {
         max-width: 40% !important;
         padding: 10px;
         margin-top: 0px;
+    }
+    a:focus-visible {
+        outline: none;
+    }
+
+    a:focus-visible img {
+        outline: 2px solid;
+        border-radius: @radius;
     }
 }
 
