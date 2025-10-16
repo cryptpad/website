@@ -96,12 +96,21 @@ document.addEventListener('DOMContentLoaded', function () {
     function doMenuOpen() {
         myHamburger.setAttribute('aria-expanded', true);
         myNavMenu.style.display='flex';
+        document.addEventListener('click', handleClickOutside);
     }
 
     function doMenuClose() {
         myHamburger.setAttribute('aria-expanded', false);
         myNavMenu.style.display='none';
 
+        document.removeEventListener('click', handleClickOutside);
+    }
+
+    function handleClickOutside(event) {
+        // click is outside both the button and menu
+        if (!myNavMenu.contains(event.target) && !myHamburger.contains(event.target)) {
+            doMenuClose();
+        }
     }
 
     function toggleMenu() {
@@ -112,7 +121,10 @@ document.addEventListener('DOMContentLoaded', function () {
             doMenuClose();
         }
     }
-    myHamburger.addEventListener('click', toggleMenu);
+    myHamburger.addEventListener('click', function (event) {
+        event.stopPropagation();
+        toggleMenu();
+    });
 
     // Initialize Lucide icons
     if (typeof lucide !== 'undefined') {
