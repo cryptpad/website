@@ -58,5 +58,11 @@
       "url": "https://crypt.unredacted.org",
       "location": "United States of America",
       "description": "A free CryptPad instance operated by Unredacted, a 501(c)(3) non-profit"
+    },
+    {
+      "title": "Ébauche FACiLe",
+      "url": "https://ebauche.facil.services",
+      "location": "Québec",
+      "description": "Instance publique de CryptPad opérée par FACiL."
     }
 ]
