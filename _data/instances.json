@@ -52,5 +52,11 @@
       "url": "https://docs.fediverse.foundation",
       "location": "Austria",
       "description": "Docs, powered by you and the Fediverse Foundation!"
+    },
+    {
+      "title": "Unredacted Crypt",
+      "url": "https://crypt.unredacted.org",
+      "location": "United States of America",
+      "description": "A free CryptPad instance operated by Unredacted, a 501(c)(3) non-profit"
     }
 ]
