@@ -203,17 +203,21 @@ CarouselPreviousNext.prototype.rotateSlides = function () {
 CarouselPreviousNext.prototype.updatePlaying = function (play) {
   this.isPlayingEnabled = play;
 
+  const icon = this.pausePlayButtonNode.querySelector('[data-lucide]');
   if (play) {
     this.pausePlayButtonNode.setAttribute('aria-label', this.pauseLabel);
     this.pausePlayButtonNode.classList.remove('play');
     this.pausePlayButtonNode.classList.add('pause');
     this.liveRegionNode.setAttribute('aria-live', 'off');
+    icon.setAttribute('data-lucide', 'pause');
   } else {
     this.pausePlayButtonNode.setAttribute('aria-label', this.playLabel);
     this.pausePlayButtonNode.classList.remove('pause');
     this.pausePlayButtonNode.classList.add('play');
     this.liveRegionNode.setAttribute('aria-live', 'polite');
+    icon.setAttribute('data-lucide', 'play');
   }
+  lucide.createIcons();
 };
 
 /* Event Handlers */

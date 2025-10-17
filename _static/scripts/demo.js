@@ -19,7 +19,7 @@ window.addEventListener('load', function () {
 
   function displaySubmitButtonError(message) {
     const errorContainer = document.getElementById('submitButtonError');
-    errorContainer.innerHTML = `<i class="fa fa-exclamation-circle"></i><span>${message}</span>`;
+    errorContainer.innerHTML = `<i data-lucide="circle-alert"></i><span>${message}</span>`;
   }
 
   function displayFieldError(fieldId, message) {
@@ -27,15 +27,16 @@ window.addEventListener('load', function () {
     hideStatus();
     let field = document.getElementById(fieldId);
     let errorContainer = document.createElement('div');
-    let errorElement = document.createElement('i');
+    let errorIcon = document.createElement('i');
     let errorMessage = document.createElement('span');
-    errorElement.classList.add('fa','fa-exclamation-circle');
+    errorIcon.setAttribute('data-lucide', 'circle-alert');
     errorMessage.textContent = message;
-    errorContainer.appendChild(errorElement);
+    errorContainer.appendChild(errorIcon);
     errorContainer.appendChild(errorMessage);
     errorContainer.classList.add('error-container');
     field.parentNode.insertBefore(errorContainer, field.nextSibling);
     field.classList.add('error');
+    lucide.createIcons();
 }
 
 

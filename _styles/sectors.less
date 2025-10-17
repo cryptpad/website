@@ -1,6 +1,7 @@
 
 .sector-title {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     background-color: @cryptpad_color_white;
     font-size: 0.8em;
     padding: 0.3rem 1.5rem;
@@ -8,6 +9,12 @@
     border-radius: @radius_L;
     transform: rotate(-5deg);
     .shadow();
+
+    svg {
+        width: 1em;
+        height: 1em;
+        margin-right: 0.5em;
+    }
 }
 
 section.your-own, section.pricing {
