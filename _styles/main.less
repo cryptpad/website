@@ -49,6 +49,7 @@
 @import './_styles/testimonials.less';
 @import './_styles/demo-form.less';
 @import './_styles/loading.less';
+@import './_styles/top-banner.less';
 
 html {
     font-size: 8px; // for rem units, makes responsive sizes easier
@@ -80,6 +81,9 @@ html, div, h1, section {
     color: @text-color;
 }
 
+a:focus-visible {
+    border-radius: @radius;
+}
 
 section {
     box-sizing: border-box;
@@ -249,6 +253,14 @@ button {
         max-width: 40% !important;
         padding: 10px;
         margin-top: 0px;
+    }
+    a:focus-visible {
+        outline: none;
+    }
+
+    a:focus-visible img {
+        outline: 2px solid;
+        border-radius: @radius;
     }
 }
 
@@ -445,9 +457,12 @@ section {
 
 section.CTA {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 8em;
+    @media screen and (max-width: 770px) {
+        flex-direction: column;
+    }
 }
 
 .pricing-desc {

@@ -6,16 +6,16 @@
        "location": "Germany"
     },
     {
-       "title": "cryptpad.piratenpartei.de",
-       "url": "https://cryptpad.piratenpartei.de",
-       "location": "Deutschland",
-       "description": "This CryptPad instance is hosted by the Pirate Party of Germany. We stand for privacy and digital sovereignty."
-    },
-    {
        "url": "https://cryptpad.disroot.org",
        "title": "cryptpad.disroot.org",
        "location": "Netherlands",
        "description": "This CryptPad instance is hosted by Disroot.org."
+    },
+    {
+      "url": "https://cryptpad.private.coffee",
+      "title": "cryptpad.private.coffee",
+      "location": "Austria",
+      "description": "An independent community instance of CryptPad brought to you by Private.coffee."
     },
     {
        "url": "https://cryptpad.malacher.fr",
@@ -24,22 +24,10 @@
        "description": "Instance hosted by individuals for free and available for everyone."
     },
     {
-       "title": "Piratenpartei Baden-Württemberg",
-       "url": "https://cryptpad.piratenpartei-bw.de",
-       "location": "Deutschland",
-       "description": "CryptPad Instanz der Piratenpartei Baden-Württemberg."
-    },
-    {
        "title": "cryptpad.bolha.tools",
        "url": "https://cryptpad.bolha.tools",
        "location": "Canada/Brasil",
        "description": "The is the Cryptpad instance of Bolha.io Collective"
-    },
-    {
-       "title": "ComputerLiebe Cryptpad",
-       "url": "https://notes.dunst.be",
-       "location": "Germany",
-       "description": "'This is an independent Cryptpad instance - hosted by ComputerLiebe."
     },
     {
        "title": "pad.4d2.org",
@@ -52,5 +40,29 @@
        "url": "https://cryptpad.noleron.com",
        "location": "Ukraine",
        "description": "Український інстанс Cryptpad. powered by noleron.com"
+    },
+    {
+      "title": "CryptPad Blabla Linux",
+      "url": "https://cryptpad.blablalinux.be",
+      "location": "Belgique",
+      "description": "Ceci est une instance communautaire et indépendante de CryptPad."
+    },
+    {
+      "title": "Fediverse Foundation",
+      "url": "https://docs.fediverse.foundation",
+      "location": "Austria",
+      "description": "Docs, powered by you and the Fediverse Foundation!"
+    },
+    {
+      "title": "Unredacted Crypt",
+      "url": "https://crypt.unredacted.org",
+      "location": "United States of America",
+      "description": "A free CryptPad instance operated by Unredacted, a 501(c)(3) non-profit"
+    },
+    {
+      "title": "Ébauche FACiLe",
+      "url": "https://ebauche.facil.services",
+      "location": "Québec",
+      "description": "Instance publique de CryptPad opérée par FACiL."
     }
 ]
