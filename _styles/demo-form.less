@@ -71,17 +71,20 @@
   }
 
   .error-container {
-    display: flex;
-    align-items: baseline;
+    display: inline-flex;
+    align-items: center;
     font-size: 2rem;
     color: @cryptpad_color_red;
   }
 
-  .error-container i {
-    margin-right: 1rem;
-  }
   .error-container span{
     text-align: center;
+  }
+  .error-container svg {
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
   }
 
   .error-container#submitButtonError {
@@ -211,6 +214,9 @@
     border-radius: 1.5rem;
     font-size: 2rem;
     max-width: unset;
+    svg.lucide {
+      flex-shrink: 0;
+    }
   }
 
   .form-card {
