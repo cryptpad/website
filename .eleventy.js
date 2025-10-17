@@ -4,6 +4,7 @@ module.exports = (function(eleventyConfig) {
     eleventyConfig.addWatchTarget("_styles");
     // Copy /images to /public
     eleventyConfig.addPassthroughCopy({'_static': '/'});
+    eleventyConfig.addPassthroughCopy('.well-known')
 
     // Debug filter
     eleventyConfig.addFilter("log", (d) => {

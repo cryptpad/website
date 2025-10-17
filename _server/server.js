@@ -8,6 +8,7 @@ const BodyParser = require('body-parser');
 const Axios = require('axios');
 const config = require('./config');
 const cors = require('cors');
+const Mail = require('./mail');
 
 const app = Express();
 app.use(BodyParser.urlencoded({ extended: true }));
@@ -15,6 +16,8 @@ app.use(BodyParser.json());
 app.use(cors());
 // Serve the content to test locally
 app.use(Express.static(Path.resolve('built')));
+
+const XNNG_DISABLED = !!config.cloud?.disable;
 
 // Post to gitlab
 const postGitlab = (data, cb) => {
@@ -96,11 +99,14 @@ let sendToCloudServer = (method, path, body, cb) => {
       });
 };
 
-let postWebmecanik = (data) => {
-    let url = `${config.cloud.webmecanik}`;
+let postWebmecanik = (data, xnngDown) => {
+    let url = config.cloud.webmecanik;
     if (!url) { return; }
 
-    // XXX newsletter_opt_in
+    if (XNNG_DISABLED || xnngDown) {
+        data.company = `[ERROR DEMO NOT LAUNCHED] ${data.company}`;
+    }
+
     const CPtoWM = {
         firstName: 'mauticform[first_name]',
         lastName: 'mauticform[last_name]',
@@ -108,6 +114,7 @@ let postWebmecanik = (data) => {
         phoneNumber: 'mauticform[phone]',
         company: 'mauticform[companyorganisation]',
         instanceName: 'mauticform[instance_name]',
+        newsletter: 'mauticform[newsletter_opt_in]',
         '_teamSize': 'mauticform[what_is_the_size_of_your]',
         '_deployment': 'mauticform[for_what_type_of_deployme]',
         '_solution': 'mauticform[what_solution_would_bette]',
@@ -153,6 +160,11 @@ function validateInstanceName(data) {
 }
 
 app.post('/cloud/available', (req, res) => {
+    if (XNNG_DISABLED) {
+        return res.json({
+            offline: true
+        });
+    }
     let body = req.body;
      if (!validateInstanceName(body)) {
         return res.status(400).json({ error: "Invalid form data" });
@@ -161,7 +173,10 @@ app.post('/cloud/available', (req, res) => {
     sendToCloudServer('GET', url, body, (err, json) => {
         if (err) {
             console.log(err)
-            return res.status(400).send(err);
+            return res.json({
+                offline: true // hide server errors
+            });
+            //return res.status(400).send(err);
         }
         res.json(json);
     })
@@ -172,7 +187,25 @@ app.post('/cloud/create', (req, res) => {
     let body = req.body;
     let url = "/create";
 
-    postWebmecanik(JSON.parse(JSON.stringify(body)));
+    let webMecData = JSON.parse(JSON.stringify(body));
+
+    const sendMail = (error) => {
+        let subject = `Error during CryptPad Cloud instance creation`;
+        let content = JSON.stringify(body, 0, 2);
+        Mail.send(subject, content, (err, info) => {
+            if (err) {
+                res.status(400).send(error);
+                return void postWebmecanik(webMecData, true);
+            }
+            res.json({
+                offline: true
+            });
+        });
+    };
+
+    if (XNNG_DISABLED) {
+        return void sendMail();
+    }
 
     delete body._deployment;
     delete body._teamSize;
@@ -181,8 +214,9 @@ app.post('/cloud/create', (req, res) => {
 
     sendToCloudServer('PUT', url, body, (err, json) => {
         if (err) {
-            return res.status(400).send(err);
+            return void sendMail(err);
         }
+        postWebmecanik(webMecData);
         console.log("Instance creation started. Checking status...");
         res.json(json);
     });
