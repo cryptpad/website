@@ -234,8 +234,22 @@
   .status-icon {
     display: flex;
     align-items: center;
+    svg {
+      width: 2.5rem;
+    }
     #spinner {
       animation: spin 10s linear infinite;
+    }
+    #checkmark {
+      color: @cryptpad_color_green;
+    }
+  }
+  @keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(1800deg);
     }
   }
 
