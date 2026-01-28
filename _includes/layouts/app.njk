@@ -37,6 +37,7 @@
     <div class="items">
         {% for benefit in benefits %}
             <div class="item">
+                <i data-lucide="check" class="lucide-icon"></i>
                 <h3>{{ benefit.title }}</h3>
                 <p>{{ benefit.text | safe}}</p>
             </div>
