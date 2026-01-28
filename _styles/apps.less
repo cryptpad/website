@@ -25,7 +25,14 @@ a.fake-button {
 }
 
 .app-title {
-    svg {
+    text-align: center;
+    h1 {
+        display: inline-flex;
+        gap: 2rem;
+        align-items: center;
+        color: @text-color;
+    }
+    .lucide-icon.app-logo {
         background-color: white;
         display: inline-block;
         padding: 1rem;
@@ -33,6 +40,16 @@ a.fake-button {
         height: 1em;
         border-radius: @radius_L;
         .shadow();
+    }
+    p {
+        margin: 0 auto;
+    }
+    .dependency {
+        background-color: white;
+        border-radius: @radius_L;
+        display: block;
+        width: fit-content;
+        font-size: 2em;
     }
 }
 

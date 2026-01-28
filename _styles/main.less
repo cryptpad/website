@@ -189,6 +189,36 @@ button {
     }
 }
 
+
+a.fake-button {
+    font-family: "IBM Plex Mono";
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    color: @cryptpad_color_grey_200;
+    background: @cryptpad_color_brand;
+    padding: 1.5rem;
+    border-radius: 5px;
+    font-size: 3rem;
+    text-decoration: none !important;
+    margin: 5rem;
+    &:hover, &:focus{
+        background-color: fade(@cryptpad_color_brand, 80%);
+    }
+    &:focus {
+        .shadow();
+    }
+    svg {
+        margin-right: 2rem;
+    }
+}
+#try-cryptpad {
+    a.fake-button svg {
+        margin-right: 0;
+        margin-left: 2rem;
+    }
+}
+
 .left-aligned {
     text-align: left;
 }
