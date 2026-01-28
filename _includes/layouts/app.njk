@@ -20,10 +20,11 @@
 {% endif %}
 
 <section class="arguments">
-    <h2>Features</h2>
+    <h2>Main Features</h2>
     <div class="items">
         {% for feature in features %}
             <div class="item">
+                <i data-lucide="{{feature.icon}}" class="lucide-icon"></i>
                 <h3>{{ feature.title }}</h3>
                 <p>{{ feature.text | safe}}</p>
             </div>

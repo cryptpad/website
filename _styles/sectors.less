@@ -68,6 +68,9 @@ section.your-own {
 
 .arguments {
     margin: 0 2rem;
+    h2 {
+        color: @text-color;
+    }
     .items {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -78,11 +81,16 @@ section.your-own {
             height: fit-content;
             padding: 2rem;
             .shadow();
+            svg {
+                scale: 1.25;
+            }
             h3 {
                 margin: 2rem auto;
+                text-align: left;
             }
             p {
                 text-align: left;
+                padding: 0;
             }
         }
     }
