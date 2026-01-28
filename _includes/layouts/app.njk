@@ -2,7 +2,7 @@
 
 {% block content %}
 <section class="app-title">
-    <h1><i class="app-{{shortname}} {{iconfont}} {{icon}}"></i> {{title}}</h1>
+    <h1><i aria-hidden="true" data-lucide="{{icon}}" class="lucide-icon app-{{shortname}}"></i> {{title}}</h1>
     <p class="left-aligned">{{long_description}}</p>
     {{ dependency | markdown | safe }}
 </section>
@@ -20,6 +20,7 @@
 {% endif %}
 
 <section class="arguments">
+    <h2>Features</h2>
     <div class="items">
         {% for feature in features %}
             <div class="item">
@@ -30,13 +31,44 @@
     </div>
 </section>
 
+<section class="arguments">
+    <h2>Benefits of CryptPad</h2>
+    <div class="items">
+        {% for benefit in benefits %}
+            <div class="item">
+                <h3>{{ benefit.title }}</h3>
+                <p>{{ benefit.text | safe}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="carousel">
+    <h2>Use Cases</h2>
+</section>
+
+<section class="subscription">
+    <h2>{{sub_title}}</h2>
+    <p>{{sub_text}}</p>
+    <a class="fake-button " href="https://cryptpad.fr/accounts/">
+        <i data-lucide="ticket" class="lucide-icon" aria-hidden="true"></i>
+        Subscribe on cryptpad.fr
+    </a>
+</section>
+
+<section>
+    <h2>{{more_header}}</h2>
+    <p>{{more_text}}</p>
+</section>
+
+
 <section>
     <p>Other apps:</p>
     <p class="other-apps">
         {% for app in collections.apps|sort(attribute="data.title") %}
             {% if app.data.title != title %}
                 <a href="{{app.url}}">
-                    <i class="app-{{app.data.shortname}} {{app.data.iconfont}} {{app.data.icon}}"></i>
+                    <i aria-hidden="true" data-lucide="{{app.data.icon}}" class="lucide-icon app-{{app.data.shortname}}"></i>
                     {{app.data.title}}
                 </a>
             {% endif %}
