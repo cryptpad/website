@@ -12,12 +12,15 @@
     <!--<p><a href="https://docs.cryptpad.org/en/user_guide/apps/{{shortname}}.html">View the {{title}} documentation</a></p>-->
 </section>
 
+<section id="video">
+    {{video | safe}}
+</section>
 
-{% if image %}
+<!--{% if image %}
 <section class="app-preview-image">
     <img src="{{image}}" alt="preview of the {{title}} application">
 </section>
-{% endif %}
+{% endif %}-->
 
 <section class="arguments">
     <h2>Main Features</h2>
@@ -60,7 +63,7 @@
 
 <section>
     <h2>{{more_header}}</h2>
-    <p>{{more_text}}</p>
+    <p class="left-aligned">{{more_text}}</p>
 </section>
 
 
