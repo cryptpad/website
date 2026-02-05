@@ -18,7 +18,8 @@
       "q4": "Yes",
       "q5": "Hamburg Werbefrei, popular initiative aimed at reducing aggressive advertising in public spaces.",
       "q6": "Yes",
-      "sector": "Nonprofits"
+      "sector": "Nonprofits",
+      "apps": ["diagram"]
     },
     {
       "_time": "2023-03-22T18:55:38.735Z",
@@ -1032,7 +1033,8 @@
       "q3": "free account on cryptpad.fr",
       "q4": "Personal use only",
       "q5": "",
-      "q7": ""
+      "q7": "",
+      "apps": ["diagram"]
     },
     {
       "_time": "2021-11-28T12:47:32.225Z",
@@ -1698,7 +1700,8 @@
       "q3": "free account on cryptpad.fr",
       "q4": "Personal use only",
       "q5": "",
-      "q7": ""
+      "q7": "",
+      "apps": ["diagram"]
     },
     {
       "_time": "2021-12-09T19:40:35.756Z",
@@ -2365,7 +2368,8 @@
       "q4": "Yes",
       "q5": "munterbund, LudwigsKlima, AspergAnders, KlimalisteBW",
       "q6": "Yes",
-      "sector": "Nonprofits"
+      "sector": "Nonprofits",
+      "apps": ["diagram"]
     },
     {
       "_time": "2022-01-07T13:27:39.148Z",
@@ -2861,7 +2865,8 @@
       "q3": "no CryptPad account",
       "q4": "Personal use only",
       "q5": "",
-      "q7": ""
+      "q7": "",
+      "apps": ["diagram"]
     },
     {
       "_time": "2022-02-03T10:42:35.508Z",
@@ -3477,7 +3482,8 @@
       "q3": "free account on cryptpad.fr",
       "q4": "Personal use only",
       "q5": "",
-      "q7": ""
+      "q7": "",
+      "apps": ["diagram"]
     },
     {
       "_time": "2022-04-02T23:09:30.418Z",

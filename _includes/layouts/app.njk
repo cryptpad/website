@@ -48,7 +48,7 @@
     </div>
 </section>
 
-<section class="carousel">
+<section class="">
     <h2>Use Cases</h2>
 </section>
 
@@ -66,6 +66,12 @@
     <p class="left-aligned">{{more_text}}</p>
 </section>
 
+<section>
+    <h2>Testimonials</h2>
+    <p>We asked users what they love about {{title}}</p>
+    {% import "components/testimonial_carousel.njk" as testimonial with context %}
+    {{ testimonial.carousel(sector="none", app=shortname) }}
+</section>
 
 <section>
     <p>Other apps:</p>

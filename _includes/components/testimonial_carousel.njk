@@ -1,5 +1,5 @@
 
-{% macro carousel(sector="") %}
+{% macro carousel(sector="", app="") %}
 <script src="/scripts/carousel-prev-next.js?ver={{cache.buster}}"></script>
 
 {% set testimonials = testimonials.responses | shuffle %}
@@ -57,6 +57,16 @@
               aria-roledescription="slide">
             {% include "components/testimonial_item.njk" %}
           </div>
+        {% elif app!="" %}
+            {% for test_app in testimonial.apps %}
+                {% if test_app == app %}
+                <div class="carousel-item active"
+                    role="group"
+                    aria-roledescription="slide">
+                {% include "components/testimonial_item.njk" %}
+                </div>
+                {% endif %}
+            {% endfor %}
         {% endif %}
       {% endfor %}
     </div>
@@ -64,4 +74,3 @@
 </section>
 
 {% endmacro %}
-
