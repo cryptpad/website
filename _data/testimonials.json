@@ -81,7 +81,8 @@
       "q3": "free account on cryptpad.fr",
       "q4": "Personal use only",
       "q5": "",
-      "q7": ""
+      "q7": "",
+      "apps": ["form"]
     },
     {
       "_time": "2021-11-24T10:04:55.982Z",
@@ -145,7 +146,8 @@
       "q4": "Yes",
       "q5": "Management and  M&A Consultancy",
       "q6": "Yes",
-      "sector": "Enterprise"
+      "sector": "Enterprise",
+      "apps": ["form"]
     },
     {
       "_time": "2021-11-24T10:55:30.932Z",
@@ -404,7 +406,8 @@
       "q3": "free account on cryptpad.fr",
       "q4": "Personal use only",
       "q5": "",
-      "q7": ""
+      "q7": "",
+      "apps": ["document"]
     },
     {
       "_time": "2021-11-24T22:05:21.037Z",
@@ -672,7 +675,8 @@
       "q4": "Yes",
       "q5": "Piratenparty of Germany (Political Party)",
       "q6": "Yes",
-      "sector": "Nonprofits"
+      "sector": "Nonprofits",
+      "apps": ["document"]
     },
     {
       "_time": "2021-11-26T10:03:12.753Z",
@@ -1023,7 +1027,8 @@
       "q4": "Personal use only",
       "q5": "Middle School",
       "q6": "No",
-      "q7": ""
+      "q7": "",
+      "apps": ["document"]
     },
     {
       "_time": "2021-11-28T11:19:36.543Z",
@@ -1239,7 +1244,8 @@
       "q3": "no CryptPad account",
       "q4": "Personal use only",
       "q5": "",
-      "q7": ""
+      "q7": "",
+      "apps": ["kanban"]
     },
     {
       "_time": "2021-12-01T02:10:18.680Z",
@@ -1449,7 +1455,8 @@
       "q4": "Yes",
       "q5": "Gymnasium im PAMINA-Schulzentrum",
       "q6": "Yes",
-      "sector": "Education"
+      "sector": "Education",
+      "apps": ["form"]
     },
     {
       "_time": "2021-12-03T00:33:35.691Z",
@@ -1543,7 +1550,8 @@
       "q3": "free account on cryptpad.fr",
       "q4": "Personal use only",
       "q5": "",
-      "q7": ""
+      "q7": "",
+      "apps": ["form"]
     },
     {
       "_time": "2021-12-05T22:32:20.938Z",
@@ -2041,7 +2049,8 @@
       "q4": "Yes",
       "q5": "Science university student",
       "q6": "No",
-      "q7": ""
+      "q7": "",
+      "apps": ["kanban"]
     },
     {
       "_time": "2021-12-21T07:53:21.144Z",
@@ -2369,7 +2378,7 @@
       "q5": "munterbund, LudwigsKlima, AspergAnders, KlimalisteBW",
       "q6": "Yes",
       "sector": "Nonprofits",
-      "apps": ["diagram"]
+      "apps": ["diagram", "document"]
     },
     {
       "_time": "2022-01-07T13:27:39.148Z",
@@ -2750,7 +2759,8 @@
       "q3": "free account on cryptpad.fr",
       "q4": "Personal use only",
       "q5": "",
-      "q7": ""
+      "q7": "",
+      "apps": ["kanban"]
     },
     {
       "_time": "2022-01-28T20:36:45.972Z",
@@ -3045,7 +3055,8 @@
       "q3": "free account on cryptpad.fr",
       "q4": "Personal use only",
       "q5": "",
-      "q7": ""
+      "q7": "",
+      "apps": ["form"]
     },
     {
       "_time": "2022-02-20T05:53:09.680Z",
@@ -3055,7 +3066,8 @@
       "q3": "free account on cryptpad.fr",
       "q4": "Personal use only",
       "q5": "",
-      "q7": ""
+      "q7": "",
+      "apps": ["kanban"]
     },
     {
       "_time": "2022-02-21T08:31:52.375Z",
@@ -3295,7 +3307,8 @@
       "q4": "Yes",
       "q5": "Otto-Brenner-Schule Hannover Vocational Educational Training",
       "q6": "Yes",
-      "sector": "Education"
+      "sector": "Education",
+      "apps": ["kanban"]
     },
     {
       "_time": "2022-03-09T09:22:21.224Z",
@@ -3843,7 +3856,8 @@
       "q3": "free account on cryptpad.fr",
       "q4": "Personal use only",
       "q5": "",
-      "q7": ""
+      "q7": "",
+      "apps": ["document"]
     },
     {
       "_time": "2022-05-19T13:20:19.407Z",
@@ -4227,7 +4241,8 @@
       "q3": "free account on cryptpad.fr",
       "q4": "Personal use only",
       "q5": "",
-      "q7": ""
+      "q7": "",
+      "apps": ["kanban"]
     },
     {
       "_time": "2022-07-11T23:07:45.345Z",
@@ -4515,7 +4530,8 @@
       "q4": "Personal use only",
       "q5": "",
       "q6": "No",
-      "q7": ""
+      "q7": "",
+      "apps": ["form"]
     },
     {
       "_time": "2022-09-04T09:48:06.043Z",
@@ -4703,7 +4719,8 @@
       "q3": "Subscribed to cryptpad.fr",
       "q4": "Personal use only",
       "q5": "",
-      "q7": ""
+      "q7": "",
+      "apps": ["document"]
     },
     {
       "_time": "2022-10-10T15:25:17.799Z",
