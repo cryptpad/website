@@ -50,6 +50,8 @@
 
 <section class="">
     <h2>Use Cases</h2>
+    {% import "components/use_case_tabs.njk" as useCaseTabs with context %}
+    {{ useCaseTabs.tabs(use_cases) }}
 </section>
 
 <section class="subscription">
