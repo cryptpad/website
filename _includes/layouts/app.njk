@@ -19,7 +19,13 @@
 </section>
 
 <section id="video">
-    {{video | safe}}
+    {% if video %}
+        {{video | safe}}
+    {% else %}
+    <div class="app-preview">
+        <img src="{{image}}" alt="preview of the {{title}} application">
+    </div>
+    {% endif %}
 </section>
 
 <!--{% if image %}
