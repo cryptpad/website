@@ -12,7 +12,7 @@ eleventyExcludeFromCollections: true
         {% for app in collections.apps|sort(attribute="data.title") %}
             {% if app.data.title != title %}
                 <a href="{{app.url}}">
-                    <i class="app-{{app.data.shortname}} {{app.data.iconfont}} {{app.data.icon}}"></i>
+                    <i aria-hidden="true" data-lucide="{{app.data.icon}}" class="app-{{app.data.shortname}} lucide-icon" ></i>
                     {{app.data.title}}
                 </a>
             {% endif %}
