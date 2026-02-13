@@ -21,7 +21,7 @@
 <section id="video">
     {% if video %}
         {{video | safe}}
-    {% else %}
+    {% else if image %}
     <div class="app-preview">
         <img src="{{image}}" alt="preview of the {{title}} application">
     </div>
