@@ -3,16 +3,7 @@
 {% block content %}
 <section class="app-title" id="try-cryptpad">
     <h1><i aria-hidden="true" data-lucide="{{icon}}" class="lucide-icon app-logo app-{{shortname}}"></i> {{title}}</h1>
-    {% if dependency_title %}
-    <p class="dependency">
-        powered by <a href="{{dependency_link}}">{{dependency_title}}</a>
-    </p>
-    {% else %}
-    <p class="dependency">
-        Built for CryptPad
-    </p>
-    {% endif %}
-    <p class="left-aligned">{{description}}</p>
+    <p>{{description}}</p>
     <a class="fake-button app-{{shortname}}" href="https://cryptpad.fr/{{urlPath or shortname}}/">
         Try {{title}}<i data-lucide="arrow-right" class="lucide-icon" aria-hidden="true"></i></a>
     <!--<p><a href="https://docs.cryptpad.org/en/user_guide/apps/{{shortname}}.html">View the {{title}} documentation</a></p>-->
