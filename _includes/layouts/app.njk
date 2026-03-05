@@ -1,0 +1,95 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+<section class="app-title" id="try-cryptpad">
+    <h1><i aria-hidden="true" data-lucide="{{icon}}" class="lucide-icon app-logo app-{{shortname}}"></i> {{title}}</h1>
+    <p>{{description}}</p>
+    <a class="fake-button app-{{shortname}}" href="https://cryptpad.fr/{{urlPath or shortname}}/">
+        Try {{title}}<i data-lucide="arrow-right" class="lucide-icon" aria-hidden="true"></i></a>
+    <!--<p><a href="https://docs.cryptpad.org/en/user_guide/apps/{{shortname}}.html">View the {{title}} documentation</a></p>-->
+</section>
+
+<section id="video">
+    {% if video %}
+        {{video | safe}}
+    {% else %}
+    <div class="app-preview">
+        <img src="{{image}}" alt="preview of the {{title}} application">
+    </div>
+    {% endif %}
+</section>
+
+<!--{% if image %}
+<section class="app-preview-image">
+    <img src="{{image}}" alt="preview of the {{title}} application">
+</section>
+{% endif %}-->
+
+<section class="arguments">
+    <h2>Main Features</h2>
+    <div class="items">
+        {% for feature in features %}
+            <div class="item">
+                <i data-lucide="{{feature.icon}}" class="lucide-icon"></i>
+                <h3>{{ feature.title }}</h3>
+                <p>{{ feature.text | safe}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="arguments">
+    <h2>Benefits of CryptPad</h2>
+    <div class="items">
+        {% for benefit in benefits %}
+            <div class="item">
+                <i data-lucide="check" class="lucide-icon"></i>
+                <h3>{{ benefit.title }}</h3>
+                <p>{{ benefit.text | safe}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="">
+    <h2>Use Cases</h2>
+    {% import "components/use_case_tabs.njk" as useCaseTabs with context %}
+    {{ useCaseTabs.tabs(use_cases) }}
+</section>
+
+<section class="subscription">
+    <h2>{{sub_title}}</h2>
+    <p>{{sub_text}}</p>
+    <a class="fake-button " href="https://cryptpad.fr/accounts/">
+        <i data-lucide="ticket" class="lucide-icon" aria-hidden="true"></i>
+        Subscribe on cryptpad.fr
+    </a>
+</section>
+
+<section>
+    <h2>{{more_header}}</h2>
+    <p class="left-aligned">{{more_text}}</p>
+</section>
+
+<section>
+    <h2>Testimonials</h2>
+    <p>We asked users what they love about {{title}}</p>
+    {% import "components/testimonial_carousel.njk" as testimonial with context %}
+    {{ testimonial.carousel(sector="none", app=shortname) }}
+</section>
+
+<section>
+    <p>Other apps:</p>
+    <p class="other-apps">
+        {% for app in collections.apps|sort(attribute="data.title") %}
+            {% if app.data.title != title %}
+                <a href="{{app.url}}">
+                    <i aria-hidden="true" data-lucide="{{app.data.icon}}" class="lucide-icon app-{{app.data.shortname}}"></i>
+                    {{app.data.title}}
+                </a>
+            {% endif %}
+        {% endfor %}
+    </p>
+</section>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+---
+layout: layouts/main.njk
+eleventyExcludeFromCollections: true
+---
+
+{% block content %}
+
+
+<section>
+    <h1>Apps</h1>
+    <article>
+    <p class="left-aligned">CryptPad is an open-source, end-to-end encrypted collaboration suite that lets you create and edit documents securely online. </p>
+    <p class="left-aligned">In one place, you get a full set of productivity apps: rich text documents, spreadsheets, presentations, kanban boards, code/Markdown, whiteboards, and forms. </p>
+    <p class="left-aligned">Everything is encrypted in your browser, which means no readable content leaves your device and even the service administrators can’t see what you write. </p>
+    <p class="left-aligned">Browse the apps below, learn what each one does, and test CryptPad for free in seconds.</p>
+    </article>
+
+    <p class="apps">
+        {% for app in collections.apps|sort(attribute="data.title") %}
+            {% if app.data.title != title %}
+                <a href="{{app.url}}">
+                    <i aria-hidden="true" data-lucide="{{app.data.icon}}" class="app-{{app.data.shortname}} lucide-icon" ></i>
+                    {{app.data.title}}
+                </a>
+            {% endif %}
+        {% endfor %}
+    </p>
+</section>
+
+{% endblock content %}

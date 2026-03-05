@@ -1,0 +1,52 @@
+{% macro tabs(use_cases) %}
+<script src="/scripts/use-case-tabs.js?ver={{cache.buster}}"></script>
+
+<noscript>
+  <style type="text/css">
+      .tabs {display:none;}
+  </style>
+  <div class="use-case-fallback">
+    {% for use_case in use_cases %}
+      <div class="use-case-card">
+        <h3>{{ use_case.title }}</h3>
+        <p>{{ use_case.text }}</p>
+        {% if use_case.image %}
+          <img src="{{ use_case.image }}" alt="{{ use_case.title }} illustration">
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</noscript>
+
+<div class="tabs">
+  <div role="tablist" aria-label="Use Cases" class="automatic">
+    {% for use_case in use_cases %}
+      <button
+        id="tab-{{ loop.index }}"
+        type="button"
+        role="tab"
+        aria-selected="{{ 'true' if loop.first else 'false' }}"
+        aria-controls="tabpanel-{{ loop.index }}"
+        {% if not loop.first %}tabindex="-1"{% endif %}
+      >
+        <span class="focus">{{ use_case.title }}</span>
+      </button>
+    {% endfor %}
+  </div>
+
+  {% for use_case in use_cases %}
+    <div
+      id="tabpanel-{{ loop.index }}"
+      role="tabpanel"
+      aria-labelledby="tab-{{ loop.index }}"
+      class="{{ 'is-hidden' if not loop.first else '' }}"
+    >
+      {% if use_case.image %}
+        <img src="{{ use_case.image }}" alt="{{ use_case.title }} illustration" class="use-case-image">
+      {% endif %}
+      <p>{{ use_case.text }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+{% endmacro %}

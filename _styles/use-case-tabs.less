@@ -1,0 +1,141 @@
+.tabs {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+[role="tablist"] {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+[role="tab"],
+[role="tab"]:focus,
+[role="tab"]:hover {
+  display: inline-block;
+  padding: 1.3rem 2rem;
+  border: none;
+  border-radius: @radius;
+  background: @cryptpad_color_white;
+  outline: none;
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-align: center;
+  cursor: pointer;
+  color: @text-color;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+[role="tab"]:hover {
+  color: @cryptpad_color_white;
+  background-color: @cryptpad_color_grey_700;
+}
+
+[role="tab"][aria-selected="true"] {
+  background-color: @cryptpad_color_brand;
+  color: @cryptpad_color_white;
+}
+
+[role="tab"][aria-selected="true"]:hover {
+  background-color: @cryptpad_color_grey_700;
+}
+
+[role="tab"]:focus-visible {
+  outline: 2px solid @cryptpad_color_brand;
+  outline-offset: 2px;
+}
+
+[role="tabpanel"] {
+  padding: 3rem;
+  border-radius: @radius_L;
+  width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+}
+
+[role="tabpanel"].is-hidden {
+  display: none;
+}
+
+[role="tabpanel"] .use-case-image {
+  flex-shrink: 0;
+  width: 55%;
+  max-width: 600px;
+  border-radius: @radius_L;
+  order: -1;
+}
+
+[role="tabpanel"] p {
+  margin: 0;
+  font-size: 2.5rem;
+  line-height: 150%;
+  flex: 1;
+  align-items: center;
+  text-align: left;
+}
+
+.use-case-fallback {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+
+  .use-case-card {
+    background: @cryptpad_color_white;
+    border-radius: @radius_L;
+    padding: 2rem;
+    max-width: 300px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      color: @cryptpad_color_brand;
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 2rem;
+      line-height: 150%;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: @radius_L;
+    }
+  }
+}
+
+@media screen and (max-width: @breakpoint) {
+  .tabs {
+    padding: 0 1rem;
+  }
+
+  [role="tablist"] {
+    flex-wrap: wrap;
+  }
+
+  [role="tab"],
+  [role="tab"]:focus,
+  [role="tab"]:hover {
+    font-size: 2rem;
+    padding: 1rem 1.5rem;
+  }
+
+  [role="tabpanel"] {
+    flex-direction: column;
+  }
+
+  [role="tabpanel"] .use-case-image {
+    max-width: 100%;
+    order: 0;
+  }
+
+  [role="tabpanel"] p {
+    font-size: 2rem;
+  }
+}

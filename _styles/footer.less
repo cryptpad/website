@@ -11,6 +11,14 @@ footer {
             max-width: 150px;
             min-width: 100px;
         }
+        a:focus-visible {
+            outline: none;
+        }
+
+        a:focus-visible img {
+            outline: 2px solid;
+            border-radius: @radius;
+        }
     }
     .link-col {
         p, ul {
@@ -24,16 +32,23 @@ footer {
             padding-left: 0;
             li {
                 //margin-bottom: 10px;
-                padding: 10px;
+                padding: 0.5rem;
                 a {
+                    display: flex;
+                    align-items: center;
                     white-space: nowrap;
                     text-decoration: none;
                     color: @cryptpad_color_grey_900;
                     padding: 7px 15px 7px 7px;
                     border-radius: 5px;
+                    width: fit-content;
                     i {
                         width: 40px;
                         text-align: center;
+                        display: inline-flex;
+                        align-items: center;
+                        width: auto;
+                        margin-right: 10px;
                     }
                     &:hover, &:focus {
                         background-color: white;
@@ -49,6 +64,14 @@ footer {
     }
     .wide {
         flex-grow: 1;
+    }
+
+    svg {
+        width: 1.2em;
+        height: 1.2em;
+        margin-right: 1rem;
+        vertical-align: middle;
+        flex-shrink: 0;
     }
 
     @media screen and (max-width: 900px) {

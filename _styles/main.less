@@ -44,9 +44,11 @@
 @import './_styles/jobs.less';
 @import './_styles/contact.less';
 @import './_styles/sectors.less';
+@import './_styles/apps.less';
 @import 'dialog.less';
 @import 'carousel-prev-next.less';
 @import './_styles/testimonials.less';
+@import './_styles/use-case-tabs.less';
 @import './_styles/demo-form.less';
 @import './_styles/loading.less';
 @import './_styles/top-banner.less';
@@ -81,6 +83,9 @@ html, div, h1, section {
     color: @text-color;
 }
 
+a:focus-visible {
+    border-radius: @radius;
+}
 
 section {
     box-sizing: border-box;
@@ -154,8 +159,12 @@ button {
     background-color: @cryptpad_color_white;
     border-radius: @radius;
     text-decoration: none;
-    i {
+    svg {
+        width: 1.2em;
+        height: 1.2em;
         margin-right: 1rem;
+        vertical-align: middle;
+        flex-shrink: 0;
     }
     &:hover {
         color: @cryptpad_color_white;
@@ -175,6 +184,39 @@ button {
     }
     &[disabled] {
         background-color: @cryptpad_color_grey_700;
+    }
+    svg {
+        margin-right: 2rem;
+    }
+}
+
+
+a.fake-button {
+    font-family: "IBM Plex Mono";
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    color: @cryptpad_color_grey_200;
+    background: @cryptpad_color_brand;
+    padding: 1.5rem;
+    border-radius: 5px;
+    font-size: 3rem;
+    text-decoration: none !important;
+    margin: 5rem;
+    &:hover, &:focus{
+        background-color: fade(@cryptpad_color_brand, 80%);
+    }
+    &:focus {
+        .shadow();
+    }
+    svg {
+        margin-right: 2rem;
+    }
+}
+#try-cryptpad {
+    a.fake-button svg {
+        margin-right: 0;
+        margin-left: 2rem;
     }
 }
 
@@ -241,6 +283,14 @@ button {
         max-width: 40% !important;
         padding: 10px;
         margin-top: 0px;
+    }
+    a:focus-visible {
+        outline: none;
+    }
+
+    a:focus-visible img {
+        outline: 2px solid;
+        border-radius: @radius;
     }
 }
 
@@ -314,6 +364,14 @@ section.instance, section.role {
         }
         &.instance-details {
             color: @cryptpad_color_grey_600;
+            span {
+                display: inline-flex;
+                align-items: center;
+            }
+            svg {
+                height: 1em;
+                width: 1em;
+            }
         }
     }
     &:hover, &:focus {
@@ -383,9 +441,14 @@ ul.icon-list {
     columns: 2;
     line-height: 160%;
     padding: 0 10px;
-    i {
-        width: 2em;
-        text-align: center;
+    li {
+        display: flex;
+    }
+    svg {
+        margin-top: 0.5rem;
+        margin-right: 1rem;
+        min-width: 1rem;
+        flex-shrink: 0;
     }
 }
 
@@ -409,6 +472,16 @@ section[data-url] {
 section {
     p {
         text-align: center;
+        svg {
+            vertical-align: middle;
+            width: 2.7rem;
+            margin: 0 0.5rem 0.5rem;
+        }
+        .flex {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
     }
 }
 
@@ -487,8 +560,11 @@ span.discount {
             padding-left: 0;
             line-height: 1.5em;
             margin: 1rem 0 0 2em;
+            display: flex;
+            flex-direction: column;
             li {
-                .fa {
+                display: inline-flex;
+                svg {
                     width: 2em;
                     text-align: center;
                     margin-left: -2em;
@@ -498,7 +574,8 @@ span.discount {
 
         .btn {
             font-family: 'IBM Plex Mono', monospace;
-            display: block;
+            display: inline-flex;
+            justify-content: center;
             text-align: center;
             margin-top: 1rem;
         }

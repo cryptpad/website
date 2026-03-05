@@ -102,56 +102,51 @@ img.reload {
 
 /* SVG Controls */
 
-.carousel .controls svg .background {
-  stroke: black;
-  fill: black;
-  stroke-width: 1px;
-  opacity: 0.1;
+.carousel .controls .background {
+  display: inline-flex;
+  height: 3rem;
+  width: 5rem;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-.carousel .controls svg .border {
-  fill: transparent;
-  stroke: transparent;
-  stroke-width: 2px;
-}
-
-.carousel .controls svg .pause {
-  stroke-width: 4;
-  fill: transparent;
-  stroke: transparent;
-}
-
-.carousel .controls svg .play {
+.carousel .controls svg.lucide-pause {
   stroke-width: 1;
   fill: transparent;
   stroke: transparent;
+  width: 2rem;
 }
 
-.carousel .controls .pause svg .pause {
+.carousel .controls svg.lucide-play {
+  stroke-width: 1;
+  fill: transparent;
+  stroke: transparent;
+  width: 2rem;
+}
+
+.carousel .controls .pause svg.lucide-pause {
   fill: @cryptpad_color_brand;
   stroke: @cryptpad_color_brand;
 }
 
-.carousel .controls .play svg .play {
+.carousel .controls .play svg.lucide-play {
   fill: @cryptpad_color_brand;
   stroke: @cryptpad_color_brand;
 }
 
-.carousel .controls svg polygon {
-  fill: @cryptpad_color_brand;
+.carousel .controls svg.lucide-arrow-right,
+.carousel .controls svg.lucide-arrow-left {
   stroke: @cryptpad_color_brand;
+  stroke-width: 3;
 }
 
-.carousel .controls button:focus svg .background,
-.carousel .controls button:hover svg .background,
-.carousel .controls button:hover svg .border {
-  fill: white;
-  stroke: @cryptpad_color_brand;
+.carousel .controls button:focus .background,
+.carousel .controls button:hover .background {
+  background-color: white;
+  border-color: @cryptpad_color_brand;
   opacity: 1;
-}
-
-.carousel .controls button:focus svg .border {
-  stroke: white;
 }
 
 /* More accessible carousel styles, with caption and controls above/below image */
