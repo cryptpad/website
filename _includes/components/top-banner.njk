@@ -1,5 +1,8 @@
+{% set newline = joiner("<br>" | safe) %}
 {% if banner.visible %}
 <div class="top-banner" role="note">
-    {{ banner.message | safe }}
+    {% for line in banner.message %}
+	{{ newline() }} {{ line | safe }}
+    {% endfor %}
 </div>
 {% endif %}

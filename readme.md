@@ -13,6 +13,8 @@ Repository for the CryptPad project website
 
 Turn the banner on/off and edit the message in `_data/banner.json`.
 
+The message is an array with one rendered line per element.
+
 ### Testimonials
 
 - Data is formatted for input from CryptPad Form JSON
