@@ -7,7 +7,11 @@ Repository for the CryptPad project website
 2. build the site from source: `npm run build`
 3. for development use `npm run dev` to serve the `built/` directory and refresh the browser automatically
 
-## Special features
+## Features
+
+### Home page banner
+
+Turn the banner on/off and edit the message in `_data/banner.json`.
 
 ### Testimonials
 
