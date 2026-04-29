@@ -1,68 +1,56 @@
 [
-    {
-       "title": "pad.envs.net",
-       "url": "https://pad.envs.net",
-       "description": "envs.net is a minimalist, non-commercial shared unix system and will always be free to use.",
-       "location": "Germany"
-    },
-    {
-       "url": "https://cryptpad.disroot.org",
-       "title": "cryptpad.disroot.org",
-       "location": "Netherlands",
-       "description": "This CryptPad instance is hosted by Disroot.org."
-    },
-    {
-      "url": "https://cryptpad.private.coffee",
-      "title": "cryptpad.private.coffee",
-      "location": "Austria",
-      "description": "An independent community instance of CryptPad brought to you by Private.coffee."
-    },
-    {
-       "url": "https://cryptpad.malacher.fr",
-       "title": "CipherPad",
-       "location": "France",
-       "description": "Instance hosted by individuals for free and available for everyone."
-    },
-    {
-       "title": "cryptpad.bolha.tools",
-       "url": "https://cryptpad.bolha.tools",
-       "location": "Canada/Brasil",
-       "description": "The is the Cryptpad instance of Bolha.io Collective"
-    },
-    {
-       "title": "pad.4d2.org",
-       "url": "https://pad.4d2.org",
-       "location": "United States of America",
-       "description": "CryptPad instance courtesy of 4d2 dot org"
-    },
-    {
-       "title": "NL Cryptpad",
-       "url": "https://cryptpad.noleron.com",
-       "location": "Ukraine",
-       "description": "Український інстанс Cryptpad. powered by noleron.com"
-    },
-    {
-      "title": "CryptPad Blabla Linux",
-      "url": "https://cryptpad.blablalinux.be",
-      "location": "Belgique",
-      "description": "Ceci est une instance communautaire et indépendante de CryptPad."
-    },
-    {
-      "title": "Fediverse Foundation",
-      "url": "https://docs.fediverse.foundation",
-      "location": "Austria",
-      "description": "Docs, powered by you and the Fediverse Foundation!"
-    },
-    {
-      "title": "Unredacted Crypt",
-      "url": "https://crypt.unredacted.org",
-      "location": "United States of America",
-      "description": "A free CryptPad instance operated by Unredacted, a 501(c)(3) non-profit"
-    },
-    {
-      "title": "Ébauche FACiLe",
-      "url": "https://ebauche.facil.services",
-      "location": "Québec",
-      "description": "Instance publique de CryptPad opérée par FACiL."
-    }
+  {
+    "title": "pad.envs.net",
+    "url": "https://pad.envs.net",
+    "description": "envs.net is a minimalist, non-commercial shared unix system and will always be free to use.",
+    "location": "Germany"
+  },
+  {
+    "url": "https://cryptpad.disroot.org",
+    "title": "cryptpad.disroot.org",
+    "location": "Netherlands",
+    "description": "This CryptPad instance is hosted by Disroot.org."
+  },
+  {
+    "url": "https://cryptpad.private.coffee",
+    "title": "cryptpad.private.coffee",
+    "location": "Austria",
+    "description": "An independent community instance of CryptPad brought to you by Private.coffee."
+  },
+  {
+    "url": "https://cryptpad.malacher.fr",
+    "title": "CipherPad",
+    "location": "France",
+    "description": "Instance hosted by individuals for free and available for everyone."
+  },
+  {
+    "title": "NL Cryptpad",
+    "url": "https://cryptpad.noleron.com",
+    "location": "Ukraine",
+    "description": "Український інстанс Cryptpad. powered by noleron.com"
+  },
+  {
+    "title": "CryptPad Blabla Linux",
+    "url": "https://cryptpad.blablalinux.be",
+    "location": "Belgique",
+    "description": "Ceci est une instance communautaire et indépendante de CryptPad."
+  },
+  {
+    "title": "Fediverse Foundation",
+    "url": "https://docs.fediverse.foundation",
+    "location": "Austria",
+    "description": "Docs, powered by you and the Fediverse Foundation!"
+  },
+  {
+    "title": "Unredacted Crypt",
+    "url": "https://crypt.unredacted.org",
+    "location": "United States of America",
+    "description": "A free CryptPad instance operated by Unredacted, a 501(c)(3) non-profit"
+  },
+  {
+    "title": "Ébauche FACiLe",
+    "url": "https://ebauche.facil.services",
+    "location": "Québec",
+    "description": "Instance publique de CryptPad opérée par FACiL."
+  }
 ]
