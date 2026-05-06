@@ -36,6 +36,12 @@
     "description": "Ceci est une instance communautaire et indépendante de CryptPad."
   },
   {
+     "title": "pad.4d2.org",
+     "url": "https://pad.4d2.org",
+     "location": "United States of America",
+     "description": "CryptPad instance courtesy of 4d2 dot org"
+  },
+  {
     "title": "Fediverse Foundation",
     "url": "https://docs.fediverse.foundation",
     "location": "Austria",
