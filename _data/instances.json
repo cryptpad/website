@@ -70,5 +70,11 @@
     "url": "https://dcmnt.eu",
     "location": "Germany",
     "description": "Generic Documents instance for everyone to use. Offered by the Fedihosting\nFoundation (https://fedihosting.foundation)"
+  },
+  {
+    "title": "pad.envs.net",
+    "url": "https://pad.envs.net",
+    "description": "envs.net is a minimalist, non-commercial shared unix system and will always be free to use.",
+    "location": "Germany"
   }
 ]
