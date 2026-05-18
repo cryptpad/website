@@ -1,17 +1,5 @@
 [
   {
-    "title": "pad.envs.net",
-    "url": "https://pad.envs.net",
-    "description": "envs.net is a minimalist, non-commercial shared unix system and will always be free to use.",
-    "location": "Germany"
-  },
-  {
-    "url": "https://cryptpad.disroot.org",
-    "title": "cryptpad.disroot.org",
-    "location": "Netherlands",
-    "description": "This CryptPad instance is hosted by Disroot.org."
-  },
-  {
     "url": "https://cryptpad.private.coffee",
     "title": "cryptpad.private.coffee",
     "location": "Austria",
@@ -58,5 +46,29 @@
     "url": "https://ebauche.facil.services",
     "location": "Québec",
     "description": "Instance publique de CryptPad opérée par FACiL."
+  },
+  {
+    "title": "Cryptpad Linux07",
+    "url": "https://cryptpad.linux07.fr",
+    "location": "France",
+    "description": "Ceci est une instance communautaire et indépendante de Cryptpad offert par les\nServices Numériques Linux07 (https://linux07.fr), Linux07 est membre des CHATONS\n(https://chatons.org)."
+  },
+  {
+    "title": "Cryptpad at tchncs.de",
+    "url": "https://pad.tchncs.de",
+    "location": "Germany",
+    "description": "The Cryptpad instance of tchncs.de – offering a fair amount of storage while\ntrying not to conflict with the official offering."
+  },
+  {
+    "title": "cryptpad.ffmuc.net",
+    "url": "https://cryptpad.ffmuc.net",
+    "location": "Deutschland",
+    "description": "Dies ist eine unabhängige CryptPad-Installation bereitgestellt von Freifunk\nMünchen (ffmuc.net)"
+  },
+  {
+    "title": "DCMNT.EU",
+    "url": "https://dcmnt.eu",
+    "location": "Germany",
+    "description": "Generic Documents instance for everyone to use. Offered by the Fedihosting\nFoundation (https://fedihosting.foundation)"
   }
 ]
