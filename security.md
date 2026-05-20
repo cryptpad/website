@@ -1,5 +1,5 @@
 ---
-layout: layouts/security
+layout: layouts/page
 title: Security Policy
 ---
 
@@ -267,7 +267,7 @@ You can find below a template to use for the content of a new security advisory:
 ### Impact
 
 Describe here the impact of the vulnerability and provide information about the
-versions of CryptPad impacted by it. 
+versions of CryptPad impacted by it.
 
 #### CVSS Score Computation Details
 
