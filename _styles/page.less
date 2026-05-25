@@ -2,13 +2,16 @@
 
 
 section#page {
-    max-width: 150ch;
+    max-width: 750px;
     margin: 0 auto;
     padding: 0 1rem;
     * {
       text-align: left;
     }
 
+    h2 {
+      margin: 6rem 0 2rem 0;
+    }
 
     h3, h4, h5 {
         font-family: 'IBM Plex Mono', monospace;
@@ -25,5 +28,14 @@ section#page {
     // }
     table {
         font-size: 1.7rem;
+        td {
+          padding: .5rem;
+        }
+    }
+
+    pre {
+      background-color: fade(@text-color, 7%);
+      border-radius: 1rem;
+      padding: 1.5rem;
     }
 }
