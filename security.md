@@ -68,7 +68,9 @@ The following tools and practices are used to detect new security issues:
 The severity is defined on a case by case basis by the core committers depending
 on two criteria:
 
-- the impact of the security issue (for instance an issue that would be blocked by our CSPs in less severe than being able to erase a document without being an owner)
+- the impact of the security issue (for instance an issue that would be blocked
+  by our Content Security Policies (CSPs) in less severe than being able to
+  erase a document without being an owner)
 - and the difficulty to reproduce it (e.g., an issue which needs to forge
   seemingly well-formed messages is less severe than an issue which only needs
   to tamper with a page URL)
