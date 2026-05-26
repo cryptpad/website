@@ -35,7 +35,7 @@ interact with the created advisories.
 ## Where to submit security issues?
 
 All security issues should be communicated to us via emails on
-<security@cryptpad.org>.
+[security@cryptpad.org](mailto:security@cryptpad.org).
 Before reaching out about a potential vulnerability, ensure it falls within the
 scope of our project.
 Please read thoroughly our
@@ -52,8 +52,8 @@ Those issues are only visible to the members of CryptPad security team.
 The following tools and practices are used to detect new security issues:
 
 - Issues reported by the community on our security communication channels,
-  especially on the security@cryptpad.org emails, which are the main entry
-  points to report security issues.
+  especially on the [security@cryptpad.org](mailto:security@cryptpad.org)
+  emails, which are the main entry points to report security issues.
     - This includes manual code reviews by CryptPad core maintainers who create
       issues.
 - Issues detected by [`npm
@@ -251,7 +251,7 @@ Those repositories follow the same security policy as CryptPad and CVE and
 issues will be reported in their own respective GitHub security advisories. As
 such, severity evaluation and embargo period remains the same for all
 CryptPad-managed products. Reporting, similarly, is also done through
-security@cryptpad.org.
+[security@cryptpad.org](mailto:security@cryptpad.org).
 
 ## Security Advisory template and information
 
