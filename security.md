@@ -10,8 +10,8 @@ This document is there to provide information about the policy of
 
 ## Known CryptPad security issues
 
-All publicly known security issues on CryptPad are reported as CVE issues and
-can be found on
+All publicly known security issues on CryptPad are reported as Common
+Vulnerabilities and Exposures (CVE) issues and can be found on
 [cve.org](https://www.cve.org/CVERecord/SearchResults?query=CryptPad).
 
 ## What are the available channels to discuss security issues?
@@ -35,7 +35,7 @@ interact with the created advisories.
 ## Where to submit security issues?
 
 All security issues should be communicated to us via emails on
-security@cryptpad.org.
+<security@cryptpad.org>.
 Before reaching out about a potential vulnerability, ensure it falls within the
 scope of our project.
 Please read thoroughly our
@@ -105,8 +105,8 @@ type of attack (depending on what he can actually do).
 The severity of the security tickets should be computed using a **CVSS 4
 calculator** such as <https://nvd.nist.gov/vuln-metrics/cvss/v4-calculator>.
 
-Security issues are marked as “Critical” issues if the CVSS score is \>=
-7, otherwise they are marked as “Major”.
+Security issues are marked as “Critical” issues if the Common Vulnerability
+Scoring System (CVSS) score is \>= 7, otherwise they are marked as “Major”.
 
 A committer reviewing a security issue could decide to raise the
 severity to “Critical” for a vulnerability with a CVSS score \< 7:
@@ -308,9 +308,9 @@ documented in
 The severity of the vulnerability should be assessed using CVSS, you can find
 information and a calculator here to help you:
 <https://nvd.nist.gov/vuln-metrics/cvss/v4-calculator>.
-You should also try to find a CWE corresponding to the vulnerability. You can
-browse and search for the closest one using the official website:
-<https://cwe.mitre.org/data/index.html>.
+You should also try to find a Common Weakness Enumeration (CWE) corresponding to
+the vulnerability. You can browse and search for the closest one using the
+official website: <https://cwe.mitre.org/data/index.html>.
 
 Finally, you should not forget to add “CryptPad” Github Team as collaborator of
 your advisory to ensure that the intended people are able to see it.
