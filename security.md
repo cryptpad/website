@@ -140,14 +140,12 @@ passive adversary.
 #### Attack complexity
 
 There are no specific best practice for this: the official definition and
-examples should be used to define the value. In case of doubt, best is to
-discuss with the community.
+examples should be used to define the value.
 
 #### Attack requirements
 
 There are no specific best practice for this: the official definition and
-examples should be used to define the value. In case of doubt, best is to
-discuss with the community.
+examples should be used to define the value.
 
 #### Privileges Required
 
@@ -162,8 +160,7 @@ with the access or not of some specific keys or seeds:
 #### User Interaction
 
 There are no specific best practice for this: the official definition and
-examples should be used to define the value. In case of doubt, best is to
-discuss with the community.
+examples should be used to define the value.
 
 #### Confidentiality Impact
 
@@ -171,7 +168,7 @@ In case of gaining access to a document content without obtaining its (at least
 viewing) keys from proper channels beforehand, the impact should be set to high.
 
 For other cases the official definition and examples should be used to define
-the value. In case of doubt, best is to discuss with the community.
+the value.
 
 #### Integrity Impact
 
@@ -179,13 +176,12 @@ In case of being able to tamper a document content without first getting its
 editing key from proper channels results in a high impact.
 
 For other cases the official definition and examples should be used to define
-the value. In case of doubt, best is to discuss with the community.
+the value.
 
 #### Availability Impact
 
 There are no specific best practice for this: the official definition and
-examples should be used to define the value. In case of doubt, best is to
-discuss with the community.
+examples should be used to define the value.
 
 ## How long does it take to fix a security issue?
 
