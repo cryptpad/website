@@ -3,8 +3,6 @@ layout: layouts/page
 title: CryptPad Security Policy
 ---
 
-# CryptPad Security Policy
-
 This document is there to provide information about the policy of
 [CryptPad](https://cryptpad.org) in case a vulnerability is found.
 
