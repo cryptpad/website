@@ -69,8 +69,8 @@ template and information</a></li>
 </ul>
 </aside>
 
-This document is there to provide information about the policy of
-[CryptPad](https://cryptpad.org) in case a vulnerability is found.
+This document provides information about the policy of
+[CryptPad](https://cryptpad.org) in case a security vulnerability is found.
 
 <!-- TOC --><a name="known-cryptpad-security-issues"></a>
 ## Known CryptPad security issues
@@ -84,10 +84,10 @@ Vulnerabilities and Exposures (CVE) issues and can be found on
 
 These channels are private because we want to apply the following strategy:
 
-- Don't make it too easy for hackers to find about security issues before we've
+1. Don't make it too easy for hackers to find about security issues before we've
   had the chance to provide a fix that our users can apply on their CryptPad
   instances.
-- Once we have fixed a security issue and released CryptPad versions with the fix,
+2. Once we have fixed a security issue and released CryptPad versions with the fix,
   and after a defined waiting period (see below for more details) to allow users
   to upgrade, the security issue is disclosed publicly.
 
@@ -102,18 +102,17 @@ interact with the created advisories.
 <!-- TOC --><a name="where-to-submit-security-issues"></a>
 ## Where to submit security issues?
 
-All security issues should be communicated to us via emails on
+All security issues should be communicated to us via email to
 [security@cryptpad.org](mailto:security@cryptpad.org).
 Before reaching out about a potential vulnerability, ensure it falls within the
 scope of our project.
-Please read thoroughly our
-[whitepaper](https://blueprints.cryptpad.org/document/whitepaper/) describing
+Please read our
+[whitepaper](https://blueprints.cryptpad.org/document/whitepaper/) thoroughly, it describes
 our threat model and what we consider acceptable or not security-wise.
-Try to give as much information as possible for those issues and in particular a
-way to exploit the vulnerability, or a way to assess that the vulnerability is
-present: we will use it to determine if some instances are subject to it or not.
+We welcome as much information as possible as part of any issues that do get submitted. In particular we ask for examples of the vulnerability being exploited, or a way to assess that the vulnerability is
+present: we will use it to determine if CryptPad instances are subject to it or not.
 
-Those issues are only visible to the members of CryptPad security team.
+The security inbox messages are only visible to the members of CryptPad security team.
 
 <!-- TOC --><a name="how-to-detect-new-security-issues"></a>
 ## How to detect new security issues?
@@ -135,19 +134,17 @@ The following tools and practices are used to detect new security issues:
 <!-- TOC --><a name="what-are-the-criteria-for-computing-severity"></a>
 ## What are the criteria for computing severity?
 
-The severity is defined on a case by case basis by the core committers depending
-on two criteria:
+The severity is defined on a case by case basis by the CryptPad security team depending on two criteria:
 
-- the impact of the security issue (for instance an issue that would be blocked
+1. The impact of the security issue (e.g. an issue that would be blocked
   by our Content Security Policies (CSPs) in less severe than being able to
   erase a document without being an owner)
-- and the difficulty to reproduce it (e.g., an issue which needs to forge
-  seemingly well-formed messages is less severe than an issue which only needs
-  to tamper with a page URL)
+2. The difficulty of exploiting the vulnerability (e.g. an issue that relies on forged
+  seemingly well-formed messages is less severe than an issue that is exploited by tampering with a page URL)
 
 We currently use two types of labels to compute the severity of an issue: the
 type of attacker (depending on its rights on the targeted ressource) and the
-type of attack (depending on what he can actually do).
+type of attack (depending on what they can actually do).
 
 <!-- TOC --><a name="types-of-attackers"></a>
 ### Types of attackers
@@ -177,13 +174,13 @@ type of attack (depending on what he can actually do).
 <!-- TOC --><a name="severity"></a>
 ### Severity
 
-The severity of the security tickets should be computed using a **CVSS 4
+The severity of the security issues should be computed using a **CVSS 4
 calculator** such as <https://nvd.nist.gov/vuln-metrics/cvss/v4-calculator>.
 
 Security issues are marked as “Critical” issues if the Common Vulnerability
 Scoring System (CVSS) score is \>= 7, otherwise they are marked as “Major”.
 
-A committer reviewing a security issue could decide to raise the
+A team member reviewing a security issue could decide to raise the
 severity to “Critical” for a vulnerability with a CVSS score \< 7:
 
 -   if there’s an high system impact
