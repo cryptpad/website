@@ -1,6 +1,6 @@
 ---
 layout: layouts/page
-title: Security Policy
+title: CryptPad Security Policy
 ---
 
 # CryptPad Security Policy
