@@ -183,7 +183,7 @@ Scoring System (CVSS) score is \>= 7, otherwise they are marked as “Major”.
 A team member reviewing a security issue could decide to raise the
 severity to “Critical” for a vulnerability with a CVSS score \< 7:
 
--   if there’s an high system impact
+-   if there’s a high system impact
 -   for another reason if there’s a strong argument for it, after
     discussing within available channels
 
