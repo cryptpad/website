@@ -1,0 +1,101 @@
+---
+title: CryptPad Donations
+description: Donation page
+layout: layouts/main
+goal: 30000
+individual:
+  - name: Supporter
+    price: 5
+    popular: ''
+    url: https://opencollective.com/cryptpad/contribute/helper-5122/checkout
+  - name: Sustainer
+    price: 10
+    popular: 'popular'
+    url: https://opencollective.com/cryptpad/contribute/member-5123/checkout
+  - name: Builder
+    price: 20
+    popular: ''
+    url: https://opencollective.com/cryptpad/contribute/supporter-5125/checkout
+organization:
+  - name: Organization 1
+    price: 50
+    url: https://opencollective.com/cryptpad/contribute/patron-5124/checkout
+  - name: Organization 2
+    price: 100
+    url: https://opencollective.com/cryptpad/contribute/elite-patron-5126/checkout
+  - name: Organization 3
+    price: 200
+    url: https://opencollective.com/cryptpad/contribute/open-donation-88259/checkout?interval=month&amount=200
+one_time_url: https://opencollective.com/cryptpad/contribute/open-donation-88259/checkout
+one_time:
+  - price: 10
+  - price: 25
+  - price: 50
+  - price: 0
+---
+
+{% import "components/donation.njk" as donation %}
+
+<section class="donation-header">
+  <h1>We keep your data private.<br>
+  We keep <span class="header-accent">our funding public</span>.</h1>
+
+  <p>CryptPad is end-to-end encrypted and open source. We cannot read your documents, and we will never sell your data. That is exactly why we ask you directly. Your support keeps the project independent.</p>
+</section>
+
+<section id="donation-progress-bar">
+    <input type="hidden" id="donation-goal-value" value="{{goal}}">
+    <div id="donation-goal">
+        <div class="bar-container">
+            <div id="donation-bar"></div>
+        </div>
+        <div class="progress">
+            <span id="progress-text"></span>
+            <span id="progress-text-full"></span>
+        </div>
+    </div>
+</section>
+
+<section class="donation-form">
+  <div class="donation-form-container">
+    <h3>Choose your support</h3>
+
+    <p id="contributors-count"></p>
+
+      <div class="donation-form-type">
+        <span class="donation-type selected" data-type="individual">
+            <i data-lucide="user" class="lucide-icon" aria-hidden="true"></i>
+            As an individual
+        </span>
+        <span class="donation-type" data-type="organization">
+            <i data-lucide="briefcase" class="lucide-icon" aria-hidden="true"></i>
+            As an organization
+        </span>
+      </div>
+
+      <div class="donation-form-list" data-type="individual" style="display: flex;">
+      {% for tier in individual %}
+          {{ donation.monthly(
+              name = tier.name,
+              price = tier.price,
+              popular = tier.popular,
+              url = tier.url
+          )}}
+      {% endfor %}
+      </div>
+
+      <div class="donation-form-list" data-type="organization">
+      {% for tier in organization %}
+          {{ donation.monthly(
+              name = tier.name,
+              price = tier.price,
+              popular = tier.popular,
+              url = tier.url
+          )}}
+      {% endfor %}
+      </div>
+
+  </div>
+</section>
+
+<script src="/scripts/donation.js?ver={{cache.buster}}"></script>

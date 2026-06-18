@@ -1,0 +1,17 @@
+{% macro monthly(name='', price=0, popular='', url='') %}
+<div class="donation-monthly-wrapper {{popular}}">
+    <a href="{{url}}" target="_blank"><div class="donation-monthly {{popular}}">
+        <span class="donation-popular">Popular</span>
+        <i data-lucide="move-up-right" class="lucide-icon" aria-hidden="true"></i>
+        <span class="donation-name">{{name}}</span>
+        <span class="donation-price">€{{price}}</span>
+        <span class="donation-type">per month</span>
+    </div></a>
+</div>
+{% endmacro %}
+
+{% macro once(price=0, url='') %}
+<div class="donation-wrapper">
+    <a href="https://opencollective.com/cryptpad/contribute/open-donation-88259/checkout">{{price}}</a>
+</div>
+{% endmacro %}
