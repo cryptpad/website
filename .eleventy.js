@@ -1,4 +1,4 @@
-const markdownIt = require("markdown-it")();
+const markdownIt = require("markdown-it");
 const { parse } = require("node-html-parser");
 
 module.exports = (function(eleventyConfig) {
@@ -31,13 +31,19 @@ module.exports = (function(eleventyConfig) {
     // return {
     //     markdownTemplateEngine: "njk, md"
     // }
-    let markdownItAnchor = require("markdown-it-anchor");
+    const markdownItAnchor = require("markdown-it-anchor");
 
-    let anchoroptions = {
+    const anchoroptions = {
         level: 1,  // Minimum level to apply anchors, or array of selected levels.
     };
 
-    let md = markdownIt.use(markdownItAnchor, anchoroptions);
+    const options = {
+        html: true, // enable HTML tags in source
+        typographer: true, // uniformize typography
+        linkify: true, // convert URLs into links
+    };
+
+    let md = markdownIt(options).use(markdownItAnchor, anchoroptions);
 
     // set the library to process markdown files
     eleventyConfig.setLibrary("md", md);
