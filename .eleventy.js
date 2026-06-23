@@ -60,7 +60,6 @@ module.exports = (function(eleventyConfig) {
         const id = heading.attributes.id;
         const text = heading.innerText;
         const level = parseInt(heading.tagName.replace("H", ""), 10);
-        console.log(id,text,level)
         return { id, text, level };
       });
 
