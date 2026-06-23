@@ -1,0 +1,45 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+<h1 class="page-title">{{ title }}</h1>
+  <section id="page">
+    {% if date %}
+      <p id="updated">
+        Last updated:
+        <time datetime="{{ date.toISOString() }}">
+          {{ date.toLocaleString("en-US", {year: "numeric", month: "long", day: "numeric"}) }}
+        </time>
+      </p>
+    {% endif %}
+    {% set toc = content | toc %}
+    {% if (toc | length) and showtoc %}
+
+    <aside id="TOC" role="doc-toc">
+        <h1>Contents</h1>
+        <ul id="main" class="toc__list" role="list" aria-labelledby="app-panel-toc">
+        {% for item in toc %}
+        <li style="--level: {{ item.level }}" class="toc__item">
+            <a href="#{{ item.id }}" class="toc__link">
+            {{ item.text | safe }}
+            </a>
+        </li>
+        {% endfor %}
+        </ul>
+    </aside>
+
+    {# <div class="toc">
+        <h2 class="toc__label" id="app-panel-toc">Page Contents</h2>
+        <ul class="toc__list" role="list" aria-labelledby="app-panel-toc">
+        {% for item in toc %}
+        <li style="--level: {{ item.level }}" class="toc__item">
+            <a href="#{{ item.id }}" class="toc__link">
+            {{ item.text | safe }}
+            </a>
+        </li>
+        {% endfor %}
+        </ul>
+    </div> #}
+    {% endif %}
+    {{ content | safe }}
+  </section>
+{% endblock %}
