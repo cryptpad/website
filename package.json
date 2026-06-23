@@ -15,7 +15,7 @@
   "author": "ansuz",
   "license": "ISC",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.1.6",
     "axios": "^1.7.4",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
@@ -24,6 +24,6 @@
     "less": "^4.2.0",
     "markdown-it-anchor": "^9.2.0",
     "node-html-parser": "^8.0.2",
-    "nodemailer": "^8.0.1"
+    "nodemailer": "^9.0.1"
   }
 }
