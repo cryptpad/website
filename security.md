@@ -1,6 +1,7 @@
 ---
 layout: layouts/page
 title: CryptPad Security Policy
+date: 2026-06-23
 showtoc: true
 ---
 

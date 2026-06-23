@@ -3,6 +3,14 @@
 {% block content %}
 <h1 class="page-title">{{ title }}</h1>
   <section id="page">
+    {% if date %}
+      <p id="updated">
+        Last updated:
+        <time datetime="{{ date.toISOString() }}">
+          {{ date.toLocaleString("en-US", {year: "numeric", month: "long", day: "numeric"}) }}
+        </time>
+      </p>
+    {% endif %}
     {% set toc = content | toc %}
     {% if (toc | length) and showtoc %}
 
