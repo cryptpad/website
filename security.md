@@ -1,7 +1,7 @@
 ---
 layout: layouts/page
 title: CryptPad Security Policy
-date: 2026-06-23
+date: 2026-10-13
 showtoc: true
 ---
 
@@ -263,6 +263,8 @@ administrators to upgrade as soon as possible.
 ## Vulnerabilities in dependencies maintained by the CryptPad team
 
 CryptPad relies on some dependencies that are maintained by the CryptPad team:
+- [cryptpad-server](https://www.npmjs.com/package/cryptpad-server)
+- [cryptpad-diagram](https://www.npmjs.com/package/cryptpad-diagram)
 - [chainpad](https://www.npmjs.com/package/chainpad)
 - [chainpad-crypto](https://www.npmjs.com/package/chainpad-crypto)
 - [chainpad-listmap](https://www.npmjs.com/package/chainpad-listmap)
